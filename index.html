@@ -86,7 +86,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">3</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">6</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,9 +157,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -212,6 +216,496 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/24/python%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/24/python%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">python基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-03-24 14:12:43 / 修改时间：21:15:49" itemprop="dateCreated datePublished" datetime="2024-03-24T14:12:43+08:00">2024-03-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="pycharm配置"><a href="#pycharm配置" class="headerlink" title="pycharm配置"></a>pycharm配置</h2><p>code templates<img src="/2024/03/24/python%E5%9F%BA%E7%A1%80/image-20240324134851480.png" alt="code templates"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : $&#123;DATE&#125; $&#123;TIME&#125;</span>
+<span class="token comment"># @Author : luotao</span>
+<span class="token comment"># @File : $&#123;NAME&#125;</span>
+<span class="token comment"># @Project $&#123;PROJECT_NAME&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><blockquote>
+<p>包管理工具</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">pip -V &#x2F;&#x2F;版本
+pip uninstall ipython &#x2F;&#x2F;卸载
+pip list &#x2F;&#x2F;包列表
+pip install ipython -i https:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F; &#x2F;&#x2F;指定下载源<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2023/12/17 12:56</span>
+<span class="token comment"># @Author : luotao</span>
+<span class="token comment"># @File : python数据类型</span>
+<span class="token comment"># @Project python基础</span>
+
+<span class="token triple-quoted-string string">"""
+1.python中系统自动辨别数据类型,并不需要显示的去声明
+2.标识符由字母/数字/下划线构成且大小写敏感
+3.python中都是字符串才可加法拼接
+"""</span>
+name_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"罗涛"</span><span class="token punctuation">,</span><span class="token string">"周超"</span><span class="token punctuation">]</span> <span class="token comment"># 列表</span>
+age_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">)</span> <span class="token comment"># 元祖</span>
+person <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"罗涛"</span><span class="token punctuation">,</span><span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">&#125;</span> <span class="token comment"># 字典</span>
+
+<span class="token comment"># 强制类型转换.0或数据为空则为False</span>
+a <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 判断数据类型</span>
+a1 <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment"># 布尔转字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>a1<span class="token punctuation">)</span> <span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a1<span class="token punctuation">)</span>
+
+b <span class="token operator">=</span> <span class="token string">" "</span> <span class="token comment"># 空格转布尔TRUE</span>
+<span class="token comment"># b = "" # 空字符串转布尔FALSE</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+b1 <span class="token operator">=</span> <span class="token builtin">bool</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># 商</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># 取整</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># 幂</span>
+
+<span class="token comment"># 多变量赋值</span>
+a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span>
+
+<span class="token comment"># 短路与\短路或</span>
+<span class="token boolean">True</span> <span class="token keyword">and</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># 1</span>
+<span class="token boolean">False</span> <span class="token keyword">and</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># 不执行</span>
+
+<span class="token boolean">True</span> <span class="token keyword">or</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># 3</span>
+<span class="token boolean">False</span> <span class="token keyword">or</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment"># 4</span>
+
+<span class="token comment"># 格式化输出</span>
+name <span class="token operator">=</span> <span class="token string">"罗涛"</span>
+age <span class="token operator">=</span> <span class="token number">18</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"我的名字是%s,我的年龄是%d"</span> <span class="token operator">%</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 输入</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 流程控制</span>
+<span class="token keyword">if</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入你的年龄:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">18</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"输入错误!"</span><span class="token punctuation">)</span>
+    
+<span class="token comment"># 分支判断</span>
+score <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入成绩:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> score <span class="token operator">>=</span><span class="token number">90</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"优秀"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> score <span class="token operator">>=</span><span class="token number">60</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"合格"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"不合格"</span><span class="token punctuation">)</span>
+    
+<span class="token comment"># 遍历    </span>
+name_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"罗涛"</span><span class="token punctuation">,</span><span class="token string">"周超"</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>name_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># 遍历下标</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment"># 0 1</span>
+    
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>name_list<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 列表长度 2</span>
+
+<span class="token comment"># 字符处理</span>
+s <span class="token operator">=</span> <span class="token string">"aa,bb "</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 第一次出现下标 3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 出现次数 2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># aa,cc </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 切割为列表 ['aa', 'bb ']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># aa,bb移除字符串头尾指定的字符（默认为空格或换行符）</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"cc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># caa,bb c 将字符串cc中的每个成员以字符'aa,bb '分隔开再拼接成一个字符串</span>
+
+<span class="token triple-quoted-string string">"""
+列表处理
+"""</span>
+nameList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"罗涛"</span><span class="token punctuation">,</span><span class="token string">"周超"</span><span class="token punctuation">]</span>
+nameList<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"中"</span><span class="token punctuation">)</span> <span class="token comment"># 追加元素</span>
+nameList<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"国"</span><span class="token punctuation">)</span> <span class="token comment"># 插入元素</span>
+nameList1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token comment"># for i in nameList1: # 遍历追加</span>
+<span class="token comment">#     nameList.append(i)</span>
+<span class="token comment"># print(nameList)</span>
+nameList<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>nameList1<span class="token punctuation">)</span> <span class="token comment"># 将一个list中的元素逐一添加到目标列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">mysql基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-02-24 14:12:43" itemprop="dateCreated datePublished" datetime="2024-02-24T14:12:43+08:00">2024-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-24 16:30:07" itemprop="dateModified" datetime="2024-03-24T16:30:07+08:00">2024-03-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224151316858.png" alt="数据库管理系统、数据库和表的关系"></p>
+<ul>
+<li>数据库管理系统 DataBaseSystem 是一套运行在操作系统的软件</li>
+<li>通过文件形式管理数据的文件系统</li>
+<li>关系型数据库</li>
+<li>非关系型数据库</li>
+<li>mysql1996年开始运作被oracle收购</li>
+<li>mysql不区分大小写</li>
+<li>mysql创建数据库默认字符集：latin1</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224164425387.png" alt="mysql数据类型"></p>
+<h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><ul>
+<li>char 固定长度 适合存储固定大小的字符串如性别、身份证号<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224165353233.png" alt="char类型"></li>
+<li>varchar 可变长度 ，适合存储一定范围内变化的字符串，如微博留言；频繁扩容或缩容效率低但节省存储<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224165555019.png" alt="image-20240224165555019"></li>
+</ul>
+<h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>数据库定义语言。Data Definition Language 定义数据库、表、字段</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 数据库不存在则创建utf8编码的数据库
+create database if not exists db1 character set utf8;
+-- 复制表
+create table tb2 like tb1;
+-- 创建表
+create table tb1(
+	id int(20),
+    uname char(20),
+    uaddress varchar(50)
+);
+
+-- 展示某数据库详细
+show create database db1;
+
+-- 选中库
+use db1;
+
+-- 查看正在运行的库
+select database();
+
+-- 查看所有表
+show tables;
+
+-- 查看某表的字段定义信息
+desc tb1;
+
+-- 查看某表的创建语句
+show create table tb1;
+
+-- 删除tb1
+drop table if exists tb1;
+
+-- 修改表名为tb2
+rename table tb1 to tb2
+
+-- 修改 默认字符编码
+alter table tb1 character set utf8
+show create table tb1; --修改是否生效
+
+-- 新增字段email
+alter table tb1 add email VARCHAR(20)
+desc tb1 -- 查看是否生效
+
+-- 修改字段长度及数据类型
+alter table tb1 modify email char(20)
+desc tb1 -- 查看是否生效
+
+-- 修改字段名、长度及数据类型
+alter table tb1 change email phone char(11)
+desc tb1 -- 查看是否生效
+
+-- 删除字段phone
+alter table tb1 drop phone
+desc tb1 -- 查看是否生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h2><p>数据库操作语言。Data Manipulation Language 对数据表增删改</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 学生表
+use db1;
+create table student(
+	sid int,
+	sname varchar(20),
+	age int,
+	sex char(1),
+	saddress varchar(50)
+);
+
+-- 增
+insert into student values(1,&quot;罗涛&quot;,&#39;23&#39;,&#39;男&#39;,&#39;宝安&#39;)
+select * from student
+
+-- 改
+update student set age&#x3D;18 where sid&#x3D;1
+
+-- 逐行删除，效率低
+delete from where sid &#x3D;1
+
+-- 先把指定表直接删除，然后重新创建一样的表
+truncate table student
+-- 1.直接删除student
+drop table if exists student;
+-- 2.获取定义语句并重新创建表
+show create table student;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h2><p>数据控制语言。Data Controller Language 定义数据库的访问权限及安全级别</p>
+<h2 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h2><p>数据查询语言，Data Query Language</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 员工表</span>
+<span class="token keyword">use</span> db1<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> emp<span class="token punctuation">(</span>
+	eid <span class="token keyword">int</span><span class="token punctuation">,</span>
+	ename <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	sex <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	salary <span class="token keyword">double</span><span class="token punctuation">,</span>
+	hire_date <span class="token keyword">date</span><span class="token punctuation">,</span>
+	depte_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 查询结果参与运算：字段值运算</span>
+<span class="token keyword">select</span> ename<span class="token punctuation">,</span>salary<span class="token operator">+</span><span class="token number">100</span>  <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename<span class="token operator">=</span><span class="token string">'罗涛'</span>
+<span class="token keyword">select</span> ename<span class="token punctuation">,</span>salary<span class="token operator">+</span>eid  <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename<span class="token operator">=</span><span class="token string">'罗涛'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking">数据库排名</a></li>
+<li>sqlLite嵌入式小型数据库应用手机端</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/01/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">java面向对象</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-01-23 21:26:02 / 修改时间：22:02:01" itemprop="dateCreated datePublished" datetime="2024-01-23T21:26:02+08:00">2024-01-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<ul>
+<li>面向对象</li>
+<li>类与对象</li>
+<li>封装</li>
+<li>构造方法</li>
+<li>关键字this与static</li>
+<li>代码块</li>
+</ul>
+</blockquote>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><blockquote>
+<p>​    现实中各种形态的不同事物间存在各种联系。在程序中使用<strong>对象映射</strong>现实中的<strong>事物</strong>，使用对象的<strong>关系描述</strong>事物之间的<strong>联系</strong>。</p>
+<p>​    把构成问题的事物按一定规则划分多个独立的对象——&gt;调用对象的方法解决问题</p>
+<p>eg:    我们部门5个人，每个人都是独立的对象。为了更易于编程和现实世界的业务逻辑处理，抽离出对象思想来进行组织，让事物与事物间用对象来描述，每个对象都是独立的个体</p>
+</blockquote>
+<p>对象–映射–事物</p>
+<p>对象关系–描述–事物联系</p>
+<pre class="line-numbers language-none"><code class="language-none">面向过程：
+分析出解决问题的步骤——&gt;用函数把步骤逐一实现——&gt;依次调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>封装性</p>
+<p>​    1.把对象的<strong>属性</strong>和<strong>方法</strong>看成整体，将两者封装在一起。</p>
+<blockquote>
+<p>属性：类结构中作为全局变量。油门、刹车</p>
+<p>方法：封装业务逻辑并提供公共的访问接口（权限）。油门加速、刹车减速</p>
+</blockquote>
+<p>​    2.隐藏不想让外界知道的信息。</p>
+<blockquote>
+<p>eg:    开车只需知道如何操作汽车，无需知道汽车内部是如何工作的</p>
+</blockquote>
+</li>
+<li><p>继承性</p>
+</li>
+<li><p>多态性</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/15/2024%E5%B9%B4%E5%BA%A6%E8%A7%84%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -240,9 +734,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-01-15 01:10:38 / 修改时间：01:10:55" itemprop="dateCreated datePublished" datetime="2024-01-15T01:10:38+08:00">2024-01-15</time>
+      <time title="创建时间：2024-01-15 01:10:38" itemprop="dateCreated datePublished" datetime="2024-01-15T01:10:38+08:00">2024-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-23 23:23:43" itemprop="dateModified" datetime="2024-03-23T23:23:43+08:00">2024-03-23</time>
     </span>
 
   
@@ -257,7 +757,7 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="作息"><a href="#作息" class="headerlink" title="作息"></a>作息</h2><pre class="line-numbers language-none"><code class="language-none">6:00-7:00	&#x2F;&#x2F;晨读
 7:00-7:40	&#x2F;&#x2F;晨澡&amp;早餐
-7:49-9:00	&#x2F;&#x2F;听课&amp;小语种
+7:40-9:00	&#x2F;&#x2F;听课&amp;小语种
 9:00-18:00	&#x2F;&#x2F;work
 18:00-20:00	&#x2F;&#x2F;上课
 20:00-21:00	&#x2F;&#x2F;晚餐&amp;听课&amp;单词
