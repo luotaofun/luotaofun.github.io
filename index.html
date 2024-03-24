@@ -821,9 +821,15 @@ show create table student;<span aria-hidden="true" class="line-numbers-rows"><sp
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-01-15 01:10:38 / 修改时间：01:46:11" itemprop="dateCreated datePublished" datetime="2024-01-15T01:10:38+08:00">2024-01-15</time>
+      <time title="创建时间：2024-01-15 01:10:38" itemprop="dateCreated datePublished" datetime="2024-01-15T01:10:38+08:00">2024-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-24 21:32:41" itemprop="dateModified" datetime="2024-03-24T21:32:41+08:00">2024-03-24</time>
     </span>
 
   
@@ -890,7 +896,7 @@ show create table student;<span aria-hidden="true" class="line-numbers-rows"><sp
 <p><img src="/2024/01/15/GithubPagesHexo/image-20240103231126378.png" alt="image-20240103231126378"></p>
 </li>
 </ul>
-<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><ul>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><ul>
 <li><p>博客根目录【D:\workspace\hexo_blog】</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装hexo</span>
 $ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli <span class="token parameter variable">-g</span> 
@@ -903,7 +909,7 @@ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <li><p><a target="_blank" rel="noopener" href="http://127.0.0.1:4000/">验证</a><img src="/2024/01/15/GithubPagesHexo/image-20240103232624429.png" alt="image-20240103232624429"></p>
 </li>
 </ul>
-<h2 id="部署到GithubPages"><a href="#部署到GithubPages" class="headerlink" title="部署到GithubPages"></a>部署到GithubPages</h2><ul>
+<h2 id="二、部署到GithubPages"><a href="#二、部署到GithubPages" class="headerlink" title="二、部署到GithubPages"></a>二、部署到GithubPages</h2><ul>
 <li><p>创建项目库<img src="/2024/01/15/GithubPagesHexo/image-20240114041303740.png" alt="image-20240114041303740"></p>
 </li>
 <li><p>配置SSH密钥</p>
@@ -936,7 +942,7 @@ hexo g -d &#x2F;&#x2F;推送到服务器<span aria-hidden="true" class="line-num
 <li><p>访问博客<a target="_blank" rel="noopener" href="https://luotaofun.github.io/">https://luotaofun.github.io</a></p>
 </li>
 </ul>
-<h1 id="图片显示"><a href="#图片显示" class="headerlink" title="图片显示"></a>图片显示</h1><ul>
+<h2 id="图片显示问题"><a href="#图片显示问题" class="headerlink" title="图片显示问题"></a>图片显示问题</h2><ul>
 <li><p>typora配置<img src="/2024/01/15/GithubPagesHexo/typora%E9%85%8D%E7%BD%AE.png" alt="typora配置"></p>
 </li>
 <li><p>在<code>_config.yml</code>配置文件把<code>false</code>改成<code>true</code></p>
@@ -944,6 +950,15 @@ hexo g -d &#x2F;&#x2F;推送到服务器<span aria-hidden="true" class="line-num
 <li><p>安装<code>hexo-asset-image</code>的依赖</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/CodeFalling/hexo-asset-image <span class="token parameter variable">--save</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
+<h1 id="关于本地git通过ssh链接github时-time-out问题的解决方法"><a href="#关于本地git通过ssh链接github时-time-out问题的解决方法" class="headerlink" title="关于本地git通过ssh链接github时 time out问题的解决方法"></a>关于本地git通过ssh链接github时 time out问题的解决方法</h1><p><img src="/2024/01/15/GithubPagesHexo/image-20240324213207217.png" alt="image-20240324213207217"></p>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">Host github.com
+HostName ssh.github.com  # 这是最重要的部分
+User git
+Port 443
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
       
     </div>
