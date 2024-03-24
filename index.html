@@ -435,7 +435,7 @@ nameList<span class="token punctuation">.</span>extend<span class="token punctua
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-24 16:30:07" itemprop="dateModified" datetime="2024-03-24T16:30:07+08:00">2024-03-24</time>
+      <time title="修改时间：2024-03-24 22:37:51" itemprop="dateModified" datetime="2024-03-24T22:37:51+08:00">2024-03-24</time>
     </span>
 
   
@@ -466,7 +466,7 @@ nameList<span class="token punctuation">.</span>extend<span class="token punctua
 <h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>数据库定义语言。Data Definition Language 定义数据库、表、字段</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 数据库不存在则创建utf8编码的数据库
 create database if not exists db1 character set utf8;
--- 复制表
+-- 复制表结构
 create table tb2 like tb1;
 -- 创建表
 create table tb1(
@@ -519,8 +519,7 @@ desc tb1 -- 查看是否生效
 alter table tb1 drop phone
 desc tb1 -- 查看是否生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
+<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324222430765.png" alt="表复制"></p>
 <h2 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h2><p>数据库操作语言。Data Manipulation Language 对数据表增删改</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 学生表
 use db1;
@@ -553,6 +552,8 @@ show create table student;<span aria-hidden="true" class="line-numbers-rows"><sp
 
 <h2 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h2><p>数据控制语言。Data Controller Language 定义数据库的访问权限及安全级别</p>
 <h2 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h2><p>数据查询语言，Data Query Language</p>
+<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324214756133.png" alt="运算符"></p>
+<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324220056864.png" alt="逻辑运算符"></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 员工表</span>
 <span class="token keyword">use</span> db1<span class="token punctuation">;</span>
 <span class="token keyword">create</span> <span class="token keyword">table</span> emp<span class="token punctuation">(</span>
@@ -566,11 +567,25 @@ show create table student;<span aria-hidden="true" class="line-numbers-rows"><sp
 
 <span class="token comment">-- 查询结果参与运算：字段值运算</span>
 <span class="token keyword">select</span> ename<span class="token punctuation">,</span>salary<span class="token operator">+</span><span class="token number">100</span>  <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename<span class="token operator">=</span><span class="token string">'罗涛'</span>
-<span class="token keyword">select</span> ename<span class="token punctuation">,</span>salary<span class="token operator">+</span>eid  <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename<span class="token operator">=</span><span class="token string">'罗涛'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">select</span> ename<span class="token punctuation">,</span>salary<span class="token operator">+</span>eid  <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename<span class="token operator">=</span><span class="token string">'罗涛'</span>
 
+<span class="token comment">-- 区间</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">where</span> salary <span class="token operator">between</span> <span class="token number">5000</span> <span class="token operator">and</span> <span class="token number">10000</span>
 
+<span class="token comment">-- in(集合)，每个元素都会与表中指定字段一一比较</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename <span class="token operator">not</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'罗涛'</span><span class="token punctuation">,</span><span class="token string">'周超'</span><span class="token punctuation">)</span> <span class="token operator">and</span> ename <span class="token operator">is</span> <span class="token boolean">null</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">where</span> ename <span class="token operator">!=</span><span class="token string">'罗涛'</span> <span class="token operator">and</span> ename <span class="token operator">is</span> <span class="token boolean">null</span>
 
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<span class="token comment">-- 模糊查询，-表示任意</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">where</span>  ename <span class="token operator">like</span> <span class="token string">'-涛%'</span>
+
+<span class="token comment">-- 单列排序 降序desc</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp  <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">desc</span>
+
+<span class="token comment">-- 组合排序,若前字段相同则 排序后一字段</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">desc</span><span class="token punctuation">,</span>eid <span class="token keyword">desc</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking">数据库排名</a></li>
 <li>sqlLite嵌入式小型数据库应用手机端</li>
 </ul>
