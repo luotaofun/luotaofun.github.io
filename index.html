@@ -435,7 +435,7 @@ nameList<span class="token punctuation">.</span>extend<span class="token punctua
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-24 22:37:51" itemprop="dateModified" datetime="2024-03-24T22:37:51+08:00">2024-03-24</time>
+      <time title="修改时间：2024-03-31 16:02:31" itemprop="dateModified" datetime="2024-03-31T16:02:31+08:00">2024-03-31</time>
     </span>
 
   
@@ -470,7 +470,7 @@ create database if not exists db1 character set utf8;
 create table tb2 like tb1;
 -- 创建表
 create table tb1(
-	id int(20),
+	id int(20) primary key,
     uname char(20),
     uaddress varchar(50)
 );
@@ -537,16 +537,17 @@ select * from student
 
 -- 改
 update student set age&#x3D;18 where sid&#x3D;1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
--- 逐行删除，效率低
-delete from where sid &#x3D;1
+<h2 id="delete和truncate影响自增"><a href="#delete和truncate影响自增" class="headerlink" title="delete和truncate影响自增"></a>delete和truncate影响自增</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 逐行删除，效率低</span>
+<span class="token keyword">delete</span> <span class="token keyword">from</span> <span class="token keyword">where</span> sid <span class="token operator">=</span><span class="token number">1</span>
 
--- 先把指定表直接删除，然后重新创建一样的表
-truncate table student
--- 1.直接删除student
-drop table if exists student;
--- 2.获取定义语句并重新创建表
-show create table student;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">-- truncate先全表删除，然后重新创建一样的表</span>
+<span class="token keyword">truncate</span> <span class="token keyword">table</span> student
+<span class="token comment">-- 1.直接删除student</span>
+<span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> student<span class="token punctuation">;</span>
+<span class="token comment">-- 2.获取定义语句并重新创建表</span>
+<span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -585,7 +586,129 @@ show create table student;<span aria-hidden="true" class="line-numbers-rows"><sp
 <span class="token comment">-- 组合排序,若前字段相同则 排序后一字段</span>
 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">order</span> <span class="token keyword">by</span> salary <span class="token keyword">desc</span><span class="token punctuation">,</span>eid <span class="token keyword">desc</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><p>纵向查询，根据列筛选保留满足条件的数据。</p>
+<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331122258240.png" alt="image-20240331122258240"></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">/*
+	1.先根据分组条件划分组
+	select * from emp where sex='男';
+	select * from emp where sex='女';
+	2.若没有明确展示字段，则取出分组中的第一条记录展示
+	3.分组要结合聚合函数使用
+	select sex,count(*) from emp group by sex;
+	
+**/</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">group</span> <span class="token keyword">by</span> sex<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="having"><a href="#having" class="headerlink" title="having"></a>having</h2><p>对分组后进一步添加过滤条件，结合group by</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">/*
+	查询部门的平均薪资>6000的部门
+	1.分组部门统计平均薪资
+	2.分组后过滤
+**/</span>
+<span class="token keyword">select</span> depte_name<span class="token punctuation">,</span><span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+<span class="token keyword">from</span> emp 
+<span class="token keyword">where</span> depte_name <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token comment">--分组前用where过滤无效数据</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> depte_name
+<span class="token keyword">having</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">6000</span>
+
+<span class="token comment">-- having 条件表达式 and\or\not </span>
+<span class="token keyword">select</span> depte_name<span class="token punctuation">,</span><span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+<span class="token keyword">from</span> emp 
+<span class="token keyword">group</span> <span class="token keyword">by</span> depte_name
+<span class="token keyword">having</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">6000</span> <span class="token operator">and</span> depte_name <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">;</span> <span class="token comment">-- 分组后过滤无效数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="limit分页查询"><a href="#limit分页查询" class="headerlink" title="limit分页查询"></a>limit分页查询</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">limit</span> 起始行<span class="token punctuation">(</span>从<span class="token number">0</span>开始<span class="token punctuation">)</span><span class="token punctuation">,</span>记录数
+<span class="token comment">-- 每页3条</span>
+<span class="token comment">-- 第1页</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">limit</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment">-- 第2页</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">limit</span> <span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment">-- 第3页</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">limit</span> <span class="token number">6</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment">-- 第4页</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">limit</span> <span class="token number">9</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment">-- 第N页,每页记录数R</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> emp <span class="token keyword">limit</span> <span class="token punctuation">(</span>N<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>R<span class="token punctuation">,</span>R<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="SQL约束"><a href="#SQL约束" class="headerlink" title="SQL约束"></a>SQL约束</h2><p>对表数据限制以保证数据的正确性。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- primary key 主键约束 标识唯一记录 主键自增 uname非空约束 IDnumber唯一约束</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb1<span class="token punctuation">(</span>
+	id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+    uname <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+    IDnumber <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span> <span class="token keyword">unique</span><span class="token punctuation">,</span>
+    uaddress <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb1<span class="token punctuation">(</span>
+	id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
+    uname <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    uaddress <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 添加主键（含非空约束）</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> tb1 <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">desc</span> tb1<span class="token punctuation">;</span><span class="token comment">-- 查看修改</span>
+<span class="token comment">-- 删除主键不会删除非空约束</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> tb1 <span class="token keyword">drop</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">;</span>
+<span class="token keyword">desc</span> tb1<span class="token punctuation">;</span><span class="token comment">-- 查看修改</span>
+<span class="token comment">-- 联合主键</span>
+<span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>字段<span class="token number">1</span>，字段<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- unique 唯一约束（null不参与该约束）</span>
+
+<span class="token comment">-- not null 非空约束</span>
+
+<span class="token comment">-- foreign key 外键约束</span>
+
+<span class="token comment">-- 默认值可以防止null值产生</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb1<span class="token punctuation">(</span>
+	id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
+    uname <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    uaddress <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    sex <span class="token keyword">char</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">'男'</span><span class="token punctuation">,</span>
+    salary <span class="token keyword">double</span> <span class="token keyword">default</span> <span class="token number">0.0</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">desc</span> tb1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331151659920.png" alt="image-20240331151659920"></p>
+<p>事务由多条sql语句组成整体，若任意一条sql异常都不能提交数据库，全部正常执行则提交，否则回滚到执行事务之前的状态。</p>
+<blockquote>
+<p>ATM取钱 取1k——》校验合法——》update (ATM宕机回滚)</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> account<span class="token punctuation">(</span>
+	id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+    username <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    money <span class="token keyword">double</span> <span class="token comment">-- 账户余额</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> account <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'luotao'</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'zhoucao'</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> account<span class="token punctuation">;</span>
+
+<span class="token comment">-- 1.开启事务 </span>
+<span class="token comment">-- start transaction;</span>
+<span class="token keyword">begin</span><span class="token punctuation">;</span>
+<span class="token comment">-- 2.提交事务 luotao-》zhoucao 转账500</span>
+<span class="token keyword">update</span> account <span class="token keyword">set</span> money<span class="token operator">=</span>money<span class="token operator">-</span><span class="token number">500</span> <span class="token keyword">where</span> username<span class="token operator">=</span><span class="token string">'luotao'</span><span class="token punctuation">;</span>
+<span class="token keyword">update</span> account <span class="token keyword">set</span> money<span class="token operator">=</span>money<span class="token operator">+</span><span class="token number">500</span> <span class="token keyword">where</span> username<span class="token operator">=</span><span class="token string">'zhoucao'</span><span class="token punctuation">;</span>
+<span class="token keyword">commit</span><span class="token punctuation">;</span> <span class="token comment">-- 提交</span>
+
+<span class="token comment">-- 异常回滚事务 rollback;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h3 id="自动提交事务"><a href="#自动提交事务" class="headerlink" title="自动提交事务"></a>自动提交事务</h3><p>mysql默认每一条DQL都是一个单独的事务。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查看当前数据库事务默认的提交方式</span>
+<span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'autocommit'</span><span class="token punctuation">;</span>
+<span class="token comment">-- 关闭数据库事务自动提交</span>
+<span class="token keyword">set</span> @<span class="token variable">@autocommit</span><span class="token operator">=</span><span class="token keyword">OFF</span><span class="token punctuation">;</span>
+<span class="token comment">-- 打开数据库事务自动提交</span>
+<span class="token keyword">set</span> @<span class="token variable">@autocommit</span><span class="token operator">=</span><span class="token keyword">ON</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="事务四大特性ACID"><a href="#事务四大特性ACID" class="headerlink" title="事务四大特性ACID"></a>事务四大特性ACID</h3><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331154513048.png" alt="事务四大特性ACID"></p>
+<h3 id="事务四个隔离级别"><a href="#事务四个隔离级别" class="headerlink" title="事务四个隔离级别"></a>事务四个隔离级别</h3><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331155949016.png" alt="事务四个隔离级别"></p>
+<h4 id="数据库并发问题"><a href="#数据库并发问题" class="headerlink" title="数据库并发问题"></a>数据库并发问题</h4><p>一个数据库服务器可被多个客户端并发访问（多个用户同时涌入服务器）。</p>
+<ul>
+<li>脏读：一个事务读到了另一个事务中尚未提交的数据</li>
+<li>不可重复读：一个事务中两次读的内容不一致。update时引发的问题</li>
+<li>幻读：读到的数据状态不准确。一个事务中某次select读到的结果无法支撑后续的业务操作。</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking">数据库排名</a></li>
 <li>sqlLite嵌入式小型数据库应用手机端</li>
 </ul>
