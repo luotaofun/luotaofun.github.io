@@ -1827,7 +1827,7 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-11-20 17:41:50" itemprop="dateModified" datetime="2024-11-20T17:41:50+08:00">2024-11-20</time>
+      <time title="修改时间：2024-11-21 17:56:14" itemprop="dateModified" datetime="2024-11-21T17:56:14+08:00">2024-11-21</time>
     </span>
 
   
@@ -2639,6 +2639,14 @@ public class ScannerTest &#123;
 
 <h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><blockquote>
 <ul>
+<li><p>静态字段属于所有实例“共享”的字段，实际上是属于<code>class</code>的字段；</p>
+<p>调用静态方法不需要实例，无法访问<code>this</code>，但可以访问静态字段和其他静态方法；</p>
+<p>静态方法常用于工具类和辅助方法。</p>
+</li>
+<li><p>因为<code>interface</code>是一个纯抽象类，所以它不能定义实例字段。但是，<code>interface</code>是可以有静态字段的，并且静态字段必须为<code>final</code>类型</p>
+</li>
+<li><p>因为静态方法属于<code>class</code>而不属于实例，因此，静态方法内部，无法访问<code>this</code>变量，也无法访问实例字段，它只能访问静态字段。</p>
+</li>
 <li><p>静态先初始化，先有对象才有对象的成员，非静态成员要先创建对象才能访问，静态成员优于非静态创建，所以静态只能访问静态。即加载时间不一样导致的。</p>
 </li>
 <li><p>被修饰的属性只会分配一块内存空间，该属性是被所有对象共享的全局或静态属性。</p>
@@ -2725,13 +2733,160 @@ public class ScannerTest &#123;
 
 
 
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><blockquote>
-<p>描述类间关系。在现有类基础上构建出的新类作为子类继承父类的属性和方法，使得子类对象具有父类的特征和行为。</p>
-</blockquote>
+<h2 id="extend"><a href="#extend" class="headerlink" title="extend"></a>extend</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>rabbiter<span class="token punctuation">.</span>hello<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+* 用final修饰的类不能被继承
+*
+ * 继承用来描述类间关系。在现有类基础上构建出的新类作为子类继承父类的属性和方法，使得子类对象具有父类的特征和行为。
+ * 通过继承复用代码以获得父类的所有功能。
+ * 子类无法访问父类的`private`字段或方法。
+ * &lt;p>
+ * 只要某个class没有final修饰符，那么任何类都可以从该class继承。
+ **/</span>
+<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Student</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"Xiao Ming"</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/**
+         *
+         *
+         * Student继承Person,因此拥有父类的全部功能
+         * Person类型的变量指向Student类型的实例，对其操作没有问题
+         * 当前继承树：Student > Person > Object
+         * 向上转型：
+         *      把子类类型安全的变为父类类型的赋值
+         *      把子类类型安全的变为更加抽象的父类类型
+         *
+         **/</span>
+        <span class="token class-name">Person</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// upcasting, ok</span>
+        <span class="token class-name">Person</span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Student</span> s1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">)</span> p1<span class="token punctuation">;</span> <span class="token comment">// 在向下转型的时候，把p1转型为Student会成功，因为p1确实指向Student实例</span>
+        <span class="token comment">/**
+         * Person类型p1实际指向Student实例，Person类型变量p2实际指向Person实例。
+         *
+         * runtime error! ClassCastException! 把p2转型为Student会失败，因为p2的实际类型是Person，不能把父类变为子类，因为子类功能比父类多，多的功能无法凭空变出来。
+         * 因此，向下转型很可能会失败。失败的时候，Java虚拟机会报ClassCastException
+         **/</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p2 <span class="token keyword">instanceof</span> <span class="token class-name">Student</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 所指向的实例是否是指定类型才会向下转型</span>
+            <span class="token class-name">Student</span> s2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">)</span> p2<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">protected</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">protected</span> <span class="token keyword">int</span> score<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token keyword">int</span> score<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">/**
+         *
+         * 任何class的构造方法，第一行语句必须是调用父类的构造方法。
+         * 如果没有明确地调用父类的构造方法，编译器会帮我们自动加一句super();
+         *
+         * 子类不会继承任何父类的构造方法。子类默认的构造方法是编译器自动生成的，不是继承的。
+         **/</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>score <span class="token operator">=</span> score<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="Polymorphic"><a href="#Polymorphic" class="headerlink" title="Polymorphic"></a>Polymorphic</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>rabbiter<span class="token punctuation">.</span>hello<span class="token punctuation">.</span>polymorphic</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+* @Description: 多态
+* @Author: LuoTao
+* @Date: 2024-11-21 11:14:26
+**/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PolymorphicDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token comment">// 给一个有普通收入、工资收入和享受国务院特殊津贴的小伙伴算税:</span>
+        <span class="token class-name">Income</span><span class="token punctuation">[</span><span class="token punctuation">]</span> incomes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Income</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">new</span> <span class="token class-name">Income</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">//300</span>
+                <span class="token keyword">new</span> <span class="token class-name">Salary</span><span class="token punctuation">(</span><span class="token number">7500</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">//2500*0.2=500</span>
+                <span class="token keyword">new</span> <span class="token class-name">StateCouncilSpecialAllowance</span><span class="token punctuation">(</span><span class="token number">15000</span><span class="token punctuation">)</span><span class="token comment">//津贴免税</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">totalTax</span><span class="token punctuation">(</span>incomes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//接受可变数量的 Income 对象,参数会被自动封装成incomes数组</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">double</span> <span class="token function">totalTax</span><span class="token punctuation">(</span><span class="token class-name">Income</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> incomes<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">double</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Income</span> income<span class="token operator">:</span> incomes<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            total <span class="token operator">=</span> total <span class="token operator">+</span> income<span class="token punctuation">.</span><span class="token function">getTax</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> total<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Income</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">protected</span> <span class="token keyword">double</span> income<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Income</span><span class="token punctuation">(</span><span class="token keyword">double</span> income<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>income <span class="token operator">=</span> income<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getTax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> income <span class="token operator">*</span> <span class="token number">0.1</span><span class="token punctuation">;</span> <span class="token comment">// 税率10%</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Salary</span> <span class="token keyword">extends</span> <span class="token class-name">Income</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Salary</span><span class="token punctuation">(</span><span class="token keyword">double</span> income<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>income<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getTax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>income <span class="token operator">&lt;=</span> <span class="token number">5000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>income <span class="token operator">-</span> <span class="token number">5000</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.2</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">StateCouncilSpecialAllowance</span> <span class="token keyword">extends</span> <span class="token class-name">Income</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">StateCouncilSpecialAllowance</span><span class="token punctuation">(</span><span class="token keyword">double</span> income<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>income<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getTax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><blockquote>
 <p>具有直接或间接继承关系且非私有方法。</p>
 <p>名称、参数列表及返回值类型需保持一致且权限&gt;=被重写方法的权限。</p>
 <p>注解@Override</p>
+<p><code>final</code>修饰的方法不能被Override</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span>demoExtends</span><span class="token punctuation">;</span>
 
@@ -2867,7 +3022,7 @@ public class ScannerTest &#123;
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoFinal</span> <span class="token punctuation">&#123;</span>
     <span class="token class-name">String</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">final</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span><span class="token comment">//final属性作为全局变量需在构造中初始化</span>
+    <span class="token keyword">final</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span><span class="token comment">//final属性作为全局变量需在构造中初始化。即用final修饰的字段在初始化后不能被修改，可以在构造方法中初始化final字段。</span>
 
     <span class="token keyword">public</span> <span class="token class-name">DemoFinal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span>
@@ -2979,18 +3134,37 @@ public class ScannerTest &#123;
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><blockquote>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p><img src="/2024/01/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/image-20241121170219127.png" alt="image-20241121170219127"></p>
+<blockquote>
 <ul>
-<li>在对类设计的时候,不能具象表示某一类实物,需要将该类定义成抽象类.</li>
-<li>抽象类用来提供一个基础类的骨架，并允许子类扩展和重用代码。而接口用来定义一组行为规范,允许多个类实现这些行为，并支持多重继承的概念。</li>
-<li><strong>继承限制</strong>：Java中一个类只能继承一个抽象类。</li>
-<li><strong>构造器</strong>：抽象类可以有构造器，虽然它本身不能被实例化，但子类在构造时可能会用到。</li>
-<li>抽象类可以提供部分方法的具体实现,接口只能定义静态常量\抽象方法\默认方法\静态方法</li>
-<li>抽象方法必须在子类中实现,继承该抽象类的子类必须重写父类的所有抽象方法。</li>
-<li>不能被实例化，可借助匿名内部类实现实例化。在子类中可用super调用父类（抽象类）的构造方法完成属性的初始化。</li>
-<li>抽象方法不能私有化，因为私有化的抽象方法不能被子类所访问，谈不上重写，无意义。</li>
-<li>当需要提供一个基本的类框架，允许子类在此基础上添加自己的行为时，使用抽象类。</li>
-<li>当需要提供一些默认实现，但又不想让别人直接实例化该类时，使用抽象类。</li>
+<li><p>在抽象类中，抽象方法本质上是定义接口规范：即规定高层类的接口，从而保证所有子类都有相同的接口实现，这样，多态就能发挥出威力。</p>
+<p>如果一个抽象类没有字段，所有方法全部都是抽象方法，就可以把该抽象类改写为接口。</p>
+</li>
+<li><p>由于多态的存在，每个子类都可以覆写父类的方法，如果父类的方法本身不需要实现任何功能，仅仅是为了定义方法签名，目的是让子类去覆写它，那么，可以把父类的方法声明为抽象方法，具体的业务逻辑由不同的子类实现，调用者并不关心</p>
+</li>
+<li><p>无法实例化的抽象类有什么用？</p>
+<p>因为抽象类本身被设计成只能用于被继承，因此，抽象类可以强迫子类实现其定义的抽象方法，否则编译会报错。因此，抽象方法实际上相当于定义了“规范”。</p>
+</li>
+<li><p>在对类设计的时候,不能具象表示某一类实物,需要将该类定义成抽象类.</p>
+</li>
+<li><p>抽象类用来提供一个基础类的骨架，并允许子类扩展和重用代码。而接口用来定义一组行为规范,允许多个类实现这些行为，并支持多重继承的概念。</p>
+</li>
+<li><p><strong>继承限制</strong>：Java中一个类只能继承一个抽象类。</p>
+</li>
+<li><p><strong>构造器</strong>：抽象类可以有构造器，虽然它本身不能被实例化，但子类在构造时可能会用到。</p>
+</li>
+<li><p>抽象类可以提供部分方法的具体实现,接口只能定义静态常量\抽象方法\默认方法\静态方法</p>
+</li>
+<li><p>抽象方法必须在子类中实现,继承该抽象类的子类必须重写父类的所有抽象方法。</p>
+</li>
+<li><p>不能被实例化，可借助匿名内部类实现实例化。在子类中可用super调用父类（抽象类）的构造方法完成属性的初始化。</p>
+</li>
+<li><p>抽象方法不能私有化，因为私有化的抽象方法不能被子类所访问，谈不上重写，无意义。</p>
+</li>
+<li><p>当需要提供一个基本的类框架，允许子类在此基础上添加自己的行为时，使用抽象类。</p>
+</li>
+<li><p>当需要提供一些默认实现，但又不想让别人直接实例化该类时，使用抽象类。</p>
+</li>
 </ul>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span>demoAbstract</span><span class="token punctuation">;</span>
@@ -3328,15 +3502,20 @@ public class ScannerTest &#123;
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><blockquote>
+<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><p><img src="/2024/01/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/image-20241121171023070.png" alt="image-20241121171023070"></p>
+<blockquote>
 <ul>
+<li><p>因为<code>interface</code>是一个纯抽象类，所以它不能定义实例字段。但是，<code>interface</code>是可以有静态字段的，并且静态字段必须为<code>final</code>类型</p>
+</li>
+<li><p>接口的所有方法都是抽象方法，接口不能定义实例字段</p>
+</li>
 <li><p>约束和规范,遵循统一的设计</p>
 </li>
 <li><p>抽象类用来提供一个基础类的骨架，并允许子类扩展和重用代码。而接口用来定义一组行为规范,允许多个类实现这些行为，并支持多重继承的概念。</p>
 </li>
 <li><p>1.8之间只能定义静态常量\抽象方法,1.8之后增加了默认方法和静态方法</p>
 </li>
-<li><p>接口中的方法默认是<code>public abstract</code>的</p>
+<li><p>接口中的方法默认是<code>public abstract</code>的，字段只能是<code>public static final</code></p>
 </li>
 <li><p>类实现接口后需重新接口中所有的抽象方法,否则本类需定义成抽象类.</p>
 </li>
