@@ -175,10 +175,10 @@
         <a href="https://user.qzone.qq.com/3452255853" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;3452255853" rel="noopener" target="_blank"><i class="QQ fa-fw"></i>QQ</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/LuoTao678" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;LuoTao678" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/luotaofun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luotaofun" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:coder_luotao@163.com" title="E-Mail → mailto:coder_luotao@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:luotao0213@163.com" title="E-Mail → mailto:luotao0213@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -1952,7 +1952,7 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-25 16:59:04" itemprop="dateModified" datetime="2024-12-25T16:59:04+08:00">2024-12-25</time>
+      <time title="修改时间：2024-12-26 12:33:24" itemprop="dateModified" datetime="2024-12-26T12:33:24+08:00">2024-12-26</time>
     </span>
 
   
@@ -2032,44 +2032,81 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
 
 <h2 id="添加模板应用场景"><a href="#添加模板应用场景" class="headerlink" title="添加模板应用场景"></a>添加模板应用场景</h2><p><img src="/2024/01/23/javaee/image-20240502141853977.png" alt="image-20240502141853977"></p>
 <h2 id="EnvironmentConstruction"><a href="#EnvironmentConstruction" class="headerlink" title="EnvironmentConstruction"></a>EnvironmentConstruction</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://jdk.java.net/archive/">jdk下载</a></p>
-</li>
-<li><p>```java<br>// 环境变量<br>JAVA_HOME<br>%JAVA_HOME%\bin<br>// 验证<br>java -version</p>
-<pre class="line-numbers language-none"><code class="language-none">
-## CrossPlatform
-
-![java跨平台](.&#x2F;javaee&#x2F;image-20240503230404707.png)
-
-* c\c++使用平台相关的编译器生成对应平台的可执行文件
-
-## DataType
-
-浮点数属于近视值，运算可能出现精度丢失。
-
-| 类型         | 取值范围                                     | 用途                                                         |
-| ------------ | -------------------------------------------- | ------------------------------------------------------------ |
-| &#96;byte&#96;(1)    | -128 到 127                                  | 存储较小的整数值，节省内存                                   |
-| &#96;short&#96;(2)   | -32,768 到 32,767       即 -2^15 到 2^15 - 1 | 存储中等大小的整数值，节省内存                               |
-| &#96;int&#96;(4)     | -2^31 到 2^31 - 1                            | 通用整数类型                                                 |
-| &#96;long&#96;(8)    | -2^63 到 2^63 - 1                            | 存储大整数值                                                 |
-| &#96;float&#96;(4)   | 大约 &#96;±3.4e±38&#96;（7 位精度）                  |                                                              |
-| &#96;double&#96;(8)  | 大约&#96;±1.7e±308&#96;（15 位精度）                 |                                                              |
-| &#96;char&#96;(2)    | &#96;\u0000&#39;&#96;到 &#96;\uffff&#96;                         | 存储单个字符                                                 |
-| &#96;boolean&#96;(1) | true 或 false                                | &#96;JVM&#96; 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。&#96;JVM &#96;支持 boolean 数组，但是是通过读写 byte 数组来实现的。 |
-
-![image-20241213122939589](.&#x2F;javaee&#x2F;image-20241213122939589.png)
-
-&#96;&#96;&#96;java
-    &#x2F;&#x2F; @Description: a++ 先算表达式再自加；--a 先自减再表达式
-	public static void main(String[] args) &#123;
-        int a &#x3D; 100;
-        int b &#x3D; 200;
-        b +&#x3D; a++;&#x2F;&#x2F;b&#x3D;300 a&#x3D;101
-        b +&#x3D; --a;&#x2F;&#x2F;a&#x3D;100 b&#x3D;300 +100&#x3D;400
-        System.out.println(a);&#x2F;&#x2F; 100
-        System.out.println(b);&#x2F;&#x2F; 400
-    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><a target="_blank" rel="noopener" href="https://jdk.java.net/archive/">jdk下载</a></li>
 </ul>
+ <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 环境变量</span>
+<span class="token constant">JAVA_HOME</span>
+<span class="token operator">%</span><span class="token constant">JAVA_HOME</span><span class="token operator">%</span>\bin
+<span class="token comment">// 验证</span>
+java <span class="token operator">-</span>version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="CrossPlatform"><a href="#CrossPlatform" class="headerlink" title="CrossPlatform"></a>CrossPlatform</h2><p><img src="/2024/01/23/javaee/image-20240503230404707.png" alt="java跨平台"></p>
+<ul>
+<li>c\c++使用平台相关的编译器生成对应平台的可执行文件</li>
+</ul>
+<h2 id="DataType"><a href="#DataType" class="headerlink" title="DataType"></a>DataType</h2><p>浮点数属于近视值，运算可能出现精度丢失。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>取值范围</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>byte</code>(1)</td>
+<td>-128 到 127</td>
+<td>存储较小的整数值，节省内存</td>
+</tr>
+<tr>
+<td><code>short</code>(2)</td>
+<td>-32,768 到 32,767       即 -2^15 到 2^15 - 1</td>
+<td>存储中等大小的整数值，节省内存</td>
+</tr>
+<tr>
+<td><code>int</code>(4)</td>
+<td>-2^31 到 2^31 - 1</td>
+<td>通用整数类型</td>
+</tr>
+<tr>
+<td><code>long</code>(8)</td>
+<td>-2^63 到 2^63 - 1</td>
+<td>存储大整数值</td>
+</tr>
+<tr>
+<td><code>float</code>(4)</td>
+<td>大约 <code>±3.4e±38</code>（7 位精度）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>double</code>(8)</td>
+<td>大约<code>±1.7e±308</code>（15 位精度）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>char</code>(2)</td>
+<td><code>\u0000&#39;</code>到 <code>\uffff</code></td>
+<td>存储单个字符</td>
+</tr>
+<tr>
+<td><code>boolean</code>(1)</td>
+<td>true 或 false</td>
+<td><code>JVM</code> 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。<code>JVM </code>支持 boolean 数组，但是是通过读写 byte 数组来实现的。</td>
+</tr>
+</tbody></table>
+<p><img src="/2024/01/23/javaee/image-20241213122939589.png" alt="image-20241213122939589"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">   <span class="token comment">// @Description: a++ 先算表达式再自加；--a 先自减再表达式</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+       <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+       <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+       b <span class="token operator">+=</span> a<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment">//b=300 a=101</span>
+       b <span class="token operator">+=</span> <span class="token operator">--</span>a<span class="token punctuation">;</span><span class="token comment">//a=100 b=300 +100=400</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 100</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 400</span>
+   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// @Description: 单目运算符自动发生强制类型转换</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
      <span class="token keyword">byte</span> a<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
