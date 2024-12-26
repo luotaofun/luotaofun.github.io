@@ -24,50 +24,50 @@
 
     <meta name="description" content="概念  数据库管理系统 DataBaseSystem 是一套运行在操作系统的软件 通过文件形式管理数据的文件系统 关系型数据库 非关系型数据库 mysql1996年开始运作被oracle收购 mysql不区分大小写 mysql创建数据库默认字符集：latin1  数据类型 字符串类型 char 固定长度 适合存储固定大小的字符串如性别、身份证号 varchar 可变长度 ，适合存储一定范围内变化的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql基础">
-<meta property="og:url" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="http://example.com/2024/02/24/mysql/index.html">
 <meta property="og:site_name" content="Taoの博客">
 <meta property="og:description" content="概念  数据库管理系统 DataBaseSystem 是一套运行在操作系统的软件 通过文件形式管理数据的文件系统 关系型数据库 非关系型数据库 mysql1996年开始运作被oracle收购 mysql不区分大小写 mysql创建数据库默认字符集：latin1  数据类型 字符串类型 char 固定长度 适合存储固定大小的字符串如性别、身份证号 varchar 可变长度 ，适合存储一定范围内变化的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224151316858.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224164425387.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224165353233.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224165555019.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324222430765.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324214756133.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324220056864.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331122258240.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331151659920.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331154513048.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331155949016.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414111259705.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414111631608.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414114457875.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414114334979.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414103836829.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414184538628.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414184707974.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414184948069.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414185521160.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414165521724.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414174406415.png">
-<meta property="og:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240417235530387.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240224151316858.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240224164425387.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240224165353233.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240224165555019.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240324222430765.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240324214756133.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240324220056864.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240331122258240.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240331151659920.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240331154513048.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240331155949016.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414111259705.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414111631608.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414114457875.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414114334979.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414103836829.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414184538628.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414184707974.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414184948069.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414185521160.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414165521724.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240414174406415.png">
+<meta property="og:image" content="http://example.com/2024/02/24/mysql/image-20240417235530387.png">
 <meta property="article:published_time" content="2024-02-24T06:12:43.000Z">
-<meta property="article:modified_time" content="2024-12-24T02:54:25.915Z">
+<meta property="article:modified_time" content="2024-12-26T01:53:15.956Z">
 <meta property="article:author" content="Luotao">
 <meta property="article:tag" content="dba">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224151316858.png">
+<meta name="twitter:image" content="http://example.com/2024/02/24/mysql/image-20240224151316858.png">
 
 
-<link rel="canonical" href="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://example.com/2024/02/24/mysql/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/","path":"2024/02/24/mysql基础/","title":"mysql基础"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/02/24/mysql/","path":"2024/02/24/mysql/","title":"mysql"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>mysql基础 | Taoの博客</title>
+<title>mysql | Taoの博客</title>
   
 
 
@@ -245,7 +245,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/24/mysql%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/24/mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -258,12 +258,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="mysql基础 | Taoの博客">
+      <meta itemprop="name" content="mysql | Taoの博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          mysql基础
+          mysql
         </h1>
 
         <div class="post-meta-container">
@@ -281,7 +281,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-24 10:54:25" itemprop="dateModified" datetime="2024-12-24T10:54:25+08:00">2024-12-24</time>
+      <time title="修改时间：2024-12-26 09:53:15" itemprop="dateModified" datetime="2024-12-26T09:53:15+08:00">2024-12-26</time>
     </span>
 
   
@@ -294,7 +294,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224151316858.png" alt="数据库管理系统、数据库和表的关系"></p>
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/2024/02/24/mysql/image-20240224151316858.png" alt="数据库管理系统、数据库和表的关系"></p>
 <ul>
 <li>数据库管理系统 DataBaseSystem 是一套运行在操作系统的软件</li>
 <li>通过文件形式管理数据的文件系统</li>
@@ -304,10 +304,10 @@
 <li>mysql不区分大小写</li>
 <li>mysql创建数据库默认字符集：latin1</li>
 </ul>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224164425387.png" alt="mysql数据类型"></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="/2024/02/24/mysql/image-20240224164425387.png" alt="mysql数据类型"></p>
 <h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><ul>
-<li>char 固定长度 适合存储固定大小的字符串如性别、身份证号<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224165353233.png" alt="char类型"></li>
-<li>varchar 可变长度 ，适合存储一定范围内变化的字符串，如微博留言；频繁扩容或缩容效率低但节省存储<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240224165555019.png" alt="image-20240224165555019"></li>
+<li>char 固定长度 适合存储固定大小的字符串如性别、身份证号<img src="/2024/02/24/mysql/image-20240224165353233.png" alt="char类型"></li>
+<li>varchar 可变长度 ，适合存储一定范围内变化的字符串，如微博留言；频繁扩容或缩容效率低但节省存储<img src="/2024/02/24/mysql/image-20240224165555019.png" alt="image-20240224165555019"></li>
 </ul>
 <h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><p>数据库定义语言。Data Definition Language 定义数据库、表、字段</p>
 <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 数据库不存在则创建utf8编码的数据库</span>
@@ -322,7 +322,7 @@
 <h3 id="复制表结构"><a href="#复制表结构" class="headerlink" title="复制表结构"></a>复制表结构</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 复制表结构</span>
 <span class="token keyword">create</span> <span class="token keyword">table</span> tb2 <span class="token operator">like</span> tb1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324222430765.png" alt="表复制"></p>
+<p><img src="/2024/02/24/mysql/image-20240324222430765.png" alt="表复制"></p>
 <h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 创建表</span>
 <span class="token keyword">create</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">exists</span> tb1<span class="token punctuation">(</span>
 	id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
@@ -446,8 +446,8 @@ create table student(
 <span class="token keyword">drop</span> <span class="token keyword">user</span> <span class="token string">'用户名'</span><span class="token variable">@'主机名称'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h2><p>数据查询语言，Data Query Language</p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324214756133.png" alt="运算符"></p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240324220056864.png" alt="逻辑运算符"></p>
+<p><img src="/2024/02/24/mysql/image-20240324214756133.png" alt="运算符"></p>
+<p><img src="/2024/02/24/mysql/image-20240324220056864.png" alt="逻辑运算符"></p>
 <h3 id="字段参与运算"><a href="#字段参与运算" class="headerlink" title="字段参与运算"></a>字段参与运算</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 员工表</span>
 <span class="token keyword">use</span> db1<span class="token punctuation">;</span>
 <span class="token keyword">create</span> <span class="token keyword">table</span> emp<span class="token punctuation">(</span>
@@ -483,7 +483,7 @@ create table student(
 
 
 <h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><p>纵向查询，根据列筛选保留满足条件的数据。</p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331122258240.png" alt="image-20240331122258240"></p>
+<p><img src="/2024/02/24/mysql/image-20240331122258240.png" alt="image-20240331122258240"></p>
 <h3 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">/*
 	1.先根据分组条件划分组
 	select * from emp where sex='男';
@@ -604,7 +604,7 @@ create table student(
 
 
 
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331151659920.png" alt="image-20240331151659920"></p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p><img src="/2024/02/24/mysql/image-20240331151659920.png" alt="image-20240331151659920"></p>
 <p>事务由多条sql语句组成整体，若任意一条sql异常都不能提交数据库，全部正常执行则提交，否则回滚到执行事务之前的状态。</p>
 <blockquote>
 <p>ATM取钱 取1k——》校验合法——》update (ATM宕机回滚)</p>
@@ -635,23 +635,23 @@ create table student(
 <span class="token comment">-- 打开数据库事务自动提交</span>
 <span class="token keyword">set</span> @<span class="token variable">@autocommit</span><span class="token operator">=</span><span class="token keyword">ON</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="事务四大特性ACID"><a href="#事务四大特性ACID" class="headerlink" title="事务四大特性ACID"></a>事务四大特性ACID</h3><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331154513048.png" alt="事务四大特性ACID"></p>
-<h3 id="事务四个隔离级别"><a href="#事务四个隔离级别" class="headerlink" title="事务四个隔离级别"></a>事务四个隔离级别</h3><p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240331155949016.png" alt="事务四个隔离级别"></p>
+<h3 id="事务四大特性ACID"><a href="#事务四大特性ACID" class="headerlink" title="事务四大特性ACID"></a>事务四大特性ACID</h3><p><img src="/2024/02/24/mysql/image-20240331154513048.png" alt="事务四大特性ACID"></p>
+<h3 id="事务四个隔离级别"><a href="#事务四个隔离级别" class="headerlink" title="事务四个隔离级别"></a>事务四个隔离级别</h3><p><img src="/2024/02/24/mysql/image-20240331155949016.png" alt="事务四个隔离级别"></p>
 <h4 id="数据库并发问题"><a href="#数据库并发问题" class="headerlink" title="数据库并发问题"></a>数据库并发问题</h4><p>一个数据库服务器可被多个客户端并发访问（多个用户同时涌入服务器）。</p>
 <h5 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h5><p>一个事务读到了另一个事务中尚未提交的数据。</p>
 <blockquote>
 <p>脏读案例</p>
 <p>– 修改默认隔离级别为“读未提交”<br>set global transaction isolation level read uncommitted;</p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414111259705.png" alt="image-20240414111259705"></p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414111631608.png" alt="image-20240414111631608"></p>
+<p><img src="/2024/02/24/mysql/image-20240414111259705.png" alt="image-20240414111259705"></p>
+<p><img src="/2024/02/24/mysql/image-20240414111631608.png" alt="image-20240414111631608"></p>
 <p>– 规避脏读：提升隔离级别</p>
 </blockquote>
 <h5 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h5><p>一个事务中两次读的内容不一致。update时引发的问题。（一个事务里在其他事务提交修改之前和之后读到的数据不一致）</p>
 <blockquote>
 <p>不可重复读案例</p>
 <p>– 修改默认隔离级别为“读已提交”<br>set global transaction isolation level read committed;</p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414114457875.png" alt="image-20240414114457875"></p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414114334979.png" alt="不可重复读"></p>
+<p><img src="/2024/02/24/mysql/image-20240414114457875.png" alt="image-20240414114457875"></p>
+<p><img src="/2024/02/24/mysql/image-20240414114334979.png" alt="不可重复读"></p>
 </blockquote>
 <h5 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h5><p>读到的数据状态不准确。一个事务中某次select读到的结果无法支撑后续的业务操作。</p>
 <p>（A用户用A事务做查询的时候读到B用户在B事务中提交的修改或新增数据，导致读不准确）</p>
@@ -665,7 +665,7 @@ create table student(
 <span class="token comment">-- 修改默认隔离级别</span>
 <span class="token keyword">set</span> <span class="token keyword">global</span> <span class="token keyword">transaction</span> <span class="token keyword">isolation</span> <span class="token keyword">level</span> 隔离级别名称<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414103836829.png" alt="mysql默认隔离级别"></p>
+<p><img src="/2024/02/24/mysql/image-20240414103836829.png" alt="mysql默认隔离级别"></p>
 <h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h3><p>A表与B表中只有一条关联数据。</p>
 <p>设计时通常合并成一张表。</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 顾客——学生</span>
@@ -790,13 +790,13 @@ create table student(
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="数据库三范式"><a href="#数据库三范式" class="headerlink" title="数据库三范式"></a>数据库三范式</h3><ul>
-<li>原子性:列最小单元<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414184538628.png" alt="1NF"></li>
-<li>一张表只描述一件事<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414184707974.png" alt="2NF"></li>
-<li>消除传递依赖<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414184948069.png" alt="3NF"></li>
+<li>原子性:列最小单元<img src="/2024/02/24/mysql/image-20240414184538628.png" alt="1NF"></li>
+<li>一张表只描述一件事<img src="/2024/02/24/mysql/image-20240414184707974.png" alt="2NF"></li>
+<li>消除传递依赖<img src="/2024/02/24/mysql/image-20240414184948069.png" alt="3NF"></li>
 </ul>
-<p>反三范式：<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414185521160.png" alt="反三范式"></p>
+<p>反三范式：<img src="/2024/02/24/mysql/image-20240414185521160.png" alt="反三范式"></p>
 <h2 id="cross-join"><a href="#cross-join" class="headerlink" title="cross join"></a>cross join</h2><p>交叉连接-笛卡尔积</p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414165521724.png" alt="笛卡尔积"></p>
+<p><img src="/2024/02/24/mysql/image-20240414165521724.png" alt="笛卡尔积"></p>
 <h2 id="inner-join"><a href="#inner-join" class="headerlink" title="inner join"></a>inner join</h2><p>内连接：将符合比较运算符比较的结果数据重新组合。两表交集。</p>
 <ul>
 <li><p>隐式内连接</p>
@@ -812,7 +812,7 @@ create table student(
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="left-join"><a href="#left-join" class="headerlink" title="left join"></a>left join</h2><p>左外连接，左表记录全显示以及右表交集。将左表作为基表与右表匹配，若右表匹配为空则NULL显示。</p>
-<p><img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240414174406415.png" alt="左外连接"></p>
+<p><img src="/2024/02/24/mysql/image-20240414174406415.png" alt="左外连接"></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 每个分类下商品数量,注意count不会过滤NULL</span>
 <span class="token keyword">select</span> c<span class="token punctuation">.</span>cname <span class="token string">'分类名'</span><span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'pid'</span><span class="token punctuation">)</span> <span class="token string">'商品数量'</span> <span class="token keyword">from</span> category c 
 <span class="token keyword">left</span> <span class="token keyword">join</span>  product p <span class="token keyword">on</span> c<span class="token punctuation">.</span>category_id<span class="token operator">=</span>p<span class="token punctuation">.</span>cid
@@ -1092,7 +1092,7 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
 <p>数据恢复之后，使用以下语句</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span>  <span class="token keyword">database</span>   QPSDZLC   <span class="token keyword">set</span>   online <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="导入脚本还原"><a href="#导入脚本还原" class="headerlink" title="导入脚本还原"></a>导入脚本还原<img src="/2024/02/24/mysql%E5%9F%BA%E7%A1%80/image-20240417235530387.png" alt="数据库备份"></h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h3 id="导入脚本还原"><a href="#导入脚本还原" class="headerlink" title="导入脚本还原"></a>导入脚本还原<img src="/2024/02/24/mysql/image-20240417235530387.png" alt="数据库备份"></h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><p><a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking">数据库排名</a></p>
 </li>
 <li><p>sqlLite嵌入式小型数据库应用手机端</p>
@@ -1121,8 +1121,8 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/03/24/python%E5%9F%BA%E7%A1%80/" rel="next" title="python基础">
-                  python基础 <i class="fa fa-chevron-right"></i>
+                <a href="/2024/03/24/python/" rel="next" title="python">
+                  python <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
