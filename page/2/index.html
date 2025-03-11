@@ -86,7 +86,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">17</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">18</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -207,6 +207,388 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/24/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/24/python/" class="post-title-link" itemprop="url">python</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-03-24 14:12:43" itemprop="dateCreated datePublished" datetime="2024-03-24T14:12:43+08:00">2024-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-23 14:44:53" itemprop="dateModified" datetime="2025-02-23T14:44:53+08:00">2025-02-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="pycharm配置"><a href="#pycharm配置" class="headerlink" title="pycharm配置"></a>pycharm配置</h2><p>code templates<img src="/2024/03/24/python/image-20240324134851480.png" alt="code templates"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : $&#123;DATE&#125; $&#123;TIME&#125;</span>
+<span class="token comment"># @Author : luotao</span>
+<span class="token comment"># @File : $&#123;NAME&#125;</span>
+<span class="token comment"># @Project $&#123;PROJECT_NAME&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><blockquote>
+<p>包管理工具</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token parameter variable">-V</span> //版本
+pip uninstall ipython //卸载
+pip list //包列表
+pip <span class="token function">install</span> ipython <span class="token parameter variable">-i</span> https://pypi.douban.com/simple/ //指定下载源<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">
+<span class="token triple-quoted-string string">"""
+1.python中系统自动辨别数据类型,并不需要显示的去声明
+2.标识符由字母/数字/下划线构成且大小写敏感
+3.python中都是字符串才可加法拼接
+"""</span>
+name_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"罗涛"</span><span class="token punctuation">,</span> <span class="token string">"周超"</span><span class="token punctuation">]</span>  <span class="token comment"># 列表</span>
+age_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span>  <span class="token comment"># 元祖</span>
+person <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"罗涛"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">&#125;</span>  <span class="token comment"># 字典</span>
+
+<span class="token comment"># 强制类型转换.0或数据为空则为False</span>
+a <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断数据类型</span>
+a1 <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># 布尔转字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>a1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a1<span class="token punctuation">)</span>
+
+b <span class="token operator">=</span> <span class="token string">" "</span>  <span class="token comment"># 空格转布尔TRUE</span>
+<span class="token comment"># b = "" # 空字符串转布尔FALSE</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+b1 <span class="token operator">=</span> <span class="token builtin">bool</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span>
+
+<span class="token comment"># 多变量赋值</span>
+a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span>
+
+<span class="token comment"># 短路与\短路或</span>
+<span class="token boolean">True</span> <span class="token keyword">and</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1</span>
+<span class="token boolean">False</span> <span class="token keyword">and</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment"># 不执行</span>
+
+<span class="token boolean">True</span> <span class="token keyword">or</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 3</span>
+<span class="token boolean">False</span> <span class="token keyword">or</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token comment"># 4</span>
+
+<span class="token comment"># 流程控制</span>
+score <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入成绩:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> score <span class="token operator">>=</span> <span class="token number">90</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"优秀"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> score <span class="token operator">>=</span> <span class="token number">60</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"合格"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"不合格"</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">
+<span class="token triple-quoted-string string">"""
+列表处理
+"""</span>
+nameList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"罗涛"</span><span class="token punctuation">,</span> <span class="token string">"周超"</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"罗涛"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 从第一个位置开始取索引</span>
+nameList<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span>  <span class="token comment"># 追加元素</span>
+nameList<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"番茄"</span><span class="token punctuation">,</span> <span class="token string">"鸡蛋"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 插入一个列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">)</span>  <span class="token comment"># ['罗涛', ['番茄', '鸡蛋'], '周超', '1']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 删除最后一个元素</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 删除第一个元素</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 清空元素</span>
+<span class="token keyword">if</span> <span class="token number">1</span> <span class="token keyword">in</span> nameList<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+nameList1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token comment"># for i in nameList1: # 遍历追加</span>
+<span class="token comment">#     nameList.append(i)</span>
+<span class="token comment"># print(nameList)</span>
+nameList<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>nameList1<span class="token punctuation">)</span>  <span class="token comment"># 将一个list中的元素逐一添加到目标列表（修改原来的列表）</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nameList<span class="token punctuation">)</span>
+goodsList1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"白象"</span><span class="token punctuation">,</span> <span class="token string">"康师傅"</span><span class="token punctuation">]</span>
+goodsList2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"烤鸭"</span><span class="token punctuation">,</span> <span class="token string">"烤鱼"</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>goodsList1 <span class="token operator">+</span> goodsList2<span class="token punctuation">)</span>  <span class="token comment"># 生成了新列表['白象', '康师傅', '烤鸭', '烤鱼']</span>
+
+<span class="token comment"># 列表切片：左闭右开区间取值</span>
+ageList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ageList<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># [18, 19, 20]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ageList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># [19, 20]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ageList<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># [18,19, 20]</span>
+name <span class="token operator">=</span> <span class="token string">"ABCDEF"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 字符串转列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># ['A', 'B', 'C', 'D', 'E', 'F']</span>
+
+<span class="token comment"># 列表排序</span>
+orderList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+orderList<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 会直接修改原始列表的排序</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>orderList<span class="token punctuation">)</span>  <span class="token comment"># [1, 2, 3, 4, 5]</span>
+
+orderList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">sorted</span><span class="token punctuation">(</span>orderList<span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># sorted临时排序(降序) [5, 4, 3, 2, 1]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>orderList<span class="token punctuation">)</span>  <span class="token comment"># 只临时修改排序，不影响原列表 [2, 1, 3, 4, 5]</span>
+
+orderList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+orderList<span class="token punctuation">.</span>reverse<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 反转</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>orderList<span class="token punctuation">)</span>  <span class="token comment"># [5, 4, 3, 2, 1]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="字符处理"><a href="#字符处理" class="headerlink" title="字符处理"></a>字符处理</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 格式化字符串</span>
+age <span class="token operator">=</span> <span class="token number">18</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"年龄是: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>age<span class="token punctuation">&#125;</span></span><span class="token string">岁"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># 格式化输出</span>
+name <span class="token operator">=</span> <span class="token string">"罗涛"</span>
+age <span class="token operator">=</span> <span class="token number">18</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"我的名字是%s,我的年龄是%d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 字符处理</span>
+s <span class="token operator">=</span> <span class="token string">"aa,bb "</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 从第二个开始找第一次出现的下标 3,找不到则返回-1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 第一次出现下标 3,找不到则报错</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 出现次数 2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># aa,cc</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 切割为列表 ['aa', 'bb ']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># aa,bb移除字符串头尾指定的字符（默认为空格或换行符）</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"cc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># caa,bb c 将字符串cc中的每个成员以字符'aa,bb '分隔开再拼接成一个字符串</span>
+stringList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"我"</span><span class="token punctuation">,</span> <span class="token string">"爱"</span><span class="token punctuation">,</span> <span class="token string">"你"</span><span class="token punctuation">]</span>  <span class="token comment"># 列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>stringList<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 我爱你</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>stringList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 爱你</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 字典</span>
+dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"neko"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"hobby"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"没有该键"</span><span class="token punctuation">)</span>
+dic<span class="token punctuation">[</span><span class="token string">"hobby"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"唱跳rap"</span>
+dic<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span>  <span class="token comment"># 删除键</span>
+dic<span class="token punctuation">.</span>popitem<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 删除一组键值对</span>
+dic<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 清空字典</span>
+
+<span class="token keyword">for</span> item <span class="token keyword">in</span> dic<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>  <span class="token comment"># 返回元祖 ('name', 'neko')</span>
+
+<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> dic<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">&#123;</span>k<span class="token punctuation">&#125;</span></span><span class="token string">是</span><span class="token interpolation"><span class="token punctuation">&#123;</span>v<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  <span class="token comment"># name是neko</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="case-点单系统"><a href="#case-点单系统" class="headerlink" title="case-点单系统"></a>case-点单系统</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">orderList<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"炒饭"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">"方便面"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+toDo<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"===请选择操作指令:\nA添加,D删除,U修改,Q查询,E退出\n"</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> toDo<span class="token operator">==</span><span class="token string">"Q"</span><span class="token punctuation">:</span>
+    goods<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入要查询的商品：\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> goods <span class="token keyword">in</span> orderList<span class="token punctuation">:</span>
+        index<span class="token operator">=</span>orderList<span class="token punctuation">.</span>index<span class="token punctuation">(</span>goods<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">&#123;</span>goods<span class="token punctuation">&#125;</span></span><span class="token string">的价格为</span><span class="token interpolation"><span class="token punctuation">&#123;</span>orderList<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查无该商品"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> toDo<span class="token operator">==</span><span class="token string">"A"</span><span class="token punctuation">:</span>
+    goods<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"===请输入要添加的商品及价格(中间用-隔开)\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> goods <span class="token keyword">not</span> <span class="token keyword">in</span> orderList<span class="token punctuation">:</span>
+        orderList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>goods<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        orderList<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>goods<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"添加成功，添加后的菜单列表为："</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>orderList<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"不能重复添加"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> toDo<span class="token operator">==</span><span class="token string">"D"</span><span class="token punctuation">:</span>
+    goods<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"===请输入要删除的商品及价格：\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> goods <span class="token keyword">in</span> orderList<span class="token punctuation">:</span>
+        <span class="token builtin">str</span><span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"确定删除(Y/N)？"</span> <span class="token operator">+</span> goods <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token builtin">str</span><span class="token operator">==</span><span class="token string">"Y"</span><span class="token punctuation">:</span>
+            indx<span class="token operator">=</span>orderList<span class="token punctuation">.</span>index<span class="token punctuation">(</span>goods<span class="token punctuation">)</span>
+            orderList<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>indx<span class="token punctuation">)</span>
+            orderList<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>indx<span class="token punctuation">)</span> <span class="token comment"># 删除后该索引的值为商品价格</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"商品</span><span class="token interpolation"><span class="token punctuation">&#123;</span>goods<span class="token punctuation">&#125;</span></span><span class="token string">删除成功"</span></span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>orderList<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"删无该商品"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> toDo<span class="token operator">==</span><span class="token string">"U"</span><span class="token punctuation">:</span>
+    goods<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入要修改的商品名称："</span><span class="token punctuation">)</span>
+    goodsPrice<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入要修改的商品的价格："</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> goods <span class="token keyword">in</span> orderList<span class="token punctuation">:</span>
+        orderList<span class="token punctuation">[</span>orderList<span class="token punctuation">.</span>index<span class="token punctuation">(</span>goods<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>goodsPrice<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">&#123;</span>goods<span class="token punctuation">&#125;</span></span><span class="token string">的价格已修改为</span><span class="token interpolation"><span class="token punctuation">&#123;</span>goodsPrice<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>orderList<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"改无该商品"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> toDo<span class="token operator">==</span><span class="token string">"E"</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"确定退出系统(Y/N)?\n"</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">"Y"</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"已成功退出系统"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="case-forDemo"><a href="#case-forDemo" class="headerlink" title="case-forDemo"></a>case-forDemo</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">password<span class="token operator">=</span><span class="token string">"678876"</span>
+<span class="token comment"># N次验密机会</span>
+num<span class="token operator">=</span><span class="token number">3</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pwd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入密码：\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> pwd<span class="token operator">==</span>password<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"验证通过"</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">elif</span> pwd <span class="token operator">!=</span> password <span class="token keyword">and</span> i <span class="token operator">&lt;</span>num<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"验证失败，还剩</span><span class="token interpolation"><span class="token punctuation">&#123;</span>num<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">&#125;</span></span><span class="token string">次机会"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"验证已锁定，请稍后再试"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="case-whileDemo"><a href="#case-whileDemo" class="headerlink" title="case-whileDemo"></a>case-whileDemo</h2><pre class="line-numbers language-pythob" data-language="pythob"><code class="language-pythob">orderList&#x3D;[&quot;牛肉面&quot;,&quot;番茄鸡蛋面&quot;,&quot;炸酱面&quot;]
+index&#x3D;0
+while index &lt; len(orderList):
+    print(orderList[index])
+    index+&#x3D;1
+
+while True:
+    str&#x3D;input(&quot;请输入\n&quot;)
+    if str&#x3D;&#x3D;&quot;下机&quot;:
+        print(&quot;下机成功&quot;)
+        break
+    else:
+        print(str)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="case-店铺查询系统"><a href="#case-店铺查询系统" class="headerlink" title="case-店铺查询系统"></a>case-店铺查询系统</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 店铺查询系统</span>
+shop1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"地区"</span><span class="token punctuation">:</span> <span class="token string">"北京"</span><span class="token punctuation">,</span> <span class="token string">"面积"</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">"评分"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span>
+shop2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"地区"</span><span class="token punctuation">:</span> <span class="token string">"重庆"</span><span class="token punctuation">,</span> <span class="token string">"面积"</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"评分"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">&#125;</span>
+shop3 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"地区"</span><span class="token punctuation">:</span> <span class="token string">"深圳"</span><span class="token punctuation">,</span> <span class="token string">"面积"</span><span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token string">"评分"</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">&#125;</span>
+shopList <span class="token operator">=</span> <span class="token punctuation">[</span>shop1<span class="token punctuation">,</span> shop2<span class="token punctuation">,</span> shop3<span class="token punctuation">]</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    area <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入要查询的地区（输入'退出'结束程序）：\n"</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 提供退出机制</span>
+    <span class="token keyword">if</span> area <span class="token operator">==</span> <span class="token string">'退出'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"程序已退出。"</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+
+    flag<span class="token operator">=</span><span class="token boolean">False</span>
+    <span class="token keyword">if</span> area <span class="token keyword">in</span> <span class="token builtin">str</span><span class="token punctuation">(</span>shopList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> shop <span class="token keyword">in</span> shopList<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> shop<span class="token punctuation">[</span><span class="token string">"地区"</span><span class="token punctuation">]</span> <span class="token operator">==</span> area<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">&#123;</span>area<span class="token punctuation">&#125;</span></span><span class="token string">地区面积</span><span class="token interpolation"><span class="token punctuation">&#123;</span>shop<span class="token punctuation">[</span><span class="token string">'面积'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span></span><span class="token string">，评分</span><span class="token interpolation"><span class="token punctuation">&#123;</span>shop<span class="token punctuation">[</span><span class="token string">'评分'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+                flag<span class="token operator">=</span><span class="token boolean">True</span>
+                <span class="token keyword">break</span>
+
+    <span class="token keyword">if</span> <span class="token keyword">not</span> flag<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"没有该地区"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
+
+orderList<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>orderList<span class="token punctuation">)</span> <span class="token comment"># 打乱序列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>orderList<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 随机抽卡</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 随机整数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 随机小数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 随机0-1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="case-饮料点单系统"><a href="#case-饮料点单系统" class="headerlink" title="case-饮料点单系统"></a>case-饮料点单系统</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># _*_ coding : utf-8 _*_</span>
+<span class="token comment"># @Time : 2025/2/23 13:16</span>
+<span class="token comment"># @Author : luotao</span>
+<span class="token comment"># @File : demo</span>
+<span class="token comment"># @Project 饮料点单系统</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Drunk</span><span class="token punctuation">:</span>
+    sweet<span class="token operator">=</span><span class="token number">7</span>
+    temperature<span class="token operator">=</span><span class="token string">"常温"</span>
+    <span class="token comment"># 构造函数</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>modle<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name<span class="token operator">=</span>name
+        self<span class="token punctuation">.</span>modle<span class="token operator">=</span>modle
+    <span class="token comment"># 加糖</span>
+    <span class="token keyword">def</span> <span class="token function">addSweet</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>sweet <span class="token operator">+=</span><span class="token number">1</span>
+    <span class="token comment"># 加冰</span>
+    <span class="token keyword">def</span> <span class="token function">addTemperature</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>temperature<span class="token operator">=</span><span class="token builtin">type</span>
+    <span class="token keyword">def</span> <span class="token function">show</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"您点了一杯</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>temperature<span class="token punctuation">&#125;</span></span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>modle<span class="token punctuation">&#125;</span></span><span class="token string">的</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span></span><span class="token string">,甜度为</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>sweet<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    nameAndType<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"您需要什么饮料？请输入名称和杯型(中间用横杆隔开):\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> nameAndType<span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"输入错误"</span><span class="token punctuation">)</span>
+    cola<span class="token operator">=</span>Drunk<span class="token punctuation">(</span>nameAndType<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>nameAndType<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        cola<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token builtin">str</span><span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请问您还有其他需求吗？Y/N\n"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token builtin">str</span><span class="token operator">==</span><span class="token string">"N"</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"好的，饮品马上来"</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            strOther<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请问需要A加糖还是B加冰？"</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> strOther<span class="token operator">==</span><span class="token string">"A"</span><span class="token punctuation">:</span>
+                cola<span class="token punctuation">.</span>addSweet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请问需要什么冰量？A:去冰，B少冰，C多冰"</span><span class="token punctuation">)</span>
+                <span class="token keyword">try</span><span class="token punctuation">:</span>
+                    cola<span class="token punctuation">.</span>addTemperature<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"A"</span><span class="token punctuation">:</span><span class="token string">"去冰"</span><span class="token punctuation">,</span><span class="token string">"B"</span><span class="token punctuation">:</span><span class="token string">"少冰"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">:</span><span class="token string">"多冰"</span><span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token builtin">type</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">except</span> KeyError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"选项有误，请重新输入"</span><span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"欢迎下次再来"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="toDo"><a href="#toDo" class="headerlink" title="toDo"></a>toDo</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
