@@ -29,10 +29,15 @@
 <meta property="og:site_name" content="Taoの博客">
 <meta property="og:description" content="深刻理解Java之Set集合什么是Set集合Set集合是Java集合框架中的一个接口，它继承自Collection接口。Set集合就像现实生活中的”集合”概念一样，比如一个班级里的学生集合，每个学生只能出现一次。 想象一下，你有一个装水果的篮子，但这个篮子有个特点：每种水果只能放一个。你不能在篮子里同时放两个苹果或两个橙子。这就是Set集合的核心特性——不允许重复元素。 在Java中，Set接口位">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314152859425.png">
+<meta property="og:image" content="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314153954152.png">
+<meta property="og:image" content="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314175851482.png">
+<meta property="og:image" content="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314154215312.png">
 <meta property="article:published_time" content="2025-03-13T18:11:30.000Z">
-<meta property="article:modified_time" content="2025-03-13T18:12:54.519Z">
+<meta property="article:modified_time" content="2025-03-14T09:59:47.088Z">
 <meta property="article:author" content="Luotao">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314152859425.png">
 
 
 <link rel="canonical" href="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/">
@@ -88,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">23</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">28</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -145,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">深刻理解Java之Set集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSet%E9%9B%86%E5%90%88"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Set集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">Set接口的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%B8%BB%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Set接口的主要实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet"><span class="nav-number">1.3.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedHashSet"><span class="nav-number">1.3.2.</span> <span class="nav-text">LinkedHashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.3.3.</span> <span class="nav-text">TreeSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EnumSet"><span class="nav-number">1.3.4.</span> <span class="nav-text">EnumSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CopyOnWriteArraySet"><span class="nav-number">1.3.5.</span> <span class="nav-text">CopyOnWriteArraySet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">Set接口的常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E9%9B%86%E5%90%88%E7%9A%84%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">Set集合的遍历方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF%EF%BC%88for-each%EF%BC%89"><span class="nav-number">1.5.1.</span> <span class="nav-text">1. 使用增强for循环（for-each）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Iterator%EF%BC%89"><span class="nav-number">1.5.2.</span> <span class="nav-text">2. 使用迭代器（Iterator）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8Stream-API%EF%BC%88Java-8%E5%8F%8A%E4%BB%A5%E4%B8%8A%EF%BC%89"><span class="nav-number">1.5.3.</span> <span class="nav-text">3. 使用Stream API（Java 8及以上）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E9%9B%86%E5%90%88%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.6.</span> <span class="nav-text">Set集合的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E9%9B%86%E5%90%88%E7%9A%84%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="nav-number">1.7.</span> <span class="nav-text">Set集合的性能比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.8.</span> <span class="nav-text">常见问题与最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%9C%A8Set%E4%B8%AD%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%EF%BC%9F"><span class="nav-number">1.8.1.</span> <span class="nav-text">1. 如何正确地在Set中存储自定义对象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84Set%E5%AE%9E%E7%8E%B0%E7%B1%BB%EF%BC%9F"><span class="nav-number">1.8.2.</span> <span class="nav-text">2. 如何选择合适的Set实现类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%81%BF%E5%85%8D%E5%9C%A8%E9%81%8D%E5%8E%86Set%E6%97%B6%E4%BF%AE%E6%94%B9%E9%9B%86%E5%90%88"><span class="nav-number">1.8.3.</span> <span class="nav-text">3. 避免在遍历Set时修改集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8Stream-API%E7%AE%80%E5%8C%96Set%E6%93%8D%E4%BD%9C"><span class="nav-number">1.8.4.</span> <span class="nav-text">4. 使用Stream API简化Set操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.9.</span> <span class="nav-text">代码示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B1%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.9.1.</span> <span class="nav-text">示例1：基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B2%EF%BC%9A%E4%B8%8D%E5%90%8CSet%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.9.2.</span> <span class="nav-text">示例2：不同Set实现的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B3%EF%BC%9A%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="nav-number">1.9.3.</span> <span class="nav-text">示例3：集合运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B4%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%E5%9C%A8Set%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.9.4.</span> <span class="nav-text">示例4：自定义对象在Set中的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B5%EF%BC%9A%E4%BD%BF%E7%94%A8Stream-API%E6%93%8D%E4%BD%9CSet"><span class="nav-number">1.9.5.</span> <span class="nav-text">示例5：使用Stream API操作Set</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">深刻理解Java之Set集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSet%E9%9B%86%E5%90%88"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Set集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">Set接口的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%B8%BB%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Set接口的主要实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet"><span class="nav-number">1.3.1.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedHashSet"><span class="nav-number">1.3.2.</span> <span class="nav-text">LinkedHashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.3.3.</span> <span class="nav-text">TreeSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.3.4.</span> <span class="nav-text">TreeSet的基本用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E7%9A%84%E8%87%AA%E7%84%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">1.4.</span> <span class="nav-text">TreeSet的自然排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparable%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.4.1.</span> <span class="nav-text">Comparable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compareTo%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E5%90%AB%E4%B9%89"><span class="nav-number">1.4.2.</span> <span class="nav-text">compareTo方法的返回值含义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E7%9A%84%E5%AE%9A%E5%88%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">1.5.</span> <span class="nav-text">TreeSet的定制排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparator%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.5.1.</span> <span class="nav-text">Comparator接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%AD%97%E6%AE%B5%E6%8E%92%E5%BA%8F"><span class="nav-number">1.5.2.</span> <span class="nav-text">多字段排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E6%8E%92%E5%BA%8F%E7%9A%84%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86"><span class="nav-number">1.6.</span> <span class="nav-text">TreeSet排序的内部原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.6.1.</span> <span class="nav-text">红黑树实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%E8%BF%87%E7%A8%8B"><span class="nav-number">1.6.2.</span> <span class="nav-text">元素添加过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E6%8E%92%E5%BA%8F%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">1.7.</span> <span class="nav-text">TreeSet排序的常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%83%E7%B4%A0%E6%9C%AA%E5%AE%9E%E7%8E%B0Comparable%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.7.1.</span> <span class="nav-text">1. 元素未实现Comparable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84%E6%AF%94%E8%BE%83%E9%80%BB%E8%BE%91"><span class="nav-number">1.7.2.</span> <span class="nav-text">2. 不一致的比较逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0%E7%9A%84%E5%85%B3%E9%94%AE%E5%B1%9E%E6%80%A7"><span class="nav-number">1.7.3.</span> <span class="nav-text">3. 修改已添加元素的关键属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E4%B8%8E%E5%85%B6%E4%BB%96%E9%9B%86%E5%90%88%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-number">1.8.</span> <span class="nav-text">TreeSet与其他集合的对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet-vs-HashSet"><span class="nav-number">1.8.1.</span> <span class="nav-text">TreeSet vs HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet-vs-LinkedHashSet"><span class="nav-number">1.8.2.</span> <span class="nav-text">TreeSet vs LinkedHashSet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E7%9A%84%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">1.9.</span> <span class="nav-text">TreeSet的性能分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">1.9.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">1.9.2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.9.3.</span> <span class="nav-text">性能测试示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.10.</span> <span class="nav-text">TreeSet的最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F"><span class="nav-number">1.10.1.</span> <span class="nav-text">1. 选择合适的排序方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A1%AE%E4%BF%9D%E6%AF%94%E8%BE%83%E9%80%BB%E8%BE%91%E4%B8%8Eequals%E4%B8%80%E8%87%B4"><span class="nav-number">1.10.2.</span> <span class="nav-text">2. 确保比较逻辑与equals一致</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%81%BF%E5%85%8D%E4%BF%AE%E6%94%B9%E5%BD%B1%E5%93%8D%E6%8E%92%E5%BA%8F%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">1.10.3.</span> <span class="nav-text">3. 避免修改影响排序的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%88%A9%E7%94%A8TreeSet%E7%9A%84%E5%AF%BC%E8%88%AA%E6%96%B9%E6%B3%95"><span class="nav-number">1.10.4.</span> <span class="nav-text">4. 利用TreeSet的导航方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%80%83%E8%99%91%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">1.10.5.</span> <span class="nav-text">5. 考虑线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%80%A7%E8%83%BD%E8%80%83%E8%99%91"><span class="nav-number">1.10.6.</span> <span class="nav-text">6. 性能考虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EnumSet"><span class="nav-number">1.10.7.</span> <span class="nav-text">EnumSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CopyOnWriteArraySet"><span class="nav-number">1.10.8.</span> <span class="nav-text">CopyOnWriteArraySet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.11.</span> <span class="nav-text">Set接口的常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E9%9B%86%E5%90%88%E7%9A%84%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.12.</span> <span class="nav-text">Set集合的遍历方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF%EF%BC%88for-each%EF%BC%89"><span class="nav-number">1.12.1.</span> <span class="nav-text">1. 使用增强for循环（for-each）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Iterator%EF%BC%89"><span class="nav-number">1.12.2.</span> <span class="nav-text">2. 使用迭代器（Iterator）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8Stream-API%EF%BC%88Java-8%E5%8F%8A%E4%BB%A5%E4%B8%8A%EF%BC%89"><span class="nav-number">1.12.3.</span> <span class="nav-text">3. 使用Stream API（Java 8及以上）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E9%9B%86%E5%90%88%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.13.</span> <span class="nav-text">Set集合的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E9%9B%86%E5%90%88%E7%9A%84%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="nav-number">1.14.</span> <span class="nav-text">Set集合的性能比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.15.</span> <span class="nav-text">常见问题与最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%9C%A8Set%E4%B8%AD%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%EF%BC%9F"><span class="nav-number">1.15.1.</span> <span class="nav-text">1. 如何正确地在Set中存储自定义对象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84Set%E5%AE%9E%E7%8E%B0%E7%B1%BB%EF%BC%9F"><span class="nav-number">1.15.2.</span> <span class="nav-text">2. 如何选择合适的Set实现类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%81%BF%E5%85%8D%E5%9C%A8%E9%81%8D%E5%8E%86Set%E6%97%B6%E4%BF%AE%E6%94%B9%E9%9B%86%E5%90%88"><span class="nav-number">1.15.3.</span> <span class="nav-text">3. 避免在遍历Set时修改集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8Stream-API%E7%AE%80%E5%8C%96Set%E6%93%8D%E4%BD%9C"><span class="nav-number">1.15.4.</span> <span class="nav-text">4. 使用Stream API简化Set操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.16.</span> <span class="nav-text">代码示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B1%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.16.1.</span> <span class="nav-text">示例1：基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B2%EF%BC%9A%E4%B8%8D%E5%90%8CSet%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.16.2.</span> <span class="nav-text">示例2：不同Set实现的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B3%EF%BC%9A%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="nav-number">1.16.3.</span> <span class="nav-text">示例3：集合运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B4%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%E5%9C%A8Set%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.16.4.</span> <span class="nav-text">示例4：自定义对象在Set中的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B5%EF%BC%9A%E4%BD%BF%E7%94%A8Stream-API%E6%93%8D%E4%BD%9CSet"><span class="nav-number">1.16.5.</span> <span class="nav-text">示例5：使用Stream API操作Set</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -250,7 +255,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-03-14 02:11:30 / 修改时间：02:12:54" itemprop="dateCreated datePublished" datetime="2025-03-14T02:11:30+08:00">2025-03-14</time>
+      <time title="创建时间：2025-03-14 02:11:30 / 修改时间：17:59:47" itemprop="dateCreated datePublished" datetime="2025-03-14T02:11:30+08:00">2025-03-14</time>
     </span>
 
   
@@ -276,7 +281,8 @@
 <li><strong>不支持索引访问</strong>：不能通过索引来访问Set中的元素。</li>
 <li><strong>最多只允许一个null元素</strong>：大多数Set实现允许存储null元素（TreeSet除外）。</li>
 </ol>
-<h2 id="Set接口的主要实现类"><a href="#Set接口的主要实现类" class="headerlink" title="Set接口的主要实现类"></a>Set接口的主要实现类</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>HashSet是Set接口最常用的实现类，它基于HashMap实现。就像一个没有特定顺序的抽奖箱，你放入的元素可能以任意顺序排列。</p>
+<h2 id="Set接口的主要实现类"><a href="#Set接口的主要实现类" class="headerlink" title="Set接口的主要实现类"></a>Set接口的主要实现类</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314152859425.png" alt="image-20250314152859425"></p>
+<p>HashSet是Set接口最常用的实现类，它基于HashMap实现。就像一个没有特定顺序的抽奖箱，你放入的元素可能以任意顺序排列。</p>
 <p><strong>特点：</strong></p>
 <ul>
 <li>不保证元素的顺序</li>
@@ -308,7 +314,7 @@
 <li>性能略低于HashSet，但迭代访问更快</li>
 </ul>
 <p><strong>内部实现：</strong><br>LinkedHashSet内部使用LinkedHashMap来存储元素，这使得它能够记住元素的插入顺序。</p>
-<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>TreeSet基于TreeMap实现，是一个有序的Set集合。想象一个自动排序的抽奖箱，无论你以什么顺序放入元素，取出时总是按照特定顺序（默认是自然顺序）。</p>
+<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>TreeSet是Java集合框架中的一个实现类，它是基于TreeMap实现的有序集合。想象一下图书馆的书架，所有书籍都按照特定的规则（如书名字母顺序）排列整齐，这就像TreeSet中的元素一样。它通过红黑树数据结构提供了高效的排序和查找功能。</p>
 <p><strong>特点：</strong></p>
 <ul>
 <li>元素按照自然顺序或指定的比较器排序</li>
@@ -317,6 +323,565 @@
 <li>查找、添加和删除操作的时间复杂度为O(log n)</li>
 </ul>
 <p><strong>内部实现：</strong><br>TreeSet内部使用TreeMap来存储元素，这使得它能够保持元素的有序性。</p>
+<h3 id="TreeSet的基本用法"><a href="#TreeSet的基本用法" class="headerlink" title="TreeSet的基本用法"></a>TreeSet的基本用法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">TreeSet</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TreeSetDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 创建TreeSet</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 添加元素</span>
+        numbers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        numbers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        numbers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        numbers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        numbers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 重复元素不会被添加</span>
+        
+        <span class="token comment">// 遍历TreeSet（已排序）</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TreeSet元素（升序）："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span> number <span class="token operator">:</span> numbers<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        <span class="token comment">// 输出：5, 10, 15, 20</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="TreeSet的自然排序"><a href="#TreeSet的自然排序" class="headerlink" title="TreeSet的自然排序"></a>TreeSet的自然排序</h2><p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314153954152.png" alt="image-20250314153954152"></p>
+<h3 id="Comparable接口"><a href="#Comparable接口" class="headerlink" title="Comparable接口"></a>Comparable接口</h3><p>TreeSet默认使用元素的自然排序规则，这要求元素实现<code>Comparable</code>接口。就像图书馆里的书籍可能按照ISBN编号自然排序一样。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">TreeSet</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// 实现Comparable接口的类</span>
+<span class="token keyword">class</span> <span class="token class-name">Book</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Book</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> title<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span> price<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token class-name">String</span> title<span class="token punctuation">,</span> <span class="token keyword">double</span> price<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> title<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Book</span> other<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 按书名字母顺序排序</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>other<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Book&#123;title='"</span> <span class="token operator">+</span> title <span class="token operator">+</span> <span class="token string">"', price="</span> <span class="token operator">+</span> price <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ComparableDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Book</span><span class="token punctuation">></span></span> bookSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        bookSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token string">"Java编程"</span><span class="token punctuation">,</span> <span class="token number">59.9</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bookSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token string">"Python基础"</span><span class="token punctuation">,</span> <span class="token number">45.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bookSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token string">"算法导论"</span><span class="token punctuation">,</span> <span class="token number">88.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bookSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Book</span><span class="token punctuation">(</span><span class="token string">"数据结构"</span><span class="token punctuation">,</span> <span class="token number">55.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 遍历（按书名字母顺序）</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Book</span> book <span class="token operator">:</span> bookSet<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="compareTo方法的返回值含义"><a href="#compareTo方法的返回值含义" class="headerlink" title="compareTo方法的返回值含义"></a>compareTo方法的返回值含义</h3><p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314175851482.png" alt="image-20250314175851482"></p>
+<p><code>compareTo</code>方法返回一个整数，其含义如下：</p>
+<ul>
+<li>返回正数：表示第一个对象（e1）应该排在第二个对象（e2）之后，交互顺序。</li>
+<li>返回负数：表示第一个对象（e1）应该排在第二个对象（e2）之前。</li>
+<li>返回零：表示两个对象相等，在排序中它们的顺序可以是任意的。</li>
+</ul>
+<p>这就像我们比较两本书的ISBN号，如果当前书的ISBN小于另一本，返回负数；相等返回零；大于则返回正数。</p>
+<h2 id="TreeSet的定制排序"><a href="#TreeSet的定制排序" class="headerlink" title="TreeSet的定制排序"></a>TreeSet的定制排序</h2><p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/image-20250314154215312.png" alt="image-20250314154215312"></p>
+<h3 id="Comparator接口"><a href="#Comparator接口" class="headerlink" title="Comparator接口"></a>Comparator接口</h3><p>如果我们想要使用不同于自然排序的规则，或者元素类没有实现Comparable接口，我们可以使用<code>Comparator</code>接口提供定制排序规则。这就像图书馆可以根据需要改变书籍的排序方式，有时按书名，有时按出版日期。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Comparator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">TreeSet</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span> score<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">,</span> <span class="token keyword">double</span> score<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>score <span class="token operator">=</span> score<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> name<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> age<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> score<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Student&#123;name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"', age="</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">", score="</span> <span class="token operator">+</span> score <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ComparatorDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 子类（这里是匿名内部类）实现Comparator接口，重写compare方法，作为参数传给TreeSet</span>
+        <span class="token comment">// 按年龄排序</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">></span></span> studentsByAge <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token class-name">Student</span> s1<span class="token punctuation">,</span> <span class="token class-name">Student</span> s2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> s1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 使用Lambda表达式按分数排序（降序）</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">></span></span> studentsByScore <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span> <span class="token operator">-></span> 
+            <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>s2<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> s1<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 添加学生</span>
+        <span class="token class-name">Student</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">85.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Student</span> s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">92.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Student</span> s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"王五"</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">78.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Student</span> s4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"赵六"</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">88.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        studentsByAge<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentsByAge<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentsByAge<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentsByAge<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        studentsByScore<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentsByScore<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentsByScore<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        studentsByScore<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"按年龄排序（升序）："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Student</span> s <span class="token operator">:</span> studentsByAge<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\n按分数排序（降序）："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Student</span> s <span class="token operator">:</span> studentsByScore<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="多字段排序"><a href="#多字段排序" class="headerlink" title="多字段排序"></a>多字段排序</h3><p>在实际应用中，我们经常需要按多个字段排序，就像图书馆可能先按类别，再按作者姓名排序。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span>job<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Comparator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">TreeSet</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> department<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> salary<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token class-name">String</span> department<span class="token punctuation">,</span> <span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> salary<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>department <span class="token operator">=</span> department<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>salary <span class="token operator">=</span> salary<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getDepartment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> department<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> name<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getSalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> salary<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Employee&#123;department='"</span> <span class="token operator">+</span> department <span class="token operator">+</span> <span class="token string">"', name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"', salary="</span> <span class="token operator">+</span> salary <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+ <span class="token keyword">class</span> <span class="token class-name">MultiFieldSortDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 先按部门，再按薪资（降序）排序</span>
+        <span class="token comment">/*
+        TreeSet&lt;Employee> employees = new TreeSet&lt;>(
+                Comparator.comparing(Employee::getDepartment)
+                        .thenComparing(Employee::getSalary, Comparator.reverseOrder())
+        );*/</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Employee</span><span class="token punctuation">></span></span> employees <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Employee</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token class-name">Employee</span> e1<span class="token punctuation">,</span> <span class="token class-name">Employee</span> e2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">int</span> departmentComparison <span class="token operator">=</span> e1<span class="token punctuation">.</span><span class="token function">getDepartment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>e2<span class="token punctuation">.</span><span class="token function">getDepartment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>departmentComparison <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">return</span> departmentComparison<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token comment">// 按薪资降序排序</span>
+                <span class="token keyword">return</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>e2<span class="token punctuation">.</span><span class="token function">getSalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> e1<span class="token punctuation">.</span><span class="token function">getSalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        employees<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"IT"</span><span class="token punctuation">,</span> <span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">12000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        employees<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"IT"</span><span class="token punctuation">,</span> <span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token number">15000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        employees<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"HR"</span><span class="token punctuation">,</span> <span class="token string">"王五"</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        employees<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"HR"</span><span class="token punctuation">,</span> <span class="token string">"赵六"</span><span class="token punctuation">,</span> <span class="token number">11000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        employees<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"IT"</span><span class="token punctuation">,</span> <span class="token string">"钱七"</span><span class="token punctuation">,</span> <span class="token number">13000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Employee</span> emp <span class="token operator">:</span> employees<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>emp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="TreeSet排序的内部原理"><a href="#TreeSet排序的内部原理" class="headerlink" title="TreeSet排序的内部原理"></a>TreeSet排序的内部原理</h2><h3 id="红黑树实现"><a href="#红黑树实现" class="headerlink" title="红黑树实现"></a>红黑树实现</h3><p>TreeSet内部使用红黑树（Red-Black Tree）数据结构来存储元素。红黑树是一种自平衡的二叉搜索树，它通过一系列的规则保证树的高度平衡，从而保证基本操作的时间复杂度为O(log n)。</p>
+<p>想象一下一棵树，每个节点都有两个子节点（左子节点和右子节点）。对于树中的任意节点：</p>
+<ul>
+<li>左子树上的所有节点都小于当前节点</li>
+<li>右子树上的所有节点都大于当前节点</li>
+</ul>
+<p>这种结构使得查找、插入和删除操作非常高效。</p>
+<h3 id="元素添加过程"><a href="#元素添加过程" class="headerlink" title="元素添加过程"></a>元素添加过程</h3><p>当向TreeSet添加元素时，会发生以下步骤：</p>
+<ol>
+<li>使用比较器（或元素的自然顺序）确定新元素的位置</li>
+<li>如果集合为空，新元素成为根节点</li>
+<li>否则，从根节点开始，与树中的节点进行比较</li>
+<li>如果新元素小于当前节点，向左子树移动</li>
+<li>如果新元素大于当前节点，向右子树移动</li>
+<li>如果新元素等于当前节点，根据TreeSet的实现，可能替换现有元素或忽略新元素</li>
+<li>找到合适的位置后，插入新元素</li>
+<li>插入后，可能需要进行树的再平衡操作</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 简化的添加过程伪代码</span>
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">E</span> element<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token class-name">Node</span> current <span class="token operator">=</span> root<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> cmp <span class="token operator">=</span> <span class="token function">compare</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> current<span class="token punctuation">.</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cmp <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>current<span class="token punctuation">.</span>left <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                current<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">rebalance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            current <span class="token operator">=</span> current<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cmp <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>current<span class="token punctuation">.</span>right <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                current<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">rebalance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            current <span class="token operator">=</span> current<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 元素已存在，根据实现可能替换或忽略</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="TreeSet排序的常见问题"><a href="#TreeSet排序的常见问题" class="headerlink" title="TreeSet排序的常见问题"></a>TreeSet排序的常见问题</h2><h3 id="1-元素未实现Comparable接口"><a href="#1-元素未实现Comparable接口" class="headerlink" title="1. 元素未实现Comparable接口"></a>1. 元素未实现Comparable接口</h3><p>如果元素没有实现Comparable接口，并且没有提供Comparator，将抛出ClassCastException。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Person&#123;name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"'&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NoComparableDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Person</span><span class="token punctuation">></span></span> personSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 将抛出ClassCastException</span>
+        personSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-不一致的比较逻辑"><a href="#2-不一致的比较逻辑" class="headerlink" title="2. 不一致的比较逻辑"></a>2. 不一致的比较逻辑</h3><p>如果compareTo方法或compare方法的实现与equals方法不一致，可能导致TreeSet行为异常。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">InconsistentPerson</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">InconsistentPerson</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">InconsistentPerson</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">InconsistentPerson</span> other<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 只按id比较</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">-</span> other<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> obj<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> obj<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">InconsistentPerson</span> that <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">InconsistentPerson</span><span class="token punctuation">)</span> obj<span class="token punctuation">;</span>
+        
+        <span class="token comment">// 按id和name比较</span>
+        <span class="token keyword">return</span> id <span class="token operator">==</span> that<span class="token punctuation">.</span>id <span class="token operator">&amp;&amp;</span> name<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>that<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token number">31</span> <span class="token operator">*</span> name<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Person&#123;name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"', id="</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-修改已添加元素的关键属性"><a href="#3-修改已添加元素的关键属性" class="headerlink" title="3. 修改已添加元素的关键属性"></a>3. 修改已添加元素的关键属性</h3><p>如果在将元素添加到TreeSet后修改了影响排序的属性，TreeSet的顺序将不再正确。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MutablePerson</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MutablePerson</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">MutablePerson</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">MutablePerson</span> other<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">-</span> other<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"MutablePerson&#123;name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"', age="</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MutableElementDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MutablePerson</span><span class="token punctuation">></span></span> personSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">MutablePerson</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MutablePerson</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MutablePerson</span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MutablePerson</span><span class="token punctuation">(</span><span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MutablePerson</span> p3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MutablePerson</span><span class="token punctuation">(</span><span class="token string">"王五"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        personSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        personSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        personSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>p3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改前："</span> <span class="token operator">+</span> personSet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 修改p1的年龄，使其大于p3</span>
+        p1<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"修改后："</span> <span class="token operator">+</span> personSet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 顺序不会自动调整！</span>
+        
+        <span class="token comment">// 验证顺序错误</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"p1是否大于p3: "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>p1<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>p3<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"但在TreeSet中p1仍在p3之前！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="TreeSet与其他集合的对比"><a href="#TreeSet与其他集合的对比" class="headerlink" title="TreeSet与其他集合的对比"></a>TreeSet与其他集合的对比</h2><h3 id="TreeSet-vs-HashSet"><a href="#TreeSet-vs-HashSet" class="headerlink" title="TreeSet vs HashSet"></a>TreeSet vs HashSet</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>TreeSet</th>
+<th>HashSet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>排序</td>
+<td>有序</td>
+<td>无序</td>
+</tr>
+<tr>
+<td>性能(添加/删除/包含)</td>
+<td>O(log n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>内部实现</td>
+<td>红黑树</td>
+<td>哈希表</td>
+</tr>
+<tr>
+<td>null元素</td>
+<td>不允许</td>
+<td>允许一个</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>需要排序的场景</td>
+<td>不关心顺序，追求性能</td>
+</tr>
+</tbody></table>
+<p>就像图书馆（TreeSet）和仓库（HashSet）的区别：图书馆中的书籍按特定顺序排列，方便查找特定范围的书籍；而仓库中的物品可能没有特定顺序，但可以通过编号快速找到特定物品。</p>
+<h3 id="TreeSet-vs-LinkedHashSet"><a href="#TreeSet-vs-LinkedHashSet" class="headerlink" title="TreeSet vs LinkedHashSet"></a>TreeSet vs LinkedHashSet</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>TreeSet</th>
+<th>LinkedHashSet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>排序</td>
+<td>按比较规则排序</td>
+<td>按插入顺序排序</td>
+</tr>
+<tr>
+<td>性能(添加/删除/包含)</td>
+<td>O(log n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>内部实现</td>
+<td>红黑树</td>
+<td>哈希表+双向链表</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>需要按特定规则排序</td>
+<td>需要保持插入顺序</td>
+</tr>
+</tbody></table>
+<p>这就像图书馆（TreeSet）和博物馆的展览（LinkedHashSet）：图书馆的书籍按分类和编号排序，而博物馆的展品按参观路线（插入顺序）排列。</p>
+<h2 id="TreeSet的性能分析"><a href="#TreeSet的性能分析" class="headerlink" title="TreeSet的性能分析"></a>TreeSet的性能分析</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>add()</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>contains()</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>iterator()</td>
+<td>O(log n)</td>
+</tr>
+</tbody></table>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>TreeSet的空间复杂度为O(n)，其中n是元素数量。</p>
+<h3 id="性能测试示例"><a href="#性能测试示例" class="headerlink" title="性能测试示例"></a>性能测试示例</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PerformanceTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">1000000</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 测试TreeSet</span>
+        <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> treeSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> startTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            treeSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        <span class="token keyword">long</span> endTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TreeSet添加"</span> <span class="token operator">+</span> size <span class="token operator">+</span> <span class="token string">"个元素耗时："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>endTime <span class="token operator">-</span> startTime<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"ms"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 测试HashSet</span>
+        <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> hashSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        startTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            hashSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        endTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"HashSet添加"</span> <span class="token operator">+</span> size <span class="token operator">+</span> <span class="token string">"个元素耗时："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>endTime <span class="token operator">-</span> startTime<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"ms"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 测试查找</span>
+        startTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            treeSet<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        endTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"TreeSet查找耗时："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>endTime <span class="token operator">-</span> startTime<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"ms"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        startTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i <span class="token operator">+=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            hashSet<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        endTime <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"HashSet查找耗时："</span> <span class="token operator">+</span> <span class="token punctuation">(</span>endTime <span class="token operator">-</span> startTime<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"ms"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="TreeSet的最佳实践"><a href="#TreeSet的最佳实践" class="headerlink" title="TreeSet的最佳实践"></a>TreeSet的最佳实践</h2><h3 id="1-选择合适的排序方式"><a href="#1-选择合适的排序方式" class="headerlink" title="1. 选择合适的排序方式"></a>1. 选择合适的排序方式</h3><p>根据业务需求选择自然排序（Comparable）或定制排序（Comparator）：</p>
+<ul>
+<li>如果类有明确的自然顺序，实现Comparable接口</li>
+<li>如果需要多种排序方式，或者无法修改类的源代码，使用Comparator</li>
+</ul>
+<h3 id="2-确保比较逻辑与equals一致"><a href="#2-确保比较逻辑与equals一致" class="headerlink" title="2. 确保比较逻辑与equals一致"></a>2. 确保比较逻辑与equals一致</h3><p>为避免意外行为，确保compareTo或compare方法的逻辑与equals方法一致。如果两个对象通过equals方法比较相等，它们的compareTo方法应该返回0。</p>
+<h3 id="3-避免修改影响排序的属性"><a href="#3-避免修改影响排序的属性" class="headerlink" title="3. 避免修改影响排序的属性"></a>3. 避免修改影响排序的属性</h3><p>将TreeSet中的元素视为不可变对象，不要修改影响排序的属性。如果必须修改，考虑：</p>
+<ul>
+<li>先从TreeSet中移除元素</li>
+<li>修改属性</li>
+<li>重新添加到TreeSet中</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MutablePerson</span><span class="token punctuation">></span></span> personSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">MutablePerson</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MutablePerson</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+personSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 需要修改年龄时</span>
+personSet<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+person<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+personSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-利用TreeSet的导航方法"><a href="#4-利用TreeSet的导航方法" class="headerlink" title="4. 利用TreeSet的导航方法"></a>4. 利用TreeSet的导航方法</h3><p>TreeSet提供了丰富的导航方法，可以高效地查找特定范围的元素：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    numbers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 获取小于或等于指定元素的最大元素</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>numbers<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 50</span>
+
+<span class="token comment">// 获取大于或等于指定元素的最小元素</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>numbers<span class="token punctuation">.</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token number">50.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 51</span>
+
+<span class="token comment">// 获取严格小于指定元素的最大元素</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>numbers<span class="token punctuation">.</span><span class="token function">lower</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 49</span>
+
+<span class="token comment">// 获取严格大于指定元素的最小元素</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>numbers<span class="token punctuation">.</span><span class="token function">higher</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 51</span>
+
+<span class="token comment">// 获取指定范围的子集</span>
+<span class="token class-name">SortedSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> subset <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">subSet</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>subset<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [20, 21, ..., 29]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-考虑线程安全"><a href="#5-考虑线程安全" class="headerlink" title="5. 考虑线程安全"></a>5. 考虑线程安全</h3><p>TreeSet不是线程安全的。在多线程环境中，可以使用以下方式确保线程安全：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 使用Collections.synchronizedSortedSet包装</span>
+<span class="token class-name">SortedSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> sortedSet <span class="token operator">=</span> <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">synchronizedSortedSet</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TreeSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 或使用并发集合类</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">ConcurrentSkipListSet</span></span><span class="token punctuation">;</span>
+<span class="token class-name">ConcurrentSkipListSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> concurrentSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ConcurrentSkipListSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-性能考虑"><a href="#6-性能考虑" class="headerlink" title="6. 性能考虑"></a>6. 性能考虑</h3><ul>
+<li>对于频繁查找操作但不关心顺序的场景，考虑使用HashSet</li>
+<li>对于需要按插入顺序访问的场景，考虑使用LinkedHashSet</li>
+<li>只有在需要元素有序或需要范围查询时，才使用TreeSet</li>
+</ul>
 <h3 id="EnumSet"><a href="#EnumSet" class="headerlink" title="EnumSet"></a>EnumSet</h3><p>EnumSet是专门为枚举类型设计的Set实现。如果你的集合只包含枚举类型的元素，EnumSet是最佳选择。</p>
 <p><strong>特点：</strong></p>
 <ul>
