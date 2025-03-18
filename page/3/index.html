@@ -86,7 +86,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">30</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">32</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -207,6 +207,236 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/03/Tomcat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/03/Tomcat/" class="post-title-link" itemprop="url">Tomcat</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-05-03 19:36:28 / 修改时间：20:10:05" itemprop="dateCreated datePublished" datetime="2024-05-03T19:36:28+08:00">2024-05-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100-windows-x64.zip">Tomcat</a></p>
+<pre class="line-numbers language-none"><code class="language-none">CATALINA_HOME
+D:\software\tomcat\apache-tomcat-8.5.100
+path
+%CATALINA_HOME%\bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>startup</p>
+</li>
+</ul>
+<h2 id="tomcat乱码解决"><a href="#tomcat乱码解决" class="headerlink" title="tomcat乱码解决"></a>tomcat乱码解决</h2><p><img src="/2024/05/03/Tomcat/image-20240503200418943.png" alt="tomcat乱码解决"></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">    <span class="token comment">&lt;!-- server.xml
+    --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8080<span class="token punctuation">"</span></span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTTP/1.1<span class="token punctuation">"</span></span>
+               <span class="token attr-name">connectionTimeout</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span>
+               <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span>
+               <span class="token attr-name">maxParameterCount</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span>
+			   <span class="token attr-name">URIEncoding</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span>
+               <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>logging.properties</p>
+<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token comment">#logging.properties</span>
+<span class="token key attr-name">java.util.logging.ConsoleHandler.level</span> <span class="token punctuation">=</span> <span class="token value attr-value">FINE</span>
+<span class="token key attr-name">java.util.logging.ConsoleHandler.formatter</span> <span class="token punctuation">=</span> <span class="token value attr-value">org.apache.juli.OneLineFormatter</span>
+<span class="token comment">#java.util.logging.ConsoleHandler.encoding = UTF-8</span>
+<span class="token key attr-name">java.util.logging.ConsoleHandler.encoding</span> <span class="token punctuation">=</span> <span class="token value attr-value">GBK</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="IDEA配置tomcat"><a href="#IDEA配置tomcat" class="headerlink" title="IDEA配置tomcat"></a>IDEA配置tomcat</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" class="post-title-link" itemprop="url">网络协议</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-03 18:52:15" itemprop="dateCreated datePublished" datetime="2024-05-03T18:52:15+08:00">2024-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-12 13:59:41" itemprop="dateModified" datetime="2024-05-12T13:59:41+08:00">2024-05-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ul>
+<li>Cisco Packet Tracer</li>
+</ul>
+<p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504012258806.png" alt="tomcat"></p>
+<p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504012420439.png" alt="image-20240504012420439"></p>
+<h2 id="客户端-服务器"><a href="#客户端-服务器" class="headerlink" title="客户端-服务器"></a>客户端-服务器</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240503234301254.png" alt="cs"></p>
+<h2 id="网络互连模型"><a href="#网络互连模型" class="headerlink" title="网络互连模型"></a>网络互连模型</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504002347798.png" alt="网络互连模型"></p>
+<ul>
+<li>1985年<code>ISO（国际标准化组织）</code>制定<code>网络互连模型OSI（openSystemInterconnectReferenceModel）</code></li>
+</ul>
+<h2 id="请求过程"><a href="#请求过程" class="headerlink" title="请求过程"></a>请求过程</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504002917628.png" alt="请求过程"></p>
+<h2 id="计算机通信基础"><a href="#计算机通信基础" class="headerlink" title="计算机通信基础"></a>计算机通信基础</h2><ul>
+<li><p>需要得知<code>目标IP</code></p>
+</li>
+<li><p>最终根据<code>MAC地址</code>(网卡地址)输送到网卡</p>
+</li>
+<li><p>网卡发现数据的<code>目标MAC地址</code>是自己则将数据传递给上一层处理，否则丢弃</p>
+</li>
+<li><p>网线直连、同轴电缆、集线器、网桥、交换机连接的设备必须在同一广播域才能通信。<img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504140458158.png" alt="广播ARP是在同一个网段传播"></p>
+</li>
+</ul>
+<h2 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504151605518.png" alt="image-20240504151605518"></p>
+<h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504153543261.png" alt="交换机"></p>
+<ul>
+<li>相当于接口更多的网桥</li>
+<li>每一个接口都记录<code>目标MAC地址</code></li>
+</ul>
+<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><ul>
+<li>可在不同网段间转发数据</li>
+<li>隔绝广播域</li>
+<li>计算机通信前会先判断目标主机和自己是否在同一网段，不同网段交由路由器转发</li>
+<li>网段计算：子网掩码&amp;IP地址<img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504211339869.png" alt="image-20240504211339869"></li>
+</ul>
+<p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504202451648.png" alt="router"></p>
+<h2 id="Mac地址"><a href="#Mac地址" class="headerlink" title="Mac地址"></a>Mac地址</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504203059805.png" alt="mediaAccessControlAdress"></p>
+<ul>
+<li>MAC地址<code>MediaAccessControlAddress</code>有6字节</li>
+<li>全球唯一，固化在网卡ROM中，有IEEE802标准规定</li>
+<li>前3字节为组织唯一标识符<code>OUI(Organizationally Unique Identifier)</code>，有IEEE的注册管理机构分配给厂商</li>
+<li>后3个字节为网络接口标识符，有厂商自行分配</li>
+</ul>
+<h2 id="修改MAC地址"><a href="#修改MAC地址" class="headerlink" title="修改MAC地址"></a>修改MAC地址</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504204923455.png" alt="修改MAC地址"></p>
+<h2 id="ARP广播"><a href="#ARP广播" class="headerlink" title="ARP广播"></a>ARP广播</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504205617208.png" alt="image-20240504205617208"></p>
+<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504210420237.png" alt="IP地址"></p>
+<ul>
+<li><code>InternetProtocolAddress</code>:互联网上每一个主机都有一个IP地址</li>
+</ul>
+<h3 id="IP地址组成"><a href="#IP地址组成" class="headerlink" title="IP地址组成"></a>IP地址组成</h3><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504212044130.png" alt="image-20240504212044130"></p>
+<h3 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h3><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504213206081.png" alt="image-20240504213206081"></p>
+<h3 id="A类IP"><a href="#A类IP" class="headerlink" title="A类IP"></a>A类IP</h3><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504213926935.png" alt="A类"></p>
+<h3 id="B类IP"><a href="#B类IP" class="headerlink" title="B类IP"></a>B类IP</h3><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504214907025.png" alt="image-20240504214907025"></p>
+<p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504214939330.png" alt="image-20240504214939330"></p>
+<h2 id="子网掩码的CIDR表示方法"><a href="#子网掩码的CIDR表示方法" class="headerlink" title="子网掩码的CIDR表示方法"></a>子网掩码的CIDR表示方法</h2><p><img src="/2024/05/03/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/image-20240504215519174.png" alt="image-20240504215519174"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://standards-oui.ieee.org/oui.txt">OUI查询</a></li>
+<li><a target="_blank" rel="noopener" href="https://mac.51240.com/">MAC地址查询</a></li>
+<li><a href="sojson.com/convert/subnetmask.html">子网掩码计算工具</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -8076,242 +8306,8 @@ vue --V<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Luotao">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taoの博客">
-      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Taoの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Git学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-04-21 09:34:43 / 修改时间：13:37:04" itemprop="dateCreated datePublished" datetime="2023-04-21T09:34:43+08:00">2023-04-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Git的诞生"><a href="#Git的诞生" class="headerlink" title="Git的诞生"></a>Git的诞生</h1><p>​        Linus在1991年创建了开源的Linux，为了维护代码库，选择了一个商业的版本控制系统BitKeeper，BitKeeper的东家BitMover公司出于人道主义精神，授权Linux社区免费使用这个版本控制系统。开发Samba的Andrew试图破解BitKeeper的协议被BitMover公司发现了，于是BitMover公司收回Linux社区的免费使用权。Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git。Git迅速成为最流行的分布式版本控制系统，2008年，GitHub网站上线为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub。</p>
-<h1 id="集中式VS分布式"><a href="#集中式VS分布式" class="headerlink" title="集中式VS分布式"></a>集中式VS分布式</h1><h2 id="1-集中式"><a href="#1-集中式" class="headerlink" title="1 集中式"></a>1 集中式</h2><p>​        版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</p>
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421094548814.png" alt="image-20230421094548814"></p>
-<p>缺点：</p>
-<ul>
-<li>必须联网工作(网速慢导致提交慢)。</li>
-<li>若中央服务器出现问题，所有人无法工作。</li>
-</ul>
-<h2 id="2-分布式"><a href="#2-分布式" class="headerlink" title="2 分布式"></a>2 分布式</h2><p>每个人的电脑都是一个完整的版本库，无需联网。多人协作时，若A在自己电脑上修改了F文件，B也在自己电脑上修改了F文件，只需将各自的修改推送给对方就可以看到对方的修改了。</p>
-<p>在推送版本库的修改时，可能电脑相互间访问不了，所以分布式通常有一台充当”中央服务器”的电脑用来方便”交换”修改。</p>
-<p>优点：</p>
-<ul>
-<li>安全性高(因为每个人电脑都有完整的版本库，某一台电脑坏掉可以从其他人那里复制)</li>
-<li>分支管理</li>
-</ul>
-<h1 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门</span>
-$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"luotao"</span>
-$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"coder@luotao@gmail.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="工作区、暂存区和版本库"><a href="#工作区、暂存区和版本库" class="headerlink" title="工作区、暂存区和版本库"></a>工作区、暂存区和版本库</h1><h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p>工作区：能看到的目录，如例子中的learngit</p>
-<p>暂存区：版本库中的stage(或者叫index)</p>
-<h2 id="版本库"><a href="#版本库" class="headerlink" title="版本库"></a>版本库</h2><p><strong>工作区</strong>有个隐藏目录.git是Git的版本库。版本库repository即仓库(目录),库里所有文件都被git管理起来，每个文件的更新都能跟踪，以便在将来某个时刻可以还原。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建工作区</span>
-<span class="token function">mkdir</span> learngit
-<span class="token builtin class-name">cd</span> learngit
-<span class="token builtin class-name">pwd</span>
-<span class="token comment"># Git管理该仓库</span>
-<span class="token function">git</span> init <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103015235.png" alt="image-20230421103015235"></p>
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103005144.png" alt="image-20230421103005144"></p>
-<h2 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h2><p>创建readme.txt文件</p>
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103617658.png" alt="image-20230421103617658"></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将文件添加到仓库</span>
-<span class="token function">git</span> <span class="token function">add</span> readme.txt
-<span class="token comment"># 将文件提交到仓库,-m &lt;提交说明></span>
-<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"wrote a readme file"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421104350344.png" alt="image-20230421104350344"></p>
-<h2 id="添加和提交"><a href="#添加和提交" class="headerlink" title="添加和提交"></a>添加和提交</h2><p>需要提交的文件修改全部放到暂存区，然后一次性提交暂存区的所有修改。</p>
-<p>往版本库添加时分两步：</p>
-<ul>
-<li>git add 把文件修改添加到暂存区</li>
-<li>git commit 把暂存区的所有内容提交到当前分支</li>
-</ul>
-<p>创建版本库时git自动创建唯一master分支。</p>
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421114654775.png" alt="image-20230421114654775"></p>
-<p>修改readme.txt文件</p>
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421104605464.png" alt="image-20230421104605464"></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看修改结果</span>
-<span class="token function">git</span> status
-<span class="token comment"># 查看上次是如何修改的，修改内容</span>
-<span class="token function">git</span> <span class="token function">diff</span> readme.txt
-<span class="token comment"># 添加修改</span>
-<span class="token function">git</span> <span class="token function">add</span> readme.txt
-<span class="token comment"># 查看添加状态</span>
-<span class="token function">git</span> status
-<span class="token comment"># 提交修改</span>
-<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"add 666"</span>
-<span class="token comment"># 查看提交状态</span>
-<span class="token function">git</span> status<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421105618941.png" alt="image-20230421105618941"></p>
-<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><ul>
-<li>git会把每次提交串成一条历史时间线。</li>
-<li>HEAD表示当前版本，HEAD^表示上个版本，HEAD~100表示往上100个版本</li>
-</ul>
-<p>Git内部有个指向当前版本的HEAD指针，回退版本时，仅把HEAD指针改变。</p>
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421111547768.png" alt="image-20230421111547768"></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看提交的历史记录,以便确定要回退到哪个版本。</span>
-<span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>oneline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421110635353.png" alt="image-20230421110635353"></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 回退到上个版本</span>
-<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> HEAD^
-<span class="token comment"># 查看版本库状态</span>
-<span class="token function">git</span> log <span class="token parameter variable">--pretty</span><span class="token operator">=</span>oneline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>当你用<code>$ git reset --hard HEAD^</code>回退到<code>add distributed</code>版本时，再想恢复到<code>append GPL</code>，就必须找到<code>append GPL</code>的commit id。Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看命令历史记录，以便确定要回到未来的哪个版本。</span>
-<span class="token function">git</span> reflog
-<span class="token comment"># 回退到未来指定版本</span>
-<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> 5cef<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421112342557.png" alt="image-20230421112342557"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Luotao">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taoの博客">
-      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Taoの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/04/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">数据结构</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-04-21 09:34:43" itemprop="dateCreated datePublished" datetime="2023-04-21T09:34:43+08:00">2023-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 13:48:43" itemprop="dateModified" datetime="2024-09-02T13:48:43+08:00">2024-09-02</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="temp"><a href="#temp" class="headerlink" title="temp"></a>temp</h1><ul>
-<li>list顺序存储。LinkedList、ArrayList、Vector</li>
-<li>set的实现类都有一套自己的排序算法，每添加一个都会按照算法将其添加到合适位置，所以set无序且不能重复元素。HashSet、LinkedHashSet</li>
-<li>Map.keyset()这里用set集合存储key</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
