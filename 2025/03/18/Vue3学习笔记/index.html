@@ -30,8 +30,23 @@
 <meta property="og:description" content="结束进程&#x2F;&#x2F; 杀进程 netstat -ano | findstr :端口号 taskkill &#x2F;pid 进程id &#x2F;f   Setup语法糖基本使用方法1. 普通的Composition API写法&lt;template&gt;   &lt;div&gt;     &lt;p&gt;Count: &amp;#123;&amp;#123; count &amp;#125;&amp;#125;&lt;&#x2F;p&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250318152057798.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250319133253221.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250319210017785.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320021455569.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320135029082.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320135626427.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320135722595.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320140337010.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320141106962.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320141200490.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320141836425.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320142903447.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320152718722.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320152636282.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320161423768.png">
+<meta property="og:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320164314641.png">
 <meta property="article:published_time" content="2025-03-17T17:13:23.000Z">
-<meta property="article:modified_time" content="2025-03-18T11:10:06.019Z">
+<meta property="article:modified_time" content="2025-03-20T15:40:00.820Z">
 <meta property="article:author" content="Luotao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250318152057798.png">
@@ -147,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">结束进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="nav-number">1.1.</span> <span class="nav-text">Setup语法糖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E7%9A%84Composition-API%E5%86%99%E6%B3%95"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1. 普通的Composition API写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8Setup%E8%AF%AD%E6%B3%95%E7%B3%96%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2. 使用Setup语法糖的写法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Setup%E8%AF%AD%E6%B3%95%E7%B3%96%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.2.</span> <span class="nav-text">Setup语法糖的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E8%87%AA%E5%8A%A8%E6%9A%B4%E9%9C%B2%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. 自动暴露变量和函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8-defineProps-%E5%92%8C-defineEmits"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. 使用 defineProps 和 defineEmits</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8-defineExpose"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3. 使用 defineExpose</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8-useSlots-%E5%92%8C-useAttrs"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">4. 使用 useSlots 和 useAttrs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E9%A1%B6%E5%B1%82-await-%E6%94%AF%E6%8C%81"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">5. 顶层 await 支持</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E6%99%AE%E9%80%9Asetup%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.3.</span> <span class="nav-text">与普通setup函数的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.1.4.</span> <span class="nav-text">实际开发示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B1%EF%BC%9A%E8%AE%A1%E6%95%B0%E5%99%A8%E7%BB%84%E4%BB%B6"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">示例1：计数器组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B2%EF%BC%9AAPI%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">示例2：API数据获取组件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.1.5.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="nav-number">1.1.6.</span> <span class="nav-text">常见问题解答</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.</span> <span class="nav-text">响应式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%93%8D%E5%BA%94%E5%BC%8FAPI"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本响应式API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90"><span class="nav-number">1.3.</span> <span class="nav-text">生命周期钩子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref%E5%8F%AF%E4%BB%A5%E5%A3%B0%E6%98%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">ref可以声明基本数据类型和对象类型的响应式数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reactive%E5%8F%AA%E8%83%BD%E5%A3%B0%E6%98%8E%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">reactive只能声明对象类型的响应式数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toRefs-%E3%80%81toRef"><span class="nav-number">4.</span> <span class="nav-text">toRefs()、toRef()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref%E5%92%8Creactive%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">ref和reactive的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7computed"><span class="nav-number">6.</span> <span class="nav-text">计算属性computed()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#watch-%E7%9B%91%E8%A7%86%E3%80%90ref%E3%80%91%E5%AE%9A%E4%B9%89%E7%9A%84%E3%80%90%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E3%80%91%E6%95%B0%E6%8D%AE"><span class="nav-number">7.</span> <span class="nav-text">watch-监视【ref】定义的【基本类型】数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#watch"><span class="nav-number">8.</span> <span class="nav-text">watch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">9.</span> <span class="nav-text"></span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">结束进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="nav-number">1.1.</span> <span class="nav-text">Setup语法糖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E7%9A%84Composition-API%E5%86%99%E6%B3%95"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1. 普通的Composition API写法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8Setup%E8%AF%AD%E6%B3%95%E7%B3%96%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2. 使用Setup语法糖的写法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Setup%E8%AF%AD%E6%B3%95%E7%B3%96%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.2.</span> <span class="nav-text">Setup语法糖的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E8%87%AA%E5%8A%A8%E6%9A%B4%E9%9C%B2%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. 自动暴露变量和函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8-defineProps-%E5%92%8C-defineEmits"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. 使用 defineProps 和 defineEmits</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8-defineExpose"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3. 使用 defineExpose</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8-useSlots-%E5%92%8C-useAttrs"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">4. 使用 useSlots 和 useAttrs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E9%A1%B6%E5%B1%82-await-%E6%94%AF%E6%8C%81"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">5. 顶层 await 支持</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E6%99%AE%E9%80%9Asetup%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.3.</span> <span class="nav-text">与普通setup函数的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.1.4.</span> <span class="nav-text">实际开发示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B1%EF%BC%9A%E8%AE%A1%E6%95%B0%E5%99%A8%E7%BB%84%E4%BB%B6"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">示例1：计数器组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B2%EF%BC%9AAPI%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E7%BB%84%E4%BB%B6"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">示例2：API数据获取组件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.1.5.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="nav-number">1.1.6.</span> <span class="nav-text">常见问题解答</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.</span> <span class="nav-text">响应式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%93%8D%E5%BA%94%E5%BC%8FAPI"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本响应式API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90"><span class="nav-number">1.3.</span> <span class="nav-text">生命周期钩子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref%E5%8F%AF%E4%BB%A5%E5%A3%B0%E6%98%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">ref可以声明基本数据类型和对象类型的响应式数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reactive%E5%8F%AA%E8%83%BD%E5%A3%B0%E6%98%8E%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">reactive只能声明对象类型的响应式数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toRefs-%E3%80%81toRef"><span class="nav-number">4.</span> <span class="nav-text">toRefs()、toRef()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref%E5%92%8Creactive%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">5.</span> <span class="nav-text">ref和reactive的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7computed"><span class="nav-number">6.</span> <span class="nav-text">计算属性computed()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90watch%E3%80%91-%E7%9B%91%E8%A7%86%E3%80%90ref%E3%80%91%E5%AE%9A%E4%B9%89%E7%9A%84%E3%80%90%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E3%80%91%E6%95%B0%E6%8D%AE"><span class="nav-number">7.</span> <span class="nav-text">【watch】-监视【ref】定义的【基本类型】数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90watch%E3%80%91-%E7%9B%91%E8%A7%86%E3%80%90ref%E3%80%91%E5%AE%9A%E4%B9%89%E7%9A%84%E3%80%90%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E3%80%91%E6%95%B0%E6%8D%AE"><span class="nav-number">8.</span> <span class="nav-text">【watch】-监视【ref】定义的【对象类型】数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90watch%E3%80%91-%E7%9B%91%E8%A7%86%E3%80%90reactive%E3%80%91%E5%AE%9A%E4%B9%89%E7%9A%84%E3%80%90%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E3%80%91%E6%95%B0%E6%8D%AE"><span class="nav-number">9.</span> <span class="nav-text">【watch】-监视【reactive】定义的【对象类型】数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90watch%E3%80%91-%E7%9B%91%E8%A7%86ref%E6%88%96reactive%E5%AE%9A%E4%B9%89%E7%9A%84%E3%80%90%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E3%80%91%E4%B8%AD%E6%9F%90%E4%B8%AA%E5%B1%9E%E6%80%A7"><span class="nav-number">10.</span> <span class="nav-text">【watch】-监视ref或reactive定义的【对象类型】中某个属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90watchEffect%E3%80%91"><span class="nav-number">11.</span> <span class="nav-text">【watchEffect】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E7%9A%84%E3%80%90ref%E3%80%91%E5%B1%9E%E6%80%A7"><span class="nav-number">12.</span> <span class="nav-text">标签的【ref】属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TS%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3-%E6%B3%9B%E5%9E%8B-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B"><span class="nav-number">13.</span> <span class="nav-text">TS中的接口_泛型_自定义类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90props%E3%80%91%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">14.</span> <span class="nav-text">【props】的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue3%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">15.</span> <span class="nav-text">vue3生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89Hooks"><span class="nav-number">16.</span> <span class="nav-text">自定义Hooks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E7%9A%84query%E5%8F%82%E6%95%B0"><span class="nav-number">17.</span> <span class="nav-text">路由的query参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E7%9A%84param%E5%8F%82%E6%95%B0"><span class="nav-number">18.</span> <span class="nav-text">路由的param参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E7%9A%84props%E9%85%8D%E7%BD%AE"><span class="nav-number">18.1.</span> <span class="nav-text">路由的props配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replace%E5%B1%9E%E6%80%A7"><span class="nav-number">19.</span> <span class="nav-text">replace属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E5%BC%8F%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA"><span class="nav-number">20.</span> <span class="nav-text">编程式路由导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8pinia%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">21.</span> <span class="nav-text">使用pinia修改数据的三种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#storeToRefs"><span class="nav-number">22.</span> <span class="nav-text">storeToRefs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subscribe%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">23.</span> <span class="nav-text">$subscribe的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-props"><span class="nav-number">24.</span> <span class="nav-text">组件通信方式_props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"><span class="nav-number">25.</span> <span class="nav-text">组件通信方式_自定义事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-mitt"><span class="nav-number">26.</span> <span class="nav-text">组件通信方式_mitt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue3%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">27.</span> <span class="nav-text">Vue3核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E7%B3%BB%E7%BB%9F-1"><span class="nav-number">27.1.</span> <span class="nav-text">响应式系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="nav-number">27.2.</span> <span class="nav-text">组件化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">28.</span> <span class="nav-text">组件通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E4%B9%8Bv-model"><span class="nav-number">28.1.</span> <span class="nav-text">组件通信方式之v-model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E4%B9%8B-attrs"><span class="nav-number">28.2.</span> <span class="nav-text">组件通信方式之$attrs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E4%B9%8B-refs%E4%B8%8E-parent"><span class="nav-number">28.3.</span> <span class="nav-text">组件通信方式之$refs与$parent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E4%B9%8Bprovide-inject"><span class="nav-number">28.4.</span> <span class="nav-text">组件通信方式之provide_inject</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E6%A7%BD%E7%B3%BB%E7%BB%9F"><span class="nav-number">29.</span> <span class="nav-text">插槽系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E6%8F%92%E6%A7%BD"><span class="nav-number">29.1.</span> <span class="nav-text">默认插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD"><span class="nav-number">29.2.</span> <span class="nav-text">具名插槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD"><span class="nav-number">29.3.</span> <span class="nav-text">作用域插槽</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E5%BC%8FAPI"><span class="nav-number">30.</span> <span class="nav-text">组合式API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shallowRef%E4%B8%8EshallowReactive"><span class="nav-number">30.1.</span> <span class="nav-text">shallowRef与shallowReactive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#readonly%E4%B8%8EshallowReadonly"><span class="nav-number">30.2.</span> <span class="nav-text">readonly与shallowReadonly</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toRaw%E4%B8%8EmarkRaw"><span class="nav-number">30.3.</span> <span class="nav-text">toRaw与markRaw</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#customRef%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">30.4.</span> <span class="nav-text">customRef的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7"><span class="nav-number">31.</span> <span class="nav-text">高级特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Teleport"><span class="nav-number">31.1.</span> <span class="nav-text">Teleport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Suspense"><span class="nav-number">31.2.</span> <span class="nav-text">Suspense</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98%E8%A7%A3%E6%9E%90"><span class="nav-number">31.3.</span> <span class="nav-text">高频面试题解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Vue3%E4%B8%AD%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">31.3.1.</span> <span class="nav-text">1. Vue3中的响应式原理是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Vue3%E4%B8%AD%E7%9A%84%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">31.3.2.</span> <span class="nav-text">2. Vue3中的组件通信方式有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Vue3%E4%B8%AD%E7%9A%84%E7%BB%84%E5%90%88%E5%BC%8FAPI%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">31.3.3.</span> <span class="nav-text">3. Vue3中的组合式API是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Vue3%E4%B8%AD%E7%9A%84Teleport%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">31.3.4.</span> <span class="nav-text">4. Vue3中的Teleport是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Vue3%E4%B8%AD%E7%9A%84Suspense%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">31.3.5.</span> <span class="nav-text">5. Vue3中的Suspense是什么？</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -250,9 +265,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-03-18 01:13:23 / 修改时间：19:10:06" itemprop="dateCreated datePublished" datetime="2025-03-18T01:13:23+08:00">2025-03-18</time>
+      <time title="创建时间：2025-03-18 01:13:23" itemprop="dateCreated datePublished" datetime="2025-03-18T01:13:23+08:00">2025-03-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-03-20 23:40:00" itemprop="dateModified" datetime="2025-03-20T23:40:00+08:00">2025-03-20</time>
     </span>
 
   
@@ -805,7 +826,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token keyword">function</span> <span class="token function">changeFirstGame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         games<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">"VUE"</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token comment">// reactive重新分配一个新对象会失去响应式，可以用`Object.assign`去整体替换</span>
+    <span class="token comment">// reactive定义的对象如果重新分配一个新对象会失去响应式，可以用`Object.assign`去整体替换</span>
     <span class="token keyword">function</span> <span class="token function">changeCar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token comment">// car=&#123;brand:'雅迪',price:1&#125; // 如果是reactive定义的对象类型会丢失响应式，而ref定义的就可以这样使用</span>
         Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>car<span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token literal-property property">brand</span><span class="token operator">:</span><span class="token string">'雅迪'</span><span class="token punctuation">,</span><span class="token literal-property property">price</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
@@ -914,7 +935,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     &#125;
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="watch-监视【ref】定义的【基本类型】数据"><a href="#watch-监视【ref】定义的【基本类型】数据" class="headerlink" title="watch-监视【ref】定义的【基本类型】数据"></a>watch-监视【ref】定义的【基本类型】数据</h2><ul>
+<h2 id="【watch】-监视【ref】定义的【基本类型】数据"><a href="#【watch】-监视【ref】定义的【基本类型】数据" class="headerlink" title="【watch】-监视【ref】定义的【基本类型】数据"></a>【watch】-监视【ref】定义的【基本类型】数据</h2><ul>
 <li>直接写数据名,监视的是value值的改变</li>
 </ul>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;style&gt;
@@ -939,19 +960,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
     let count &#x3D;ref(0)
     function sum()&#123;
         count.value +&#x3D;1;
-        console.log(count.value);
         
     &#125;
     &#x2F;&#x2F; watch 监视【ref】定义的【基本类型】数据
     const stopWach&#x3D; watch(count,(newValue,oldValue)&#x3D;&gt;&#123;
         console.log(&quot;count变化了&quot;,newValue,oldValue);
+        
+        
         if (newValue&gt;&#x3D;5)&#123;
             stopWach();
         &#125;
     &#125;)
-&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h2><ul>
+<h2 id="【watch】-监视【ref】定义的【对象类型】数据"><a href="#【watch】-监视【ref】定义的【对象类型】数据" class="headerlink" title="【watch】-监视【ref】定义的【对象类型】数据"></a>【watch】-监视【ref】定义的【对象类型】数据</h2><ul>
 <li>若修改的是ref定义的对象的属性，newValue和oldValue都是新值，因为它们是同一个对象,地址值不变。</li>
 <li>若修改整个ref定义的对象，newValue是新值，oldValue是旧值，因为不是同一个对象。监视的是地址值，若想监视对象内部属性的变化，需要开启深度监视。</li>
 </ul>
@@ -963,11 +985,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 &lt;template&gt;
     &lt;div class&#x3D;&quot;person&quot;&gt;
-        &lt;button @click&#x3D;&quot;changeName&quot;&gt;修改对象属性&#123;&#123;person.name&#125;&#125;&lt;&#x2F;button&gt;
-        &lt;button @click&#x3D;&quot;changePerson&quot;&gt;修改对象&#123;&#123;person.name&#125;&#125;&lt;&#x2F;button&gt;
+        &lt;h1&gt;watch-监视【ref】定义的【对象类型】数据&lt;&#x2F;h1&gt;
+        &lt;h2&gt;姓名：&#123;&#123;person.name&#125;&#125;&lt;&#x2F;h2&gt;&lt;br&gt;
+        &lt;h2&gt;年龄：&#123;&#123;person.age&#125;&#125;&lt;&#x2F;h2&gt;&lt;br&gt;
+        &lt;div class&#x3D;&quot;btn&quot;&gt;
+            &lt;button @click&#x3D;&quot;changeName&quot;&gt;修改名字&lt;&#x2F;button&gt;
+            &lt;button @click&#x3D;&quot;changeAge&quot;&gt;修改年龄&lt;&#x2F;button&gt;
+            &lt;button @click&#x3D;&quot;changePerson&quot;&gt;修改整个人&lt;&#x2F;button&gt;
+        &lt;&#x2F;div&gt;
     &lt;&#x2F;div&gt;
 &lt;&#x2F;template&gt;
-
 &lt;script lang&#x3D;&quot;ts&quot; &gt;
    export default&#123;
         name:&quot;Person123&quot;
@@ -977,22 +1004,1328 @@ console<span class="token punctuation">.</span><span class="token function">log<
     import &#123; ref, watch&#125; from &#39;vue&#39;;
     let person&#x3D;ref(&#123;
         name:&quot;luotao&quot;,
-        age:18
+        age:20
     &#125;)
 
     function changeName()&#123;
-        person.value.name&#x3D;&quot;张三&quot;
+        person.value.name&#x3D;&quot;neko&quot;
+    &#125;
+    function changeAge()&#123;
+        person.value.age&#x3D; 18
     &#125;
     function changePerson()&#123;
-        person.value&#x3D;&#123;name:&quot;李四&quot;,age:20&#125;
+        person.value&#x3D;&#123;name:&quot;张三&quot;,age:25&#125;
     &#125;
     &#x2F;&#x2F; watch 监视【ref】定义的【对象类型】数据
+    &#x2F;*
+    * 若修改的是ref定义的对象的属性，newValue和oldValue都是新值，因为它们是同一个对象,地址值不变。
+    * 若修改整个ref定义的对象，newValue是新值，oldValue是旧值，因为不是同一个对象。监视的是地址值，若想监视对象内部属性的变化，需要开启深度监视。
+    *&#x2F;
     const stopWach&#x3D; watch(person,(newValue,oldValue)&#x3D;&gt;&#123;
         console.log(&quot;person变化了&quot;,newValue,oldValue);
-    &#125;,&#123;deep:true&#125;)
-&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        console.log(newValue&#x3D;&#x3D;&#x3D;oldValue); 
 
-<h2 id><a href="#" class="headerlink" title></a></h2>
+    &#125;,&#123;deep:true&#125;)
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="【watch】-监视【reactive】定义的【对象类型】数据"><a href="#【watch】-监视【reactive】定义的【对象类型】数据" class="headerlink" title="【watch】-监视【reactive】定义的【对象类型】数据"></a>【watch】-监视【reactive】定义的【对象类型】数据</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class&#x3D;&quot;person&quot;&gt;
+        &lt;h1&gt;监视【reactive】定义的【对象类型】数据&lt;&#x2F;h1&gt;
+        &lt;h2&gt;姓名：&#123;&#123;person.name&#125;&#125;&lt;&#x2F;h2&gt;&lt;br&gt;
+        &lt;h2&gt;年龄：&#123;&#123;person.age&#125;&#125;&lt;&#x2F;h2&gt;&lt;br&gt;
+        &lt;div class&#x3D;&quot;btn&quot;&gt;
+            &lt;button @click&#x3D;&quot;changeName&quot;&gt;修改名字&lt;&#x2F;button&gt;
+            &lt;button @click&#x3D;&quot;changeAge&quot;&gt;修改年龄&lt;&#x2F;button&gt;
+            &lt;button @click&#x3D;&quot;changePerson&quot;&gt;修改整个人&lt;&#x2F;button&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;script lang&#x3D;&quot;ts&quot; setup name&#x3D;&quot;Person&quot;&gt;
+import &#123; reactive,watch &#125; from &#39;vue&#39;;
+
+let person&#x3D;reactive(&#123;
+    name:&quot;luotao&quot;,
+    age:20
+&#125;)
+function changeName()&#123;
+    person.name&#x3D;&quot;neko&quot;
+&#125;
+function changeAge()&#123;
+    person.age&#x3D;18
+&#125;
+function changePerson()&#123;
+    person&#x3D;Object.assign(person,&#123;name:&quot;张三&quot;,age:25&#125;)
+&#125;
+&#x2F;&#x2F; 监视【reactive】定义的【对象类型】数据，默认隐式的创建了深度监视。这里person地址值没有变，nnewValue和oldvalue是同一个对象
+watch(person,(newValue,oldValue)&#x3D;&gt;&#123;
+    console.log(&quot;person变化了：&quot;,newValue,oldValue);
+    console.log(newValue&#x3D;&#x3D;&#x3D;oldValue); &#x2F;&#x2F; true  操作的是同一个对象
+    
+    
+&#125;)
+&lt;&#x2F;script&gt;
+&lt;style&gt;
+.person&#123;
+    background-color: greenyellow;
+    box-shadow: 0,0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+&#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="【watch】-监视ref或reactive定义的【对象类型】中某个属性"><a href="#【watch】-监视ref或reactive定义的【对象类型】中某个属性" class="headerlink" title="【watch】-监视ref或reactive定义的【对象类型】中某个属性"></a>【watch】-监视ref或reactive定义的【对象类型】中某个属性</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250319133253221.png" alt="image-20250319133253221"></p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class&#x3D;&quot;person&quot;&gt;
+        &lt;h2&gt;姓名：&#123;&#123;person.name&#125;&#125;&lt;&#x2F;h2&gt;
+        &lt;h2&gt;年龄：&#123;&#123;person.age&#125;&#125;&lt;&#x2F;h2&gt;
+        &lt;h2&gt;汽车&#123;&#123;person.car.c1&#125;&#125;、&#123;&#123;person.car.c2&#125;&#125;&lt;&#x2F;h2&gt;
+        &lt;button @click&#x3D;&quot;changeName&quot;&gt;修改名字&lt;&#x2F;button&gt;
+        &lt;button @click&#x3D;&quot;changeAge&quot;&gt;修改年龄&lt;&#x2F;button&gt;
+        &lt;button @click&#x3D;&quot;changeC1&quot;&gt;修改第一台车&lt;&#x2F;button&gt;
+        &lt;button @click&#x3D;&quot;changeC2&quot;&gt;修改第二台车&lt;&#x2F;button&gt;
+        &lt;button @click&#x3D;&quot;changeCar&quot;&gt;修改整个车&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;script lang&#x3D;&quot;ts&quot; setup name&#x3D;&quot;person&quot;&gt;
+import &#123; reactive, watch &#125; from &#39;vue&#39;;
+    let person&#x3D;reactive(&#123;
+        name:&quot;luotao&quot;,
+        age:18,
+        car:&#123;
+            c1:&quot;su7&quot;,
+            c2:&quot;雅迪&quot;
+        &#125;
+    &#125;)
+    function changeName()&#123;
+        person.name +&#x3D;&quot;~&quot;
+    &#125;
+    function changeAge()&#123;
+        person.age+&#x3D;1
+    &#125;
+    function changeC1()&#123;
+        person.car.c1&#x3D;&quot;c1&quot;
+    &#125;
+    function changeC2()&#123;
+        person.car.c2&#x3D;&quot;c2&quot;
+    &#125;
+    function changeCar()&#123;
+        person.car&#x3D;&#123;
+            c1:&quot;c3&quot;,
+            c2:&quot;c4&quot;
+        &#125;
+    &#125;
+    &#x2F;&#x2F; 监视ref或reactive定义的【对象类型】中某个属性：
+    &#x2F;&#x2F; 需要写成函数式（getter函数）
+    &#x2F;*watch(()&#x3D;&gt;&#123;return person.name&#125;,(newValue,oldValue)&#x3D;&gt;&#123;
+        console.log(&quot;person.name变化了&quot;,newValue,oldValue);
+    &#125;)*&#x2F;
+
+    &#x2F;&#x2F; 监视ref或reactive定义的【对象类型】中某个属性,且该属性是对象类型的(监视的是地址值)：
+    &#x2F;&#x2F; 推荐写函数式，若要关注该属性的细枝末节，可以直接开启深度监视
+    &#x2F;*watch(()&#x3D;&gt;&#123;
+        return person.car
+    &#125;,(newValue,oldValue)&#x3D;&gt;&#123;
+        console.log(&quot;person.car变化了&quot;,newValue,oldValue)
+    &#125;,&#123;deep:true&#125;)*&#x2F;
+
+    &#x2F;&#x2F; 以上两种情况的数组写法
+    watch([()&#x3D;&gt;&#123;
+        return person.name
+    &#125;,()&#x3D;&gt;&#123;
+        return person.car
+    &#125;],(newValue,oldValue)&#x3D;&gt;&#123;
+        console.log(&quot;person.car变化了&quot;,newValue,oldValue)
+    &#125;,&#123;deep:true&#125;)
+
+&lt;&#x2F;script&gt;
+&lt;style&gt;
+    .person&#123;
+        background-color: greenyellow;
+        box-shadow: 0,0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    &#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="【watchEffect】"><a href="#【watchEffect】" class="headerlink" title="【watchEffect】"></a>【watchEffect】</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class&#x3D;&quot;person&quot;&gt;
+        &lt;h2&gt;水温：&#123;&#123;temperature&#125;&#125;&lt;&#x2F;h2&gt;
+        &lt;h2&gt;水位：&#123;&#123;hight&#125;&#125;&lt;&#x2F;h2&gt;
+        &lt;button @click&#x3D;&quot;changeTemperature&quot;&gt;水温+10&lt;&#x2F;button&gt;
+        &lt;button @click&#x3D;&quot;changeHight&quot;&gt;水位+10&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;script lang&#x3D;&quot;ts&quot; setup name&#x3D;&quot;person&quot;&gt;
+import &#123; ref, watch, watchEffect &#125; from &#39;vue&#39;;
+    let temperature&#x3D;ref(10)
+    let hight&#x3D;ref(10)
+    function changeTemperature()&#123;
+        temperature.value +&#x3D;10
+    &#125;
+    function changeHight()&#123;
+        hight.value+&#x3D;10
+    &#125;
+    &#x2F;&#x2F; watch要明确出监视的数据
+    &#x2F;*
+    watch([temperature,hight],(value,oldValue)&#x3D;&gt;&#123;
+        let [temperature,hight]&#x3D;value
+        if (temperature &gt;&#x3D;60 || hight &gt;&#x3D;60)&#123;
+            console.log(&quot;发送请求&quot;);
+        &#125;
+              
+    &#125;)*&#x2F;
+
+    &#x2F;&#x2F; watchEffect：行数用到哪些属性就监视哪些属性
+    watchEffect(()&#x3D;&gt;&#123;
+        console.log(&quot;一上来就执行&quot;);
+        
+        if (temperature.value &gt;&#x3D;60 || hight.value &gt;&#x3D;60)&#123;
+            console.log(&quot;发送请求&quot;);
+        &#125;
+    &#125;)
+    
+&lt;&#x2F;script&gt;
+&lt;style&gt;
+    .person&#123;
+        background-color: greenyellow;
+        box-shadow: 0,0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    &#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="标签的【ref】属性"><a href="#标签的【ref】属性" class="headerlink" title="标签的【ref】属性"></a>标签的【ref】属性</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class&#x3D;&quot;person&quot;&gt;
+        &lt;!-- 【标签的ref属性用于注册模板引用】用在DOM标签上获取的是DOM节点，用在组件标签上，获取的是主键实例对象 --&gt;
+        &lt;h2 ref&#x3D;&quot;temp&quot;&gt;你好&lt;&#x2F;h2&gt;
+        &lt;button @click&#x3D;&quot;show&quot;&gt;展示ref标记的内容&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;script lang&#x3D;&quot;ts&quot; setup name&#x3D;&quot;person&quot;&gt;
+import &#123; ref ,defineExpose&#125; from &#39;vue&#39;;
+    let temp&#x3D;ref(); &#x2F;&#x2F; 创建一个temp，用于存储ref标记的内容
+    function show()&#123;
+        console.log(temp.value); &#x2F;&#x2F; &lt;h2&gt;水温：10&lt;&#x2F;h2&gt;
+        
+    &#125;   
+    defineExpose(&#123;temp&#125;) &#x2F;&#x2F; 导出
+&lt;&#x2F;script&gt;
+&lt;style&gt;
+    .person&#123;
+        background-color: greenyellow;
+        box-shadow: 0,0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    &#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="TS中的接口-泛型-自定义类型"><a href="#TS中的接口-泛型-自定义类型" class="headerlink" title="TS中的接口_泛型_自定义类型"></a>TS中的接口_泛型_自定义类型</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 定义一个接口来约束person对象的具体属性</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">PersonInter</span><span class="token punctuation">&#123;</span>
+    id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span><span class="token builtin">number</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 创建一个自定义类型</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Persons</span><span class="token operator">=</span>PersonInter<span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script  lang&#x3D;&quot;ts&quot; setup name&#x3D;&quot;App&quot;&gt;
+    import &#123;type PersonInter,type Persons&#125; from &#39;@&#x2F;types&#39;
+    import &#123; reactive &#125; from &#39;vue&#39;;
+    &#x2F;&#x2F; let personList:Persons&#x3D;reactive([
+    &#x2F;&#x2F;     &#123;id:&#39;1&#39;,name:&#39;luotao&#39;,age:18&#125;,
+    &#x2F;&#x2F;     &#123;id:&#39;2&#39;,name:&#39;neko&#39;,age:20&#125;
+    &#x2F;&#x2F; ])
+    &#x2F;&#x2F; 优雅的写法
+    let personList&#x3D;reactive&lt;Persons&gt;([
+        &#123;id:&#39;1&#39;,name:&#39;luotao&#39;,age:18&#125;,
+        &#123;id:&#39;2&#39;,name:&#39;neko&#39;,age:20&#125;
+    ])
+    console.log(personList[0].name);
+&lt;&#x2F;script&gt;
+
+&lt;template&gt;
+  &lt;div id&#x3D;&quot;app&quot;&gt;
+    &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;style&gt;
+
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="【props】的使用"><a href="#【props】的使用" class="headerlink" title="【props】的使用"></a>【props】的使用</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+import Person from &#39;.&#x2F;components&#x2F;Person.vue&#39;;
+import &#123; reactive &#125; from &#39;vue&#39;;
+import &#123;type PersonInter,type Persons&#125; from &#39;@&#x2F;types&#39;
+  let personList&#x3D; reactive&lt;Persons&gt;(
+    [
+      &#123;id:&#39;1&#39;,name:&#39;luotao&#39;,age:18&#125;,
+      &#123;id:&#39;2&#39;,name:&#39;neko&#39;,age:20&#125;,
+    ]
+  )
+  console.log(personList)
+&lt;&#x2F;script&gt;
+
+&lt;template&gt;
+  &lt;!-- 传给Person组件 --&gt;
+  &lt;Person :list&#x3D;&quot;personList&quot;&gt;&lt;&#x2F;Person&gt;
+&lt;&#x2F;template&gt;
+
+&lt;style scoped&gt;
+
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+    import &#123; type Persons &#125; from &#39;@&#x2F;types&#39;;
+    import &#123; defineProps ,withDefaults&#125; from &#39;vue&#39;;
+    &#x2F;&#x2F; let hello&#x3D; defineProps([&quot;list&quot;]) &#x2F;&#x2F; 1.只接受list
+
+    &#x2F;&#x2F; let hello &#x3D; defineProps&lt;&#123;list:Persons&#125;&gt;() &#x2F;&#x2F; 2.接受list,限制Person类型
+
+    &#x2F;&#x2F; 3.接受list,限制Person类型,?限制必要性，withDefaults指定默认值
+    withDefaults(defineProps&lt;&#123;list?:Persons&#125;&gt;(),&#123;
+        list:()&#x3D;&gt;&#123;
+            return [&#123;id:&#39;0&#39;,name:&#39;defaultName&#39;,age:18&#125;]
+        &#125;
+    &#125;)
+
+&lt;&#x2F;script&gt;
+
+&lt;template&gt;
+     &lt;div class&#x3D;&quot;person&quot;&gt;
+        &lt;ul&gt;
+            &lt;li v-for&#x3D;&quot;item in list &quot; :key&#x3D;&quot;item.id&quot;&gt;&#123;&#123;item.name&#125;&#125;--&#123;&#123; item.age &#125;&#125;&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+     &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;style scoped&gt;
+        .person&#123;
+        background-color: greenyellow;
+        box-shadow: 0,0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    &#125;
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="vue3生命周期"><a href="#vue3生命周期" class="headerlink" title="vue3生命周期"></a>vue3生命周期</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250319210017785.png" alt="image-20250319210017785"></p>
+<h2 id="自定义Hooks"><a href="#自定义Hooks" class="headerlink" title="自定义Hooks"></a>自定义Hooks</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onBeforeMount<span class="token punctuation">,</span> reactive <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">let</span> dogList <span class="token operator">=</span> <span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+        <span class="token string">'https://images.dog.ceo/breeds/pembroke/n02113023_4373.jpg'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://dog.ceo/api/breed/pembroke/images/random'</span><span class="token punctuation">)</span>
+            dogList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">onBeforeMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+        <span class="token function">getDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>dogList<span class="token punctuation">,</span>getDog<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">
+
+&lt;template&gt;
+     &lt;div class&#x3D;&quot;person&quot;&gt;
+        &lt;img v-for&#x3D;&quot; (dog,index) in dogList&quot; :key&#x3D;&quot;index&quot; :src&#x3D;&quot;dog&quot; alt&#x3D;&quot;&quot;&gt;
+        &lt;button @click&#x3D;&quot;getDog&quot;&gt;再来一只&lt;&#x2F;button&gt;
+     &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+import useDog from &#39;@&#x2F;hooks&#x2F;useDog&#39;;
+const &#123;dogList,getDog&#125;&#x3D;useDog()
+&lt;&#x2F;script&gt;
+&lt;style scoped&gt;
+    .person&#123;
+        background-color: greenyellow;
+        box-shadow: 0,0 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        flex-direction: column;
+    &#125;
+    img&#123;
+        width: 100px;
+        margin-bottom: 1px;
+    &#125;
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="路由的query参数"><a href="#路由的query参数" class="headerlink" title="路由的query参数"></a>路由的query参数</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320021455569.png" alt="image-20250320021455569"></p>
+<h2 id="路由的param参数"><a href="#路由的param参数" class="headerlink" title="路由的param参数"></a>路由的param参数</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320135029082.png" alt="image-20250320135029082"></p>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320135626427.png" alt="image-20250320135626427"></p>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320135722595.png" alt="image-20250320135722595"></p>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320140337010.png" alt="image-20250320140337010"></p>
+<h3 id="路由的props配置"><a href="#路由的props配置" class="headerlink" title="路由的props配置"></a>路由的props配置</h3><ul>
+<li>props的对象写法</li>
+<li>props的布尔值写法</li>
+<li>props的函数写法</li>
+</ul>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320141106962.png" alt="image-20250320141106962"></p>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320141200490.png" alt="image-20250320141200490"></p>
+<h2 id="replace属性"><a href="#replace属性" class="headerlink" title="replace属性"></a>replace属性</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320141836425.png" alt="image-20250320141836425"></p>
+<h2 id="编程式路由导航"><a href="#编程式路由导航" class="headerlink" title="编程式路由导航"></a>编程式路由导航</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320142903447.png" alt="image-20250320142903447"></p>
+<h2 id="使用pinia修改数据的三种方式"><a href="#使用pinia修改数据的三种方式" class="headerlink" title="使用pinia修改数据的三种方式"></a>使用pinia修改数据的三种方式</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320152718722.png" alt="image-20250320152718722"></p>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320152636282.png" alt="image-20250320152636282"></p>
+<h2 id="storeToRefs"><a href="#storeToRefs" class="headerlink" title="storeToRefs"></a>storeToRefs</h2><h2 id="subscribe的使用"><a href="#subscribe的使用" class="headerlink" title="$subscribe的使用"></a>$subscribe的使用</h2><h2 id="组件通信方式-props"><a href="#组件通信方式-props" class="headerlink" title="组件通信方式_props"></a>组件通信方式_props</h2><p>props通常用在父组件与子组件。</p>
+<p>若父传子，属性值是非函数。</p>
+<p>若子传父，属性值是函数。</p>
+<p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320161423768.png" alt="image-20250320161423768"></p>
+<h2 id="组件通信方式-自定义事件"><a href="#组件通信方式-自定义事件" class="headerlink" title="组件通信方式_自定义事件"></a>组件通信方式_自定义事件</h2><p><img src="/2025/03/18/Vue3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250320164314641.png" alt="image-20250320164314641"></p>
+<h2 id="组件通信方式-mitt"><a href="#组件通信方式-mitt" class="headerlink" title="组件通信方式_mitt"></a>组件通信方式_mitt</h2><ul>
+<li><p><code>npm i mitt</code></p>
+</li>
+<li><p>创建utils包下的emitter.ts</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 引入mitt</span>
+<span class="token keyword">import</span> mitt <span class="token keyword">from</span> <span class="token string">'mitt'</span>
+
+<span class="token comment">// 调用mitt得到emitter，emitter能：绑定事件、触发事件</span>
+<span class="token keyword">const</span> emitter <span class="token operator">=</span> <span class="token function">mitt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">/* // 绑定事件
+emitter.on('test1',()=>&#123;
+  console.log('test1被调用了')
+&#125;)
+emitter.on('test2',()=>&#123;
+  console.log('test2被调用了')
+&#125;)
+
+// 触发事件
+setInterval(() => &#123;
+  emitter.emit('test1')
+  emitter.emit('test2')
+&#125;, 1000);
+
+setTimeout(() => &#123;
+  // emitter.off('test1')
+  // emitter.off('test2')
+  emitter.all.clear()
+&#125;, 3000); */</span>
+
+
+<span class="token comment">// 暴露emitter</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> emitter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>main.ts中import</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> emitter <span class="token keyword">from</span> <span class="token string">'./utils/emitter'</span><span class="token punctuation">;</span> <span class="token comment">//引入emitter</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>子组件1给子组件2传递toy</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class&#x3D;&quot;child1&quot;&gt;
+      &lt;h3&gt;子组件1&lt;&#x2F;h3&gt;
+      &lt;h4&gt;玩具：&#123;&#123;toy&#125;&#125;&lt;&#x2F;h4&gt;
+      &lt;!-- 用emitter.emit触发组件2声明的send-toy事件，并传递我自己的toy --&gt;
+      &lt;button @click&#x3D;&quot;emitter.emit(&#39;send-toy&#39;,toy)&quot;&gt;给组件2toy&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;template&gt;
+  
+  &lt;script setup lang&#x3D;&quot;ts&quot; name&#x3D;&quot;Child1&quot;&gt;
+    import emitter from &#39;@&#x2F;utils&#x2F;emitter&#39;;
+    import &#123; ref &#125; from &#39;vue&#39;;
+    let toy &#x3D; ref(&#39;奥特曼&#39;)
+  &lt;&#x2F;script&gt;
+  
+  &lt;style scoped&gt;
+      .child1&#123;
+          margin-top: 50px;
+          background-color: skyblue;
+          padding: 10px;
+          box-shadow: 0 0 10px black;
+          border-radius: 10px;
+      &#125;
+      .child1 button&#123;
+          margin-right: 10px;
+      &#125;
+  &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class&#x3D;&quot;child2&quot;&gt;
+      &lt;h3&gt;子组件2&lt;&#x2F;h3&gt;
+      &lt;h4&gt;电脑:&#123;&#123;computer&#125;&#125;&lt;&#x2F;h4&gt;
+      &lt;h4&gt;组件1给我的toy是：&#123;&#123;toy&#125;&#125;&lt;&#x2F;h4&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;template&gt;
+  
+  &lt;script setup lang&#x3D;&quot;ts&quot; name&#x3D;&quot;Child2&quot;&gt;
+  import emitter from &#39;@&#x2F;utils&#x2F;emitter&#39;
+import &#123; onUnmounted &#125; from &#39;vue&#39;
+import &#123;ref&#125; from &#39;vue&#39;
+  
+      let computer &#x3D; ref(&#39;小米&#39;)
+      let toy &#x3D; ref(&#39;&#39;)
+      &#x2F;&#x2F; 给emitter绑定send-toy事件
+      emitter.on(&#39;send-toy&#39;,(value:any)&#x3D;&gt;&#123;
+          toy.value&#x3D;value
+      &#125;)
+      &#x2F;&#x2F; 在组件2卸载时解绑send-toy事件
+      onUnmounted(()&#x3D;&gt;&#123;
+        emitter.off(&#39;send-toy&#39;)
+        console.log(&#39;send-toy事件卸载了&#39;);
+        
+      &#125;)
+  &lt;&#x2F;script&gt;
+  
+  &lt;style scoped&gt;
+      .child2&#123;
+          margin-top: 50px;
+          background-color: orange;
+          padding: 10px;
+          box-shadow: 0 0 10px black;
+          border-radius: 10px;
+      &#125;
+  &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="Vue3核心概念"><a href="#Vue3核心概念" class="headerlink" title="Vue3核心概念"></a>Vue3核心概念</h2><h3 id="响应式系统-1"><a href="#响应式系统-1" class="headerlink" title="响应式系统"></a>响应式系统</h3><p><strong>技术解释</strong>：Vue3的响应式系统基于ES6的Proxy，能够直接监听对象和数组的变化。</p>
+<p><strong>生活案例</strong>：想象一个智能家居系统。当你调整温度设定（数据变化）时，空调会自动响应并调整工作模式（UI更新）。Vue3的响应式系统就像这个智能家居的控制中心，监测所有设定的变化并通知相关设备做出反应。</p>
+<h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><p><strong>技术解释</strong>：Vue应用由独立、可复用的组件构建而成，每个组件封装自己的HTML、CSS和JavaScript。</p>
+<p><strong>生活案例</strong>：组件就像乐高积木。每个积木（组件）有特定的形状和功能，可以独立存在，也可以与其他积木组合创建复杂结构。一个页面就是由这些不同功能的”积木”组合而成的。</p>
+<h2 id="组件通信方式"><a href="#组件通信方式" class="headerlink" title="组件通信方式"></a>组件通信方式</h2><h3 id="组件通信方式之v-model"><a href="#组件通信方式之v-model" class="headerlink" title="组件通信方式之v-model"></a>组件通信方式之v-model</h3><p><strong>技术解释</strong>：Vue3中的v-model是props和emit的语法糖，用于在父子组件间实现双向绑定。</p>
+<p><strong>生活案例</strong>：想象父母（父组件）给孩子（子组件）零花钱。v-model就像一个特殊的钱包：父母放钱进去（props传值），孩子花钱后会自动更新钱包余额并通知父母（emit事件）。这样父母始终知道钱包里有多少钱，实现了”双向通信”。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+&lt;child-component v-model:money&#x3D;&quot;pocket&quot; &#x2F;&gt;
+&lt;p&gt;钱包余额: &#123;&#123; pocket &#125;&#125;&lt;&#x2F;p&gt;
+&lt;&#x2F;template&gt;
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;
+import ChildComponent from &#39;.&#x2F;ChildComponent.vue&#39;
+const pocket &#x3D; ref(100)
+&lt;&#x2F;script&gt;
+&lt;!-- 子组件 (ChildComponent.vue) --&gt;
+&lt;template&gt;
+&lt;div&gt;
+&lt;p&gt;我的零花钱: &#123;&#123; money &#125;&#125;&lt;&#x2F;p&gt;
+&lt;button @click&#x3D;&quot;spendMoney(10)&quot;&gt;花费10元&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;script setup&gt;
+const props &#x3D; defineProps([&#39;money&#39;])
+const emit &#x3D; defineEmits([&#39;update:money&#39;])
+function spendMoney(amount) &#123;
+emit(&#39;update:money&#39;, props.money - amount)
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="组件通信方式之-attrs"><a href="#组件通信方式之-attrs" class="headerlink" title="组件通信方式之$attrs"></a>组件通信方式之$attrs</h3><p><strong>技术解释</strong>：$attrs包含父组件传递给子组件但未被props接收的所有属性，Vue3中也包含了事件监听器。</p>
+<p><strong>生活案例</strong>：想象一个快递转运站。当包裹（属性）到达转运站（父组件）时，有些包裹有明确的收件人（props），而其他包裹（$attrs）则需要继续转发到下一站（子组件或孙组件）。$attrs就是这个自动转发系统。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;middle-component 
+    title&#x3D;&quot;Hello&quot; 
+    :description&#x3D;&quot;desc&quot; 
+    @click&#x3D;&quot;handleClick&quot; 
+  &#x2F;&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;
+import MiddleComponent from &#39;.&#x2F;MiddleComponent.vue&#39;
+
+const desc &#x3D; ref(&#39;This is a description&#39;)
+function handleClick() &#123;
+  console.log(&#39;Clicked!&#39;)
+&#125;
+&lt;&#x2F;script&gt;
+
+&lt;!-- 中间组件 (MiddleComponent.vue) --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;中间组件&lt;&#x2F;h2&gt;
+    &lt;child-component v-bind&#x3D;&quot;$attrs&quot; &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import ChildComponent from &#39;.&#x2F;ChildComponent.vue&#39;
+&lt;&#x2F;script&gt;
+
+&lt;!-- 子组件 (ChildComponent.vue) --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;&#x2F;h3&gt;
+    &lt;p&gt;&#123;&#123; description &#125;&#125;&lt;&#x2F;p&gt;
+    &lt;button @click&#x3D;&quot;$attrs.onClick&quot;&gt;点击我&lt;&#x2F;button&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+defineProps([&#39;title&#39;, &#39;description&#39;])
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="组件通信方式之-refs与-parent"><a href="#组件通信方式之-refs与-parent" class="headerlink" title="组件通信方式之$refs与$parent"></a>组件通信方式之$refs与$parent</h3><p><strong>技术解释</strong>：$refs用于直接访问子组件实例或DOM元素，而$parent用于访问父组件实例。</p>
+<p><strong>生活案例</strong>：想象一个办公室环境。$refs就像直接走到同事桌前（子组件）请求帮助，而$parent则像向你的上级（父组件）请求指导。这是直接的点对点通信，不经过正式的沟通渠道。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;child-component ref&#x3D;&quot;childRef&quot; &#x2F;&gt;
+    &lt;button @click&#x3D;&quot;callChildMethod&quot;&gt;调用子组件方法&lt;&#x2F;button&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;
+import ChildComponent from &#39;.&#x2F;ChildComponent.vue&#39;
+
+const childRef &#x3D; ref(null)
+
+function callChildMethod() &#123;
+  childRef.value.showMessage(&#39;来自父组件的消息&#39;)
+&#125;
+&lt;&#x2F;script&gt;
+
+&lt;!-- 子组件 (ChildComponent.vue) --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;子组件&lt;&#x2F;p&gt;
+    &lt;button @click&#x3D;&quot;askParent&quot;&gt;向父组件请求数据&lt;&#x2F;button&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; getCurrentInstance &#125; from &#39;vue&#39;
+
+const instance &#x3D; getCurrentInstance()
+
+function showMessage(msg) &#123;
+  alert(msg)
+&#125;
+
+function askParent() &#123;
+  const parentData &#x3D; instance.parent.data
+  alert(&#96;父组件数据: $&#123;parentData&#125;&#96;)
+&#125;
+
+&#x2F;&#x2F; 暴露方法给父组件调用
+defineExpose(&#123;
+  showMessage
+&#125;)
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="组件通信方式之provide-inject"><a href="#组件通信方式之provide-inject" class="headerlink" title="组件通信方式之provide_inject"></a>组件通信方式之provide_inject</h3><p><strong>技术解释</strong>：provide/inject允许祖先组件向所有后代组件注入数据，无需通过props逐级传递。</p>
+<p><strong>生活案例</strong>：想象一个家族WhatsApp群组。家族长辈（祖先组件）在群里发布重要信息（provide数据），所有家族成员（后代组件）无论层级关系如何，都能直接接收到这些信息（inject数据），而不需要通过中间人传话。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 祖先组件 --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;家族群组&lt;&#x2F;h1&gt;
+    &lt;p&gt;当前主题: &#123;&#123; theme &#125;&#125;&lt;&#x2F;p&gt;
+    &lt;button @click&#x3D;&quot;toggleTheme&quot;&gt;切换主题&lt;&#x2F;button&gt;
+    &lt;middle-component &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; ref, provide &#125; from &#39;vue&#39;
+import MiddleComponent from &#39;.&#x2F;MiddleComponent.vue&#39;
+
+const theme &#x3D; ref(&#39;light&#39;)
+
+function toggleTheme() &#123;
+  theme.value &#x3D; theme.value &#x3D;&#x3D;&#x3D; &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;
+&#125;
+
+&#x2F;&#x2F; 提供主题给所有后代组件
+provide(&#39;theme&#39;, theme)
+provide(&#39;toggleTheme&#39;, toggleTheme)
+&lt;&#x2F;script&gt;
+
+&lt;!-- 中间组件 (MiddleComponent.vue) --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;中间组件&lt;&#x2F;h2&gt;
+    &lt;descendant-component &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import DescendantComponent from &#39;.&#x2F;DescendantComponent.vue&#39;
+&lt;&#x2F;script&gt;
+
+&lt;!-- 后代组件 (DescendantComponent.vue) --&gt;
+&lt;template&gt;
+  &lt;div :class&#x3D;&quot;theme&quot;&gt;
+    &lt;h3&gt;后代组件&lt;&#x2F;h3&gt;
+    &lt;p&gt;当前使用的主题: &#123;&#123; theme &#125;&#125;&lt;&#x2F;p&gt;
+    &lt;button @click&#x3D;&quot;toggleTheme&quot;&gt;切换主题&lt;&#x2F;button&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; inject &#125; from &#39;vue&#39;
+
+&#x2F;&#x2F; 注入祖先组件提供的数据
+const theme &#x3D; inject(&#39;theme&#39;)
+const toggleTheme &#x3D; inject(&#39;toggleTheme&#39;)
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="插槽系统"><a href="#插槽系统" class="headerlink" title="插槽系统"></a>插槽系统</h2><h3 id="默认插槽"><a href="#默认插槽" class="headerlink" title="默认插槽"></a>默认插槽</h3><p><strong>技术解释</strong>：默认插槽允许父组件将内容传递到子组件的指定位置。</p>
+<p><strong>生活案例</strong>：想象一个相框（子组件）。默认插槽就像相框中放照片的空间，你可以在这个空间（slot）放入任何照片（内容），而相框的样式和结构保持不变。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 子组件 (Frame.vue) --&gt;
+&lt;template&gt;
+  &lt;div class&#x3D;&quot;frame&quot;&gt;
+    &lt;div class&#x3D;&quot;frame-header&quot;&gt;精美相框&lt;&#x2F;div&gt;
+    &lt;div class&#x3D;&quot;frame-content&quot;&gt;
+      &lt;!-- 默认插槽 --&gt;
+      &lt;slot&gt;这里放默认照片&lt;&#x2F;slot&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class&#x3D;&quot;frame-footer&quot;&gt;2023年&lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;frame&gt;
+      &lt;!-- 插入到默认插槽的内容 --&gt;
+      &lt;img src&#x3D;&quot;.&#x2F;family-photo.jpg&quot; alt&#x3D;&quot;家庭照片&quot; &#x2F;&gt;
+    &lt;&#x2F;frame&gt;
+    
+    &lt;frame&gt;
+      &lt;!-- 另一个不同的内容 --&gt;
+      &lt;img src&#x3D;&quot;.&#x2F;vacation-photo.jpg&quot; alt&#x3D;&quot;度假照片&quot; &#x2F;&gt;
+    &lt;&#x2F;frame&gt;
+    
+    &lt;!-- 不提供内容时会显示默认内容 --&gt;
+    &lt;frame&gt;&lt;&#x2F;frame&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import Frame from &#39;.&#x2F;Frame.vue&#39;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h3><p><strong>技术解释</strong>：具名插槽允许在同一个组件中定义多个插槽，并通过名称区分。</p>
+<p><strong>生活案例</strong>：想象一封电子邮件模板（子组件）。它有不同的部分：标题、正文和签名。具名插槽就像这个模板中预留的不同区域，你可以分别填入不同内容，每个内容都放在指定的位置。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 子组件 (EmailTemplate.vue) --&gt;
+&lt;template&gt;
+  &lt;div class&#x3D;&quot;email&quot;&gt;
+    &lt;header&gt;
+      &lt;slot name&#x3D;&quot;header&quot;&gt;默认标题&lt;&#x2F;slot&gt;
+    &lt;&#x2F;header&gt;
+    &lt;main&gt;
+      &lt;slot name&#x3D;&quot;content&quot;&gt;默认正文内容...&lt;&#x2F;slot&gt;
+    &lt;&#x2F;main&gt;
+    &lt;footer&gt;
+      &lt;slot name&#x3D;&quot;signature&quot;&gt;默认签名&lt;&#x2F;slot&gt;
+    &lt;&#x2F;footer&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;email-template&gt;
+      &lt;template #header&gt;
+        &lt;h2&gt;会议邀请&lt;&#x2F;h2&gt;
+      &lt;&#x2F;template&gt;
+      
+      &lt;template #content&gt;
+        &lt;p&gt;亲爱的团队成员，&lt;&#x2F;p&gt;
+        &lt;p&gt;我们将于下周一举行季度回顾会议，请准时参加。&lt;&#x2F;p&gt;
+      &lt;&#x2F;template&gt;
+      
+      &lt;template #signature&gt;
+        &lt;p&gt;此致，&lt;&#x2F;p&gt;
+        &lt;p&gt;项目经理&lt;&#x2F;p&gt;
+      &lt;&#x2F;template&gt;
+    &lt;&#x2F;email-template&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import EmailTemplate from &#39;.&#x2F;EmailTemplate.vue&#39;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h3><p><strong>技术解释</strong>：作用域插槽允许子组件将数据回传给父组件的插槽内容。</p>
+<p><strong>生活案例</strong>：想象一个图书馆借书系统（子组件）。作用域插槽就像图书馆提供的借书记录查询服务，图书馆（子组件）拥有所有借书数据，但允许读者（父组件）决定如何展示和使用这些数据，比如按日期排序或只查看特定类型的书籍。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 子组件 (BookList.vue) --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;图书馆藏书列表&lt;&#x2F;h2&gt;
+    &lt;ul&gt;
+      &lt;li v-for&#x3D;&quot;book in books&quot; :key&#x3D;&quot;book.id&quot;&gt;
+        &lt;!-- 将book数据传递给父组件的插槽 --&gt;
+        &lt;slot :book&#x3D;&quot;book&quot; :checkout&#x3D;&quot;checkoutBook&quot;&gt;
+          &#123;&#123; book.title &#125;&#125; (默认显示)
+        &lt;&#x2F;slot&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;
+
+const books &#x3D; ref([
+  &#123; id: 1, title: &#39;战争与和平&#39;, author: &#39;托尔斯泰&#39;, available: true &#125;,
+  &#123; id: 2, title: &#39;百年孤独&#39;, author: &#39;马尔克斯&#39;, available: false &#125;,
+  &#123; id: 3, title: &#39;红楼梦&#39;, author: &#39;曹雪芹&#39;, available: true &#125;
+])
+
+function checkoutBook(bookId) &#123;
+  const book &#x3D; books.value.find(b &#x3D;&gt; b.id &#x3D;&#x3D;&#x3D; bookId)
+  if (book &amp;&amp; book.available) &#123;
+    book.available &#x3D; false
+    return true
+  &#125;
+  return false
+&#125;
+&lt;&#x2F;script&gt;
+
+&lt;!-- 父组件 --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;book-list&gt;
+      &lt;template #default&#x3D;&quot;&#123; book, checkout &#125;&quot;&gt;
+        &lt;div :class&#x3D;&quot;&#123; &#39;unavailable&#39;: !book.available &#125;&quot;&gt;
+          &lt;h3&gt;&#123;&#123; book.title &#125;&#125;&lt;&#x2F;h3&gt;
+          &lt;p&gt;作者: &#123;&#123; book.author &#125;&#125;&lt;&#x2F;p&gt;
+          &lt;p&gt;状态: &#123;&#123; book.available ? &#39;可借阅&#39; : &#39;已借出&#39; &#125;&#125;&lt;&#x2F;p&gt;
+          &lt;button 
+            v-if&#x3D;&quot;book.available&quot; 
+            @click&#x3D;&quot;checkout(book.id)&quot;
+          &gt;
+            借阅
+          &lt;&#x2F;button&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;template&gt;
+    &lt;&#x2F;book-list&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import BookList from &#39;.&#x2F;BookList.vue&#39;
+&lt;&#x2F;script&gt;
+
+&lt;style&gt;
+.unavailable &#123;
+  opacity: 0.6;
+&#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="组合式API"><a href="#组合式API" class="headerlink" title="组合式API"></a>组合式API</h2><h3 id="shallowRef与shallowReactive"><a href="#shallowRef与shallowReactive" class="headerlink" title="shallowRef与shallowReactive"></a>shallowRef与shallowReactive</h3><p><strong>技术解释</strong>：shallowRef和shallowReactive创建浅层响应式对象，只有对象的顶层属性是响应式的，嵌套对象不会被转换。</p>
+<p><strong>生活案例</strong>：想象一个邮箱系统。普通的ref/reactive就像完整的邮件追踪服务，从寄件到收件的每一步都会通知你（深层响应）。而shallow版本就像只追踪包裹是否已送达（顶层响应），但不会告诉你包裹内部物品的状态变化。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;邮件系统&lt;&#x2F;h2&gt;
+    &lt;button @click&#x3D;&quot;updateDeep&quot;&gt;更新深层属性 (reactive)&lt;&#x2F;button&gt;
+    &lt;button @click&#x3D;&quot;updateShallow&quot;&gt;更新深层属性 (shallowReactive)&lt;&#x2F;button&gt;
+    &lt;pre&gt;&#123;&#123; normalPackage &#125;&#125;&lt;&#x2F;pre&gt;
+    &lt;pre&gt;&#123;&#123; shallowPackage &#125;&#125;&lt;&#x2F;pre&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; reactive, shallowReactive &#125; from &#39;vue&#39;
+
+&#x2F;&#x2F; 完全响应式
+const normalPackage &#x3D; reactive(&#123;
+  status: &#39;运送中&#39;,
+  details: &#123;
+    items: [&#39;书&#39;, &#39;衣服&#39;],
+    weight: &#39;2kg&#39;
+  &#125;
+&#125;)
+
+&#x2F;&#x2F; 浅层响应式
+const shallowPackage &#x3D; shallowReactive(&#123;
+  status: &#39;运送中&#39;,
+  details: &#123;
+    items: [&#39;电子产品&#39;, &#39;文具&#39;],
+    weight: &#39;1kg&#39;
+  &#125;
+&#125;)
+
+function updateDeep() &#123;
+  &#x2F;&#x2F; 这会触发视图更新
+  normalPackage.details.items.push(&#39;新物品&#39;)
+&#125;
+
+function updateShallow() &#123;
+  &#x2F;&#x2F; 这不会触发视图更新，因为details是非响应式的
+  shallowPackage.details.items.push(&#39;新物品&#39;)
+  
+  &#x2F;&#x2F; 但这会触发更新，因为status是顶层属性
+  &#x2F;&#x2F; shallowPackage.status &#x3D; &#39;已送达&#39;
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="readonly与shallowReadonly"><a href="#readonly与shallowReadonly" class="headerlink" title="readonly与shallowReadonly"></a>readonly与shallowReadonly</h3><p><strong>技术解释</strong>：readonly创建一个深层只读代理，任何嵌套属性都不可修改，而shallowReadonly只使顶层属性为只读。</p>
+<p><strong>生活案例</strong>：想象一份合同文档。readonly就像一份完全盖章的合同，所有条款和附件都不能修改（深层只读）。而shallowReadonly就像只有主要条款不能修改，但附件内容可以调整（浅层只读）。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;合同系统&lt;&#x2F;h2&gt;
+    &lt;button @click&#x3D;&quot;tryModify&quot;&gt;尝试修改合同&lt;&#x2F;button&gt;
+    &lt;pre&gt;&#123;&#123; contractInfo &#125;&#125;&lt;&#x2F;pre&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; reactive, readonly, shallowReadonly &#125; from &#39;vue&#39;
+
+&#x2F;&#x2F; 原始合同数据
+const originalContract &#x3D; reactive(&#123;
+  title: &#39;服务协议&#39;,
+  signDate: &#39;2023-05-15&#39;,
+  terms: &#123;
+    duration: &#39;12个月&#39;,
+    payment: &#39;5000元&#x2F;月&#39;
+  &#125;
+&#125;)
+
+&#x2F;&#x2F; 完全只读版本
+const readonlyContract &#x3D; readonly(originalContract)
+
+&#x2F;&#x2F; 浅层只读版本
+const shallowReadonlyContract &#x3D; shallowReadonly(originalContract)
+
+&#x2F;&#x2F; 用于展示的合同信息
+const contractInfo &#x3D; reactive(&#123;
+  original: originalContract,
+  readonly: readonlyContract,
+  shallowReadonly: shallowReadonlyContract
+&#125;)
+
+function tryModify() &#123;
+  try &#123;
+    &#x2F;&#x2F; 这会成功
+    originalContract.title &#x3D; &#39;更新的服务协议&#39;
+    
+    try &#123;
+      &#x2F;&#x2F; 这会失败并显示警告
+      readonlyContract.title &#x3D; &#39;尝试修改只读合同&#39;
+    &#125; catch (e) &#123;
+      console.log(&#39;无法修改readonly合同的顶层属性&#39;)
+    &#125;
+    
+    try &#123;
+      &#x2F;&#x2F; 这会失败并显示警告
+      readonlyContract.terms.duration &#x3D; &#39;24个月&#39;
+    &#125; catch (e) &#123;
+      console.log(&#39;无法修改readonly合同的嵌套属性&#39;)
+    &#125;
+    
+    try &#123;
+      &#x2F;&#x2F; 这会失败并显示警告
+      shallowReadonlyContract.title &#x3D; &#39;尝试修改浅层只读合同&#39;
+    &#125; catch (e) &#123;
+      console.log(&#39;无法修改shallowReadonly合同的顶层属性&#39;)
+    &#125;
+    
+    &#x2F;&#x2F; 这会成功，因为嵌套属性不是只读的
+    shallowReadonlyContract.terms.duration &#x3D; &#39;24个月&#39;
+    
+    console.log(&#39;修改操作完成&#39;)
+  &#125; catch (e) &#123;
+    console.error(e)
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="toRaw与markRaw"><a href="#toRaw与markRaw" class="headerlink" title="toRaw与markRaw"></a>toRaw与markRaw</h3><p><strong>技术解释</strong>：toRaw返回响应式对象的原始对象，markRaw标记一个对象永远不会被转为响应式。</p>
+<p><strong>生活案例</strong>：想象一个智能家居系统。toRaw就像临时关闭智能功能，获取设备的原始状态进行维护；markRaw则像永久将某些设备（如老式电视）排除在智能系统外，它们的状态变化永远不会触发自动化操作。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;智能家居控制面板&lt;&#x2F;h2&gt;
+    &lt;button @click&#x3D;&quot;updateDevice&quot;&gt;更新设备状态&lt;&#x2F;button&gt;
+    &lt;button @click&#x3D;&quot;getOriginalState&quot;&gt;获取原始状态&lt;&#x2F;button&gt;
+    &lt;button @click&#x3D;&quot;addNewDevice&quot;&gt;添加新设备&lt;&#x2F;button&gt;
+    &lt;pre&gt;&#123;&#123; deviceInfo &#125;&#125;&lt;&#x2F;pre&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; reactive, toRaw, markRaw, ref &#125; from &#39;vue&#39;
+
+&#x2F;&#x2F; 响应式智能设备列表
+const smartDevices &#x3D; reactive(&#123;
+  livingRoom: &#123;
+    lights: &#123; status: &#39;on&#39;, brightness: 80 &#125;,
+    thermostat: &#123; status: &#39;on&#39;, temperature: 22 &#125;
+  &#125;,
+  kitchen: &#123;
+    lights: &#123; status: &#39;off&#39;, brightness: 0 &#125;,
+    refrigerator: &#123; status: &#39;on&#39;, temperature: 4 &#125;
+  &#125;
+&#125;)
+
+&#x2F;&#x2F; 用于展示的信息
+const deviceInfo &#x3D; ref(&#123;
+  smartDevices,
+  rawState: null,
+  updateCount: 0
+&#125;)
+
+&#x2F;&#x2F; 更新设备状态
+function updateDevice() &#123;
+  smartDevices.livingRoom.lights.brightness +&#x3D; 5
+  if (smartDevices.livingRoom.lights.brightness &gt; 100) &#123;
+    smartDevices.livingRoom.lights.brightness &#x3D; 100
+  &#125;
+  deviceInfo.value.updateCount++
+&#125;
+
+&#x2F;&#x2F; 获取原始状态（不触发响应式更新）
+function getOriginalState() &#123;
+  &#x2F;&#x2F; 使用toRaw获取原始对象
+  const rawDevices &#x3D; toRaw(smartDevices)
+  deviceInfo.value.rawState &#x3D; rawDevices
+  
+  &#x2F;&#x2F; 修改原始对象不会触发视图更新
+  rawDevices.livingRoom.thermostat.temperature &#x3D; 25
+&#125;
+
+&#x2F;&#x2F; 添加新设备（使用markRaw标记为非响应式）
+function addNewDevice() &#123;
+  &#x2F;&#x2F; 创建一个永远不会成为响应式的设备对象
+  const oldTV &#x3D; markRaw(&#123;
+    status: &#39;on&#39;,
+    channel: 5,
+    volume: 30
+  &#125;)
+  
+  &#x2F;&#x2F; 即使添加到响应式对象中，oldTV也不会变成响应式的
+  smartDevices.livingRoom.tv &#x3D; oldTV
+  
+  &#x2F;&#x2F; 这个修改不会触发更新
+  setTimeout(() &#x3D;&gt; &#123;
+    oldTV.channel &#x3D; 8
+    deviceInfo.value.updateCount++
+  &#125;, 1000)
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="customRef的使用"><a href="#customRef的使用" class="headerlink" title="customRef的使用"></a>customRef的使用</h3><p><strong>技术解释</strong>：customRef允许创建自定义的响应式引用，可以显式控制依赖追踪和触发更新。</p>
+<p><strong>生活案例</strong>：想象一个智能搜索框。普通的ref就像即时搜索，每输入一个字符就立即搜索；而customRef就像带有防抖功能的搜索框，等你停止输入一段时间后才执行搜索，避免频繁无效的搜索请求。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;智能搜索&lt;&#x2F;h2&gt;
+    &lt;input 
+      type&#x3D;&quot;text&quot; 
+      placeholder&#x3D;&quot;输入搜索内容...&quot; 
+      v-model&#x3D;&quot;searchQuery&quot;
+    &#x2F;&gt;
+    &lt;p&gt;当前搜索: &#123;&#123; searchQuery &#125;&#125;&lt;&#x2F;p&gt;
+    &lt;p&gt;搜索结果将在您停止输入后显示&lt;&#x2F;p&gt;
+    &lt;div v-if&#x3D;&quot;isSearching&quot;&gt;搜索中...&lt;&#x2F;div&gt;
+    &lt;ul v-else-if&#x3D;&quot;searchResults.length&quot;&gt;
+      &lt;li v-for&#x3D;&quot;(result, index) in searchResults&quot; :key&#x3D;&quot;index&quot;&gt;
+        &#123;&#123; result &#125;&#125;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p v-else-if&#x3D;&quot;searchQuery&quot;&gt;无搜索结果&lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; customRef, ref &#125; from &#39;vue&#39;
+
+&#x2F;&#x2F; 创建一个带防抖功能的ref
+function useDebouncedRef(value, delay &#x3D; 500) &#123;
+  let timeout
+  return customRef((track, trigger) &#x3D;&gt; &#123;
+    return &#123;
+      get() &#123;
+        &#x2F;&#x2F; 追踪依赖
+        track()
+        return value
+      &#125;,
+      set(newValue) &#123;
+        &#x2F;&#x2F; 清除之前的定时器
+        clearTimeout(timeout)
+        &#x2F;&#x2F; 设置新的定时器，延迟触发更新
+        timeout &#x3D; setTimeout(() &#x3D;&gt; &#123;
+          value &#x3D; newValue
+          &#x2F;&#x2F; 触发更新
+          trigger()
+        &#125;, delay)
+      &#125;
+    &#125;
+  &#125;)
+&#125;
+
+&#x2F;&#x2F; 使用自定义的防抖ref
+const searchQuery &#x3D; useDebouncedRef(&#39;&#39;)
+const isSearching &#x3D; ref(false)
+const searchResults &#x3D; ref([])
+
+&#x2F;&#x2F; 监听searchQuery的变化
+watch(searchQuery, async (newQuery) &#x3D;&gt; &#123;
+  if (newQuery.trim()) &#123;
+    isSearching.value &#x3D; true
+    &#x2F;&#x2F; 模拟API搜索
+    try &#123;
+      await new Promise(resolve &#x3D;&gt; setTimeout(resolve, 1000))
+      &#x2F;&#x2F; 模拟搜索结果
+      searchResults.value &#x3D; [
+        &#96;关于 &quot;$&#123;newQuery&#125;&quot; 的结果 1&#96;,
+        &#96;关于 &quot;$&#123;newQuery&#125;&quot; 的结果 2&#96;,
+        &#96;关于 &quot;$&#123;newQuery&#125;&quot; 的结果 3&#96;
+      ]
+    &#125; catch (error) &#123;
+      console.error(&#39;搜索出错:&#39;, error)
+      searchResults.value &#x3D; []
+    &#125; finally &#123;
+      isSearching.value &#x3D; false
+    &#125;
+  &#125; else &#123;
+    searchResults.value &#x3D; []
+  &#125;
+&#125;)
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h2><h3 id="Teleport"><a href="#Teleport" class="headerlink" title="Teleport"></a>Teleport</h3><p><strong>技术解释</strong>：Teleport是一个内置组件，允许将组件的一部分DOM”传送”到组件DOM层次结构之外的DOM节点中。</p>
+<p><strong>生活案例</strong>：想象一个购物网站的客服聊天窗口。虽然聊天功能逻辑属于产品页面组件，但聊天窗口需要固定在屏幕右下角，不受页面滚动影响。Teleport就像一个传送门，让聊天窗口的UI可以”传送”到页面底部，而逻辑仍留在原组件中。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div class&#x3D;&quot;product-page&quot;&gt;
+    &lt;h1&gt;产品详情: 智能手表&lt;&#x2F;h1&gt;
+    &lt;div class&#x3D;&quot;product-info&quot;&gt;
+      &lt;img src&#x3D;&quot;&#x2F;watch.jpg&quot; alt&#x3D;&quot;智能手表&quot; &#x2F;&gt;
+      &lt;p&gt;价格: ¥1299&lt;&#x2F;p&gt;
+      &lt;button @click&#x3D;&quot;showChat &#x3D; true&quot;&gt;联系客服&lt;&#x2F;button&gt;
+    &lt;&#x2F;div&gt;
+    
+    &lt;!-- 使用Teleport将聊天窗口传送到body底部 --&gt;
+    &lt;teleport to&#x3D;&quot;body&quot;&gt;
+      &lt;div v-if&#x3D;&quot;showChat&quot; class&#x3D;&quot;chat-window&quot;&gt;
+        &lt;div class&#x3D;&quot;chat-header&quot;&gt;
+          &lt;h3&gt;客服中心&lt;&#x2F;h3&gt;
+          &lt;button @click&#x3D;&quot;showChat &#x3D; false&quot;&gt;关闭&lt;&#x2F;button&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div class&#x3D;&quot;chat-messages&quot;&gt;
+          &lt;p class&#x3D;&quot;message system&quot;&gt;客服小王为您服务&lt;&#x2F;p&gt;
+          &lt;p class&#x3D;&quot;message incoming&quot;&gt;有什么可以帮您的吗？&lt;&#x2F;p&gt;
+          &lt;p v-if&#x3D;&quot;userMessage&quot; class&#x3D;&quot;message outgoing&quot;&gt;
+            &#123;&#123; userMessage &#125;&#125;
+          &lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div class&#x3D;&quot;chat-input&quot;&gt;
+          &lt;input 
+            v-model&#x3D;&quot;newMessage&quot; 
+            @keyup.enter&#x3D;&quot;sendMessage&quot;
+            placeholder&#x3D;&quot;输入消息...&quot; 
+          &#x2F;&gt;
+          &lt;button @click&#x3D;&quot;sendMessage&quot;&gt;发送&lt;&#x2F;button&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;teleport&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;
+
+const showChat &#x3D; ref(false)
+const newMessage &#x3D; ref(&#39;&#39;)
+const userMessage &#x3D; ref(&#39;&#39;)
+
+function sendMessage() &#123;
+  if (newMessage.value.trim()) &#123;
+    userMessage.value &#x3D; newMessage.value
+    newMessage.value &#x3D; &#39;&#39;
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;
+
+&lt;style scoped&gt;
+.product-page &#123;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+&#125;
+
+&#x2F;* 聊天窗口样式 *&#x2F;
+.chat-window &#123;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+&#125;
+
+.chat-header &#123;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f0f0f0;
+&#125;
+
+.chat-messages &#123;
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+&#125;
+
+.message &#123;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+&#125;
+
+.system &#123;
+  text-align: center;
+  color: #888;
+&#125;
+
+.incoming &#123;
+  background: #f0f0f0;
+  align-self: flex-start;
+&#125;
+
+.outgoing &#123;
+  background: #e3f2fd;
+  align-self: flex-end;
+  text-align: right;
+&#125;
+
+.chat-input &#123;
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+&#125;
+
+.chat-input input &#123;
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+&#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Suspense"><a href="#Suspense" class="headerlink" title="Suspense"></a>Suspense</h3><p><strong>技术解释</strong>：Suspense是一个内置组件，用于协调对异步依赖的处理，可以在等待异步组件时显示加载状态。</p>
+<p><strong>生活案例</strong>：想象一个在线电影平台。当用户点击观看电影时，需要等待视频加载完成。Suspense就像一个耐心的影院经理，在视频加载期间显示”加载中”的画面，等视频准备好后再开始播放。</p>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div class&#x3D;&quot;movie-platform&quot;&gt;
+    &lt;h1&gt;在线电影平台&lt;&#x2F;h1&gt;
+    &lt;div class&#x3D;&quot;movie-list&quot;&gt;
+      &lt;div 
+        v-for&#x3D;&quot;movie in movies&quot; 
+        :key&#x3D;&quot;movie.id&quot; 
+        class&#x3D;&quot;movie-card&quot; 
+        @click&#x3D;&quot;selectMovie(movie)&quot;
+      &gt;
+        &lt;img :src&#x3D;&quot;movie.poster&quot; :alt&#x3D;&quot;movie.title&quot; &#x2F;&gt;
+        &lt;h2&gt;&#123;&#123; movie.title &#125;&#125;&lt;&#x2F;h2&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    
+    &lt;div v-if&#x3D;&quot;selectedMovie&quot; class&#x3D;&quot;movie-player&quot;&gt;
+      &lt;h2&gt;&#123;&#123; selectedMovie.title &#125;&#125;&lt;&#x2F;h2&gt;
+      &lt;Suspense&gt;
+        &lt;template #default&gt;
+          &lt;video-player :src&#x3D;&quot;selectedMovie.video&quot; &#x2F;&gt;
+        &lt;&#x2F;template&gt;
+        &lt;template #fallback&gt;
+          &lt;div class&#x3D;&quot;loading&quot;&gt;视频加载中...&lt;&#x2F;div&gt;
+        &lt;&#x2F;template&gt;
+      &lt;&#x2F;Suspense&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;
+import VideoPlayer from &#39;.&#x2F;VideoPlayer.vue&#39;
+
+const movies &#x3D; ref([
+  &#123; id: 1, title: &#39;肖申克的救赎&#39;, poster: &#39;&#x2F;poster1.jpg&#39;, video: &#39;&#x2F;video1.mp4&#39; &#125;,
+  &#123; id: 2, title: &#39;阿甘正传&#39;, poster: &#39;&#x2F;poster2.jpg&#39;, video: &#39;&#x2F;video2.mp4&#39; &#125;,
+  &#123; id: 3, title: &#39;霸王别姬&#39;, poster: &#39;&#x2F;poster3.jpg&#39;, video: &#39;&#x2F;video3.mp4&#39; &#125;
+])
+
+const selectedMovie &#x3D; ref(null)
+
+function selectMovie(movie) &#123;
+  selectedMovie.value &#x3D; movie
+&#125;
+&lt;&#x2F;script&gt;
+
+&lt;style scoped&gt;
+.movie-platform &#123;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+&#125;
+
+.movie-list &#123;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+&#125;
+
+.movie-card &#123;
+  width: 300px;
+  margin-bottom: 20px;
+  cursor: pointer;
+&#125;
+
+.movie-player &#123;
+  margin-top: 20px;
+&#125;
+
+.loading &#123;
+  text-align: center;
+  font-size: 20px;
+  color: #888;
+&#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="高频面试题解析"><a href="#高频面试题解析" class="headerlink" title="高频面试题解析"></a>高频面试题解析</h3><h4 id="1-Vue3中的响应式原理是什么？"><a href="#1-Vue3中的响应式原理是什么？" class="headerlink" title="1. Vue3中的响应式原理是什么？"></a>1. Vue3中的响应式原理是什么？</h4><p><strong>技术解释</strong>：Vue3的响应式原理基于ES6的Proxy，能够直接监听对象和数组的变化。当数据发生变化时，Vue会自动更新相关的DOM，保持UI和数据的同步。</p>
+<p><strong>生活案例</strong>：想象一个智能家居系统。当你调整温度设定（数据变化）时，空调会自动响应并调整工作模式（UI更新）。Vue3的响应式系统就像这个智能家居的控制中心，监测所有设定的变化并通知相关设备做出反应。</p>
+<h4 id="2-Vue3中的组件通信方式有哪些？"><a href="#2-Vue3中的组件通信方式有哪些？" class="headerlink" title="2. Vue3中的组件通信方式有哪些？"></a>2. Vue3中的组件通信方式有哪些？</h4><p><strong>技术解释</strong>：Vue3中的组件通信方式包括props和emit、v-model、$refs和$parent、provide/inject、$attrs和插槽系统。</p>
+<p><strong>生活案例</strong>：想象一个家族WhatsApp群组。家族长辈（祖先组件）在群里发布重要信息（provide数据），所有家族成员（后代组件）无论层级关系如何，都能直接接收到这些信息（inject数据），而不需要通过中间人传话。</p>
+<h4 id="3-Vue3中的组合式API是什么？"><a href="#3-Vue3中的组合式API是什么？" class="headerlink" title="3. Vue3中的组合式API是什么？"></a>3. Vue3中的组合式API是什么？</h4><p><strong>技术解释</strong>：Vue3中的组合式API是一组基于函数的API，允许在不使用选项式API的情况下组织和重用组件逻辑。它包括ref、reactive、computed、watch、生命周期钩子等函数。</p>
+<p><strong>生活案例</strong>：想象一个智能家居系统。组合式API就像一个工具箱，里面有各种工具（函数），你可以根据需要选择和组合使用，构建出不同的智能功能。</p>
+<h4 id="4-Vue3中的Teleport是什么？"><a href="#4-Vue3中的Teleport是什么？" class="headerlink" title="4. Vue3中的Teleport是什么？"></a>4. Vue3中的Teleport是什么？</h4><p><strong>技术解释</strong>：Teleport是一个内置组件，允许将组件的一部分DOM”传送”到组件DOM层次结构之外的DOM节点中。</p>
+<p><strong>生活案例</strong>：想象一个购物网站的客服聊天窗口。虽然聊天功能逻辑属于产品页面组件，但聊天窗口需要固定在屏幕右下角，不受页面滚动影响。Teleport就像一个传送门，让聊天窗口的UI可以”传送”到页面底部，而逻辑仍留在原组件中。</p>
+<h4 id="5-Vue3中的Suspense是什么？"><a href="#5-Vue3中的Suspense是什么？" class="headerlink" title="5. Vue3中的Suspense是什么？"></a>5. Vue3中的Suspense是什么？</h4><p><strong>技术解释</strong>：Suspense是一个内置组件，用于协调对异步依赖的处理，可以在等待异步组件时显示加载状态。</p>
+<p><strong>生活案例</strong>：想象一个在线电影平台。当用户点击观看电影时，需要等待视频加载完成。Suspense就像一个耐心的影院经理，在视频加载期间显示”加载中”的画面，等视频准备好后再开始播放。</p>
+
     </div>
 
     
