@@ -252,7 +252,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-10 17:03:20" itemprop="dateModified" datetime="2025-03-10T17:03:20+08:00">2025-03-10</time>
+      <time title="修改时间：2025-03-31 18:08:02" itemprop="dateModified" datetime="2025-03-31T18:08:02+08:00">2025-03-31</time>
     </span>
 
   
@@ -2901,7 +2901,9 @@
 <h2 id="长度属性"><a href="#长度属性" class="headerlink" title="长度属性"></a>长度属性</h2><p><img src="/2024/10/06/helloweb/image-20250307091842508.png" alt="image-20250307091842508"></p>
 <h2 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h2><p><img src="/2024/10/06/helloweb/image-20250307092743743.png" alt="image-20250307092743743"></p>
 <h2 id="resize"><a href="#resize" class="headerlink" title="resize"></a>resize</h2><p><img src="/2024/10/06/helloweb/image-20250307093209630.png" alt="image-20250307093209630"></p>
-<h2 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h2><p><img src="/2024/10/06/helloweb/image-20250307094514573.png" alt="image-20250307094514573"></p>
+<h2 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h2><pre class="line-numbers language-none"><code class="language-none">box-shadow: 0px 0px 20px black;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2024/10/06/helloweb/image-20250307094514573.png" alt="image-20250307094514573"></p>
 <p><img src="/2024/10/06/helloweb/image-20250307094547447.png" alt="image-20250307094547447"></p>
 <h2 id="opacity"><a href="#opacity" class="headerlink" title="opacity"></a>opacity</h2><p><img src="/2024/10/06/helloweb/image-20250307095723700.png" alt="image-20250307095723700"></p>
 <h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p><img src="/2024/10/06/helloweb/image-20250307115143226.png" alt="image-20250307115143226"></p>
@@ -5917,7 +5919,7 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-29 20:19:38" itemprop="dateModified" datetime="2025-03-29T20:19:38+08:00">2025-03-29</time>
+      <time title="修改时间：2025-04-03 15:23:23" itemprop="dateModified" datetime="2025-04-03T15:23:23+08:00">2025-04-03</time>
     </span>
 
   
@@ -5931,14 +5933,18 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Shortcut-keys"><a href="#Shortcut-keys" class="headerlink" title="Shortcut keys"></a>Shortcut keys</h2><ul>
-<li><code>alt + 1 </code></li>
+<li>Ctrl + Alt + 左箭头：返回到上一个光标位置</li>
+<li> <code>alt + 1 </code></li>
 <li>标记书签<code>ctrl + F11</code></li>
+<li>按 Shift + F11 查看所有书签并快速跳转</li>
 <li>复制全类名<code>ctrl + shift + alt + c</code></li>
 <li>分屏<code>shift + enter</code></li>
 <li>语句块<code>ctrl + alt + t</code></li>
+<li>按快捷键 Ctrl + E 打开“最近文件”列表</li>
+<li>移到方法结尾<code>Ctrl + ]</code></li>
 </ul>
 <h2 id="IDEA热部署"><a href="#IDEA热部署" class="headerlink" title="IDEA热部署"></a>IDEA热部署</h2><ul>
-<li><p>运行时自动编译<img src="/2024/01/23/javaee/image-20241220170347257.png" alt="image-20241220170347257"><img src="/2024/01/23/javaee/image-20241220170214845.png" alt="image-20241220170214845"><img src="/2024/01/23/javaee/image-20241220170454739.png" alt="image-20241220170454739"></p>
+<li><p>运行时自动编译<img src="/2024/01/23/javaee/.%5Cjavaee%5Cimage-20241220170347257.png" alt="image-20241220170347257"><img src="/2024/01/23/javaee/image-20241220170214845.png" alt="image-20241220170214845"><img src="/2024/01/23/javaee/image-20241220170454739.png" alt="image-20241220170454739"></p>
 </li>
 <li><p>引入<code>devtools</code>热部署</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--devtools热部署--></span>
@@ -12609,6 +12615,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
     &#125;)
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>域名不同需要解决跨域,可以配置一个代理让前端发起的业务请求通过代理请求到后端的服务器上。根目录下创建<code>vue.config.js</code></p>
+<p>代理配置的工作方式是：前端请求先到达前端开发服务器，然后由开发服务器转发到后端服务器。这个过程对前端代码是透明的，您的代码仍然发送请求到 /api/blog/tags，但实际上这个请求会被代理到 <a target="_blank" rel="noopener" href="http://localhost:8000/blog/tags%E3%80%82">http://localhost:8000/blog/tags。</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// module相当于当前的js</span>
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">// 配置代理信息。前端请求时url带该前缀时走代理请求到target指定的后端服务器上，并且请求路径中的该前缀被去掉，还原成后端接口原来的路径。</span>
@@ -12618,11 +12625,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 <span class="token literal-property property">target</span><span class="token operator">:</span><span class="token string">'http://127.0.0.1:8000/'</span><span class="token punctuation">,</span>
                 <span class="token literal-property property">pathRewrite</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
                     <span class="token string-property property">'^/api'</span><span class="token operator">:</span><span class="token string">''</span>
-                <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">changeOrigin</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">logLevel</span><span class="token operator">:</span> <span class="token string">'debug'</span>
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/2024/01/23/javaee/image-20250327191219017.png" alt="image-20250327191219017"></p>
 </li>
