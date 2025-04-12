@@ -86,7 +86,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">41</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">42</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +157,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -207,6 +207,657 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Luotao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">每一个辉煌瞬间的背后都是无数个平凡枯燥的片断支撑起来的。</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">Spring基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-29 09:15:19" itemprop="dateCreated datePublished" datetime="2021-11-29T09:15:19+08:00">2021-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-02 18:07:07" itemprop="dateModified" datetime="2021-12-02T18:07:07+08:00">2021-12-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Ioc"><a href="#Ioc" class="headerlink" title="Ioc"></a>Ioc</h1><p>将目标对象的创建的控制权由最初的消费者转嫁给一个中间的角色,这个中间角色负责将对象创建并集中管理,对集中管理的容器叫Ioc容器，顾客在获取对象的过程中，不再对对象直接操作，而是通过Ioc容器提取，拿到所需要的对象。</p>
+<ul>
+<li><p>Ioc控制反转, inverse of control是一种<strong>宏观的设计理念</strong>。</p>
+</li>
+<li><p>由代理人来创建与管理对象，消费者通过代理人来获取对象。</p>
+</li>
+<li><p>loc的目的是降低对象之间直接耦合（通过代理人解耦，对象之间可以灵活变化）；加入IoC容器将对象统一管理，让对象关联变为弱耦合。</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129100634336.png" alt="image-20211129100634336"></p>
+</li>
+<li><p>在生活中的典型体现: </p>
+<p>1.如何在众多品种中挑选出最脆甜的苹果呢?</p>
+<p>只需要问老板（代理人）哪些苹果（对象）是最脆甜的,听取老板的采购意见,将获取对象的权力交给水果老板,有老板做出决定,如果老板说这种苹果也不错,那么这种苹果极有可能出现在我的采购清单里。</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129093609962.png" alt="image-20211129093609962"></p>
+</li>
+</ul>
+<p>​        2.在一个陌生城市安居，大多数人都回去找中介，而不是房东，因为中介有足够多的房源，足够多的选择，我们可以根据中介提供的信息选择自己心仪的，虽然会收取中介费，但避免了许多麻烦，节约了时间成本。</p>
+<h1 id="DI依赖注入"><a href="#DI依赖注入" class="headerlink" title="DI依赖注入"></a>DI依赖注入</h1><ul>
+<li>Dependency injection是具体技术实现，是<strong>微观实现</strong>。</li>
+<li>DI在不同语言中使用的具体技术是不一样的，在Java中实现DI是基于Java的<strong>反射技术</strong>。</li>
+</ul>
+<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211130104735708.png" alt="image-20211130104735708"></p>
+<ul>
+<li><p>Spring Framework的核心是IoC容器与AOP面向切面编程</p>
+</li>
+<li><p>spring IoC负责创建与管理系统对象,并在此基础上扩展功能</p>
+</li>
+<li><p>Spring生态体系</p>
+</li>
+</ul>
+<h1 id="Spring-IoC"><a href="#Spring-IoC" class="headerlink" title="Spring IoC"></a>Spring IoC</h1><p>运行时运用Java反射技术动态的将对象实例化以及对对象进行注入</p>
+<p>职责</p>
+<ul>
+<li>对象的控制权交由第三方统一管理(IoC控制反转)</li>
+<li>利用Java反射技术实现运行时对象创建与关联(DI依赖注入)</li>
+<li>基于配置提高应用程序的可维护性与扩展性</li>
+</ul>
+<h1 id="Spring-IoC初体验"><a href="#Spring-IoC初体验" class="headerlink" title="Spring IoC初体验"></a>Spring IoC初体验</h1><p>妈妈在早餐后给三个孩子分发餐后水果,</p>
+<p>盘子里由三个苹果: 红富士/青苹果/金帅,</p>
+<p>孩子们口味不同: 莉莉喜欢甜的/安迪喜欢酸的/露娜喜欢软软的,</p>
+<p>孩子们如何得到喜欢的苹果?</p>
+<p><strong>(一)使用传统的编码方式</strong></p>
+<ul>
+<li>新建maven工程</li>
+</ul>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129111517457.png" alt="image-20211129111517457"></p>
+<ul>
+<li><p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129125924501.png" alt="image-20211129125924501"></p>
+</li>
+<li><p>Apple类</p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>entity</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Apple</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> title<span class="token punctuation">;</span> <span class="token comment">// 品种</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> color<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> origin<span class="token punctuation">;</span> <span class="token comment">// 产地</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Apple</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Apple</span><span class="token punctuation">(</span><span class="token class-name">String</span> title<span class="token punctuation">,</span> <span class="token class-name">String</span> color<span class="token punctuation">,</span> <span class="token class-name">String</span> origin<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> title<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>origin <span class="token operator">=</span> origin<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> title<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token class-name">String</span> title<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> title<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> color<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setColor</span><span class="token punctuation">(</span><span class="token class-name">String</span> color<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getOrigin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> origin<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOrigin</span><span class="token punctuation">(</span><span class="token class-name">String</span> origin<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>origin <span class="token operator">=</span> origin<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>Child类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>entity</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Apple</span> apple<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">Apple</span> apple<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>apple <span class="token operator">=</span> apple<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Apple</span> <span class="token function">getApple</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> apple<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setApple</span><span class="token punctuation">(</span><span class="token class-name">Apple</span> apple<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>apple <span class="token operator">=</span> apple<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token operator">+</span> <span class="token string">"吃到了"</span><span class="token operator">+</span> apple<span class="token punctuation">.</span><span class="token function">getOrigin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">"种植的"</span><span class="token operator">+</span> apple<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>Application类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>entity<span class="token punctuation">.</span></span><span class="token class-name">Apple</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>entity<span class="token punctuation">.</span></span><span class="token class-name">Child</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Application</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Apple</span> apple1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Apple</span><span class="token punctuation">(</span><span class="token string">"红富士"</span><span class="token punctuation">,</span> <span class="token string">"红色"</span> <span class="token punctuation">,</span><span class="token string">"欧洲"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Apple</span> apple2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Apple</span><span class="token punctuation">(</span><span class="token string">"青苹果"</span><span class="token punctuation">,</span> <span class="token string">"绿色"</span> <span class="token punctuation">,</span><span class="token string">"中亚"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Apple</span> apple3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Apple</span><span class="token punctuation">(</span><span class="token string">"金帅"</span><span class="token punctuation">,</span> <span class="token string">"黄色"</span> <span class="token punctuation">,</span><span class="token string">"中国"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> lily <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token string">"莉莉"</span><span class="token punctuation">,</span> apple1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> andy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token string">"安迪"</span><span class="token punctuation">,</span> apple2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> luna <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token string">"露娜"</span><span class="token punctuation">,</span> apple3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lily<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        andy<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        luna<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>运行Application</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129143658399.png" alt="image-20211129143658399"></p>
+</li>
+<li><p>这种传统的编码方式一旦涉及到代码的修改就必须要重新上线,这不利于软件的维护性和可扩展性,根本原因就是运用了new关键字，在编译期间就将对象与对象之间进行了强制绑定。那如何解决这些问题呢？这时Spring IoC容器就应运而生了，通过配置的形式完成对象的实例化以及对象和对象之间的依赖关系。</p>
+</li>
+</ul>
+<p><strong>（二）引入Spring IoC容器</strong></p>
+<ul>
+<li><p>pom.xml</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--    添加阿里云的镜像,可以大幅提高maven远程下载的速度--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repositories</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repository</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--           阿里云对外开放的公共仓库,可以有效的提高组件下载速度--></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>https://maven.aliyun.com/repository/public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repository</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repositories</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--            机构名字--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--        使用Spring IoC容器最小的依赖范围--></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-context<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.2.6.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129145601026.png" alt="image-20211129145601026"></p>
+</li>
+<li><p>创建Spring IoC核心配置文件applicationContext.xml</p>
+<p>所有对象的创建以及关联的设置都是在这个文件中进行的</p>
+<p>访问<a target="_blank" rel="noopener" href="https://spring.io/">Spring官网</a></p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151333399.png" alt="image-20211129151333399"></p>
+</li>
+</ul>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151358092.png" alt="image-20211129151358092"></p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151456767.png" alt="image-20211129151456767"></p>
+<p>复制作为文档说明部分,schema规定了在当前xml中可以书写哪些标签</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151626183.png" alt="image-20211129151626183"></p>
+<ul>
+<li><p>粘贴到applicationContext.xml中</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129152300940.png" alt="image-20211129152300940"></p>
+</li>
+<li><p>有三种苹果,需要使用bean创建三个对象,bean是用于实例化Java对象的标签。</p>
+</li>
+</ul>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--    在IoC容器启动时,自动由Spring实例化Apple对象,取名sweetApple放入到容器中--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sweetApple<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Apple<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>红富士<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>红色<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>origin<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>欧洲<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--酸苹果--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sourApple<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Apple<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>青苹果<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>绿色<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>origin<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>中亚<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--软苹果--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>softApple<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Apple<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>金帅<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>黄色<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>origin<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>中国<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>ioc这个包下创建SpringApplication类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>entity<span class="token punctuation">.</span></span><span class="token class-name">Apple</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span></span><span class="token class-name">ApplicationContext</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>support<span class="token punctuation">.</span></span><span class="token class-name">ClassPathXmlApplicationContext</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringApplication</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//        启动IoC容器后才能对刚才配置的bean实例化</span>
+        <span class="token comment">// 创建Spring IoC容器，加载指定的xml文件来初始化IoC容器,classpath:代表在当前类路径下查找applicationContext.xml文件。此时context指代IoC容器</span>
+        <span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"classpath:applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/**
+        *使用getBean()将对应标签的苹果从容器中提取出来,Apple.class是提取的类型
+        *也可以写成Apple sweetApple = (Apple)context.getBean("sweetApple");
+        object类型强制转换为Apple类型
+        */</span>
+        <span class="token class-name">Apple</span> sweetApple <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"sweetApple"</span><span class="token punctuation">,</span> <span class="token class-name">Apple</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//打印输出苹果的品种</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sweetApple<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>运行SpringApplication</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129161941253.png" alt="image-20211129161941253"></p>
+</li>
+<li><p>到applicationContext.xml创建三个Child对象</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--    创建三个Child对象--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lily<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>莉莉<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token comment">&lt;!--        IoC容器运行后自动通过反射技术将容器中的sweetApple的apple对象赋予到lily的apple属性中--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sweetApple<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>andy<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>安迪<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sourApple<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>luna<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>露娜<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>softApple<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>到SpringApplication中从IoC容器中提取三个孩子对象</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//        从IoC容器中提取三个孩子对象</span>
+        <span class="token class-name">Child</span> lily <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"lily"</span><span class="token punctuation">,</span> <span class="token class-name">Child</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lily<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> andy <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"andy"</span><span class="token punctuation">,</span> <span class="token class-name">Child</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        andy<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Child</span> luna <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"luna"</span><span class="token punctuation">,</span> <span class="token class-name">Child</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        luna<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>运行SpringApplication</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129170119981.png" alt="image-20211129170119981"></p>
+</li>
+</ul>
+<h1 id="配置Bean的三种方式"><a href="#配置Bean的三种方式" class="headerlink" title="配置Bean的三种方式"></a>配置Bean的三种方式</h1><p><strong>基于XML配置Bean</strong></p>
+<p>上面例子的applicationContext.xml</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建Spring IoC容器，加载指定的xml文件来初始化IoC容器,classpath:代表在当前类路径下查找applicationContext.xml文件。此时context指代IoC容器,使用ApplicationContext的实现类ClassPathXmlApplicationContext来加载配置文件</span>
+        <span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"classpath:applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>基于构造方法实例化对象</p>
+<ul>
+<li><p>bean标签默认通过默认构造方法创建对象</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>    bean标签默认通过默认构造方法创建对象<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"apple1"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.kuroneko.spring.ioc.entity.Apple"</span><span class="token operator">></span>
+        
+    <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">public Apple() &#123;
+    System.out.println(&quot;Apple对象已创建,&quot;+ this);
+&#125;
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>利用构造方法参数名实例化,使用constructor-arg name=”构造方法参数名” value=””</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">    <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"apple2"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.kuroneko.spring.ioc.entity.Apple"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>        没有constructor<span class="token operator">-</span>arg则代表调用默认构造方法实例化<span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg name<span class="token operator">=</span><span class="token string">"title"</span> value<span class="token operator">=</span><span class="token string">"红富士"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg name<span class="token operator">=</span><span class="token string">"origin"</span> value<span class="token operator">=</span><span class="token string">"欧洲"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg name<span class="token operator">=</span><span class="token string">"color"</span> value<span class="token operator">=</span><span class="token string">"红色"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Apple</span><span class="token punctuation">(</span><span class="token class-name">String</span> title<span class="token punctuation">,</span> <span class="token class-name">String</span> color<span class="token punctuation">,</span> <span class="token class-name">String</span> origin<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"通过带参构造方法创建对象,"</span><span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> title<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>origin <span class="token operator">=</span> origin<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>利用构造方法参数位置实例化</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">    <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"apple3"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.kuroneko.spring.ioc.entity.Apple"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>     利用构造方法参数位置实现对象实例化<span class="token operator">--</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg index<span class="token operator">=</span><span class="token string">"0"</span> value<span class="token operator">=</span><span class="token string">"红富士"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg index<span class="token operator">=</span><span class="token string">"1"</span> value<span class="token operator">=</span><span class="token string">"欧洲"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg index<span class="token operator">=</span><span class="token string">"2"</span> value<span class="token operator">=</span><span class="token string">"红色"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>工厂模式</p>
+<p>用途 : 隐藏创建类的细节,通过一个额外的工厂类来组织创建我们需要的对象。</p>
+<ul>
+<li><p>基于静态工厂实例化对象</p>
+<ul>
+<li><p>ioc包下创建factory用于保存工厂类，然后创建AppleStaticFactory类代表苹果的静态工厂</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">package com.kuroneko.spring.ioc.factory;
+
+import com.kuroneko.spring.ioc.entity.Apple;
+
+public class AppleStaticFactory &#123;
+
+&#x2F;**
+ * 静态工厂通过静态方法创建对象,隐藏创建对象的细节,static意味着这个方法是属于工厂类的
+ * 创建static的 甜苹果对象
+ *&#x2F;
+    public static Apple createSweetApple()&#123;
+        Apple apple &#x3D;new Apple();
+        apple.setTitle(&quot;红富士&quot;);
+        apple.setOrigin(&quot;欧洲&quot;);
+        apple.setColor(&quot;红色&quot;);
+        return apple;
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--    利用静态工厂获取对象--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple4<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.factory.AppleStaticFactory<span class="token punctuation">"</span></span>
+          <span class="token attr-name">factory-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>createSweetApple<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>基于工厂实例方法实例化对象</p>
+<p>工厂实例方法创建对象是指IoC容器对工厂类进行实例化并调用对应的实例方法创建对象的过程</p>
+<ul>
+<li><p>factory包下创建AppleFactoryInstance类</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">package com.kuroneko.spring.ioc.factory;
+
+import com.kuroneko.spring.ioc.entity.Apple;
+
+&#x2F;**
+ * 工厂实例方法创建对象是指IoC容器对工厂类进行实例化并调用对应的实例方法创建对象的过程
+ *不用static关键字意味着这个方法是属于这个工厂对象的,而不是属于工厂类的
+ *&#x2F;
+public class AppleFactoryInstance &#123;
+    public Apple createSweetApple() &#123;
+        Apple apple &#x3D; new Apple();
+        apple.setTitle(&quot;红富士&quot;);
+        apple.setOrigin(&quot;欧洲&quot;);
+        apple.setColor(&quot;红色&quot;);
+        return apple;
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--    利用工厂实例方法获取对象--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>factoryInstance<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.factory.AppleFactoryInstance<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple5<span class="token punctuation">"</span></span> <span class="token attr-name">factory-bean</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>factoryInstance<span class="token punctuation">"</span></span> <span class="token attr-name">factory-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>createSweetApple<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">      <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>扩展</p>
+<p>bean id与name属性</p>
+<ul>
+<li><p>都是设置对象在IoC容器中唯一标识</p>
+</li>
+<li><p>两者在同一个配置文件中都不允许重复出现</p>
+</li>
+<li><p>多个配置文件运行重复,新对象会覆盖旧对象</p>
+</li>
+<li><p>驼峰命名书写</p>
+</li>
+<li><p>name可以一次性设置多个标识,而id只能设置一个,如 bean name=”apple2, apple7”</p>
+</li>
+<li><p>在没有Id与name的bean默认使用类名全称作为bean标识</p>
+</li>
+</ul>
+<p><strong>基于注解配置Bean</strong></p>
+<p><strong>基于Java代码配置Bean</strong></p>
+<h1 id="bean-scope属性详解"><a href="#bean-scope属性详解" class="headerlink" title="bean scope属性详解"></a>bean scope属性详解</h1><p>用于决定对象何时被创建与作用范围</p>
+<p>配置将影响容器内对象的数量</p>
+<p>默认值singleton(单例),指全局共享同一个对象实例</p>
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211130162157940.png" alt="image-20211130162157940"></p>
+<ul>
+<li><p>singleton(单例模式)</p>
+<p>singleton在容器是单例多线程执行，存在线程安全风险</p>
+<p>为什么spring默认使用单例模式?</p>
+<p>如果每一次在需要某个对象的时候都去创建它,会额外占用内存空间和cpu的计算资源,频繁创建对象会带来的资源损耗,使用单例模式可以有效的解决创建对象时占用资源的问题,<strong>在IoC启动时会自动的默认实例化对象</strong>。</p>
+<ul>
+<li><p>ioc包下创建dao.UserDao</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserDao</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">UserDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"UserDao已创建:"</span><span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>ioc包下创建service.UserService</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>service</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>kuroneko<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>ioc<span class="token punctuation">.</span>dao<span class="token punctuation">.</span></span><span class="token class-name">UserDao</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserService</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">UserDao</span> userDao<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">UserService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"UserService已创建:"</span><span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">UserDao</span> <span class="token function">getUserDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> userDao<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserDao</span><span class="token punctuation">(</span><span class="token class-name">UserDao</span> userDao<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"调用setUserDao"</span><span class="token operator">+</span> userDao<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span>userDao <span class="token operator">=</span> userDao<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>```java</p>
+<bean id="UserDao" class="com.kuroneko.spring.ioc.dao.UserDao" scope="prototype">
+    <bean id="UserService" class="com.kuroneko.spring.ioc.service.UserService">
+        <property name="userDao" ref="UserDao">
+    </property></bean>
+<pre class="line-numbers language-none"><code class="language-none">
+    以上配置在Ioc初始化过程中会产生几个对象呢?
+
+    会创建两个对象,第一个对象是UserService,因为它使用的是单例模式,会在IoC容器初始化过程中创建UserService对象,又由于UserService**引入了UserDao对象**(UserDao在初始化过程中是不存在的)于是容器又对UserDao实例化。
+
+    ![image-20211201162952316](2021-11-29-Spring基础&#x2F;image-20211201162952316.png)
+
+* prototype多例
+
+  **在getBean（）或对象注入时才会实例化对象**
+
+  prototype在容器中多实例，占用更多资源，不存在线程安全问题
+
+* singleton线程安全解决方案
+
+  ![image-20211130165142101](2021-11-29-Spring基础&#x2F;image-20211130165142101.png)
+
+  * 为每一个线程加锁，在设置和读取的过程中，让当前代码处于独占的状态用户2只有当用户1处理完以后才可以继续处理，相当于把多线程并行的运行改为串形的排队执行
+
+  * 为每一个用户都分配一个只属于它自己的对象，各操作各的互不影响，就不会产生信息错乱的问题，创建多个对象的设置放在Spring IoC容器中就称之为prototype多例
+
+    ![image-20211130165601977](2021-11-29-Spring基础&#x2F;image-20211130165601977.png)
+
+![image-20211130165710503](2021-11-29-Spring基础&#x2F;image-20211130165710503.png)
+
+当看到一份配置文件时,你要能马上反应出来,当前的IoC容器在初始化过程中到底实例化了几个对象。
+
+如果在单例模式下，IoC初始化时是按照bean的前后顺序依次进行的，但如果第一个bean增加了prototype，第一个bean并不会在IoC容器初始化自动实例化，而在某一个属性关联到一个多例对象的时候同样会触发实例化对象的操作。
+
+# 单例和多例的使用场景
+
+作为某一个属性，如果在运行过程中它是恒定不变的，那就可以在当前容器中进行单例的设置，如果在运行过程中它在不断的变化，那就使用多例模式
+
+# bean的生命周期
+
+![image-20211201165512806](2021-11-29-Spring基础&#x2F;image-20211201165512806.png)
+
+* init-method
+
+entity包下创建Order菜单类
+
+&#96;&#96;&#96;java
+package com.kuroneko.spring.ioc.entity;
+
+public class Order &#123;
+    private Float price;
+    private Integer quantity;
+    private Float total;
+
+    public Order() &#123;
+        System.out.println(&quot;创建Order对象,&quot; + this);
+    &#125;
+
+    public void init()&#123;
+        System.out.println(&quot;执行init()方法&quot;);
+        total &#x3D; price * quantity;
+    &#125;
+
+    public void pay()&#123;
+        System.out.println(&quot;订单金额为:&quot; + total);
+    &#125;
+
+    public Float getPrice() &#123;
+        return price;
+    &#125;
+
+    public void setPrice(Float price) &#123;
+        System.out.println(&quot;设置price&quot; + price);
+        this.price &#x3D; price;
+    &#125;
+
+    public Integer getQuantity() &#123;
+        return quantity;
+    &#125;
+
+    public void setQuantity(Integer quantity) &#123;
+        System.out.println(&quot;设置quantity&quot; + quantity);
+        this.quantity &#x3D; quantity;
+    &#125;
+
+    public Float getTotal() &#123;
+        return total;
+    &#125;
+
+    public void setTotal(Float total) &#123;
+        this.total &#x3D; total;
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></bean></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>order1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Order<span class="token punctuation">"</span></span> <span class="token attr-name">init-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>init<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>price<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>19.8<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>quantity<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class SpringApplication &#123;
+    public static void main(String[] args) &#123;
+        ApplicationContext context &#x3D; new ClassPathXmlApplicationContext(&quot;classpath:applicationContext.xml&quot;);
+        System.out.println(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;IoC容器已初始化&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
+        Order Order1 &#x3D; context.getBean(&quot;order1&quot;, Order.class);
+        Order1.pay();
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211202145304272.png" alt="image-20211202145304272"></p>
+<ul>
+<li><p>销毁IoC容器</p>
+<p>Order类添加destory方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"释放与订单对象相关的资源"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>order1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.kuroneko.spring.ioc.entity.Order<span class="token punctuation">"</span></span> <span class="token attr-name">init-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>init<span class="token punctuation">"</span></span> <span class="token attr-name">destroy-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>destroy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>price<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>19.8<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>quantity<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+         * registerShutdownHook()用于销毁IoC容器,会自动调用我们在bean中设置的destroy-method方法
+         *  registerShutdownHook()放在了ClassPathXmlApplicationContext这个ApplicationContext的具体实现类中,因此在调用时强制转换回具体的实现类
+         */</span>
+        <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">)</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">registerShutdownHook</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211202152937798.png" alt="image-20211202152937798"></p>
+</li>
+</ul>
+<h1 id="实现极简IoC容器"><a href="#实现极简IoC容器" class="headerlink" title="实现极简IoC容器"></a>实现极简IoC容器</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
