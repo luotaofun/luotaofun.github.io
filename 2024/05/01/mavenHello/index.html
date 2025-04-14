@@ -30,12 +30,17 @@
 <meta property="og:description" content="maven  基于项目对象模型Project Object Model管理项目的构建过程和依赖关系   环境搭建 Maven下载  环境变量 &lt;!--安装目录--&gt; MAVEN_HOME &lt;!--path--&gt; %MAVEN_HOME%\bin 修改settings.xml &lt;!--本地仓库maven_rep--&gt; &lt;localRepository&gt;D:\sof">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20240501172020632.png">
+<meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20250414143623909.png">
+<meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20250414143842126.png">
+<meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20250414144842996.png">
+<meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20250414145041296.png">
+<meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20250414145335734.png">
 <meta property="og:image" content="http://example.com/2024/05/01/mavenHello/20200514101056912.png">
 <meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20241220170347257.png">
 <meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20241220170214845.png">
 <meta property="og:image" content="http://example.com/2024/05/01/mavenHello/image-20241220170454739.png">
 <meta property="article:published_time" content="2024-05-01T08:26:01.000Z">
-<meta property="article:modified_time" content="2024-12-23T05:45:26.614Z">
+<meta property="article:modified_time" content="2025-04-14T06:53:38.843Z">
 <meta property="article:author" content="Luotao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/05/01/mavenHello/image-20240501172020632.png">
@@ -94,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">42</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">43</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -151,7 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#maven"><span class="nav-number">1.</span> <span class="nav-text">maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">IDEA配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEmaven%E5%9C%A8%E4%B8%8D%E8%81%94%E7%BD%91%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">设置maven在不联网的情况下使用本地插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA%E7%83%AD%E9%83%A8%E7%BD%B2"><span class="nav-number">5.</span> <span class="nav-text">IDEA热部署</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#maven"><span class="nav-number">1.</span> <span class="nav-text">maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA%E5%88%9B%E5%BB%BAmaven%E7%9A%84java%E5%B7%A5%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">IDEA创建maven的java工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA%E5%88%9B%E5%BB%BAmaven%E7%9A%84web%E5%B7%A5%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">IDEA创建maven的web工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEmaven%E5%9C%A8%E4%B8%8D%E8%81%94%E7%BD%91%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%8F%92%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">设置maven在不联网的情况下使用本地插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA%E7%83%AD%E9%83%A8%E7%BD%B2"><span class="nav-number">6.</span> <span class="nav-text">IDEA热部署</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -262,7 +267,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-23 13:45:26" itemprop="dateModified" datetime="2024-12-23T13:45:26+08:00">2024-12-23</time>
+      <time title="修改时间：2025-04-14 14:53:38" itemprop="dateModified" datetime="2025-04-14T14:53:38+08:00">2025-04-14</time>
     </span>
 
   
@@ -333,7 +338,20 @@ MAVEN_HOME
 <pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;自动下载缺省或更新配置文件和依赖到本地出库。
 mvn help:system<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
-<h2 id="IDEA配置"><a href="#IDEA配置" class="headerlink" title="IDEA配置"></a>IDEA配置</h2><p><img src="/2024/05/01/mavenHello/image-20240501172020632.png" alt="maven"></p>
+<h2 id="IDEA创建maven的java工程"><a href="#IDEA创建maven的java工程" class="headerlink" title="IDEA创建maven的java工程"></a>IDEA创建maven的java工程</h2><ol>
+<li><p><img src="/2024/05/01/mavenHello/image-20240501172020632.png" alt="maven"></p>
+</li>
+<li><p><img src="/2024/05/01/mavenHello/image-20250414143623909.png" alt="image-20250414143623909"></p>
+</li>
+<li><p><img src="/2024/05/01/mavenHello/image-20250414143842126.png" alt="image-20250414143842126"></p>
+</li>
+</ol>
+<h2 id="IDEA创建maven的web工程"><a href="#IDEA创建maven的web工程" class="headerlink" title="IDEA创建maven的web工程"></a>IDEA创建maven的web工程</h2><ol>
+<li><img src="/2024/05/01/mavenHello/image-20250414144842996.png" alt="image-20250414144842996"></li>
+<li><img src="/2024/05/01/mavenHello/image-20250414145041296.png" alt="image-20250414145041296"></li>
+<li><img src="/2024/05/01/mavenHello/image-20250414145335734.png" alt="image-20250414145335734"></li>
+<li></li>
+</ol>
 <h2 id="设置maven在不联网的情况下使用本地插件"><a href="#设置maven在不联网的情况下使用本地插件" class="headerlink" title="设置maven在不联网的情况下使用本地插件"></a>设置maven在不联网的情况下使用本地插件</h2><p>一般使用maven为我们提供好的骨架时，是需要联网的，配置这个，可以在没有网路的情况下，我们可以正常创建工程，并从之前已经使用过的工程中找到相应的骨架。</p>
 <pre class="line-numbers language-none"><code class="language-none">-DarchetypeCatalog&#x3D;internal<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
