@@ -22,12 +22,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="概述 起源于1995年，主要用于处理网页中的前端验证。   JavaScript基本数据类型学习笔记 📚1. 字符串（String）- 存储文字&#x2F;&#x2F; 创建字符串的方式 let name &#x3D; &quot;小明&quot;;  let greeting &#x3D; 欢迎$&amp;#123;name&amp;#125;; &#x2F;&#x2F; 反引号（可以插入变量） &#x2F;">
+    <meta name="description" content="概述 起源于1995年，主要用于处理网页中的前端验证。  Netscape 与 Sun Microsystems（Java 的拥有者）合作后，将其正式命名为 JavaScript。 这一命名主要是出于营销考虑，借用了当时非常流行的 Java 语言的热度，尽管两者语法和设计思想并不相同。    JavaScript基本数据类型学习笔记 📚1. 字符串（String）- 存储文字&#x2F;&amp;#x2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript">
 <meta property="og:url" content="http://example.com/2025/03/10/JavaScript/index.html">
 <meta property="og:site_name" content="Taoの博客">
-<meta property="og:description" content="概述 起源于1995年，主要用于处理网页中的前端验证。   JavaScript基本数据类型学习笔记 📚1. 字符串（String）- 存储文字&#x2F;&#x2F; 创建字符串的方式 let name &#x3D; &quot;小明&quot;;  let greeting &#x3D; 欢迎$&amp;#123;name&amp;#125;; &#x2F;&#x2F; 反引号（可以插入变量） &#x2F;">
+<meta property="og:description" content="概述 起源于1995年，主要用于处理网页中的前端验证。  Netscape 与 Sun Microsystems（Java 的拥有者）合作后，将其正式命名为 JavaScript。 这一命名主要是出于营销考虑，借用了当时非常流行的 Java 语言的热度，尽管两者语法和设计思想并不相同。    JavaScript基本数据类型学习笔记 📚1. 字符串（String）- 存储文字&#x2F;&amp;#x2">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/03/10/JavaScript/image-20250310180910726.png">
 <meta property="og:image" content="http://example.com/2025/03/10/JavaScript/image-20250312020925534.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="http://example.com/2025/03/10/JavaScript/image-20250317214719665.png">
 <meta property="og:image" content="http://example.com/2025/03/10/JavaScript/image-20250318004002936.png">
 <meta property="article:published_time" content="2025-03-10T09:25:33.000Z">
-<meta property="article:modified_time" content="2025-03-17T17:02:48.150Z">
+<meta property="article:modified_time" content="2025-05-01T07:01:57.948Z">
 <meta property="article:author" content="LuoTao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2025/03/10/JavaScript/image-20250310180910726.png">
@@ -267,7 +267,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-18 01:02:48" itemprop="dateModified" datetime="2025-03-18T01:02:48+08:00">2025-03-18</time>
+      <time title="修改时间：2025-05-01 15:01:57" itemprop="dateModified" datetime="2025-05-01T15:01:57+08:00">2025-05-01</time>
     </span>
 
   
@@ -282,6 +282,10 @@
     <div class="post-body" itemprop="articleBody">
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>起源于1995年，主要用于处理网页中的前端验证。</p>
+<ul>
+<li>Netscape 与 Sun Microsystems（Java 的拥有者）合作后，将其正式命名为 <strong>JavaScript</strong>。</li>
+<li>这一命名主要是出于营销考虑，借用了当时非常流行的 <strong>Java</strong> 语言的热度，尽管两者语法和设计思想并不相同。</li>
+</ul>
 </blockquote>
 <p><img src="/2025/03/10/JavaScript/image-20250310180910726.png" alt="image-20250310180910726"></p>
 <h1 id="JavaScript基本数据类型学习笔记-📚"><a href="#JavaScript基本数据类型学习笔记-📚" class="headerlink" title="JavaScript基本数据类型学习笔记 📚"></a>JavaScript基本数据类型学习笔记 📚</h1><h3 id="1-字符串（String）-存储文字"><a href="#1-字符串（String）-存储文字" class="headerlink" title="1. 字符串（String）- 存储文字"></a>1. 字符串（String）- 存储文字</h3><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 创建字符串的方式

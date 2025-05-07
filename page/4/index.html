@@ -253,7 +253,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-26 09:53:15" itemprop="dateModified" datetime="2024-12-26T09:53:15+08:00">2024-12-26</time>
+      <time title="修改时间：2025-05-05 19:36:45" itemprop="dateModified" datetime="2025-05-05T19:36:45+08:00">2025-05-05</time>
     </span>
 
   
@@ -266,7 +266,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/2024/02/24/mysql/image-20240224151316858.png" alt="数据库管理系统、数据库和表的关系"></p>
+          <h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><blockquote>
+<p>多线程环境下多个锁导致的交叉产生，这种因争夺资源而陷入相互等待的僵局。</p>
+</blockquote>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 查看 InnoDB 存储引擎状态信息的 SQL 命令。该命令输出的内容通常被用来分析数据库性能、事务等待、死锁等问题。DEADLOCKS	最近一次的死锁信息。
+show engine innodb status;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="/2024/02/24/mysql/image-20240224151316858.png" alt="数据库管理系统、数据库和表的关系"></p>
 <ul>
 <li>数据库管理系统 DataBaseSystem 是一套运行在操作系统的软件</li>
 <li>通过文件形式管理数据的文件系统</li>
@@ -1134,7 +1142,7 @@ source 目标路径<span class="token punctuation">;</span><span aria-hidden="tr
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-17 17:59:24" itemprop="dateModified" datetime="2025-04-17T17:59:24+08:00">2025-04-17</time>
+      <time title="修改时间：2025-05-04 23:40:39" itemprop="dateModified" datetime="2025-05-04T23:40:39+08:00">2025-05-04</time>
     </span>
 
   
@@ -1934,31 +1942,34 @@ java <span class="token operator">-</span>version<span aria-hidden="true" class=
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>img_path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"png"</span><span class="token punctuation">,</span><span class="token string">"jpg"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Array学习笔记"><a href="#Array学习笔记" class="headerlink" title="Array学习笔记"></a>Array学习笔记</h2><blockquote>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><blockquote>
 <ul>
-<li>有序</li>
-<li>创建后长度不可变</li>
-<li>元素的数据类型相同</li>
+<li>数组的元素相同数据类型、是有序的、可重复的</li>
+<li>创建后长度和类型不可变</li>
 </ul>
 </blockquote>
 <p><img src="/2024/01/23/javaee/image-20250313112746476.png" alt="image-20250313112746476"></p>
 <p><img src="/2024/01/23/javaee/image-20250313112858349.png" alt="image-20250313112858349"></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span>job<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>demo</span><span class="token punctuation">;</span>
-
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span>container</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span></span><span class="token punctuation">;</span>
 
 <span class="token comment">/**
  * @Classname ArrayDemo
  * @Description 数组
+ * - 数组的元素相同数据类型、是有序的、可重复的
+ * - 创建后长度和类型不可变
+ * 缺点：(后来设计出集合来规避这些缺点)
+ * - 底层基于紧密结构(即顺序结构)导致增删效率低
+ * - 数组中实际存储的元素数量没有提供对应方法来获取
  * @Version 1.0.0
  * @Date 2025/2/25 20:24
  * @Author LuoTao
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayDemo</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">//        arrayInit();</span>
-<span class="token comment">//        arrayBubbleSort();</span>
-<span class="token comment">//        arrayReverse();</span>
+        <span class="token function">arrayInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">arrayBubbleSort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">arrayReverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">arrayTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 
@@ -2030,10 +2041,10 @@ java <span class="token operator">-</span>version<span aria-hidden="true" class=
     <span class="token punctuation">&#125;</span>
 
     <span class="token comment">/**
-    * @Description: 二维数组计算个人平均分和各科平均分
-    * @Author: LuoTao
-    * @Date: 2025-03-13 11:24:13
-    **/</span>
+     * @Description: 二维数组计算个人平均分和各科平均分
+     * @Author: LuoTao
+     * @Date: 2025-03-13 11:24:13
+     **/</span>
     <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">arrayTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token keyword">float</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> score <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token number">100f</span><span class="token punctuation">,</span> <span class="token number">99f</span><span class="token punctuation">,</span> <span class="token number">98.5f</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token number">80f</span><span class="token punctuation">,</span> <span class="token number">95f</span><span class="token punctuation">,</span> <span class="token number">92f</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token number">100f</span><span class="token punctuation">,</span> <span class="token number">95.5f</span><span class="token punctuation">,</span> <span class="token number">95f</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
         <span class="token keyword">float</span> sumScore<span class="token punctuation">;</span><span class="token comment">// 个人总分</span>
@@ -2065,7 +2076,7 @@ java <span class="token operator">-</span>version<span aria-hidden="true" class=
 <span class="token punctuation">&#125;</span>
 
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Java面向对象编程-OOP-学习笔记"><a href="#Java面向对象编程-OOP-学习笔记" class="headerlink" title="Java面向对象编程(OOP)学习笔记"></a>Java面向对象编程(OOP)学习笔记</h2><h3 id="1-面向对象基本概念"><a href="#1-面向对象基本概念" class="headerlink" title="1. 面向对象基本概念"></a>1. 面向对象基本概念</h3><p>面向对象编程(Object-Oriented Programming)是一种编程范式，它将现实世界中的事物抽象为程序中的对象。</p>
 <p>面向对象编程就像是在搭建乐高积木。每个积木块都是一个对象，它们有自己的特征（属性）和功能（方法）。通过组合不同的积木块，我们可以创建出复杂的结构。</p>
@@ -8809,7 +8820,7 @@ IdentityFile ~/.ssh/id_rsa
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-22 00:37:44" itemprop="dateModified" datetime="2025-04-22T00:37:44+08:00">2025-04-22</time>
+      <time title="修改时间：2025-05-07 21:30:10" itemprop="dateModified" datetime="2025-05-07T21:30:10+08:00">2025-05-07</time>
     </span>
 
   
@@ -9123,11 +9134,14 @@ ssh-keygen <span class="token parameter variable">-t</span> rsa -C<span class="t
 
 <h2 id="推送问题"><a href="#推送问题" class="headerlink" title="推送问题"></a>推送问题</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将本地推送到远程仓库，并设置远程分支为【上游分支】，Git 会将本地分支与远程分支关联起来：</span>
 <span class="token function">git</span> push --set-upstream origin <span class="token operator">&lt;</span>本地分支名<span class="token operator">></span>:<span class="token operator">&lt;</span>远程分支名<span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token comment"># 等价于：git push -u origin  &lt;本地分支名>:&lt;远程分支名></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 注意：【强制推送】本地分支会覆盖远程分支的提交历史</span>
 <span class="token function">git</span> push <span class="token parameter variable">--force</span> origin <span class="token operator">&lt;</span>本地分支名<span class="token operator">></span>:<span class="token operator">&lt;</span>远程分支名<span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span class="token comment"># 添加子模块</span>
+<span class="token function">git</span> submodule <span class="token function">add</span> 子模块仓库地址
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

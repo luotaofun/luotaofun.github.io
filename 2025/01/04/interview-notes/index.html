@@ -22,29 +22,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="QPSquery per second 即每秒请求数,一般2000次可满足大多业务场景 记录QPS的两种方式:  在接口方法中用唯一字符串日志记录,然后统计字符串出现的次数 用Tomcat access log记录接口访问日志,然后统计日志出现的次数  工作流将业务流程定义为一系列节点和连接,在多个参与者之间按预定规则自动传递信息或任务,用户只需要用可视化的方式定义好流程的各个步骤\规则和参与者,">
+    <meta name="description" content="面试.prompt这是一个模拟面试场景，要求你站在面试者的角度回答关于xxx工作原理的问题。 你需要构建一个全面而专业的回答，涵盖xxx的关键概念、工作原理和技术优势。一个好的面试回答应该：  1. 简洁清晰地解释xxx是什么 2. 描述其核心组件及其作用 3. 详细说明工作流程 4. 提到xxx的技术优势 5. 可以适当加入一些实际经验来增加可信度    你将以这个结构来组织回答。  现在你将详">
 <meta property="og:type" content="article">
-<meta property="og:title" content="interviewNotes">
-<meta property="og:url" content="http://example.com/2025/01/04/interviewNOtes/index.html">
+<meta property="og:title" content="interview-notes">
+<meta property="og:url" content="http://example.com/2025/01/04/interview-notes/index.html">
 <meta property="og:site_name" content="Taoの博客">
-<meta property="og:description" content="QPSquery per second 即每秒请求数,一般2000次可满足大多业务场景 记录QPS的两种方式:  在接口方法中用唯一字符串日志记录,然后统计字符串出现的次数 用Tomcat access log记录接口访问日志,然后统计日志出现的次数  工作流将业务流程定义为一系列节点和连接,在多个参与者之间按预定规则自动传递信息或任务,用户只需要用可视化的方式定义好流程的各个步骤\规则和参与者,">
+<meta property="og:description" content="面试.prompt这是一个模拟面试场景，要求你站在面试者的角度回答关于xxx工作原理的问题。 你需要构建一个全面而专业的回答，涵盖xxx的关键概念、工作原理和技术优势。一个好的面试回答应该：  1. 简洁清晰地解释xxx是什么 2. 描述其核心组件及其作用 3. 详细说明工作流程 4. 提到xxx的技术优势 5. 可以适当加入一些实际经验来增加可信度    你将以这个结构来组织回答。  现在你将详">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/01/04/interviewNOtes/image-20250317170750209.png">
 <meta property="article:published_time" content="2025-01-04T06:18:49.000Z">
-<meta property="article:modified_time" content="2025-03-25T08:04:14.690Z">
+<meta property="article:modified_time" content="2025-05-06T16:49:59.041Z">
 <meta property="article:author" content="LuoTao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2025/01/04/interviewNOtes/image-20250317170750209.png">
 
 
-<link rel="canonical" href="http://example.com/2025/01/04/interviewNOtes/">
+<link rel="canonical" href="http://example.com/2025/01/04/interview-notes/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/01/04/interviewNOtes/","path":"2025/01/04/interviewNOtes/","title":"interviewNotes"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/01/04/interview-notes/","path":"2025/01/04/interview-notes/","title":"interview-notes"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>interviewNotes | Taoの博客</title>
+<title>interview-notes | Taoの博客</title>
   
 
 
@@ -148,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#QPS"><span class="nav-number">1.</span> <span class="nav-text">QPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">2.</span> <span class="nav-text">工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">成员变量与局部变量的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final%E4%BF%AE%E9%A5%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8F%AF%E5%8F%98%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">final修饰为什么不可变？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal"><span class="nav-number">5.</span> <span class="nav-text">ThreadLocal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Autowired%E4%B8%8E-Resource%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number"></span> <span class="nav-text">@Autowired与@Resource的区别</span></a></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95-prompt"><span class="nav-number">1.</span> <span class="nav-text">面试.prompt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E8%AE%A4%E9%9C%80%E6%B1%82-prompt"><span class="nav-number">2.</span> <span class="nav-text">确认需求.prompt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1-prompt"><span class="nav-number">3.</span> <span class="nav-text">原型设计.prompt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D-prompt"><span class="nav-number">4.</span> <span class="nav-text">提示词.prompt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QPS"><span class="nav-number">5.</span> <span class="nav-text">QPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">6.</span> <span class="nav-text">工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">成员变量与局部变量的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final%E4%BF%AE%E9%A5%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8F%AF%E5%8F%98%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">final修饰为什么不可变？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal"><span class="nav-number">9.</span> <span class="nav-text">ThreadLocal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowired%E4%B8%8E-Resource%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">10.</span> <span class="nav-text">@Autowired与@Resource的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%8A%B6%E6%80%81%E7%99%BB%E5%BD%95"><span class="nav-number">11.</span> <span class="nav-text">无状态登录</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +221,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/04/interviewNOtes/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/04/interview-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -236,12 +234,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="interviewNotes | Taoの博客">
+      <meta itemprop="name" content="interview-notes | Taoの博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          interviewNotes
+          interview-notes
         </h1>
 
         <div class="post-meta-container">
@@ -259,7 +257,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-25 16:04:14" itemprop="dateModified" datetime="2025-03-25T16:04:14+08:00">2025-03-25</time>
+      <time title="修改时间：2025-05-07 00:49:59" itemprop="dateModified" datetime="2025-05-07T00:49:59+08:00">2025-05-07</time>
     </span>
 
   
@@ -272,38 +270,93 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="QPS"><a href="#QPS" class="headerlink" title="QPS"></a>QPS</h2><p><code>query per second</code> 即每秒请求数,一般<code>2000次</code>可满足大多业务场景</p>
+        <h2 id="面试-prompt"><a href="#面试-prompt" class="headerlink" title="面试.prompt"></a>面试.prompt</h2><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">这是一个模拟面试场景，要求你站在面试者的角度回答关于xxx工作原理的问题。
+你需要构建一个全面而专业的回答，涵盖xxx的关键概念、工作原理和技术优势。一个好的面试回答应该：
+
+1. 简洁清晰地解释xxx是什么
+2. 描述其核心组件及其作用
+3. 详细说明工作流程
+4. 提到xxx的技术优势
+5. 可以适当加入一些实际经验来增加可信度
+   你将以这个结构来组织回答。
+
+现在你将详细构思关于xxx各个部分的回答内容。
+你需要为回答添加一些个人经验元素，并确保整体流畅自然。这样回答会更加真实，显示出实际经验而不只是理论知识。同时，应该确保解释足够通俗易懂，不要太过技术性或晦涩。面试回答不应该过长，但需要足够全面，平衡细节和简洁性。可以在回答中表达对xxx的熟悉程度和实际应用场景，这样会让面试官感到不只是记住了概念，而是真正理解和使用过这个框架。最后，你需要确保回答是逻辑连贯的，每个部分都应该自然地引导到下一个部分，使整个回答形成一个完整的叙述。
+
+现在你可以整合前面的思考，形成一个完整的面试回答。你会以一个自然、专业且有信心的语气呈现，同时确保信息准确性和全面性。这个回答应该展现你对xxx的深入理解和实践经验，突出其工作原理和技术优势，同时注意语言的流畅和连贯性。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="确认需求-prompt"><a href="#确认需求-prompt" class="headerlink" title="确认需求.prompt"></a>确认需求.prompt</h2><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">请你复述一遍我的需求再进行答复，让我能够确认你真的理解了我的需求指令。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="原型设计-prompt"><a href="#原型设计-prompt" class="headerlink" title="原型设计.prompt"></a>原型设计.prompt</h2><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">帮我设计一个有待办清单功能的微信小程序的原型图，请通过一下方式帮我完成所有的设计：
+1.思考怎么方便用户使用
+2.作为设计师思考这些原型界面的设计
+3.作为产品经理规划这个界面
+4.使用html在一个界面上生成原型界面，让原型更精美和贴近真实，我希望这个界面是能直接拿去进行开发的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="提示词-prompt"><a href="#提示词-prompt" class="headerlink" title="提示词.prompt"></a>提示词.prompt</h2><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">帮我设计一个清晰规范的纯Markdown代码的提示词，用于和Cursor沟通开发有待办清单功能的微信小程序，以下是我的需求
+
+- 将任务拆分为多个部分，逐步生成，避免内容过长导致中断。
+- 明确每个步骤的功能需求。
+- 描述界面风格和交互设计，确保简洁、直观，符合微信小程序的设计规范。
+- 明确每个步骤的输出内容，例如原型设计、代码框架、注释和错误处理。
+- 根据原型图，生成这个微信小程序，要求界面按照原型图去还原，并且工程可运行。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="QPS"><a href="#QPS" class="headerlink" title="QPS"></a>QPS</h2><blockquote>
+<p><code>query per second</code> 即每秒请求数,一般<code>2000次</code>可满足大多业务场景</p>
 <p>记录<code>QPS</code>的两种方式:</p>
 <ul>
 <li>在接口方法中用唯一字符串日志记录,然后统计字符串出现的次数</li>
 <li>用<code>Tomcat access log</code>记录接口访问日志,然后统计日志出现的次数</li>
 </ul>
-<h2 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h2><p>将业务流程定义为一系列节点和连接,在多个参与者之间按预定规则自动传递信息或任务,用户只需要用可视化的方式定义好流程的各个步骤\规则和参与者,如添加”订单组审核”节点只需在流程定义中添加一个节点即可</p>
+</blockquote>
+<h2 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h2><blockquote>
+<p>将业务流程定义为一系列节点和连接,在多个参与者之间按预定规则自动传递信息或任务,用户只需要用可视化的方式定义好流程的各个步骤\规则和参与者,如添加”订单组审核”节点只需在流程定义中添加一个节点即可</p>
 <p>提供对流程执行状态的实时监控,可以跟踪每个节点的进展,识别潜在问题并采取干预措施</p>
+</blockquote>
 <h2 id="成员变量与局部变量的区别"><a href="#成员变量与局部变量的区别" class="headerlink" title="成员变量与局部变量的区别"></a>成员变量与局部变量的区别</h2><blockquote>
 <p>这就像是一个公司和临时工的关系：</p>
 <p>- 成员变量就像是公司的正式员工，只要公司存在，他们就一直在那里</p>
 <p>- 局部变量就像是临时工，只在特定项目期间存在，项目结束就离开了</p>
-</blockquote>
 <ul>
 <li><p>成员变量在堆中在对象被创建时根据数据类型赋默认值,与对象同生共死，对象被创建时分配内存，对象被垃圾回收时释放内存</p>
 </li>
 <li><p>在使用前必须显式初始化。局部变量在栈内存作用于方法执行期间,方法结束后立即从栈中弹出。</p>
 </li>
 </ul>
-<h2 id="final修饰为什么不可变？"><a href="#final修饰为什么不可变？" class="headerlink" title="final修饰为什么不可变？"></a>final修饰为什么不可变？</h2><ul>
+</blockquote>
+<h2 id="final修饰为什么不可变？"><a href="#final修饰为什么不可变？" class="headerlink" title="final修饰为什么不可变？"></a><code>final</code>修饰为什么不可变？</h2><blockquote>
+<ul>
 <li>修饰基本数据类型变量时（常量）则其值一旦初始化后就不能再改变。</li>
 <li>修饰引用数据类型变量时则其引用不能再指向其他对象，但对象本身的内容是可以改变的（除非该对象本身是不可变的，如 <code>String</code>）。</li>
 <li>修饰的方法不能被子类override，从而保证方法的行为在继承体系中保持一致。</li>
 <li>修饰的类不能被继承，这就像是一个完美的产品设计，设计师认为它已经达到了最佳状态，不需要也不允许任何修改或扩展。。</li>
 <li><code>final</code> 提供了一种机制来保护数据或行为不被意外或恶意修改，特别是在多线程环境或第三方库使用场景中。</li>
-<li>编译器可以对final方法进行内联优化</li>
+<li>编译器可以对<code>final</code>方法进行内联优化</li>
 </ul>
-<h2 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h2><p><img src="/2025/01/04/interviewNOtes/image-20250317170750209.png" alt="image-20250317170750209"></p>
-<p>进程是计算机资源分配最小单位，线程是计算机计算的最小单位。这个最小的计算单位在操作系统中由进程去控制，所以操作系统只负责把资源分配给进程，进程没有专门空间存储ThreadLocal,所以它跟多是语言层面的事情。ThreadLocal提供线程局部变量，相当于给每一个线程独立的副本。</p>
-<p>比如你在玩游戏，一个游戏就是进程。这个进程用于有渲染的程序A，和有用于AI处理的程序B。A和B经常抢占CPU的时间片就会导致游戏卡顿。如果一个进程中的所有线程在同步计算结果时去访问进程中的全局变量，就会产生竞争条件，需要解决一致性（加锁）。</p>
-<h1 id="Autowired与-Resource的区别"><a href="#Autowired与-Resource的区别" class="headerlink" title="@Autowired与@Resource的区别"></a>@Autowired与@Resource的区别</h1><p>@Autowired 注解的作用就是让 Spring 容器自动为 areaDao 成员变量注入一个实现了 AreaDao 接口的实例对象。Spring 会根据配置（例如 MyBatis 的配置）动态生成AreaDao 实现类的代理对象。这个代理对象会被注入到 areaDao 中</p>
-<p>@Autowired根据type注入，@Resource基于名称，找不到时基于类型注入，本质上均实现了注入效果。<br>一般来说，注入controller的service虽然一般来说我们都是注入一个接口，但是该接口有实现类，并且使用@Service进行关联，所以注入类型应该也可以视为一个类，但是mybatis仅需提供Dao接口，也就是说，注入service的dao只是一个接口，而没有实现类，虽然mybatis能够通过Dao接口和xml文件实现与数据库的操作，但是@Autowired并没有这个识别功能，可能它就认为你类型不匹配，无法使用通过类型注入的方法</p>
+</blockquote>
+<h2 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a><code>ThreadLocal</code></h2><blockquote>
+<p>进程是计算机资源分配最小单位，线程是计算机计算的最小单位。这个最小的计算单位在操作系统中由进程去控制，所以操作系统只负责把资源分配给进程，进程没有专门空间存储<code>ThreadLocal</code>,所以它跟多是语言层面的事情。<code>ThreadLocal</code>提供线程局部变量，相当于给每一个线程独立的副本。</p>
+<p>比如你在玩游戏，一个游戏就是进程。这个进程用于有渲染的程序A，和有用于AI处理的程序B。A和B经常抢占<code>CPU</code>的时间片就会导致游戏卡顿。如果一个进程中的所有线程在同步计算结果时去访问进程中的全局变量，就会产生竞争条件，需要解决一致性（加锁）。</p>
+</blockquote>
+<h2 id="Autowired与-Resource的区别"><a href="#Autowired与-Resource的区别" class="headerlink" title="@Autowired与@Resource的区别"></a><code>@Autowired</code>与<code>@Resource</code>的区别</h2><blockquote>
+<p><code>@Autowired </code>注解的作用就是让 <code>Spring </code>容器自动为 <code>areaDao </code>成员变量注入一个实现了 AreaDao 接口的实例对象。<code>Spring</code> 会根据配置（例如 <code>MyBatis </code>的配置）动态生成<code>AreaDao</code> 实现类的代理对象。这个代理对象会被注入到 <code>areaDao</code> 中</p>
+<p><code>@Autowired</code>根据type注入，@Resource基于名称，找不到时基于类型注入，本质上均实现了注入效果。<br>一般来说，注入controller的service虽然一般来说我们都是注入一个接口，但是该接口有实现类，并且使用<code>@Service</code>进行关联，所以注入类型应该也可以视为一个类，但是<code>mybatis</code>仅需提供Dao接口，也就是说，注入<code>service</code>的<code>dao</code>只是一个接口，而没有实现类，虽然<code>mybatis</code>能够通过Dao接口和xml文件实现与数据库的操作，但是<code>@Autowired</code>并没有这个识别功能，可能它就认为你类型不匹配，无法使用通过类型注入的方法</p>
+</blockquote>
+<h2 id="无状态登录"><a href="#无状态登录" class="headerlink" title="无状态登录"></a>无状态登录</h2><blockquote>
+<p>传统的登录验签：</p>
+<p>服务器校验完账号密码后用httpsession生成sessionid，把sessionid回写到浏览器的cookie，下次请求时浏览器会自动携带这个cookie,对cookie进行拦截即可判断是否放行。</p>
+<p>无状态登录验签：</p>
+<p>支持CS和BS架构，狐表开发的应用没有管理session cookie的功能，所以不得不使用无状态登录方式。服务端把令牌生成并返回给客户端后，可能产生安全隐患，比如用户账密泄露被第三方登录了，并且密码被修改了，这时候，一般情况是只要用户修改账密，就应该把这个用户所有账号踢下线，但是由于之前签发的令牌没有过期，那就可以一直请求放行。</p>
+<p>基于Redis：</p>
+<ol>
+<li>只做存取和匹配。这样不用去加解密，因为加解密本身是很耗CPU的行为。</li>
+<li>对权限可观可控。当用户修改账密后，可以在Redis把对应令牌删除，实现重登录。</li>
+</ol>
+</blockquote>
 
     </div>
 
@@ -322,8 +375,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/02/18/%E5%BD%B1%E5%88%80RPA%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="next" title="影刀RPA工程师">
-                  影刀RPA工程师 <i class="fa fa-chevron-right"></i>
+                <a href="/2025/02/18/%E5%BD%B1%E5%88%80RPA%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
