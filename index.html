@@ -253,7 +253,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-13 01:46:35" itemprop="dateModified" datetime="2025-05-13T01:46:35+08:00">2025-05-13</time>
+      <time title="修改时间：2025-05-14 02:00:29" itemprop="dateModified" datetime="2025-05-14T02:00:29+08:00">2025-05-14</time>
     </span>
 
   
@@ -266,7 +266,264 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">test<span class="token punctuation">.</span>com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span></span>数据结构与算法<span class="token punctuation">;</span>
+          <h2 id="尾递归算法"><a href="#尾递归算法" class="headerlink" title="尾递归算法"></a>尾递归算法</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">test<span class="token punctuation">.</span>com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span></span>数据结构与算法<span class="token punctuation">.</span>myrecursion<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @Classname MyRecursion
+ * @Description
+ * ## 用递归计算斐波那契数列
+ * > 通过分治的思想把一个数据规模大的问题分解成若干个规模较小的子问题，子问题（往前追问）的求解思路完全一样，最后一定有一个确定的答案（排队场景的第一个人肯定知道自己位置是1），即递归的结束条件。
+ *> 推荐使用尾递归算法
+ * > 用尾递归实现链表
+ * @Version 1.0.0
+ * @Date 2025/5/13 17:44
+ * @Author LuoTao
+ */</span>
+ <span class="token keyword">class</span> <span class="token class-name">MyRecursionCalcFibonacci</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> array<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//定义一个数组作为缓存，存储已经计算过的斐波那契值</span>
+
+    <span class="token comment">/**
+     * @Description
+     * 斐波那契数列:  1 1 2 3 5 8 13...
+        f(1) = 1
+        f(2) = 1
+        f(3) = f(2) + f(1) = 1 + 1 = 2
+        f(4) = f(3) + f(2) = 2 + 1 = 3
+        f(5) = f(4) + f(3) = 3 + 2 = 5
+        f(n) = f(n-1) + f(n-2)
+     * 终止条件：n &lt;= 2 reutrn 1
+     * @Author LuoTao
+     * @Date 2025/5/13 19:39
+     * @return 第 n 项斐波那契数
+     * @param n 当前计算到第几项
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//O(2^n)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//终止条件为 n &lt;= 2 返回 1</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/**
+     * @Description
+     * 尾递归实现斐波那契数列 1 1 2 3 5
+     *  >示例图解：
+     *      5,1,1
+     *      4,2,1
+     *      3,3,2
+     *      2,5,3->return 5
+     * @Author LuoTao
+     * @Date 2025/5/13 23:21
+     * @return int 第 n 项斐波那契数
+     * @param n 当前计算到第几项
+     * @param fi 当前项的值f(i)
+     * @param fiPre 前一项的值f(i-1)
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fibonacciByTailRecursion</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">int</span> fi<span class="token punctuation">,</span><span class="token keyword">int</span> fiPre<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//O(n)</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"fibonacciByTailRecursion("</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> fi <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> fiPre <span class="token operator">+</span><span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> fi<span class="token punctuation">;</span> <span class="token comment">// ✅ 终止条件：返回累计的值</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// 尾递归:该递归调用是函数的最后一行操作，没有后续运算</span>
+        <span class="token keyword">return</span> <span class="token function">fibonacciByTailRecursion</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>fi <span class="token operator">+</span> fiPre<span class="token punctuation">,</span>fi<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 当前项更新为当前项与前一项之和，前项更新为当前项（回溯）</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token comment">/**
+     * @Description 不用递归实现斐波那契数列
+     * @Author LuoTao
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fibonacciByNone</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//O(n)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">int</span> f1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> f2 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> f3 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            f3 <span class="token operator">=</span> f1 <span class="token operator">+</span> f2<span class="token punctuation">;</span> <span class="token comment">//f(n) = f(n-1) + f(n-2)</span>
+            f1 <span class="token operator">=</span> f2<span class="token punctuation">;</span> <span class="token comment">// 前移</span>
+            f2 <span class="token operator">=</span> f3<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> f3<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/**
+     * @Description 使用数组实现斐波那契数列
+     * @Author LuoTao
+     * @return int 第 n 项斐波那契数
+     * @param n 当前计算到第几项
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fibonacciByArray</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//O(n)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// 1 1 2 3 5 8 13...</span>
+        <span class="token comment">//0 1 2 3 4 5 6...</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            data<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> data<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// f(n) = f(n-1) + f(n-2)</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> data<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 返回数组最后一个元素,即第 n 项斐波那契数</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token comment">/**
+     * @Description
+    记忆化递归算法: 使用数组来做缓存O(n)
+        使用一个数组来存储已经计算过的斐波那契值。
+        在每次递归调用前检查数组中是否已经存在结果：
+        如果有，则直接返回缓存的结果；
+        如果没有，则进行递归计算，并将结果保存到数组中。
+        递归终止条件为：当 n &lt;= 2 时返回 1。
+     * @Author LuoTao
+     * @return int 第 n 项斐波那契数
+     * @param n 当前计算到第几项
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fibonacciByArrayToCache</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 初始化缓存数组</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>array <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> array<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 索引对齐:能够保存 f(1) 到 f(5)，也就是需要索引 1 ~ 5，因此数组长度必须是 5 + 1 = 6</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 终止条件</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// 命中缓存：如果缓存中有值，直接返回</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> array<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// 否则递归计算并将结果保存到缓存中</span>
+        array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">fibonacciByArrayToCache</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibonacciByArrayToCache</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// f(n) = f(n-1) + f(n-2)</span>
+        <span class="token keyword">return</span> array<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * @param n 当前计算到第几项
+     * @return int 第 n 项斐波那契数
+     * @Description 尾递归 + 缓存方式计算斐波那契数列
+     * @Author LuoTao
+     * @Date 2025/5/13 23:13
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fibonacciByArrayToCacheByTailRecursion</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> fi<span class="token punctuation">,</span> <span class="token keyword">int</span> fiPrev<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"fibonacciByArrayToCacheByTailRecursion("</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> fi <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> fiPrev <span class="token operator">+</span><span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 初始化缓存数组</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>array <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> array<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 索引对齐:能够保存 f(1) 到 f(5)，也就是需要索引 1 ~ 5，因此数组长度必须是 5 + 1 = 6</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> fi<span class="token punctuation">;</span> <span class="token comment">// 终止条件</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// 命中缓存：如果缓存中有值，直接返回</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> array<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">// 尾递归:该递归调用是函数的最后一行操作，没有后续运算</span>
+        <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token function">fibonacciByArrayToCacheByTailRecursion</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> fiPrev <span class="token operator">+</span> fi<span class="token punctuation">,</span> fi<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  当前项更新为当前项与前一项之和，前项更新为当前项</span>
+        array<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> result<span class="token punctuation">;</span> <span class="token comment">//将结果保存到缓存中</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">/**
+ * @Description
+ * 用递归计算阶乘
+ * @Author LuoTao
+ * @Date 2025/5/13 21:59
+ **/</span>
+<span class="token keyword">class</span> <span class="token class-name">MyRecursionCalcFactorial</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/**
+     * @Description
+     * 普通递归计算阶乘
+     * @Author LuoTao
+     * @Date 2025/5/13 21:59
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 5!  = 5 * 4 * 3 * 2 * 1</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 终止条件，此时 result 已累计最终结果</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> n <span class="token operator">*</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// f(n) = n * f(n-1)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/**
+     * @Description
+    >尾递归计算阶乘 : f(n) = n * f(n-1)
+    5!=120
+    5,1
+    4,5
+    3,20
+    2,60
+    1,120
+     * @param fi 当前项的值f(i)
+     * @Author LuoTao
+     * @Date 2025/5/13 21:59
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">factorialTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> fi<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"factorialTail("</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> fi <span class="token operator">+</span> <span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> fi<span class="token punctuation">;</span> <span class="token comment">// 终止条件，此时 result 已累计最终结果,返回当前项的值</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token function">factorialTail</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">*</span> fi<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 当前项更新为n*前项</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">/**
+ * @Description
+> 排队场景的递（问）归（回溯），我不知道我排在第几个，那么我问我前面的人排第几个，前面的人也不知道自己排第几，那他继续往前追问，直到问到第一个人，然后从第一个人一直传回我这里，我就知道了我是排第几了。
+f(n) = f(n-1) + 1
+1 2 3 4 5...
+ * @Author LuoTao
+ **/</span>
+<span class="token keyword">class</span> <span class="token class-name">MyRecursionCalcQueue</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">queue</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">//O(n)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token function">queue</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">/**
+     * @Description 尾递归实现  f(n) = f(n-1) + 1
+        queueByTail(5, 1)
+        → queueByTail(4, 2)
+        → queueByTail(3, 3)
+        → queueByTail(2, 4)
+        → queueByTail(1, 5)
+        → return 5 ✅
+
+     * @Author LuoTao
+     **/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">queueByTail</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span><span class="token keyword">int</span> fi<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"queueByTail("</span> <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> fi <span class="token operator">+</span> <span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> fi<span class="token punctuation">;</span><span class="token comment">// 返回的是当前累积值 fi</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token function">queueByTail</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>fi<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第"</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">"个斐波那契数："</span><span class="token operator">+</span> <span class="token class-name">MyRecursionCalcFibonacci</span><span class="token punctuation">.</span><span class="token function">fibonacciByTailRecursion</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"====================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">MyRecursionCalcFactorial</span><span class="token punctuation">.</span><span class="token function">factorialTail</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//阶乘是从 1 开始乘的</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">MyRecursionCalcQueue</span><span class="token punctuation">.</span><span class="token function">queueByTail</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">MyRecursionCalcFibonacci</span><span class="token punctuation">.</span><span class="token function">fibonacciByArrayToCacheByTailRecursion</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"================"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">MyRecursionCalcFactorial</span><span class="token punctuation">.</span><span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">test<span class="token punctuation">.</span>com<span class="token punctuation">.</span>luotao<span class="token punctuation">.</span></span>数据结构与算法<span class="token punctuation">;</span>
 <span class="token comment">/**
 * @Description:
  ## 评价算法的两个指标：
