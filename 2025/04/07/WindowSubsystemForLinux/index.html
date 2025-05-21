@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="win命令where git start xx # 打开目录 dir # 目录结构    迁移# version wsl --list --verbose  # export wsl --export Ubuntu-20.04 D:\workspace\Ubuntu-20.04.tar  # 注销 wsl --unregister Ubuntu-20.04  # export to new pos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WindowSubsystemForLinux">
+<meta property="og:url" content="http://example.com/2025/04/07/WindowSubsystemForLinux/index.html">
+<meta property="og:site_name" content="Taoの博客">
+<meta property="og:description" content="win命令where git start xx # 打开目录 dir # 目录结构    迁移# version wsl --list --verbose  # export wsl --export Ubuntu-20.04 D:\workspace\Ubuntu-20.04.tar  # 注销 wsl --unregister Ubuntu-20.04  # export to new pos">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250407231416759.png">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250414164016474.png">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250414164222404.png">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250414164927875.png">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250414163329053.png">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250413063356935.png">
+<meta property="og:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250413063430738.png">
+<meta property="article:published_time" content="2025-04-07T11:19:28.000Z">
+<meta property="article:modified_time" content="2025-05-21T09:53:16.621Z">
+<meta property="article:author" content="LuoTao">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/04/07/WindowSubsystemForLinux/image-20250407231416759.png">
+
+
+<link rel="canonical" href="http://example.com/2025/04/07/WindowSubsystemForLinux/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/04/07/WindowSubsystemForLinux/","path":"2025/04/07/WindowSubsystemForLinux/","title":"WindowSubsystemForLinux"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>WindowSubsystemForLinux | Taoの博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Taoの博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">昨夜向左.火车向右</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">44</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    <!--音乐播放器-->
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#win%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">win命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB"><span class="nav-number">2.</span> <span class="nav-text">迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85mysql"><span class="nav-number">3.</span> <span class="nav-text">安装mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E8%84%9A%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">sql脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85JDK"><span class="nav-number">5.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%90%8E%E7%AB%AF"><span class="nav-number">6.</span> <span class="nav-text">部署后端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%89%8D%E7%AB%AF"><span class="nav-number">7.</span> <span class="nav-text">部署前端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%98%E7%AE%A1%E5%88%B0cloudflare"><span class="nav-number">8.</span> <span class="nav-text">托管到cloudflare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloudflare-Tunnel%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="nav-number">9.</span> <span class="nav-text">Cloudflare Tunnel实现内网穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dns"><span class="nav-number">10.</span> <span class="nav-text">dns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Name-Servers"><span class="nav-number">11.</span> <span class="nav-text">Name Servers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E5%95%86%E5%A4%84%E6%9B%B4%E6%96%B0%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">12.</span> <span class="nav-text">域名注册商处更新名称服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN%EF%BC%88Content-Delivery-Network%EF%BC%89"><span class="nav-number">13.</span> <span class="nav-text">CDN（Content Delivery Network）</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LuoTao"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">LuoTao</p>
+  <div class="site-description" itemprop="description"><font color="#FFFFFF">昨夜向左.火车向右</font></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://wx.qq.com/" title="微信 → https:&#x2F;&#x2F;wx.qq.com&#x2F;" rel="noopener" target="_blank"><i class="weixin fa-fw"></i>微信</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/3452255853" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;3452255853" rel="noopener" target="_blank"><i class="QQ fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/luotaofun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luotaofun" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luotao0213@163.com" title="E-Mail → mailto:luotao0213@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/luotaofun" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/07/WindowSubsystemForLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="LuoTao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">昨夜向左.火车向右</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="WindowSubsystemForLinux | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WindowSubsystemForLinux
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-07 19:19:28" itemprop="dateCreated datePublished" datetime="2025-04-07T19:19:28+08:00">2025-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-21 17:53:16" itemprop="dateModified" datetime="2025-05-21T17:53:16+08:00">2025-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="win命令"><a href="#win命令" class="headerlink" title="win命令"></a>win命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">where <span class="token function">git</span>
+start xx <span class="token comment"># 打开目录</span>
+<span class="token function">dir</span> <span class="token comment"># 目录结构</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># version</span>
+wsl <span class="token parameter variable">--list</span> <span class="token parameter variable">--verbose</span>
+
+<span class="token comment"># export</span>
+wsl <span class="token parameter variable">--export</span> Ubuntu-20.04 D:<span class="token punctuation">\</span>workspace<span class="token punctuation">\</span>Ubuntu-20.04.tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 注销</span>
+wsl <span class="token parameter variable">--unregister</span> Ubuntu-20.04<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># export to new position</span>
+wsl <span class="token parameter variable">--import</span> ubuntu2004 D:<span class="token punctuation">\</span>workspace<span class="token punctuation">\</span>WSL<span class="token punctuation">\</span>ubantu D:<span class="token punctuation">\</span>workspace<span class="token punctuation">\</span>Ubuntu-20.04.tar
+
+<span class="token comment"># defaultUser</span>
+ubuntu2004 config --default-user usert
+
+<span class="token comment"># addUser</span>
+<span class="token function">sudo</span> adduser usert
+<span class="token comment"># checkUser</span>
+<span class="token function">id</span> usert
+
+<span class="token comment"># start</span>
+wsl <span class="token parameter variable">-d</span> ubuntu2004<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">MySQL :: Download MySQL Community Server (Archived Versions)</a>PRM Bundle</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查询所有已安装的 MySQL 相关软件包</span>
+dpkg <span class="token parameter variable">-l</span> <span class="token operator">|</span> <span class="token function">grep</span> mysql
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<span class="token comment"># 使用 wget 下载 Bundle</span>
+<span class="token function">wget</span> https://downloads.mysql.com/archives/get/p/23/file/mysql-server_8.0.40-1ubuntu20.04_amd64.deb-bundle.tar
+
+<span class="token comment">#  下载完成后，检查文件  </span>
+<span class="token function">ls</span> <span class="token parameter variable">-l</span> mysql-server_8.0.40-1ubuntu20.04_amd64.deb-bundle.tar
+
+<span class="token comment"># 创建mysql目录，-p 选项表示如果父目录（/opt/mysql/）不存在，则自动创建。</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /opt/mysql/log
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /opt/mysql/data
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /opt/mysql/share
+<span class="token comment"># 验证目录</span>
+<span class="token function">ls</span> <span class="token parameter variable">-l</span> /opt/mysql/
+
+<span class="token comment"># 移动到/opt/mysql/</span>
+<span class="token function">mv</span> mysql-server_8.0.40-1ubuntu20.04_amd64.deb-bundle.tar /opt/mysql/
+
+<span class="token comment"># 查询用户</span>
+<span class="token function">id</span> usert
+<span class="token comment"># 修改目录所有者，-R：递归修改目录及其所有子目录和文件的所有者。mysql:mysql：将所有者修改为 mysql 用户,它是MySQL 安装时默认创建的系统用户，所属组也修改为 mysql 组。</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> <span class="token parameter variable">-R</span> mysql:mysql /opt/mysql/
+   
+
+<span class="token comment"># 修改目录权限，755 表示所有者有读、写、执行权限，其他用户有读和执行权限。</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token parameter variable">-R</span> <span class="token number">755</span> /opt/mysql/
+<span class="token comment">#  停止mysql</span>
+ <span class="token function">sudo</span> systemctl stop mysql
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 编辑主配置文件</span>
+   <span class="token function">sudo</span> <span class="token function">nano</span> /etc/mysql/my.cnf
+   
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment"># 数据目录</span>
+datadir <span class="token operator">=</span> /opt/mysql/data
+
+<span class="token comment"># 错误日志路径</span>
+log-error <span class="token operator">=</span> /opt/mysql/log/mysqld.log
+
+<span class="token comment"># 运行 MySQL 的用户是 MySQL 安装时默认创建的系统用户。</span>
+user <span class="token operator">=</span> mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">  <span class="token comment"># 备份</span>
+  <span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> /opt/mysql/data/ /opt/mysql/data-backup/
+   
+<span class="token comment"># 重新初始化</span>
+mysqld <span class="token parameter variable">--initialize</span> <span class="token parameter variable">--user</span><span class="token operator">=</span>mysql <span class="token parameter variable">--basedir</span><span class="token operator">=</span>/opt/mysql <span class="token parameter variable">--datadir</span><span class="token operator">=</span>/opt/mysql/data/ <span class="token parameter variable">--lc_messages_dir</span><span class="token operator">=</span>/opt/mysql/share <span class="token parameter variable">--lc_messages</span><span class="token operator">=</span>en_US
+<span class="token comment"># 查看初始化过程中生成的临时 root 密码</span>
+   <span class="token function">sudo</span> <span class="token function">cat</span> /opt/mysql/log/mysqld.log <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"A temporary password"</span>
+<span class="token comment">#使用临时密码登录 MySQl</span>
+   <span class="token function">sudo</span> mysql <span class="token parameter variable">-u</span> root <span class="token parameter variable">-p</span>
+<span class="token comment"># 修改 root 密码</span>
+   ALTER <span class="token environment constant">USER</span> <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED BY <span class="token string">''</span><span class="token punctuation">;</span>
+show databases<span class="token punctuation">;</span>
+   
+<span class="token comment">#  重启 MySQL 服务</span>
+<span class="token function">sudo</span> systemctl restart mysql
+<span class="token comment"># 查看配置项</span>
+   SHOW VARIABLES LIKE <span class="token string">'datadir'</span><span class="token punctuation">;</span>
+   SHOW VARIABLES LIKE <span class="token string">'log_error'</span><span class="token punctuation">;</span>
+   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2025/04/07/WindowSubsystemForLinux/image-20250407231416759.png" alt="image-20250407231416759"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看MySQL 服务器的 IP 地址</span>
+<span class="token function">ip</span> addr show
+<span class="token comment"># 开放远程连接，不行就配置</span>
+<span class="token function">sudo</span> <span class="token function">nano</span> /etc/mysql/my.cnf
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+bind-address <span class="token operator">=</span> <span class="token number">0.0</span>.0.0
+<span class="token comment"># 开放远程连接</span>
+use mysql<span class="token punctuation">;</span>
+update user <span class="token builtin class-name">set</span> <span class="token assign-left variable">user.Host</span><span class="token operator">=</span><span class="token string">'%'</span> where <span class="token assign-left variable">user.User</span><span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
+<span class="token comment"># 刷新权限</span>
+FLUSH PRIVILEGES<span class="token punctuation">;</span>
+<span class="token comment"># 开放防火墙，开放 MySQL 默认端口（3306）</span>
+<span class="token function">sudo</span> ufw status
+<span class="token function">sudo</span> ufw allow <span class="token number">3306</span>/tcp
+<span class="token function">sudo</span> ufw reload
+<span class="token comment"># 测试远程连接 </span>
+mysql <span class="token parameter variable">-h</span>  <span class="token number">172.22</span>.250.63 <span class="token parameter variable">-u</span> root <span class="token parameter variable">-p</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 解压 Bundle，/opt/ 目录通常用于安装第三方软件，适合存放 MySQL 的解压文件。</span>
+  <span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-xvf</span> mysql-server_8.0.40-1ubuntu20.04_amd64.deb-bundle.tar <span class="token parameter variable">-C</span> /opt/mysql/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<span class="token comment">#安装依赖</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libaio1 libmecab2
+
+<span class="token comment"># 安装所有 .deb 包</span>
+   <span class="token function">sudo</span> dpkg <span class="token parameter variable">-i</span> mysql-*.deb
+<span class="token comment"># 启动 MySQL 服务</span>
+<span class="token function">sudo</span> systemctl start mysql
+<span class="token comment">#设置 MySQL 服务开机自启</span>
+   <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> mysql
+<span class="token comment">#检查 MySQL 服务状态</span>
+   <span class="token function">sudo</span> systemctl status mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="sql脚本"><a href="#sql脚本" class="headerlink" title="sql脚本"></a>sql脚本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"> -- 创建数据库
+create database 数据库名 default character <span class="token builtin class-name">set</span> utf8mb4 collate utf8mb4_unicode_ci<span class="token punctuation">;</span>
+ <span class="token comment"># 导入</span>
+ use 数据库名<span class="token punctuation">;</span>
+<span class="token builtin class-name">source</span> 脚本路径；
+show tables<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 导出整个数据库结构</span>
+   mysqldump <span class="token parameter variable">-u</span> username <span class="token parameter variable">-p</span> --no-data  数据库名 <span class="token operator">|</span> <span class="token function">gzip</span> <span class="token operator">></span> /path/to/your/job.sql.gz
+<span class="token comment"># 导出整个数据库数据</span>
+   mysqldump <span class="token parameter variable">-u</span> username <span class="token parameter variable">-p</span> --no-create-info   数据库名 <span class="token operator">|</span> <span class="token function">gzip</span>  <span class="token operator">></span> /path/to/your/job.sql.gz
+   
+<span class="token comment"># 导出特定表</span>
+mysqldump <span class="token parameter variable">-u</span> username <span class="token parameter variable">-p</span> 数据库名 表1 表2 <span class="token operator">></span> /path/to/your/job_tables.sql
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-xvf</span> jdk-8u441-linux-x64.tar.gz <span class="token parameter variable">-C</span> /opt/
+<span class="token function">ls</span>
+<span class="token comment"># 重命名</span>
+<span class="token function">mv</span> jdk1.8.0_441 jdk8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nano</span> ~/.bashrc
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/opt/jdk8
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+
+<span class="token builtin class-name">source</span> ~/.bashrc
+<span class="token comment"># 验证</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$JAVA_HOME</span>
+<span class="token builtin class-name">echo</span> <span class="token environment constant">$PATH</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署后端"><a href="#部署后端" class="headerlink" title="部署后端"></a>部署后端</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建项目日志目录</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /var/log/job-api
+<span class="token function">sudo</span> <span class="token function">chown</span> root:root /var/log/job-api<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 配置为 systemd 服务</span>
+<span class="token comment">#在 /etc/systemd/system/ 目录下创建一个服务文件</span>
+<span class="token function">sudo</span> <span class="token function">nano</span> /etc/systemd/system/job-api.service
+<span class="token comment"># 添加以下内容</span>
+
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token comment"># 服务的描述信息，用于标识服务的用途</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Job API Service
+<span class="token comment"># 定义服务的启动顺序。syslog.target 表示该服务会在系统日志服务启动之后启动</span>
+<span class="token assign-left variable">After</span><span class="token operator">=</span>syslog.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token comment"># 指定运行服务的用户</span>
+<span class="token assign-left variable">User</span><span class="token operator">=</span>root
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/opt/jdk8/bin/java <span class="token parameter variable">-jar</span> <span class="token parameter variable">-Dspring.config.location</span><span class="token operator">=</span>/opt/job/application.prod.yaml /opt/job/job-api.jar
+<span class="token comment"># 如果服务以 143 状态码退出，systemd 会认为这是正常退出</span>
+<span class="token assign-left variable">SuccessExitStatus</span><span class="token operator">=</span><span class="token number">143</span>
+<span class="token comment"># 日志文件的路径</span>
+<span class="token assign-left variable">StandardOutput</span><span class="token operator">=</span>append:/var/log/job-api/start.log
+<span class="token assign-left variable">StandardError</span><span class="token operator">=</span>append:/var/log/job-api/start.log
+<span class="token comment"># 定义服务的重启策略。on-failure 表示当服务非正常退出时（如崩溃或被手动停止），systemd 会自动重启服务。</span>
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>on-failure
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token comment"># 当使用 systemctl enable 启用服务时，systemd 会将该服务添加到 multi-user.target 的依赖链中，确保系统启动时自动启动该服务</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 重新加载 systemd 配置</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token comment"># 启动服务</span>
+<span class="token function">sudo</span> systemctl start job-api
+<span class="token comment"># 设置开机自启</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> job-api
+<span class="token comment"># 查看服务状态</span>
+<span class="token function">sudo</span> systemctl status job-api
+<span class="token comment"># 查看日志</span>
+<span class="token function">tail</span> <span class="token parameter variable">-f</span> /var/log/job-api/start.log
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署前端"><a href="#部署前端" class="headerlink" title="部署前端"></a>部署前端</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装7z解压</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> p7zip-full
+7z x /opt/job/job-web.7z -o/opt/job/
+<span class="token function">ls</span> /opt/job/
+<span class="token comment"># 重命名</span>
+ <span class="token function">mv</span> /opt/job/dist job-web
+ 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装Nginx</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nginx
+<span class="token comment"># 设置开机自启</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> nginx
+<span class="token comment"># 启动</span>
+systemctl start nginx
+<span class="token comment"># 停止 Nginx</span>
+<span class="token function">sudo</span> systemctl stop nginx
+<span class="token comment"># 重启</span>
+  <span class="token function">sudo</span> systemctl restart nginx
+<span class="token comment"># 重新加载配置</span>
+  <span class="token function">sudo</span> systemctl reload nginx
+<span class="token comment"># 状态</span>
+systemctl status nginx
+<span class="token comment"># 访问默认页面</span>
+http://172.22.250.63/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>配置一个 Nginx 服务器块，监听 80 端口，并将域名 luotao.130017.xyz映射到 /opt/job/job-web 目录。<br>对于 /api/ 路径，配置了跨域支持，并将其反向代理到后端服务 <a target="_blank" rel="noopener" href="http://172.22.250.63:8000/">http://172.22.250.63:8000/</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将配置放在独立的文件中，例如 /etc/nginx/sites-available/job.conf</span>
+<span class="token function">sudo</span> <span class="token function">nano</span> /etc/nginx/sites-available/job.conf
+
+<span class="token comment"># 添加以下配置内容</span>
+server <span class="token punctuation">&#123;</span>
+    listen <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name luotao.130017.xyz<span class="token punctuation">;</span>
+
+    <span class="token comment"># 前端根目录</span>
+    root /opt/job/job-web<span class="token punctuation">;</span>
+
+    <span class="token comment">#  /api/ 请求被反向代理到 Spring Boot</span>
+    location /api/ <span class="token punctuation">&#123;</span>
+        <span class="token comment"># 跨域配置</span>
+        add_header <span class="token string">'Access-Control-Allow-Origin'</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+        add_header <span class="token string">'Access-Control-Allow-Methods'</span> <span class="token string">'POST, GET, OPTIONS'</span><span class="token punctuation">;</span>
+        add_header <span class="token string">'Access-Control-Allow-Headers'</span> <span class="token string">'Authorization, Content-Type'</span><span class="token punctuation">;</span>
+        add_header <span class="token string">'Access-Control-Max-Age'</span> <span class="token number">1728000</span><span class="token punctuation">;</span>
+
+        <span class="token comment"># 处理 OPTIONS 预检请求</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request_method</span> <span class="token operator">=</span> <span class="token string">'OPTIONS'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token builtin class-name">return</span> <span class="token number">204</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment"># 反向代理到后端服务</span>
+        proxy_pass http://localhost:8000/<span class="token punctuation">;</span>
+        proxy_set_header Host <span class="token variable">$host</span><span class="token punctuation">;</span>
+        proxy_set_header X-Real-IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forwarded-Proto <span class="token variable">$scheme</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment"># 静态文件服务</span>
+    location / <span class="token punctuation">&#123;</span>
+        <span class="token comment"># try_files $uri $uri/ =404;</span>
+        <span class="token comment"># 将所有非 API 请求重定向到 index.html，以便前端框架处理路径</span>
+        try_files <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /opt/job/job-web/index.html<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将配置文件链接到 /etc/nginx/sites-enabled/ 目录，使 Nginx 加载该配置：</span>
+<span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /etc/nginx/sites-available/job.conf /etc/nginx/sites-enabled/
+<span class="token comment"># 测试配置文件</span>
+<span class="token function">sudo</span> nginx <span class="token parameter variable">-t</span>
+<span class="token comment"># 重新加载Nginx</span>
+<span class="token function">sudo</span> nginx <span class="token parameter variable">-s</span> reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看 Nginx 日志</span>
+<span class="token function">sudo</span> <span class="token function">tail</span> <span class="token parameter variable">-f</span> /var/log/nginx/error.log
+
+ <span class="token function">sudo</span> <span class="token function">tail</span> <span class="token parameter variable">-f</span> /var/log/nginx/access.log
+ 
+<span class="token comment"># 将目录权限修改为 755，允许所有用户读取s和执行该目录</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">755</span> /opt/job/job-web
+<span class="token comment"># 为 /opt/job/job-web 及其子目录添加执行权限</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /opt/job/job-web
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /opt/job/job-web/js
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /opt/job/job-web/css <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="托管到cloudflare"><a href="#托管到cloudflare" class="headerlink" title="托管到cloudflare"></a>托管到cloudflare</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.spaceship.com/zh/application/advanced-dns-application/">高级 DNS - Spaceship</a>购买一个域名<code>130017.xyz</code></p>
+</li>
+<li><p>将域名的名称服务器更新为Cloudflare提供的名称服务器，才能使用 Cloudflare 的 DNS 服务。这样，所有的 DNS 查询都会被路由到 Cloudflare 的名称服务器，由 Cloudflare 来管理和解析该域名的 DNS 记录。</p>
+</li>
+<li><p>在 Cloudflare 的控制面板中管理该域名的所有 DNS 记录。</p>
+<ul>
+<li><p>实现通过域名内网穿透：用Cloudflare Tunnel 将外部域名 luotao.130017.xyz 转发到内部服务的  172.22.250.63</p>
+</li>
+<li><p>实现通过域名进行邮件转发：</p>
+<ol>
+<li><p>在域名注册商处绑定要转发的目标邮件：<img src="/2025/04/07/WindowSubsystemForLinux/image-20250414164016474.png" alt="image-20250414164016474"></p>
+<p>注册商自动添加的dns记录中的转发规则：可以看到为我们指定了两个邮件服务器。<img src="/2025/04/07/WindowSubsystemForLinux/image-20250414164222404.png" alt="image-20250414164222404"></p>
+</li>
+<li><p>将提供的dns记录添加到cloudflare的dns记录中: 完事后就可以用<code>xxx@130017.xyz</code>转发到之前绑定的目标邮件了</p>
+<p><img src="/2025/04/07/WindowSubsystemForLinux/image-20250414164927875.png" alt="image-20250414164927875"></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Cloudflare-Tunnel实现内网穿透"><a href="#Cloudflare-Tunnel实现内网穿透" class="headerlink" title="Cloudflare Tunnel实现内网穿透"></a>Cloudflare Tunnel实现内网穿透</h2><p><img src="/2025/04/07/WindowSubsystemForLinux/image-20250414163329053.png" alt="image-20250414163329053"></p>
+<blockquote>
+<p>Cloudflare Tunnel 将外部域名 luotao.130017.xyz 转发到内部服务的  172.22.250.63，整体过程如下：</p>
+<p>用户 -&gt; Cloudflare 的 DNS 服务器将其解析为Cloudflare的边缘节点IP地址 -&gt; 转发到Tunnel -&gt; 通过加密隧道转发到内部服务器 -&gt; Nginx反向代理 -&gt;Spring Boot -&gt; Nginx将响应转发 Tunnel -&gt; Tunnel 通过加密隧道将响应转发到Cloudflare边缘节点 -&gt; 用户</p>
+<ul>
+<li><p>用户访问 luotao.130017.xyz发请求</p>
+</li>
+<li><p>DNS解析：浏览器向DNS服务器查询 luotao.130017.xyz的IP地址</p>
+<p>由于你使用了 Cloudflare Tunnel，Cloudflare 的 DNS 服务器会将 luotao.130017.xyz 解析为 Cloudflare 的边缘节点 IP 地址（通常是 Cloudflare 提供的公共 IP 或域名）。</p>
+</li>
+<li><p>用户的请求被路由到 Cloudflare 的边缘节点。根据配置的隧道规则，将请求转发到我的 Cloudflare Tunnel。</p>
+</li>
+<li><p>Cloudflare Tunnel 根据我在 Cloudflare 控制台中的配置，将请求通过加密隧道转发到内部服务器的目标地址 172.22.250.63。</p>
+</li>
+<li><p>Nginx 接收请求并根据配置进行处理：<br>如果请求路径为 /api/，Nginx 将请求反向代理到服务器的 Spring Boot 应用（<a target="_blank" rel="noopener" href="http://localhost:8000/%EF%BC%89%E3%80%82">http://localhost:8000/）。</a><br>如果请求路径为其他路径（如 /），Nginx 直接从 /opt/job/job-web 目录中读取文件并返回给客户端。</p>
+<p>对于 /api/ 开头的请求，Spring Boot 根据配置的控制器返回相应的 API 响应。</p>
+<p>Nginx 将处理后的响应返回给 Cloudflare Tunnel</p>
+</li>
+<li><p>Cloudflare Tunnel 将响应通过加密隧道转发回 Cloudflare 边缘节点。<br>Cloudflare 边缘节点将响应返回给用户</p>
+</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 检查隧道服务的状态</span>
+     <span class="token function">sudo</span> systemctl status cloudflared<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看系统架构</span>
+<span class="token function">uname</span> <span class="token parameter variable">-m</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装cloudflared </span>
+<span class="token function">wget</span> https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb <span class="token parameter variable">-O</span> cloudflared.deb
+
+
+<span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">--output</span> cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb <span class="token operator">&amp;&amp;</span> 
+
+<span class="token function">sudo</span> dpkg <span class="token parameter variable">-i</span> cloudflared.deb <span class="token operator">&amp;&amp;</span> 
+
+<span class="token function">sudo</span> cloudflared <span class="token function">service</span> <span class="token function">install</span> 你的令牌<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启动服务</span>
+<span class="token function">sudo</span> systemctl start cloudflared  
+<span class="token comment"># 停止服务</span>
+<span class="token function">sudo</span> systemctl stop cloudflared  
+<span class="token comment"># 查看服务状态</span>
+<span class="token function">sudo</span> systemctl status cloudflared 
+<span class="token comment"># 设置开机自启</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> cloudflared
+<span class="token comment"># 禁用开机自启</span>
+<span class="token function">sudo</span> systemctl disable cloudflared <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="dns"><a href="#dns" class="headerlink" title="dns"></a>dns</h2><blockquote>
+<ul>
+<li><p>域名解析：DNS 的主要功能是将域名解析映射为对应的 <strong>IP 地址</strong>，使得用户可以通过易于记忆的域名来访问互联网资源，而不需要记住复杂的 IP 地址。</p>
+</li>
+<li><p>资源定位：提供其他类型的资源记录，如邮件服务器地址（MX 记录）、别名（CNAME 记录）等。</p>
+</li>
+<li><p>域名：由多个部分组成，例如 <a target="_blank" rel="noopener" href="http://www.example.com,其中/">www.example.com，其中</a> com 是顶级域名（TLD），example 是二级域名，www 是子域名。</p>
+</li>
+<li><p>DNS 服务器：负责处理 DNS 查询的服务器，包括根服务器、顶级域名服务器和权威域名服务器等。</p>
+</li>
+<li><p>DNS 记录：是存储在 DNS 服务器中的数据条目，它们定义了域名如何映射到各种类型的网络服务。</p>
+<ul>
+<li><p>A 记录（Address Record）<br>功能：将域名映射到 IPv4 地址。<br>示例：<a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> 的 A 记录可能指向 192.0.2.1。<br>用途：用于指定域名对应的 IP 地址，使得用户可以通过域名访问网站或其他服务。</p>
+</li>
+<li><p>AAAA 记录（IPv6 Address Record）<br>功能：将域名映射到 IPv6 地址。<br>示例：<a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> 的 AAAA 记录可能指向 2001:db8::1。<br>用途：随着 IPv6 的普及，AAAA 记录用于支持基于 IPv6 的网络连接</p>
+</li>
+<li><p>NS 记录（Name Server Record）<br>功能：指定负责该域名的名称服务器。<br>示例：example.com 的 NS 记录可能指向 ns1.example.com 和 ns2.example.com。<br>用途：用于指定哪个名称服务器负责管理和解析该域名的 DNS 记录。</p>
+</li>
+<li><p>MX 记录（Mail Exchange Record）<br>功能：指定负责接收该域名邮件的邮件服务器。<br>示例：example.com 的 MX 记录可能指向 mail.example.com。<br>用途：用于电子邮件系统的配置，确保邮件能够正确地路由和投递。</p>
+</li>
+<li><p>TXT 记录（Text Record）<br>功能：存储任意文本信息。<br>示例：example.com 的 TXT 记录可能包含 v=spf1 include:spf.efwd.spaceship.net ~all。<br>用途：常用于验证域名所有权、设置 SPF（Sender Policy Framework）记录以防止垃圾邮件等,指定了哪些邮件服务器被授权发送来自该域名的邮件。</p>
+</li>
+<li><p>SRV 记录（Service Record）<br>功能：定义特定服务的位置，包括服务的协议、端口和目标主机。<br>示例：_sip._tcp.example.com 的 SRV 记录可能指向 priority 10 weight 5 port 5060 target sipserver.example.com。<br>用途：常用于定位提供特定服务（如 SIP、XMPP 等）的服务器。</p>
+</li>
+<li><p>PTR 记录（Pointer Record）<br>功能：进行反向 DNS 查找，将 IP 地址映射回域名。<br>示例：IP 地址 192.0.2.1 的 PTR 记录可能指向 <a target="_blank" rel="noopener" href="http://www.example.com./">www.example.com。</a><br>用途：用于邮件系统验证和网络调试。</p>
+</li>
+<li><p>CNAME 记录（Canonical Name Record）<br>功能：将一个域名别名指向另一个域名。<br>示例：mail.example.com 的 CNAME 记录可能指向 example.com。<br>用途：常用于创建子域名或为同一个网站提供多个访问入口。</p>
+<ol>
+<li><p>域名解析请求：当用户请求一个设置了 CNAME 记录的域名（别名）时，DNS 解析器会首先查找该域名的 DNS 记录。</p>
+</li>
+<li><p>找到 CNAME 记录：如果找到 CNAME 记录，DNS 解析器会发现该域名实际上是一个别名，指向另一个域名（规范名称）</p>
+</li>
+<li><p>二次解析：DNS 解析器会继续对规范名称进行解析，查找其对应的 IP 地址或其他类型的 DNS 记录（如 A 记录、AAAA 记录等）。</p>
+</li>
+<li><p>返回结果：最终，DNS 解析器将找到的 IP 地址或其他解析结果返回给用户，完成域名解析过程。</p>
+</li>
+<li><p>假设你有一个主域名 example.com，并且希望创建一个子域名 <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> 来指向 example.com.</p>
+<pre class="line-numbers language-none"><code class="language-none">Host (Name)       Type    Value
+----------------  ------  -----------------
+www               CNAME   example.com
+                                   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样，当用户访问 <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> 时，DNS 解析器会将其解析为 example.com，并进一步获取 example.com 对应的 IP 地址或其他解析结果。</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>用户请求：当用户在浏览器中输入一个域名（如 <a target="_blank" rel="noopener" href="http://www.130017.xyz.com)时,操作系统会首先检查本地缓存是否有该域名的解析记录./">www.130017.xyz.com）时，操作系统会首先检查本地缓存是否有该域名的解析记录。</a></p>
+</li>
+<li><p>递归查询：如果本地缓存中没有记录，请求会被发送到配置的 DNS 服务器（通常是 ISP 提供的 DNS 服务器）进行递归查询。</p>
+</li>
+<li><p>迭代查询：DNS 服务器会向根域名服务器、顶级域名服务器（如 .com 的服务器）和权威域名服务器进行迭代查询，直到找到目标域名对应的 IP 地址。</p>
+</li>
+<li><p>返回结果：找到 IP 地址后，DNS 服务器将结果返回给用户，用户就可以通过该 IP 地址访问目标网站。</p>
+</li>
+</ul>
+<h2 id="Name-Servers"><a href="#Name-Servers" class="headerlink" title="Name Servers"></a>Name Servers</h2><p><img src="/2025/04/07/WindowSubsystemForLinux/image-20250413063356935.png" alt="image-20250413063356935"></p>
+<p>Cloudflare 提供的名称服务器（Name Servers）的作用</p>
+<ul>
+<li>DNS 解析：名称服务器负责将域名（如 130017.xyz）转换为对应的 IP 地址（如 192.0.2.1），这是互联网通信的基础。</li>
+<li>在 Cloudflare 控制面板中配置的 DNS 记录（如 NS、A、CNAME 等）会被 Cloudflare 的全球 CDN 网络分发到各个边缘节点，然后由 Cloudflare 转发到我的源站服务器。<br>全球 CDN 网络：Cloudflare 的 CDN 网络在全球范围内部署了大量边缘节点，这些节点会缓存和分发我的 DNS 记录，以实现快速和可靠的 DNS 解析</li>
+</ul>
+<h2 id="域名注册商处更新名称服务器"><a href="#域名注册商处更新名称服务器" class="headerlink" title="域名注册商处更新名称服务器"></a>域名注册商处更新名称服务器</h2><p><img src="/2025/04/07/WindowSubsystemForLinux/image-20250413063430738.png" alt="image-20250413063430738"></p>
+<ul>
+<li>将域名的名称服务器更新为Cloudflare提供的名称服务器，才能使用 Cloudflare 的 DNS 服务。这样，所有的 DNS 查询都会被路由到 Cloudflare 的名称服务器，由 Cloudflare 来管理和解析该域名的 DNS 记录。之后可以在 Cloudflare 的控制面板中管理该域名的所有 DNS 记录（如 A 记录、CNAME 记录、MX 记录等）。</li>
+</ul>
+<h2 id="CDN（Content-Delivery-Network）"><a href="#CDN（Content-Delivery-Network）" class="headerlink" title="CDN（Content Delivery Network）"></a>CDN（Content Delivery Network）</h2><blockquote>
+<p>用于加速互联网内容传输的技术和网络架构。它通过在全球范围内部署大量的<strong>服务器节点</strong>，将内容缓存并分发到这些节点上，使得用户可以就近获取所需的内容，从而显著提高访问速度和用户体验</p>
+<p>边缘节点: 是CDN 网络中部署在全球各地的服务器节点，这些节点通常位于互联网服务提供商（ISP）的数据中心或电信运营商的机房内，距离最终用户较近</p>
+<ol>
+<li>内容缓存：当某个内容（如网页、图片、视频等）首次被请求时，CDN 系统会将该内容从源站服务器（Origin Server存放原始内容的服务器）复制并缓存到相应的边缘节点上。</li>
+<li>内容分发：后续的相同内容请求会被路由到最近的边缘节点，由边缘节点直接响应，而不是每次都回源站服务器获取内容。</li>
+<li>智能调度：CDN 系统会根据用户的地理位置、网络状况、节点负载等因素，智能选择最优的边缘节点来响应用户的请求。</li>
+</ol>
+</blockquote>
+<ol>
+<li>内容上传：原始内容（如网页、图片、视频等）首先被上传到<strong>源站服务器</strong>（Origin Server）。</li>
+<li>内容分发：CDN 系统会将这些内容<strong>自动分发并缓存</strong>到全球各地的边缘节点（Edge Nodes 或 PoPs - Points of Presence）。</li>
+<li>用户请求：当用户请求某个内容时，CDN 会根据用户的地理位置、网络状况等因素，选择最优的边缘节点来响应请求。</li>
+<li>内容交付：边缘节点将缓存的内容直接返回给用户，由于距离较近，可以实现快速传输。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/29/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" rel="prev" title="个人博客系统">
+                  <i class="fa fa-chevron-left"></i> 个人博客系统
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/04/10/mybatis/" rel="next" title="mybatis">
+                  mybatis <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LuoTao</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"4086c32b96a8dd12fb0d6e63a69a6f80"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

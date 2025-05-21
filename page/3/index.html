@@ -13,14 +13,14 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
 
 <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="昨夜向左.火车向右">
 <meta property="og:type" content="website">
@@ -86,7 +86,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">43</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">44</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -158,12 +158,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -217,6 +217,703 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="LuoTao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">昨夜向左.火车向右</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">深刻理解Java之List集合</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-14 01:23:57" itemprop="dateCreated datePublished" datetime="2025-03-14T01:23:57+08:00">2025-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-22 00:37:46" itemprop="dateModified" datetime="2025-04-22T00:37:46+08:00">2025-04-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="深刻理解Java之List集合"><a href="#深刻理解Java之List集合" class="headerlink" title="深刻理解Java之List集合"></a>深刻理解Java之List集合</h1><p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314132644267.png" alt="image-20250314132644267"></p>
+<h2 id="1-List接口概述"><a href="#1-List接口概述" class="headerlink" title="1. List接口概述"></a>1. List接口概述</h2><h3 id="1-1-基本特性"><a href="#1-1-基本特性" class="headerlink" title="1.1 基本特性"></a>1.1 基本特性</h3><p>List接口继承自Collection接口，代表一个有序的、可重复的元素集合。其主要特点：</p>
+<ul>
+<li><strong>有序性</strong>：元素存储和添加的顺序一致</li>
+<li><strong>可重复性</strong>：允许存储相同的元素</li>
+<li><strong>索引访问</strong>：可以通过索引精确访问元素</li>
+<li><strong>动态扩容</strong>：大多数实现类支持动态调整容量</li>
+<li>存储引用数据类型</li>
+</ul>
+<p><strong>生活比喻</strong>：List就像电影院的一排座位</p>
+<ul>
+<li>每个座位都有明确的编号(0, 1, 2…)，按顺序排列</li>
+<li>同一个人可以买多个座位(可重复)</li>
+<li>你可以直接找到”第5号座位”而不需要从头数过去</li>
+<li>如果需要，影院可以增加更多座位(动态扩容)</li>
+</ul>
+<h3 id="1-2-List在集合框架中的位置"><a href="#1-2-List在集合框架中的位置" class="headerlink" title="1.2 List在集合框架中的位置"></a>1.2 List在集合框架中的位置</h3><pre class="line-numbers language-none"><code class="language-none">Collection (接口)
+├── List (接口)
+│   ├── ArrayList (实现类)
+│   ├── LinkedList (实现类)
+│   ├── Vector (实现类)
+│   │   └── Stack (子类)
+│   └── ...
+├── Set (接口)
+└── Queue (接口)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-3-List接口定义的主要方法"><a href="#1-3-List接口定义的主要方法" class="headerlink" title="1.3 List接口定义的主要方法"></a>1.3 List接口定义的主要方法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 添加元素到指定位置</span>
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token class-name">E</span> element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取指定索引的元素</span>
+<span class="token class-name">E</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 替换指定索引的元素</span>
+<span class="token class-name">E</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token class-name">E</span> element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 移除指定索引的元素</span>
+<span class="token class-name">E</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 查找元素首次出现的索引</span>
+<span class="token keyword">int</span> <span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 查找元素最后一次出现的索引</span>
+<span class="token keyword">int</span> <span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取子列表</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> <span class="token function">subList</span><span class="token punctuation">(</span><span class="token keyword">int</span> fromIndex<span class="token punctuation">,</span> <span class="token keyword">int</span> toIndex<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="2-List的主要实现类"><a href="#2-List的主要实现类" class="headerlink" title="2. List的主要实现类"></a>2. List的主要实现类</h2><h3 id="2-1-ArrayList-“整齐排列的火车车厢”"><a href="#2-1-ArrayList-“整齐排列的火车车厢”" class="headerlink" title="2.1 ArrayList - “整齐排列的火车车厢”"></a>2.1 ArrayList - “整齐排列的火车车厢”</h3><p>ArrayList是List接口最常用的实现类，基于动态数组实现，查询快，但由于不可变性，增删会复制创建新数组。</p>
+<p><strong>内部结构</strong>：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// ArrayList的核心是一个Object数组</span>
+<span class="token keyword">transient</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span> elementData<span class="token punctuation">;</span>
+
+<span class="token comment">// 实际元素数量</span>
+<span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>工作原理</strong>：</p>
+<ul>
+<li>初始容量为10（默认构造函数）</li>
+<li>当容量不足时，自动扩容为原容量的1.5倍</li>
+<li>扩容涉及数组复制，是一个相对昂贵的操作</li>
+</ul>
+<p><strong>性能特点</strong>：</p>
+<ul>
+<li>随机访问性能极佳：O(1)</li>
+<li>尾部添加元素通常为O(1)，但可能触发扩容</li>
+<li>中间插入/删除元素性能较差：O(n)，因为需要移动元素</li>
+<li>非线程安全</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>ArrayList就像一列火车车厢，整齐地排列在铁轨上：</p>
+<ul>
+<li>想找到第N号车厢非常容易，直接数过去就行（随机访问快）</li>
+<li>在中间加入新车厢很麻烦，需要把后面所有车厢都移动（中间插入慢）</li>
+<li>在尾部加车厢相对简单，但偶尔需要换一条更长的铁轨（扩容操作）</li>
+<li>每个车厢紧挨着，占用空间紧凑（内存效率高）</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建ArrayList</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> fruits <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 添加元素</span>
+fruits<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fruits<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Banana"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fruits<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Orange"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 指定位置添加</span>
+fruits<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Mango"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Apple, Mango, Banana, Orange]</span>
+
+<span class="token comment">// 访问元素</span>
+<span class="token class-name">String</span> fruit <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Apple</span>
+
+<span class="token comment">// 修改元素</span>
+fruits<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Pineapple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Pineapple, Mango, Banana, Orange]</span>
+
+<span class="token comment">// 删除元素</span>
+fruits<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Pineapple, Mango, Orange]</span>
+
+<span class="token comment">// 查找元素</span>
+<span class="token keyword">int</span> index <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Mango"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1</span>
+
+<span class="token comment">// 大小</span>
+<span class="token keyword">int</span> siz <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-2-LinkedList-“手拉手的人链”"><a href="#2-2-LinkedList-“手拉手的人链”" class="headerlink" title="2.2 LinkedList - “手拉手的人链”"></a>2.2 LinkedList - “手拉手的人链”</h3><p>LinkedList是基于双向链表实现的List接口，同时也实现了Deque接口。增删快，只需要改节点的指针，当时查询慢，需要从头开始找。</p>
+<p><strong>内部结构</strong>：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 链表节点类</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">E</span> item<span class="token punctuation">;</span>           <span class="token comment">// 元素值</span>
+    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> next<span class="token punctuation">;</span>     <span class="token comment">// 后继节点</span>
+    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> prev<span class="token punctuation">;</span>     <span class="token comment">// 前驱节点</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 链表大小</span>
+<span class="token keyword">transient</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
+
+<span class="token comment">// 头节点和尾节点</span>
+<span class="token keyword">transient</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> first<span class="token punctuation">;</span>
+<span class="token keyword">transient</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> last<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>工作原理</strong>：</p>
+<ul>
+<li>每个元素都是一个包含前后引用的节点</li>
+<li>添加元素时创建新节点并调整相关节点的引用</li>
+<li>删除元素时调整相关节点的引用</li>
+</ul>
+<p><strong>性能特点</strong>：</p>
+<ul>
+<li>随机访问性能较差：O(n)，需要从头/尾遍历</li>
+<li>插入/删除元素性能极佳：O(1)，只需调整引用</li>
+<li>内存占用较大，每个元素需要额外存储前后引用</li>
+<li>非线程安全</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>LinkedList就像一群手拉手的人形成的人链：</p>
+<ul>
+<li>要找到第50个人，你必须从头（或尾）数过去（随机访问慢）</li>
+<li>在任何位置插入新人很容易，只需要松开两个人的手，让新人拉住他们（插入快）</li>
+<li>每个人除了自己外，还要记住前后两个人是谁（额外内存开销）</li>
+<li>人链的两端可以很方便地加入或移除人员（两端操作高效）</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314144120517.png" alt="image-20250314144120517"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建LinkedList</span>
+<span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> tasks <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 添加元素</span>
+tasks<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Task 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tasks<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Task 3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 在指定位置添加</span>
+tasks<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Task 2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Task 1, Task 2, Task 3]</span>
+
+<span class="token comment">// 作为双端队列使用</span>
+tasks<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token string">"Task 0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Task 0, Task 1, Task 2, Task 3]</span>
+tasks<span class="token punctuation">.</span><span class="token function">addLast</span><span class="token punctuation">(</span><span class="token string">"Task 4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [Task 0, Task 1, Task 2, Task 3, Task 4]</span>
+
+<span class="token comment">// 获取元素</span>
+<span class="token class-name">String</span> first <span class="token operator">=</span> tasks<span class="token punctuation">.</span><span class="token function">getFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Task 0</span>
+<span class="token class-name">String</span> last <span class="token operator">=</span> tasks<span class="token punctuation">.</span><span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Task 4</span>
+
+<span class="token comment">// 删除元素</span>
+tasks<span class="token punctuation">.</span><span class="token function">removeFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Task 1, Task 2, Task 3, Task 4]</span>
+tasks<span class="token punctuation">.</span><span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [Task 1, Task 2, Task 3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-3-Vector-“带锁的保险柜”"><a href="#2-3-Vector-“带锁的保险柜”" class="headerlink" title="2.3 Vector - “带锁的保险柜”"></a>2.3 Vector - “带锁的保险柜”</h3><p>Vector是List接口的古老实现类，与ArrayList类似，但是线程安全的。</p>
+<p><strong>内部结构</strong>：</p>
+<ul>
+<li>与ArrayList类似，基于数组实现</li>
+<li>方法使用synchronized关键字同步</li>
+</ul>
+<p><strong>性能特点</strong>：</p>
+<ul>
+<li>随机访问性能好：O(1)</li>
+<li>由于同步机制，性能比ArrayList差</li>
+<li>扩容时默认增长为原容量的2倍（而ArrayList是1.5倍）</li>
+<li>线程安全</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>Vector就像一个带锁的保险柜，每次只允许一个人操作：</p>
+<ul>
+<li>查找和存取物品的方式与普通柜子相同</li>
+<li>但每次操作都需要先开锁，用完再锁上（同步操作的开销）</li>
+<li>安全性高，但效率低</li>
+</ul>
+<p><strong>适用场景</strong>：</p>
+<ul>
+<li>需要线程安全的动态数组</li>
+<li>多线程环境下共享集合</li>
+<li>注：现代Java应用中，通常使用Collections.synchronizedList()或CopyOnWriteArrayList代替Vector</li>
+</ul>
+<h3 id="2-4-Stack-“书堆”"><a href="#2-4-Stack-“书堆”" class="headerlink" title="2.4 Stack - “书堆”"></a>2.4 Stack - “书堆”</h3><p>Stack是Vector的子类，实现了后进先出(LIFO)的栈结构。</p>
+<p><strong>主要方法</strong>：</p>
+<ul>
+<li><code>push(E item)</code>：将元素压入栈顶</li>
+<li><code>pop()</code>：移除并返回栈顶元素</li>
+<li><code>peek()</code>：返回栈顶元素但不移除</li>
+<li><code>empty()</code>：检查栈是否为空</li>
+<li><code>search(Object o)</code>：查找元素在栈中的位置</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>Stack就像一堆叠放的书：</p>
+<ul>
+<li>你只能从顶部放书或取书</li>
+<li>要拿到底部的书，必须先移除上面所有的书</li>
+</ul>
+<p><strong>注意</strong>：Stack类已被视为过时设计，现代Java应用通常使用Deque接口的实现（如ArrayDeque）作为栈。</p>
+<h2 id="3-ArrayList与LinkedList的深度对比"><a href="#3-ArrayList与LinkedList的深度对比" class="headerlink" title="3. ArrayList与LinkedList的深度对比"></a>3. ArrayList与LinkedList的深度对比</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>ArrayList</th>
+<th>LinkedList</th>
+<th>生活比喻</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内部实现</td>
+<td>动态数组</td>
+<td>双向链表</td>
+<td>整齐排列的停车场 vs 分散但互相连接的停车位</td>
+</tr>
+<tr>
+<td>随机访问</td>
+<td>O(1)，极快</td>
+<td>O(n)，较慢</td>
+<td>翻书找页码 vs 看连续剧找某一集</td>
+</tr>
+<tr>
+<td>插入/删除（中间）</td>
+<td>O(n)，需移动元素</td>
+<td>O(1)，仅调整引用</td>
+<td>排队插队(所有人后移) vs 手拉手人链中加人(只调整相邻两人)</td>
+</tr>
+<tr>
+<td>插入/删除（末尾）</td>
+<td>平均O(1)，可能扩容</td>
+<td>O(1)</td>
+<td>在队尾加人 vs 在人链尾部加人</td>
+</tr>
+<tr>
+<td>内存占用</td>
+<td>较少</td>
+<td>较多（存储前后引用）</td>
+<td>紧凑的公寓楼 vs 带花园的独栋别墅</td>
+</tr>
+<tr>
+<td>迭代性能</td>
+<td>较好（内存连续）</td>
+<td>较差（内存分散）</td>
+<td>连续高速公路 vs 有红绿灯的城市道路</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>随机访问、尾部操作</td>
+<td>频繁插入删除、两端操作</td>
+<td>图书馆查书 vs 排队叫号系统</td>
+</tr>
+</tbody></table>
+<h2 id="4-List的常用操作"><a href="#4-List的常用操作" class="headerlink" title="4. List的常用操作"></a>4. List的常用操作</h2><p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314124911847.png" alt="image-20250314124911847"></p>
+<p><img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314125024121.png" alt="image-20250314125024121"></p>
+<h3 id="4-1-创建List"><a href="#4-1-创建List" class="headerlink" title="4.1 创建List"></a>4.1 创建List</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 空ArrayList</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 指定初始容量</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 基于已有集合创建</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>anotherCollection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用Arrays.asList创建固定大小的List</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list4 <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 注意：Arrays.asList返回的List不支持add/remove操作</span>
+
+<span class="token comment">// Java 9+: 使用List.of创建不可变List</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list5 <span class="token operator">=</span> <span class="token class-name">List</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用Stream创建</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> list6 <span class="token operator">=</span> <span class="token class-name">IntStream</span><span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+                              <span class="token punctuation">.</span><span class="token function">boxed</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                              <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：</p>
+<ul>
+<li>创建空ArrayList就像买了一个空相册，准备放照片</li>
+<li>指定初始容量就像提前准备好20个格子的收纳盒</li>
+<li>Arrays.asList就像买了一个已经放了照片的相册，但相册大小固定</li>
+</ul>
+<h3 id="4-2-添加元素"><a href="#4-2-添加元素" class="headerlink" title="4.2 添加元素"></a>4.2 添加元素</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> colors <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 添加单个元素</span>
+colors<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 在指定位置添加</span>
+colors<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Blue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 添加多个元素</span>
+colors<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Green"</span><span class="token punctuation">,</span> <span class="token string">"Yellow"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 在指定位置添加集合</span>
+colors<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Purple"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-3-访问元素"><a href="#4-3-访问元素" class="headerlink" title="4.3 访问元素"></a>4.3 访问元素</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> planets <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>
+    <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Mercury"</span><span class="token punctuation">,</span> <span class="token string">"Venus"</span><span class="token punctuation">,</span> <span class="token string">"Earth"</span><span class="token punctuation">,</span> <span class="token string">"Mars"</span><span class="token punctuation">,</span> <span class="token string">"Jupiter"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 通过索引访问</span>
+<span class="token class-name">String</span> earth <span class="token operator">=</span> planets<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Earth</span>
+
+<span class="token comment">// 查找元素位置</span>
+<span class="token keyword">int</span> index <span class="token operator">=</span> planets<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Mars"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 3</span>
+<span class="token keyword">int</span> lastIndex <span class="token operator">=</span> planets<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"Earth"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 2</span>
+
+<span class="token comment">// 检查是否包含元素</span>
+<span class="token keyword">boolean</span> contains <span class="token operator">=</span> planets<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"Venus"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span>
+
+<span class="token comment">// 获取子列表（视图，非副本）</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> innerPlanets <span class="token operator">=</span> planets<span class="token punctuation">.</span><span class="token function">subList</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-4-修改元素"><a href="#4-4-修改元素" class="headerlink" title="4.4 修改元素"></a>4.4 修改元素</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>
+    <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"Charlie"</span><span class="token punctuation">,</span> <span class="token string">"David"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 替换元素</span>
+names<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Robert"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [Alice, Robert, Charlie, David]</span>
+
+<span class="token comment">// 批量替换（Java 8+）</span>
+names<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span>name <span class="token operator">-></span> name<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [ALICE, ROBERT, CHARLIE, DAVID]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-5-删除元素"><a href="#4-5-删除元素" class="headerlink" title="4.5 删除元素"></a>4.5 删除元素</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> animals <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>
+    <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Dog"</span><span class="token punctuation">,</span> <span class="token string">"Cat"</span><span class="token punctuation">,</span> <span class="token string">"Bird"</span><span class="token punctuation">,</span> <span class="token string">"Fish"</span><span class="token punctuation">,</span> <span class="token string">"Cat"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 删除指定位置的元素</span>
+<span class="token class-name">String</span> removed <span class="token operator">=</span> animals<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Bird</span>
+<span class="token comment">// 现在是 [Dog, Cat, Fish, Cat]</span>
+
+<span class="token comment">// 删除指定元素（首次出现）</span>
+<span class="token keyword">boolean</span> isRemoved <span class="token operator">=</span> animals<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"Cat"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span>
+<span class="token comment">// 现在是 [Dog, Fish, Cat]</span>
+
+<span class="token comment">// 批量删除</span>
+animals<span class="token punctuation">.</span><span class="token function">removeAll</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Fish"</span><span class="token punctuation">,</span> <span class="token string">"Cat"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 现在是 [Dog]</span>
+
+<span class="token comment">// 条件删除（Java 8+）</span>
+animals<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Elephant"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+animals<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Snake"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+animals<span class="token punctuation">.</span><span class="token function">removeIf</span><span class="token punctuation">(</span>animal <span class="token operator">-></span> animal<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 现在是 [Dog]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-6-遍历List"><a href="#4-6-遍历List" class="headerlink" title="4.6 遍历List"></a>4.6 遍历List</h3><table>
+<thead>
+<tr>
+<th>iterator方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hasNext()</td>
+<td>判断集合中是否还有下一个元素</td>
+</tr>
+<tr>
+<td>next()</td>
+<td>返回集合中的下一个元素</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>删除迭代器返回的元素</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> fruits <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Cherry"</span><span class="token punctuation">,</span> <span class="token string">"Date"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 1. 使用for循环（索引）</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> fruits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>fruits<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 2. 使用增强for循环</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> fruit <span class="token operator">:</span> fruits<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>fruit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 3. 使用迭代器时，集合中的元素删除只能通过迭代器提供remove方法</span>
+<span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> iterator <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> f <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>f<span class="token operator">==</span><span class="token string">"Banana"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        iterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 4. 使用ListIterator（可双向遍历）</span>
+<span class="token class-name">ListIterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> listIterator <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>listIterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>listIterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 反向遍历</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>listIterator<span class="token punctuation">.</span><span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>listIterator<span class="token punctuation">.</span><span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 5. 使用forEach方法（Java 8+）</span>
+fruits<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 6. 使用Stream API（Java 8+）</span>
+fruits<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>f <span class="token operator">-></span> f<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token operator">::</span><span class="token function">toUpperCase</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：</p>
+<ul>
+<li>for循环（索引）：就像按座位号点名</li>
+<li>增强for循环：就像派发礼物，每个人都要领到，但不关心座位号</li>
+<li>迭代器：就像列队检查，检查完一个人后，才移动到下一个人</li>
+<li>Stream API：就像设置了一条传送带，水果经过清洗(filter)、切片(map)等处理</li>
+</ul>
+<h3 id="4-7-排序List"><a href="#4-7-排序List" class="headerlink" title="4.7 排序List"></a>4.7 排序List</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>
+    <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Zack"</span><span class="token punctuation">,</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"Charlie"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 1. 使用Collections.sort（自然顺序）</span>
+<span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [Alice, Bob, Charlie, Zack]</span>
+
+<span class="token comment">// 2. 使用List.sort（Java 8+）</span>
+names<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">naturalOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [Alice, Bob, Charlie, Zack]</span>
+
+<span class="token comment">// 3. 自定义比较器</span>
+names<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">comparing</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token operator">::</span><span class="token function">length</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 按长度排序: [Bob, Zack, Alice, Charlie]</span>
+
+<span class="token comment">// 4. 反向排序</span>
+names<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">reverseOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [Zack, Charlie, Bob, Alice]</span>
+
+<span class="token comment">// 5. 复合排序</span>
+names<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>
+    <span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">comparing</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token operator">::</span><span class="token function">length</span><span class="token punctuation">)</span>
+              <span class="token punctuation">.</span><span class="token function">thenComparing</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">naturalOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 先按长度，再按字母顺序</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：</p>
+<ul>
+<li>自然顺序排序就像按字母表顺序排队</li>
+<li>自定义比较器就像可以选择按年龄、身高或成绩给学生排队</li>
+<li>复合排序就像先按年级分组，再按成绩排序</li>
+</ul>
+<h2 id="5-List的线程安全性"><a href="#5-List的线程安全性" class="headerlink" title="5. List的线程安全性"></a>5. List的线程安全性</h2><h3 id="5-1-线程不安全的List"><a href="#5-1-线程不安全的List" class="headerlink" title="5.1 线程不安全的List"></a>5.1 线程不安全的List</h3><p>ArrayList和LinkedList都不是线程安全的，在多线程环境下可能出现：</p>
+<ul>
+<li>ConcurrentModificationException</li>
+<li>数据不一致</li>
+<li>元素丢失</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>就像没有管理员的图书馆书架，多人同时取放书可能导致混乱（有人正在整理的书架被其他人打乱）</p>
+<h3 id="5-2-创建线程安全的List"><a href="#5-2-创建线程安全的List" class="headerlink" title="5.2 创建线程安全的List"></a>5.2 创建线程安全的List</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1. 使用Collections.synchronizedList</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> syncList <span class="token operator">=</span> <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">synchronizedList</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用时需要手动同步迭代操作</span>
+<span class="token keyword">synchronized</span> <span class="token punctuation">(</span>syncList<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> iterator <span class="token operator">=</span> syncList<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 2. 使用CopyOnWriteArrayList（适合读多写少的场景）</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> cowList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CopyOnWriteArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 写操作会复制整个底层数组，读操作无锁</span>
+<span class="token comment">// 迭代器是快照，不会抛出ConcurrentModificationException</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：</p>
+<ul>
+<li>synchronizedList就像有管理员的图书馆，一次只允许一个人操作书架，其他人必须等待</li>
+<li>CopyOnWriteArrayList就像特殊的图书馆，每次有人要修改书架，都会先复制一份完整的书架进行修改，读者始终看到的是完整的旧版本，直到修改完成</li>
+</ul>
+<h2 id="6-List的性能优化"><a href="#6-List的性能优化" class="headerlink" title="6. List的性能优化"></a>6. List的性能优化</h2><h3 id="6-1-ArrayList优化"><a href="#6-1-ArrayList优化" class="headerlink" title="6.1 ArrayList优化"></a>6.1 ArrayList优化</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1. 指定初始容量，避免频繁扩容</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 2. 批量添加元素</span>
+list<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>collection<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 优于循环添加</span>
+
+<span class="token comment">// 3. 使用ensureCapacity预分配空间</span>
+<span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> arrayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+arrayList<span class="token punctuation">.</span><span class="token function">ensureCapacity</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 4. 使用trimToSize释放多余空间</span>
+arrayList<span class="token punctuation">.</span><span class="token function">trimToSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：</p>
+<ul>
+<li>指定初始容量就像搬家时一开始就租足够大的卡车，比先租小车再换大车要高效得多</li>
+<li>trimToSize就像搬完家后退掉大卡车，换成刚好够用的小车，节省空间</li>
+</ul>
+<h3 id="6-2-LinkedList优化"><a href="#6-2-LinkedList优化" class="headerlink" title="6.2 LinkedList优化"></a>6.2 LinkedList优化</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1. 使用合适的方法</span>
+<span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> linkedList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 使用addFirst/addLast而非add(0, element)</span>
+linkedList<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token string">"First"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 比add(0, "First")更高效</span>
+
+<span class="token comment">// 2. 避免随机访问</span>
+<span class="token comment">// 不要使用for (int i = 0; i &lt; list.size(); i++)</span>
+<span class="token comment">// 而应使用迭代器或增强for循环</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：</p>
+<ul>
+<li>使用addFirst而非add(0, element)就像直接告诉门卫”我要见队伍最前面的人”，而不是让门卫带你从队伍头走到尾</li>
+</ul>
+<h2 id="7-List的实际应用场景"><a href="#7-List的实际应用场景" class="headerlink" title="7. List的实际应用场景"></a>7. List的实际应用场景</h2><h3 id="7-1-ArrayList应用场景"><a href="#7-1-ArrayList应用场景" class="headerlink" title="7.1 ArrayList应用场景"></a>7.1 ArrayList应用场景</h3><ul>
+<li>实现动态数组</li>
+<li>频繁随机访问的数据集合</li>
+<li>数据量较大但变化较少的集合</li>
+<li>需要快速迭代的场景</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>ArrayList就像一本书的目录或索引，需要快速查找但不经常修改</p>
+<h3 id="7-2-LinkedList应用场景"><a href="#7-2-LinkedList应用场景" class="headerlink" title="7.2 LinkedList应用场景"></a>7.2 LinkedList应用场景</h3><ul>
+<li>实现队列或栈</li>
+<li>频繁插入/删除操作的场景</li>
+<li>实现LRU缓存</li>
+<li>需要从两端操作的集合</li>
+</ul>
+<p><strong>生活比喻</strong>：<br>LinkedList就像餐厅的等位名单，经常有人加入或离开队伍</p>
+<h3 id="7-3-实际案例：分页处理"><a href="#7-3-实际案例：分页处理" class="headerlink" title="7.3 实际案例：分页处理"></a>7.3 实际案例：分页处理</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pagination</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> data<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> pageSize<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Pagination</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> data<span class="token punctuation">,</span> <span class="token keyword">int</span> pageSize<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 创建副本，避免外部修改</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>pageSize <span class="token operator">=</span> pageSize<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token function">getPage</span><span class="token punctuation">(</span><span class="token keyword">int</span> pageNumber<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> startIndex <span class="token operator">=</span> <span class="token punctuation">(</span>pageNumber <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> pageSize<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> endIndex <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>startIndex <span class="token operator">+</span> pageSize<span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">>=</span> data<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> startIndex <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        <span class="token keyword">return</span> data<span class="token punctuation">.</span><span class="token function">subList</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> endIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getTotalPages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span> data<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 使用示例</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> allProducts <span class="token operator">=</span> productRepository<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Pagination</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> pagination <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pagination</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>allProducts<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Product</span><span class="token punctuation">></span></span> page1 <span class="token operator">=</span> pagination<span class="token punctuation">.</span><span class="token function">getPage</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 获取第一页</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>生活比喻</strong>：<br>分页处理就像一本厚书的章节划分，让读者能够一次阅读适量的内容，而不是一次展示所有内容</p>
+<h2 id="8-List的最佳实践"><a href="#8-List的最佳实践" class="headerlink" title="8. List的最佳实践"></a>8. List的最佳实践</h2><ol>
+<li><p><strong>选择合适的实现类</strong></p>
+<ul>
+<li>随机访问多，选择ArrayList</li>
+<li>插入/删除多，选择LinkedList</li>
+<li>需要线程安全，使用CopyOnWriteArrayList或synchronizedList</li>
+</ul>
+<p><strong>比喻</strong>：就像选择交通工具 - 需要在固定站点上下客，选择公交车(ArrayList)；需要灵活穿梭于各个小巷，选择摩托车(LinkedList)</p>
+</li>
+<li><p><strong>避免频繁扩容</strong></p>
+<ul>
+<li>预估容量，使用带容量参数的构造函数</li>
+<li>批量添加元素时使用addAll而非循环add</li>
+</ul>
+<p><strong>比喻</strong>：一开始就买足够大的水桶，而不是先买小桶再换大桶</p>
+</li>
+<li><p><strong>正确使用迭代器</strong></p>
+<ul>
+<li>使用迭代器遍历时不要使用集合的remove方法，应使用迭代器的remove方法<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 错误方式</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> item <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> list<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ConcurrentModificationException</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 正确方式</span>
+<span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> it <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">String</span> item <span class="token operator">=</span> it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> it<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>比喻</strong>：就像在移动的传送带上拿东西 - 直接改变传送带的结构会导致故障，应该通过传送带提供的控制按钮来移除物品</p>
+</li>
+<li><p><strong>合理使用视图和包装器</strong></p>
+<ul>
+<li>subList返回的是原List的视图，修改会影响原List</li>
+<li>unmodifiableList创建只读视图，防止修改</li>
+</ul>
+<p><strong>比喻</strong>：subList就像房间的窗户，通过窗户看到的变化反映了房间的实际变化；unmodifiableList就像博物馆的展品，只能看不能动</p>
+</li>
+<li><p><strong>注意List.of和Arrays.asList的限制</strong></p>
+<ul>
+<li>List.of和Arrays.asList创建的List不支持添加/删除操作</li>
+<li>Arrays.asList创建的List大小固定，但元素可修改</li>
+<li>List.of创建的List完全不可变</li>
+</ul>
+<p><strong>比喻</strong>：Arrays.asList就像固定格数的相册，可以替换照片但不能增减格子；List.of就像密封的时间胶囊，一旦封存就不能改变</p>
+</li>
+<li><p><strong>利用Stream API进行复杂操作</strong></p>
+<ul>
+<li>使用Stream API进行过滤、映射、归约等操作<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> evenNumbers <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                                  <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>n <span class="token operator">-></span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                                  <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>比喻</strong>：Stream API就像工厂的生产线，原材料(数据)经过一系列工序(操作)，最终成为成品</p>
+</li>
+<li><p><strong>避免装箱/拆箱开销</strong></p>
+<ul>
+<li>对于基本类型，考虑使用专门的实现如IntArrayList（第三方库）</li>
+<li>或使用数组代替List</li>
+</ul>
+<p><strong>比喻</strong>：装箱/拆箱就像每次进出商场都要把东西包装/拆包，很耗时间</p>
+</li>
+<li><p><strong>注意equals和hashCode</strong></p>
+<ul>
+<li>自定义类作为List元素时，正确实现equals和hashCode方法</li>
+<li>这对contains、remove等方法的正确工作至关重要</li>
+</ul>
+<p><strong>比喻</strong>：equals就像人脸识别系统，如果设计不当，可能会把双胞胎认成同一个人或把同一个人的不同表情认成不同人</p>
+</li>
+</ol>
+<p>通过深入理解List集合的内部机制和使用技巧，结合生活化的比喻，我们可以在实际开发中更加高效地使用这一重要的数据结构，编写出更加高效、可靠的代码。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/13/%E8%AF%A6%E8%A7%A3Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,9 +942,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-03-13 23:50:16 / 修改时间：23:52:55" itemprop="dateCreated datePublished" datetime="2025-03-13T23:50:16+08:00">2025-03-13</time>
+      <time title="创建时间：2025-03-13 23:50:16" itemprop="dateCreated datePublished" datetime="2025-03-13T23:50:16+08:00">2025-03-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-22 00:37:43" itemprop="dateModified" datetime="2025-04-22T00:37:43+08:00">2025-04-22</time>
     </span>
 
   
@@ -3252,7 +3955,7 @@ toggleBtn<span class="token punctuation">.</span><span class="token function">ad
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-24 04:38:13" itemprop="dateModified" datetime="2025-04-24T04:38:13+08:00">2025-04-24</time>
+      <time title="修改时间：2025-05-20 17:14:32" itemprop="dateModified" datetime="2025-05-20T17:14:32+08:00">2025-05-20</time>
     </span>
 
   
@@ -3266,7 +3969,25 @@ toggleBtn<span class="token punctuation">.</span><span class="token function">ad
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="title-影刀RPA工程师"><a href="#title-影刀RPA工程师" class="headerlink" title="title: 影刀RPA工程师"></a>title: 影刀RPA工程师</h1><p>date: 2025-02-18 17:42:25<br>tags:</p>
-<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>各位面试官，你们好，非常感谢能给我这次面试机会。我叫罗涛，今年24岁，毕业于重庆工商职业学院，我擅长基于java、VB语言的程序语言设计。我之前的工作主要是服务于业务部门，软件自研，一方面解决商务部提出的针对erp系统的优化需求转化为技术实现，利用低代码平台二次开发，其次负责部分系统的维护工作，包括流程的搭建与变更。这份工作我是从助理做起的，半年后我成为了软件开发工程师，这个过程中我有机会主导开发一些项目，比如利用低代码平台搭建电子签名服务平台、分析金蝶云webapi接口并打通集成到已有的业务系统中（比如将录单、下推功能）等，这些使我累积了丰富的经验。最后我希望能加入贵公司，发挥我的能力，给公司创造价值。谢谢，我的介绍完毕。</p>
+<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>各位面试官，你们好，非常感谢能给我这次面试机会。我叫罗涛，24岁，毕业于重庆工商职业学院，我有2年的低代码开发经验。我擅长基于java、VB语言的程序语言设计。我之前任职于金证股份旗下的子公司齐普生科技，工作主要是服务于业务部门，软件自研，一方面解决商务部提出的针对erp系统的优化需求转化为技术实现，利用低代码平台二次开发，其次负责部分系统的维护工作，包括流程的搭建与变更。这份工作我是从助理做起的，半年后我成为了软件开发工程师，这个过程中我有机会主导开发一些项目，比如利用低代码平台搭建电子签名服务平台、分析金蝶云webapi接口并打通集成到已有的业务系统中（比如将录单、下推功能）等，这些使我累积了丰富的经验。最后我希望能加入贵公司，发挥我的能力，给公司创造价值。谢谢，我的介绍完毕。</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">【个人信息】
+各位面试官，你们好，非常感谢能给我这次面试机会。我叫罗涛,我是于2022年从重庆工商职业学院的计算机专业毕业，并且加入了金证股份旗下的子公司齐普生科技，主要从事低代码foxtable的二次开发。迄今为止有2年左右的低代码开发经验。
+【工作背景】
+这份工作我是从助理做起的，半年后我成为了软件开发工程师，这个过程中我有机会主导开发一些项目，比如搭建电子签名平台和对接第三方接口服务，将商务部的业务需求转化为技术实现。
+这些使我累积了丰富的经验。
+【技术栈】
+那我在整个的这样的一个项目的经历过程当中
+主要的一些技术栈会采用 java 的开发语言，运用springboot开发框架和一些数据中间件比如sqlserver、Redis缓存。
+【学习能力】
+那我认为我是一个好学喜欢的人，我用spring和vue去做了一个自己的博客，我业余时间也会做一些demo和创作分享到我的博客或者GITHUB。
+【期待】
+最后我希望能加入贵公司，发挥我的能力，给公司创造价值。谢谢，我的介绍完毕。
+【项目1细节】
+利用低代码平台搭建电子签名服务平台的业务项目，它是基于foxtable对外，比如二级，三级分销商的经办人和本公司去提供一对一或者一对多的签名服务。
+1.qps有多少？因为这个签名服务是由销售驱动，对接到订单组，然后订单组（6个人）去执行这么一个过程，所以整个过程基本上是先由人工去一对一沟通，最后利用我们的系统去产出结果，基本上都是串行，不会有很高的并发量。
+【项目2细节】
+对接一些第三方接口服务。打通金蝶云webapi接口集成到erp业务系统中（比如将录单、下推功能）等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="婉拒"><a href="#婉拒" class="headerlink" title="婉拒"></a>婉拒</h2><p>曹小姐，你好。我是昨天在boss上约面试rpa工程师的罗涛。是这样的，我想放弃这次面试机会，因为我今天收到了其他公司的offer，真的非常抱歉占用了您和贵司的资源。</p>
 <h2 id="薪酬"><a href="#薪酬" class="headerlink" title="薪酬"></a>薪酬</h2><p>请问方便介绍一下贵司的薪酬体系吗，是底薪+绩效+奖金还是固定薪资呢？</p>
 <p>我看到这个岗位的薪资范围在8-12K,那我上家公司在7K，我认为以我的工作经验，学习能力和岗位匹配度，我希望能有15%-20%的涨幅。</p>
@@ -3515,7 +4236,7 @@ VALUES (&#39;小迪&#39;, &#39;中国&#39;, 10086);
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-10 03:08:41" itemprop="dateModified" datetime="2025-05-10T03:08:41+08:00">2025-05-10</time>
+      <time title="修改时间：2025-05-15 00:42:53" itemprop="dateModified" datetime="2025-05-15T00:42:53+08:00">2025-05-15</time>
     </span>
 
   
@@ -3528,30 +4249,34 @@ VALUES (&#39;小迪&#39;, &#39;中国&#39;, 10086);
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="MyBusinessCard"><a href="#MyBusinessCard" class="headerlink" title="MyBusinessCard"></a>MyBusinessCard</h2><pre class="line-numbers language-json" data-language="json"><code class="language-json">制作一张插画特写用来作为我的微信朋友圈背景图，展示左手拿着一张名片。主题风格为Intellij Light，字体采用consolas<span class="token punctuation">,</span>这张名片被设计成在代码编辑器中打开的json样式。名片上的内容为采用json语法高亮格式的代码，需要代码行号，包含清晰可见的键值对<span class="token punctuation">,</span>每个字符都不能有错误，键名必须用双引号括起来，最后一个键值对后面不能多加逗号<span class="token punctuation">,</span>其余的逗号和双引号不能省略，采用标准json格式。窗口界面标明文件名【MyBusinessCard.json】，背景稍作模糊处理，突出名片本身。比如：
-    【<span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"LuoTao"</span><span class="token punctuation">,</span>】
-    【<span class="token property">"Email"</span><span class="token operator">:</span> <span class="token string">"coder.luotao@gmail.com"</span><span class="token punctuation">,</span>】
-    【<span class="token property">"Blog"</span><span class="token operator">:</span> <span class="token string">"tao.130017.xyz"</span>】<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+          <h2 id="MyBusinessCard"><a href="#MyBusinessCard" class="headerlink" title="MyBusinessCard"></a>MyBusinessCard</h2><pre class="line-numbers language-json" data-language="json"><code class="language-json">制作一张插画特写用来作为我的微信朋友圈背景图，展示左手拿着一张名片。主题风格为Intellij Light，字体采用consolas<span class="token punctuation">,</span>这张名片被设计成在代码编辑器中打开的json样式。名片上的内容为采用json语法高亮格式的代码，需要代码行号，包含清晰可见的键值对。窗口界面标明文件名<span class="token punctuation">[</span>MyBusinessCard.json<span class="token punctuation">]</span>，背景稍作模糊处理，突出名片本身。
+比如：
+<span class="token punctuation">&#123;</span>
+    <span class="token property">"Name"</span><span class="token operator">:</span> <span class="token string">"LuoTao"</span><span class="token punctuation">,</span>
+    <span class="token property">"Email"</span><span class="token operator">:</span> <span class="token string">"coder.luotao@gmail.com"</span><span class="token punctuation">,</span>
+    <span class="token property">"Blog"</span><span class="token operator">:</span> <span class="token string">"tao.130017.xyz"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 
 
-<h2 id="面试-prompt"><a href="#面试-prompt" class="headerlink" title="面试.prompt"></a>面试.prompt</h2><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">这是一个模拟面试场景，要求你站在面试者的角度回答关于xxx工作原理的问题。
-你需要构建一个全面而专业的回答，涵盖xxx的关键概念、工作原理和技术优势。一个好的面试回答应该：
+<h2 id="面试-prompt"><a href="#面试-prompt" class="headerlink" title="面试.prompt"></a>面试.prompt</h2><pre class="line-numbers language-none"><code class="language-none">这是一个模拟面试场景，我会输入相关的指令，你将根据我的指令站在面试者的角度回答问题。
+询问我输入指令,递进式交互，支持基于初始回答的连续追问。
+你需要构建一个全面而专业的回答，涵盖[&#x2F;question]的关键概念、工作原理和技术优势。一个好的面试回答应该：
+    1. 简洁清晰地解释[&#x2F;question]是什么
+    2. 列举出一个形象化的场景来描述
+    3. 描述其核心组件及其作用
+    4. 详细说明工作流程
+    5. 画出示例图解
+    6. 提到[&#x2F;question]的技术优势
+    7. 可以适当加入一些实际经验来增加可信度
+现在你将详细构思关于[&#x2F;question]各个部分的回答内容。
+你需要为回答添加一些个人经验元素，并确保整体流畅自然。这样回答会更加真实，显示出实际经验而不只是理论知识。同时，应该确保解释足够通俗易懂，不要太过技术性或晦涩。面试回答不应该过长，但需要足够全面，平衡细节和简洁性。可以在回答中表达对[&#x2F;question]的熟悉程度和实际应用场景，这样会让面试官感到不只是记住了概念，而是真正理解和使用过这个框架。最后，你需要确保回答是逻辑连贯的，每个部分都应该自然地引导到下一个部分，使整个回答形成一个完整的叙述。
+现在你可以整合前面的思考，形成一个完整的面试回答。你会以一个自然、专业且有信心的语气呈现，同时确保信息准确性和全面性。这个回答应该展现你对[&#x2F;question]的深入理解和实践经验，突出其工作原理和技术优势，同时注意语言的流畅和连贯性。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-1. 简洁清晰地解释xxx是什么
-2. 描述其核心组件及其作用
-3. 详细说明工作流程
-4. 提到xxx的技术优势
-5. 可以适当加入一些实际经验来增加可信度
-   你将以这个结构来组织回答。
 
-现在你将详细构思关于xxx各个部分的回答内容。
-你需要为回答添加一些个人经验元素，并确保整体流畅自然。这样回答会更加真实，显示出实际经验而不只是理论知识。同时，应该确保解释足够通俗易懂，不要太过技术性或晦涩。面试回答不应该过长，但需要足够全面，平衡细节和简洁性。可以在回答中表达对xxx的熟悉程度和实际应用场景，这样会让面试官感到不只是记住了概念，而是真正理解和使用过这个框架。最后，你需要确保回答是逻辑连贯的，每个部分都应该自然地引导到下一个部分，使整个回答形成一个完整的叙述。
-
-现在你可以整合前面的思考，形成一个完整的面试回答。你会以一个自然、专业且有信心的语气呈现，同时确保信息准确性和全面性。这个回答应该展现你对xxx的深入理解和实践经验，突出其工作原理和技术优势，同时注意语言的流畅和连贯性。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="确认需求-prompt"><a href="#确认需求-prompt" class="headerlink" title="确认需求.prompt"></a>确认需求.prompt</h2><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">请你复述一遍我的需求再进行答复，让我能够确认你真的理解了我的需求指令。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -3654,7 +4379,18 @@ VALUES (&#39;小迪&#39;, &#39;中国&#39;, 10086);
 <li><p>设计模式</p>
 </li>
 </ul>
-<h1 id><a href="#" class="headerlink" title></a></h1>
+<h2 id="Cookie、Session和Token的区别？"><a href="#Cookie、Session和Token的区别？" class="headerlink" title="Cookie、Session和Token的区别？"></a>Cookie、Session和Token的区别？</h2><blockquote>
+<p>发一个登录请求把账密传到服务器，服务器进行鉴权后将账密传到前端，前端将账密保存到cookie，那后续的请求都带上cookie，这样就维持了用户的登录状态。cookie存储在浏览器有被篡改的风险，所以我们不能完全依赖cookie。</p>
+<p>我们可以通过在服务器鉴权后，将Session存入用户信息，响应时Tomcat会自动在响应头存入将SessionId存入setcookie，浏览器发现响应头包含setcookie这个属性就会自动将SessionId存入cookie，那么后续的请求也会携带cookie，服务器拿到cookie中的SessionId就可以得到登录的用户信息维持登录状态。由于Session保存在服务端，所以安全性高，但是如果服务器压力比较大，对服务器进行集群部署，那Session只会存在一台服务器上，其他服务器并不会有当前的用户登录信息，如果集群之后负载均衡，有可能下一次的请求就会打到其他服务器，那就会鉴权失败，现在基本都是前后端分离的架构，也会导致跨域，我们需要在前后端都去设置运行跨域，非常麻烦。</p>
+<p>JsonWebToken生成的Token字符串有三部分组成：</p>
+<ul>
+<li>header：包含了加密的算法和Token类型，将这些信息base64编码后得到Token的第一部分</li>
+<li>payload负载数据：将包含我们需要传递的信息，比如账密，将这些信息base64编码后得到Token的第二部分 ，前端可以对其base64解码</li>
+<li>signature签名：将base64编码的header和payload相加，再加上我们的私钥，最后再通过header中的加密算法加密就构成了Token的第三部分</li>
+</ul>
+<p>在服务器鉴权成功后会创建一个JWT的Token字符串，包含这三段信息，然后把Token返回给前端，前端对其字符截取然后base64解码后拿到payload，后续的请求只需在请求头中携带Token，后端拿到Token后解密验证signature，如果没有被篡改则放行，整个过程不需要依赖前后端的任何存储，就是一个加密后的字符串。</p>
+</blockquote>
+
       
     </div>
 
@@ -3708,9 +4444,15 @@ VALUES (&#39;小迪&#39;, &#39;中国&#39;, 10086);
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-12-18 10:29:58 / 修改时间：10:51:21" itemprop="dateCreated datePublished" datetime="2024-12-18T10:29:58+08:00">2024-12-18</time>
+      <time title="创建时间：2024-12-18 10:29:58" itemprop="dateCreated datePublished" datetime="2024-12-18T10:29:58+08:00">2024-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-22 00:37:44" itemprop="dateModified" datetime="2025-04-22T00:37:44+08:00">2025-04-22</time>
     </span>
 
   
@@ -3789,7 +4531,7 @@ VALUES (&#39;小迪&#39;, &#39;中国&#39;, 10086);
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-31 18:08:02" itemprop="dateModified" datetime="2025-03-31T18:08:02+08:00">2025-03-31</time>
+      <time title="修改时间：2025-04-22 00:37:43" itemprop="dateModified" datetime="2025-04-22T00:37:43+08:00">2025-04-22</time>
     </span>
 
   
@@ -7454,7 +8196,7 @@ XX
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-14 14:31:57" itemprop="dateModified" datetime="2025-04-14T14:31:57+08:00">2025-04-14</time>
+      <time title="修改时间：2025-04-22 00:37:47" itemprop="dateModified" datetime="2025-04-22T00:37:47+08:00">2025-04-22</time>
     </span>
 
   
@@ -7566,7 +8308,7 @@ path
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-12 13:59:41" itemprop="dateModified" datetime="2024-05-12T13:59:41+08:00">2024-05-12</time>
+      <time title="修改时间：2025-04-22 00:37:43" itemprop="dateModified" datetime="2025-04-22T00:37:43+08:00">2025-04-22</time>
     </span>
 
   
@@ -7655,187 +8397,6 @@ path
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/01/mavenHello/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="LuoTao">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taoの博客">
-      <meta itemprop="description" content="<font color="#FFFFFF">昨夜向左.火车向右</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Taoの博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/01/mavenHello/" class="post-title-link" itemprop="url">mavenHello</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-01 16:26:01" itemprop="dateCreated datePublished" datetime="2024-05-01T16:26:01+08:00">2024-05-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-14 14:53:38" itemprop="dateModified" datetime="2025-04-14T14:53:38+08:00">2025-04-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><blockquote>
-<ul>
-<li>基于项目对象模型<code>Project Object Model</code>管理项目的构建过程和依赖关系</li>
-</ul>
-</blockquote>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.zip">Maven下载</a></p>
-</li>
-<li><p>环境变量</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;!--安装目录--&gt;
-MAVEN_HOME
-&lt;!--path--&gt;
-%MAVEN_HOME%\bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>修改settings.xml</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--本地仓库maven_rep--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>D:\software\maven\maven_rep<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">  
-<span class="token comment">&lt;!--配置阿里云私服--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>aliyunmaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>阿里云公共仓库<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>https://maven.aliyun.com/repository/public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- java1.6版本 --></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>profile</span><span class="token punctuation">></span></span>       
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>jdk-1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>       
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activation</span><span class="token punctuation">></span></span>       
-	   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activeByDefault</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activeByDefault</span><span class="token punctuation">></span></span>       
-	   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>jdk</span><span class="token punctuation">></span></span>1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>jdk</span><span class="token punctuation">></span></span>       
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activation</span><span class="token punctuation">></span></span>       
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>       
-	   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.source</span><span class="token punctuation">></span></span>1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.source</span><span class="token punctuation">></span></span>       
-	   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.target</span><span class="token punctuation">></span></span>1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.target</span><span class="token punctuation">></span></span>       
-	   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.compilerVersion</span><span class="token punctuation">></span></span>1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.compilerVersion</span><span class="token punctuation">></span></span>       
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>       
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>profile</span><span class="token punctuation">></span></span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>项目中pom指定jdk1.6</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>  
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>  
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>  
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>  
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>maven-compiler-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>  
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.0.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>  
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>  
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">></span></span>1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">></span></span>  
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">></span></span>1.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">></span></span>  
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>  
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>  
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>  
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>验证</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;自动下载缺省或更新配置文件和依赖到本地出库。
-mvn help:system<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ul>
-<h2 id="IDEA创建maven的java工程"><a href="#IDEA创建maven的java工程" class="headerlink" title="IDEA创建maven的java工程"></a>IDEA创建maven的java工程</h2><ol>
-<li><p><img src="/2024/05/01/mavenHello/image-20240501172020632.png" alt="maven"></p>
-</li>
-<li><p><img src="/2024/05/01/mavenHello/image-20250414143623909.png" alt="image-20250414143623909"></p>
-</li>
-<li><p><img src="/2024/05/01/mavenHello/image-20250414143842126.png" alt="image-20250414143842126"></p>
-</li>
-</ol>
-<h2 id="IDEA创建maven的web工程"><a href="#IDEA创建maven的web工程" class="headerlink" title="IDEA创建maven的web工程"></a>IDEA创建maven的web工程</h2><ol>
-<li><img src="/2024/05/01/mavenHello/image-20250414144842996.png" alt="image-20250414144842996"></li>
-<li><img src="/2024/05/01/mavenHello/image-20250414145041296.png" alt="image-20250414145041296"></li>
-<li><img src="/2024/05/01/mavenHello/image-20250414145335734.png" alt="image-20250414145335734"></li>
-<li></li>
-</ol>
-<h2 id="设置maven在不联网的情况下使用本地插件"><a href="#设置maven在不联网的情况下使用本地插件" class="headerlink" title="设置maven在不联网的情况下使用本地插件"></a>设置maven在不联网的情况下使用本地插件</h2><p>一般使用maven为我们提供好的骨架时，是需要联网的，配置这个，可以在没有网路的情况下，我们可以正常创建工程，并从之前已经使用过的工程中找到相应的骨架。</p>
-<pre class="line-numbers language-none"><code class="language-none">-DarchetypeCatalog&#x3D;internal<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="/2024/05/01/mavenHello/20200514101056912.png" alt="设置maven在不联网的情况下使用本地插件"></p>
-<h2 id="IDEA热部署"><a href="#IDEA热部署" class="headerlink" title="IDEA热部署"></a>IDEA热部署</h2><ul>
-<li><p>运行时自动编译<img src="/2024/05/01/mavenHello/image-20241220170347257.png" alt="image-20241220170347257"><img src="/2024/05/01/mavenHello/image-20241220170214845.png" alt="image-20241220170214845"><img src="/2024/05/01/mavenHello/image-20241220170454739.png" alt="image-20241220170454739"></p>
-</li>
-<li><p>引入<code>devtools</code>热部署</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
-	<span class="token comment">&lt;!--devtools热部署--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-devtools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
-			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
-				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!--                    开启热部署devtools--></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fork</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fork</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
-			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
-
-
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -7877,6 +8438,10 @@ mvn help:system<span aria-hidden="true" class="line-numbers-rows"><span></span><
 
 
 
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9d8d3da09189165dcde8f1d3e109ad78"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
 </html>
