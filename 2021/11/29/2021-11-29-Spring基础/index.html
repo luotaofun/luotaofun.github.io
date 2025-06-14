@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Ioc 将目标对象的创建的控制权由最初的消费者转嫁给一个中间的角色,这个中间角色负责将对象创建并集中管理,对集中管理的容器叫Ioc容器，顾客在获取对象的过程中，不再对对象直接操作，而是通过Ioc容器提取，拿到所需要的对象。  Ioc控制反转, inverse of control是一种宏观的设计理念。 由代理人来创建与管理对象，消费者通过代理人来获取对象。 loc的目的是降低对象之间直">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring基础">
+<meta property="og:url" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Taoの博客">
+<meta property="og:description" content="Ioc 将目标对象的创建的控制权由最初的消费者转嫁给一个中间的角色,这个中间角色负责将对象创建并集中管理,对集中管理的容器叫Ioc容器，顾客在获取对象的过程中，不再对对象直接操作，而是通过Ioc容器提取，拿到所需要的对象。  Ioc控制反转, inverse of control是一种宏观的设计理念。 由代理人来创建与管理对象，消费者通过代理人来获取对象。 loc的目的是降低对象之间直">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129100634336.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129093609962.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211130104735708.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129111517457.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129125924501.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129143658399.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129145601026.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151333399.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151358092.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151456767.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151626183.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129152300940.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129161941253.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129170119981.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211130162157940.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211202145304272.png">
+<meta property="og:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211202152937798.png">
+<meta property="article:published_time" content="2021-11-29T01:15:19.000Z">
+<meta property="article:modified_time" content="2025-06-13T23:46:18.800Z">
+<meta property="article:author" content="LuoTao">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129100634336.png">
+
+
+<link rel="canonical" href="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/","path":"2021/11/29/2021-11-29-Spring基础/","title":"Spring基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Spring基础 | Taoの博客</title>
+  
+
+
+
+
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com/3.4.4"></script>
+
+<!-- Google Fonts (Noto Sans SC for Chinese, Poppins for English) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+<!-- Apache ECharts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Taoの博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Best Tao.</p>
+
+    <!-- Music Player -->
+    <div class="music-player-container mt-4">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    <!--音乐播放器-->
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ioc"><span class="nav-number">1.</span> <span class="nav-text">Ioc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#di%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">DI依赖注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring"><span class="nav-number">3.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-ioc"><span class="nav-number">4.</span> <span class="nav-text">Spring IoC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-ioc%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="nav-number">5.</span> <span class="nav-text">Spring IoC初体验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEbean%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">配置Bean的三种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bean-scope%E5%B1%9E%E6%80%A7%E8%AF%A6%E8%A7%A3"><span class="nav-number">7.</span> <span class="nav-text">bean scope属性详解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%9E%81%E7%AE%80ioc%E5%AE%B9%E5%99%A8"><span class="nav-number">8.</span> <span class="nav-text">实现极简IoC容器</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LuoTao"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">LuoTao</p>
+  <div class="site-description" itemprop="description"><font color="#FFFFFF">Best Tao.</font></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://wx.qq.com/" title="微信 → https:&#x2F;&#x2F;wx.qq.com&#x2F;" rel="noopener" target="_blank"><i class="weixin fa-fw"></i>微信</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/3452255853" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;3452255853" rel="noopener" target="_blank"><i class="QQ fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/luotaofun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luotaofun" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luotao0213@163.com" title="E-Mail → mailto:luotao0213@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/luotaofun" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luotaofun.github.io/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="LuoTao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">Best Tao.</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Spring基础 | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-29 09:15:19" itemprop="dateCreated datePublished" datetime="2021-11-29T09:15:19+08:00">2021-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-14 07:46:18" itemprop="dateModified" datetime="2025-06-14T07:46:18+08:00">2025-06-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="ioc">Ioc</h1>
+<p>将目标对象的创建的控制权由最初的消费者转嫁给一个中间的角色,这个中间角色负责将对象创建并集中管理,对集中管理的容器叫Ioc容器，顾客在获取对象的过程中，不再对对象直接操作，而是通过Ioc容器提取，拿到所需要的对象。</p>
+<ul>
+<li><p>Ioc控制反转, inverse of
+control是一种<strong>宏观的设计理念</strong>。</p></li>
+<li><p>由代理人来创建与管理对象，消费者通过代理人来获取对象。</p></li>
+<li><p>loc的目的是降低对象之间直接耦合（通过代理人解耦，对象之间可以灵活变化）；加入IoC容器将对象统一管理，让对象关联变为弱耦合。</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129100634336.png" alt="image-20211129100634336">
+<figcaption aria-hidden="true">image-20211129100634336</figcaption>
+</figure></li>
+<li><p>在生活中的典型体现:</p>
+<p>1.如何在众多品种中挑选出最脆甜的苹果呢?</p>
+<p>只需要问老板（代理人）哪些苹果（对象）是最脆甜的,听取老板的采购意见,将获取对象的权力交给水果老板,有老板做出决定,如果老板说这种苹果也不错,那么这种苹果极有可能出现在我的采购清单里。</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129093609962.png" alt="image-20211129093609962">
+<figcaption aria-hidden="true">image-20211129093609962</figcaption>
+</figure></li>
+</ul>
+<p>​
+2.在一个陌生城市安居，大多数人都回去找中介，而不是房东，因为中介有足够多的房源，足够多的选择，我们可以根据中介提供的信息选择自己心仪的，虽然会收取中介费，但避免了许多麻烦，节约了时间成本。</p>
+<h1 id="di依赖注入">DI依赖注入</h1>
+<ul>
+<li>Dependency
+injection是具体技术实现，是<strong>微观实现</strong>。</li>
+<li>DI在不同语言中使用的具体技术是不一样的，在Java中实现DI是基于Java的<strong>反射技术</strong>。</li>
+</ul>
+<h1 id="spring">Spring</h1>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211130104735708.png" alt="image-20211130104735708">
+<figcaption aria-hidden="true">image-20211130104735708</figcaption>
+</figure>
+<ul>
+<li><p>Spring Framework的核心是IoC容器与AOP面向切面编程</p></li>
+<li><p>spring IoC负责创建与管理系统对象,并在此基础上扩展功能</p></li>
+<li><p>Spring生态体系</p></li>
+</ul>
+<h1 id="spring-ioc">Spring IoC</h1>
+<p>运行时运用Java反射技术动态的将对象实例化以及对对象进行注入</p>
+<p>职责</p>
+<ul>
+<li>对象的控制权交由第三方统一管理(IoC控制反转)</li>
+<li>利用Java反射技术实现运行时对象创建与关联(DI依赖注入)</li>
+<li>基于配置提高应用程序的可维护性与扩展性</li>
+</ul>
+<h1 id="spring-ioc初体验">Spring IoC初体验</h1>
+<p>妈妈在早餐后给三个孩子分发餐后水果,</p>
+<p>盘子里由三个苹果: 红富士/青苹果/金帅,</p>
+<p>孩子们口味不同: 莉莉喜欢甜的/安迪喜欢酸的/露娜喜欢软软的,</p>
+<p>孩子们如何得到喜欢的苹果?</p>
+<p><strong>(一)使用传统的编码方式</strong></p>
+<ul>
+<li>新建maven工程</li>
+</ul>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129111517457.png" alt="image-20211129111517457">
+<figcaption aria-hidden="true">image-20211129111517457</figcaption>
+</figure>
+<ul>
+<li><figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129125924501.png" alt="image-20211129125924501">
+<figcaption aria-hidden="true">image-20211129125924501</figcaption>
+</figure></li>
+<li>Apple类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Apple</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String title; <span class="comment">// 品种</span></span><br><span class="line">    <span class="keyword">private</span> String color;</span><br><span class="line">    <span class="keyword">private</span> String origin; <span class="comment">// 产地</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Apple</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Apple</span><span class="params">(String title, String color, String origin)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.title = title;</span><br><span class="line">        <span class="built_in">this</span>.color = color;</span><br><span class="line">        <span class="built_in">this</span>.origin = origin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getTitle</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setTitle</span><span class="params">(String title)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getColor</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setColor</span><span class="params">(String color)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getOrigin</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> origin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setOrigin</span><span class="params">(String origin)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.origin = origin;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Child类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Child</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Apple apple;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Child</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Child</span><span class="params">(String name, Apple apple)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.apple = apple;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Apple <span class="title function_">getApple</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> apple;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setApple</span><span class="params">(Apple apple)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.apple = apple;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(name+ <span class="string">&quot;吃到了&quot;</span>+ apple.getOrigin()+ <span class="string">&quot;种植的&quot;</span>+ apple.getTitle());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>Application类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.kuroneko.spring.ioc.entity.Apple;</span><br><span class="line"><span class="keyword">import</span> com.kuroneko.spring.ioc.entity.Child;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Apple</span> <span class="variable">apple1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Apple</span>(<span class="string">&quot;红富士&quot;</span>, <span class="string">&quot;红色&quot;</span> ,<span class="string">&quot;欧洲&quot;</span>);</span><br><span class="line">        <span class="type">Apple</span> <span class="variable">apple2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Apple</span>(<span class="string">&quot;青苹果&quot;</span>, <span class="string">&quot;绿色&quot;</span> ,<span class="string">&quot;中亚&quot;</span>);</span><br><span class="line">        <span class="type">Apple</span> <span class="variable">apple3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Apple</span>(<span class="string">&quot;金帅&quot;</span>, <span class="string">&quot;黄色&quot;</span> ,<span class="string">&quot;中国&quot;</span>);</span><br><span class="line">        <span class="type">Child</span> <span class="variable">lily</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Child</span>(<span class="string">&quot;莉莉&quot;</span>, apple1);</span><br><span class="line">        <span class="type">Child</span> <span class="variable">andy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Child</span>(<span class="string">&quot;安迪&quot;</span>, apple2);</span><br><span class="line">        <span class="type">Child</span> <span class="variable">luna</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Child</span>(<span class="string">&quot;露娜&quot;</span>, apple3);</span><br><span class="line">        lily.eat();</span><br><span class="line">        andy.eat();</span><br><span class="line">        luna.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>运行Application</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129143658399.png" alt="image-20211129143658399">
+<figcaption aria-hidden="true">image-20211129143658399</figcaption>
+</figure></li>
+<li><p>这种传统的编码方式一旦涉及到代码的修改就必须要重新上线,这不利于软件的维护性和可扩展性,根本原因就是运用了new关键字，在编译期间就将对象与对象之间进行了强制绑定。那如何解决这些问题呢？这时Spring
+IoC容器就应运而生了，通过配置的形式完成对象的实例化以及对象和对象之间的依赖关系。</p></li>
+</ul>
+<p><strong>（二）引入Spring IoC容器</strong></p>
+<ul>
+<li><p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    添加阿里云的镜像,可以大幅提高maven远程下载的速度--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--           阿里云对外开放的公共仓库,可以有效的提高组件下载速度--&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--            机构名字--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        使用Spring IoC容器最小的依赖范围--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129145601026.png" alt="image-20211129145601026">
+<figcaption aria-hidden="true">image-20211129145601026</figcaption>
+</figure></li>
+<li><p>创建Spring IoC核心配置文件applicationContext.xml</p>
+<p>所有对象的创建以及关联的设置都是在这个文件中进行的</p>
+<p>访问<a target="_blank" rel="noopener" href="https://spring.io/">Spring官网</a></p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151333399.png" alt="image-20211129151333399">
+<figcaption aria-hidden="true">image-20211129151333399</figcaption>
+</figure></li>
+</ul>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151358092.png" alt="image-20211129151358092">
+<figcaption aria-hidden="true">image-20211129151358092</figcaption>
+</figure>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151456767.png" alt="image-20211129151456767">
+<figcaption aria-hidden="true">image-20211129151456767</figcaption>
+</figure>
+<p>复制作为文档说明部分,schema规定了在当前xml中可以书写哪些标签</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        https://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129151626183.png" alt="image-20211129151626183">
+<figcaption aria-hidden="true">image-20211129151626183</figcaption>
+</figure>
+<ul>
+<li><p>粘贴到applicationContext.xml中</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129152300940.png" alt="image-20211129152300940">
+<figcaption aria-hidden="true">image-20211129152300940</figcaption>
+</figure></li>
+<li><p>有三种苹果,需要使用bean创建三个对象,bean是用于实例化Java对象的标签。</p></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    在IoC容器启动时,自动由Spring实例化Apple对象,取名sweetApple放入到容器中--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sweetApple&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Apple&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;红富士&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;color&quot;</span> <span class="attr">value</span>=<span class="string">&quot;红色&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;origin&quot;</span> <span class="attr">value</span>=<span class="string">&quot;欧洲&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--酸苹果--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sourApple&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Apple&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;青苹果&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;color&quot;</span> <span class="attr">value</span>=<span class="string">&quot;绿色&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;origin&quot;</span> <span class="attr">value</span>=<span class="string">&quot;中亚&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--软苹果--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;softApple&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Apple&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">value</span>=<span class="string">&quot;金帅&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;color&quot;</span> <span class="attr">value</span>=<span class="string">&quot;黄色&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;origin&quot;</span> <span class="attr">value</span>=<span class="string">&quot;中国&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>ioc这个包下创建SpringApplication类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.kuroneko.spring.ioc.entity.Apple;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="comment">//        启动IoC容器后才能对刚才配置的bean实例化</span></span><br><span class="line">        <span class="comment">// 创建Spring IoC容器，加载指定的xml文件来初始化IoC容器,classpath:代表在当前类路径下查找applicationContext.xml文件。此时context指代IoC容器</span></span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;classpath:applicationContext.xml&quot;</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">        *使用getBean()将对应标签的苹果从容器中提取出来,Apple.class是提取的类型</span></span><br><span class="line"><span class="comment">        *也可以写成Apple sweetApple = (Apple)context.getBean(&quot;sweetApple&quot;);</span></span><br><span class="line"><span class="comment">        object类型强制转换为Apple类型</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="type">Apple</span> <span class="variable">sweetApple</span> <span class="operator">=</span> context.getBean(<span class="string">&quot;sweetApple&quot;</span>, Apple.class);</span><br><span class="line">        <span class="comment">//打印输出苹果的品种</span></span><br><span class="line">        System.out.println(sweetApple.getTitle());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>运行SpringApplication</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129161941253.png" alt="image-20211129161941253">
+<figcaption aria-hidden="true">image-20211129161941253</figcaption>
+</figure></li>
+<li><p>到applicationContext.xml创建三个Child对象</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    创建三个Child对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;lily&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Child&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;莉莉&quot;</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        IoC容器运行后自动通过反射技术将容器中的sweetApple的apple对象赋予到lily的apple属性中--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;apple&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;sweetApple&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;andy&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Child&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;安迪&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;apple&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;sourApple&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;luna&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Child&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;露娜&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;apple&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;softApple&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>到SpringApplication中从IoC容器中提取三个孩子对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//        从IoC容器中提取三个孩子对象</span></span><br><span class="line">        <span class="type">Child</span> <span class="variable">lily</span> <span class="operator">=</span> context.getBean(<span class="string">&quot;lily&quot;</span>, Child.class);</span><br><span class="line">        lily.eat();</span><br><span class="line">        <span class="type">Child</span> <span class="variable">andy</span> <span class="operator">=</span> context.getBean(<span class="string">&quot;andy&quot;</span>, Child.class);</span><br><span class="line">        andy.eat();</span><br><span class="line">        <span class="type">Child</span> <span class="variable">luna</span> <span class="operator">=</span> context.getBean(<span class="string">&quot;luna&quot;</span>, Child.class);</span><br><span class="line">        luna.eat();</span><br></pre></td></tr></table></figure></li>
+<li><p>运行SpringApplication</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211129170119981.png" alt="image-20211129170119981">
+<figcaption aria-hidden="true">image-20211129170119981</figcaption>
+</figure></li>
+</ul>
+<h1 id="配置bean的三种方式">配置Bean的三种方式</h1>
+<p><strong>基于XML配置Bean</strong></p>
+<p>上面例子的applicationContext.xml</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建Spring IoC容器，加载指定的xml文件来初始化IoC容器,classpath:代表在当前类路径下查找applicationContext.xml文件。此时context指代IoC容器,使用ApplicationContext的实现类ClassPathXmlApplicationContext来加载配置文件</span></span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;classpath:applicationContext.xml&quot;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>基于构造方法实例化对象</p>
+<ul>
+<li><p>bean标签默认通过默认构造方法创建对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    bean标签默认通过默认构造方法创建对象--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">&quot;apple1&quot;</span> class=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Apple&quot;</span>&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Apple</span>()</span> &#123;</span><br><span class="line">    System.<span class="keyword">out</span>.println(<span class="string">&quot;Apple对象已创建,&quot;</span>+ <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+<li><p>利用构造方法参数名实例化,使用constructor-arg
+name=“构造方法参数名” value=“”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    &lt;bean id=<span class="string">&quot;apple2&quot;</span> class=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Apple&quot;</span>&gt;</span><br><span class="line">&lt;!--        没有constructor-arg则代表调用默认构造方法实例化--&gt;</span><br><span class="line">        &lt;constructor-arg name=<span class="string">&quot;title&quot;</span> value=<span class="string">&quot;红富士&quot;</span>/&gt;</span><br><span class="line">        &lt;constructor-arg name=<span class="string">&quot;origin&quot;</span> value=<span class="string">&quot;欧洲&quot;</span>/&gt;</span><br><span class="line">        &lt;constructor-arg name=<span class="string">&quot;color&quot;</span> value=<span class="string">&quot;红色&quot;</span>/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Apple</span><span class="params">(String title, String color, String origin)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;通过带参构造方法创建对象,&quot;</span>+ <span class="built_in">this</span>);</span><br><span class="line">    <span class="built_in">this</span>.title = title;</span><br><span class="line">    <span class="built_in">this</span>.color = color;</span><br><span class="line">    <span class="built_in">this</span>.origin = origin;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>利用构造方法参数位置实例化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    &lt;bean id=<span class="string">&quot;apple3&quot;</span> class=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Apple&quot;</span>&gt;</span><br><span class="line">&lt;!--     利用构造方法参数位置实现对象实例化--&gt;</span><br><span class="line">      &lt;constructor-arg index=<span class="string">&quot;0&quot;</span> value=<span class="string">&quot;红富士&quot;</span>/&gt;</span><br><span class="line">        &lt;constructor-arg index=<span class="string">&quot;1&quot;</span> value=<span class="string">&quot;欧洲&quot;</span>/&gt;</span><br><span class="line">        &lt;constructor-arg index=<span class="string">&quot;2&quot;</span> value=<span class="string">&quot;红色&quot;</span>/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>工厂模式</p>
+<p>用途 :
+隐藏创建类的细节,通过一个额外的工厂类来组织创建我们需要的对象。</p>
+<ul>
+<li><p>基于静态工厂实例化对象</p>
+<ul>
+<li><p>ioc包下创建factory用于保存工厂类，然后创建AppleStaticFactory类代表苹果的静态工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc.factory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.kuroneko.spring.ioc.entity.Apple;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppleStaticFactory</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 静态工厂通过静态方法创建对象,隐藏创建对象的细节,static意味着这个方法是属于工厂类的</span></span><br><span class="line"><span class="comment"> * 创建static的 甜苹果对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Apple <span class="title function_">createSweetApple</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Apple</span> <span class="variable">apple</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Apple</span>();</span><br><span class="line">        apple.setTitle(<span class="string">&quot;红富士&quot;</span>);</span><br><span class="line">        apple.setOrigin(<span class="string">&quot;欧洲&quot;</span>);</span><br><span class="line">        apple.setColor(<span class="string">&quot;红色&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> apple;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    利用静态工厂获取对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;apple4&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.factory.AppleStaticFactory&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">factory-method</span>=<span class="string">&quot;createSweetApple&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>基于工厂实例方法实例化对象</p>
+<p>工厂实例方法创建对象是指IoC容器对工厂类进行实例化并调用对应的实例方法创建对象的过程</p>
+<ul>
+<li><p>factory包下创建AppleFactoryInstance类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc.factory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.kuroneko.spring.ioc.entity.Apple;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 工厂实例方法创建对象是指IoC容器对工厂类进行实例化并调用对应的实例方法创建对象的过程</span></span><br><span class="line"><span class="comment"> *不用static关键字意味着这个方法是属于这个工厂对象的,而不是属于工厂类的</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppleFactoryInstance</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> Apple <span class="title function_">createSweetApple</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Apple</span> <span class="variable">apple</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Apple</span>();</span><br><span class="line">        apple.setTitle(<span class="string">&quot;红富士&quot;</span>);</span><br><span class="line">        apple.setOrigin(<span class="string">&quot;欧洲&quot;</span>);</span><br><span class="line">        apple.setColor(<span class="string">&quot;红色&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> apple;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    利用工厂实例方法获取对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;factoryInstance&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.factory.AppleFactoryInstance&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;apple5&quot;</span> <span class="attr">factory-bean</span>=<span class="string">&quot;factoryInstance&quot;</span> <span class="attr">factory-method</span>=<span class="string">&quot;createSweetApple&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">      </span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>扩展</p>
+<p>bean id与name属性</p>
+<ul>
+<li><p>都是设置对象在IoC容器中唯一标识</p></li>
+<li><p>两者在同一个配置文件中都不允许重复出现</p></li>
+<li><p>多个配置文件运行重复,新对象会覆盖旧对象</p></li>
+<li><p>驼峰命名书写</p></li>
+<li><p>name可以一次性设置多个标识,而id只能设置一个,如 bean name=“apple2,
+apple7”</p></li>
+<li><p>在没有Id与name的bean默认使用类名全称作为bean标识</p></li>
+</ul>
+<p><strong>基于注解配置Bean</strong></p>
+<p><strong>基于Java代码配置Bean</strong></p>
+<h1 id="bean-scope属性详解">bean scope属性详解</h1>
+<p>用于决定对象何时被创建与作用范围</p>
+<p>配置将影响容器内对象的数量</p>
+<p>默认值singleton(单例),指全局共享同一个对象实例</p>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211130162157940.png" alt="image-20211130162157940">
+<figcaption aria-hidden="true">image-20211130162157940</figcaption>
+</figure>
+<ul>
+<li><p>singleton(单例模式)</p>
+<p>singleton在容器是单例多线程执行，存在线程安全风险</p>
+<p>为什么spring默认使用单例模式?</p>
+<p>如果每一次在需要某个对象的时候都去创建它,会额外占用内存空间和cpu的计算资源,频繁创建对象会带来的资源损耗,使用单例模式可以有效的解决创建对象时占用资源的问题,<strong>在IoC启动时会自动的默认实例化对象</strong>。</p>
+<ul>
+<li><p>ioc包下创建dao.UserDao</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserDao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UserDao</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;UserDao已创建:&quot;</span>+ <span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>ioc包下创建service.UserService</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.kuroneko.spring.ioc.service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.kuroneko.spring.ioc.dao.UserDao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UserService</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;UserService已创建:&quot;</span>+ <span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> UserDao <span class="title function_">getUserDao</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> userDao;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserDao</span><span class="params">(UserDao userDao)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;调用setUserDao&quot;</span>+ userDao);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.userDao = userDao;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>```java
+<bean id="UserDao" class="com.kuroneko.spring.ioc.dao.UserDao" scope="prototype">
+<bean id="UserService" class="com.kuroneko.spring.ioc.service.UserService">
+<property name="userDao" ref="UserDao"> </property></bean> <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    以上配置在Ioc初始化过程中会产生几个对象呢?</span><br><span class="line"></span><br><span class="line">    会创建两个对象,第一个对象是UserService,因为它使用的是单例模式,会在IoC容器初始化过程中创建UserService对象,又由于UserService**引入了UserDao对象**(UserDao在初始化过程中是不存在的)于是容器又对UserDao实例化。</span><br><span class="line"></span><br><span class="line">    ![image<span class="number">-20211201162952316</span>](<span class="number">2021</span><span class="number">-11</span><span class="number">-29</span>-Spring基础/image<span class="number">-20211201162952316.</span>png)</span><br><span class="line"></span><br><span class="line">* prototype多例</span><br><span class="line"></span><br><span class="line">  **在getBean（）或对象注入时才会实例化对象**</span><br><span class="line"></span><br><span class="line">  prototype在容器中多实例，占用更多资源，不存在线程安全问题</span><br><span class="line"></span><br><span class="line">* singleton线程安全解决方案</span><br><span class="line"></span><br><span class="line">  ![image<span class="number">-20211130165142101</span>](<span class="number">2021</span><span class="number">-11</span><span class="number">-29</span>-Spring基础/image<span class="number">-20211130165142101.</span>png)</span><br><span class="line"></span><br><span class="line">  * 为每一个线程加锁，在设置和读取的过程中，让当前代码处于独占的状态用户<span class="number">2</span>只有当用户<span class="number">1</span>处理完以后才可以继续处理，相当于把多线程并行的运行改为串形的排队执行</span><br><span class="line"></span><br><span class="line">  * 为每一个用户都分配一个只属于它自己的对象，各操作各的互不影响，就不会产生信息错乱的问题，创建多个对象的设置放在Spring IoC容器中就称之为prototype多例</span><br><span class="line"></span><br><span class="line">    ![image<span class="number">-20211130165601977</span>](<span class="number">2021</span><span class="number">-11</span><span class="number">-29</span>-Spring基础/image<span class="number">-20211130165601977.</span>png)</span><br><span class="line"></span><br><span class="line">![image<span class="number">-20211130165710503</span>](<span class="number">2021</span><span class="number">-11</span><span class="number">-29</span>-Spring基础/image<span class="number">-20211130165710503.</span>png)</span><br><span class="line"></span><br><span class="line">当看到一份配置文件时,你要能马上反应出来,当前的IoC容器在初始化过程中到底实例化了几个对象。</span><br><span class="line"></span><br><span class="line">如果在单例模式下，IoC初始化时是按照bean的前后顺序依次进行的，但如果第一个bean增加了prototype，第一个bean并不会在IoC容器初始化自动实例化，而在某一个属性关联到一个多例对象的时候同样会触发实例化对象的操作。</span><br><span class="line"></span><br><span class="line"><span class="meta"># 单例和多例的使用场景</span></span><br><span class="line"></span><br><span class="line">作为某一个属性，如果在运行过程中它是恒定不变的，那就可以在当前容器中进行单例的设置，如果在运行过程中它在不断的变化，那就使用多例模式</span><br><span class="line"></span><br><span class="line"><span class="meta"># bean的生命周期</span></span><br><span class="line"></span><br><span class="line">![image<span class="number">-20211201165512806</span>](<span class="number">2021</span><span class="number">-11</span><span class="number">-29</span>-Spring基础/image<span class="number">-20211201165512806.</span>png)</span><br><span class="line"></span><br><span class="line">* <span class="keyword">init</span>-method</span><br><span class="line"></span><br><span class="line">entity包下创建Order菜单类</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">package com.kuroneko.spring.ioc.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Order</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Float price;</span><br><span class="line">    <span class="keyword">private</span> Integer quantity;</span><br><span class="line">    <span class="keyword">private</span> Float total;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Order</span>()</span> &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;创建Order对象,&quot;</span> + <span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;执行init()方法&quot;</span>);</span><br><span class="line">        total = price * quantity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pay</span>()</span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;订单金额为:&quot;</span> + total);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">getPrice</span>()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span>(<span class="params">Float price</span>)</span> &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;设置price&quot;</span> + price);</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getQuantity</span>()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> quantity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setQuantity</span>(<span class="params">Integer quantity</span>)</span> &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">&quot;设置quantity&quot;</span> + quantity);</span><br><span class="line">        <span class="keyword">this</span>.quantity = quantity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Float <span class="title">getTotal</span>()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTotal</span>(<span class="params">Float total</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.total = total;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></bean></p></li>
+</ul></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;order1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Order&quot;</span> <span class="attr">init-method</span>=<span class="string">&quot;init&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;price&quot;</span> <span class="attr">value</span>=<span class="string">&quot;19.8&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;quantity&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1000&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;classpath:applicationContext.xml&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;======IoC容器已初始化======&quot;</span>);</span><br><span class="line">        <span class="type">Order</span> <span class="variable">Order1</span> <span class="operator">=</span> context.getBean(<span class="string">&quot;order1&quot;</span>, Order.class);</span><br><span class="line">        Order1.pay();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211202145304272.png" alt="image-20211202145304272">
+<figcaption aria-hidden="true">image-20211202145304272</figcaption>
+</figure>
+<ul>
+<li><p>销毁IoC容器</p>
+<p>Order类添加destory方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;释放与订单对象相关的资源&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;order1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuroneko.spring.ioc.entity.Order&quot;</span> <span class="attr">init-method</span>=<span class="string">&quot;init&quot;</span> <span class="attr">destroy-method</span>=<span class="string">&quot;destroy&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;price&quot;</span> <span class="attr">value</span>=<span class="string">&quot;19.8&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;quantity&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1000&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">         * registerShutdownHook()用于销毁IoC容器,会自动调用我们在bean中设置的destroy-method方法</span></span><br><span class="line"><span class="comment">         *  registerShutdownHook()放在了ClassPathXmlApplicationContext这个ApplicationContext的具体实现类中,因此在调用时强制转换回具体的实现类</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        ((ClassPathXmlApplicationContext)context).registerShutdownHook();</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2021/11/29/2021-11-29-Spring%E5%9F%BA%E7%A1%80/image-20211202152937798.png" alt="image-20211202152937798">
+<figcaption aria-hidden="true">image-20211202152937798</figcaption>
+</figure></li>
+</ul>
+<h1 id="实现极简ioc容器">实现极简IoC容器</h1>
+
+    </div>
+
+    
+    
+      
+<div class="signature signature-post">Best Tao.</div>
+
+    
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/25/2021-11-25-Java%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" rel="prev" title="Java环境搭建与语法入门">
+                  <i class="fa fa-chevron-left"></i> Java环境搭建与语法入门
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/13/2021-12-13-Java%E8%AF%AD%E6%B3%95%E4%B9%8B%E5%BE%AA%E7%8E%AF%E3%80%81%E6%95%B0%E7%BB%84%E4%B8%8E%E6%96%B9%E6%B3%95/" rel="next" title="Java语法之循环、数组与方法">
+                  Java语法之循环、数组与方法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LuoTao</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://lib.baomitu.com/mermaid/9.0.1/mermaid.min.js","integrity":"sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"2e38d768721a73941fe80077ed057c6d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

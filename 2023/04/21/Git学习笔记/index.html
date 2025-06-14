@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="glfs大文件上传 12where git1.start 到git的bin目录，并将gitlfs安装到该目录 12345678910# 将所有文件标记为使用 Git LFS（Large File Storage）进行版本控制git lfs track *# 查看分支git branch -vv# 重命名分支为maingit branch -m master main# 添加远程仓库git re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git学习笔记">
+<meta property="og:url" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Taoの博客">
+<meta property="og:description" content="glfs大文件上传 12where git1.start 到git的bin目录，并将gitlfs安装到该目录 12345678910# 将所有文件标记为使用 Git LFS（Large File Storage）进行版本控制git lfs track *# 查看分支git branch -vv# 重命名分支为maingit branch -m master main# 添加远程仓库git re">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421094548814.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410164410797.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103015235.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103005144.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103617658.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421104350344.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421114654775.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421104605464.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421105618941.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421111547768.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421110635353.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421112342557.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410153815148.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410153955885.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410163306535.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410155939477.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410161223502.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410162650182.png">
+<meta property="og:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410165007818.png">
+<meta property="article:published_time" content="2023-04-21T01:34:43.000Z">
+<meta property="article:modified_time" content="2025-06-13T23:46:19.503Z">
+<meta property="article:author" content="LuoTao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421094548814.png">
+
+
+<link rel="canonical" href="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2023/04/21/Git学习笔记/","title":"Git学习笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git学习笔记 | Taoの博客</title>
+  
+
+
+
+
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com/3.4.4"></script>
+
+<!-- Google Fonts (Noto Sans SC for Chinese, Poppins for English) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+<!-- Apache ECharts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Taoの博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Best Tao.</p>
+
+    <!-- Music Player -->
+    <div class="music-player-container mt-4">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    <!--音乐播放器-->
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#glfs%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">1.</span> <span class="nav-text">glfs大文件上传</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="nav-number"></span> <span class="nav-text">Git的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8Fvs%E5%88%86%E5%B8%83%E5%BC%8F"><span class="nav-number"></span> <span class="nav-text">集中式VS分布式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">1 集中式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">2 分布式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E9%85%8D%E7%BD%AE"><span class="nav-number"></span> <span class="nav-text">Git配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number"></span> <span class="nav-text">工作区、暂存区和版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">把文件添加到版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%92%8C%E6%8F%90%E4%BA%A4"><span class="nav-number">4.</span> <span class="nav-text">添加和提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="nav-number">5.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">文件操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C"><span class="nav-number"></span> <span class="nav-text">命令操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E6%82%94%E8%8D%AF"><span class="nav-number">1.</span> <span class="nav-text">后悔药</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">2.</span> <span class="nav-text">git log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">远程分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">推送问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">分支重命名</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LuoTao"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">LuoTao</p>
+  <div class="site-description" itemprop="description"><font color="#FFFFFF">Best Tao.</font></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://wx.qq.com/" title="微信 → https:&#x2F;&#x2F;wx.qq.com&#x2F;" rel="noopener" target="_blank"><i class="weixin fa-fw"></i>微信</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/3452255853" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;3452255853" rel="noopener" target="_blank"><i class="QQ fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/luotaofun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luotaofun" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luotao0213@163.com" title="E-Mail → mailto:luotao0213@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/luotaofun" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luotaofun.github.io/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="LuoTao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">Best Tao.</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git学习笔记 | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-21 09:34:43" itemprop="dateCreated datePublished" datetime="2023-04-21T09:34:43+08:00">2023-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-14 07:46:19" itemprop="dateModified" datetime="2025-06-14T07:46:19+08:00">2025-06-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="glfs大文件上传">glfs大文件上传</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">where</span> git</span><br><span class="line">1.start 到git的bin目录，并将gitlfs安装到该目录</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将所有文件标记为使用 Git LFS（Large File Storage）进行版本控制</span></span><br><span class="line">git lfs track *</span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">git branch -vv</span><br><span class="line"><span class="comment"># 重命名分支为main</span></span><br><span class="line">git branch -m master main</span><br><span class="line"><span class="comment"># 添加远程仓库</span></span><br><span class="line">git remote add origin https://github.com/luotaofun/_posts.git</span><br><span class="line"><span class="comment"># 推送到远程仓库</span></span><br><span class="line">git push  origin &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="git的诞生">Git的诞生</h1>
+<p>​
+Linus在1991年创建了开源的Linux，为了维护代码库，选择了一个商业的版本控制系统BitKeeper，BitKeeper的东家BitMover公司出于人道主义精神，授权Linux社区免费使用这个版本控制系统。开发Samba的Andrew试图破解BitKeeper的协议被BitMover公司发现了，于是BitMover公司收回Linux社区的免费使用权。Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git。Git迅速成为最流行的分布式版本控制系统，2008年，GitHub网站上线为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub。</p>
+<h1 id="集中式vs分布式">集中式VS分布式</h1>
+<h2 id="集中式">1 集中式</h2>
+<p>​
+版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</p>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421094548814.png" alt="image-20230421094548814">
+<figcaption aria-hidden="true">image-20230421094548814</figcaption>
+</figure>
+<p>缺点：</p>
+<ul>
+<li>必须联网工作(网速慢导致提交慢)。</li>
+<li>若中央服务器出现问题，所有人无法工作。</li>
+</ul>
+<h2 id="分布式">2 分布式</h2>
+<p>每个人的电脑都是一个完整的版本库，无需联网。多人协作时，若A在自己电脑上修改了F文件，B也在自己电脑上修改了F文件，只需将各自的修改推送给对方就可以看到对方的修改了。</p>
+<p>在推送版本库的修改时，可能电脑相互间访问不了，所以分布式通常有一台充当”中央服务器”的电脑用来方便”交换”修改。</p>
+<p>优点：</p>
+<ul>
+<li>安全性高(因为每个人电脑都有完整的版本库，某一台电脑坏掉可以从其他人那里复制)</li>
+<li>分支管理</li>
+</ul>
+<h1 id="git配置">Git配置</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门</span></span><br><span class="line">$ git config --global user.name <span class="string">&quot;luotao&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;coder@luotao@gmail.com&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="工作区暂存区和版本库">工作区、暂存区和版本库</h1>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410164410797.png" alt="image-20250410164410797">
+<figcaption aria-hidden="true">image-20250410164410797</figcaption>
+</figure>
+<h2 id="工作区和暂存区">工作区和暂存区</h2>
+<p>工作区：能看到的目录，如例子中的learngit</p>
+<p>暂存区：版本库中的stage(或者叫index)</p>
+<h2 id="版本库">版本库</h2>
+<p><strong>工作区</strong>有个隐藏目录.git是Git的版本库。版本库repository即仓库(目录),库里所有文件都被git管理起来，每个文件的更新都能跟踪，以便在将来某个时刻可以还原。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建工作区</span></span><br><span class="line"><span class="built_in">mkdir</span> learngit</span><br><span class="line"><span class="built_in">cd</span> learngit</span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="comment"># Git管理该仓库</span></span><br><span class="line">git init </span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103015235.png" alt="image-20230421103015235">
+<figcaption aria-hidden="true">image-20230421103015235</figcaption>
+</figure>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103005144.png" alt="image-20230421103005144">
+<figcaption aria-hidden="true">image-20230421103005144</figcaption>
+</figure>
+<h2 id="把文件添加到版本库">把文件添加到版本库</h2>
+<p>创建readme.txt文件</p>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421103617658.png" alt="image-20230421103617658">
+<figcaption aria-hidden="true">image-20230421103617658</figcaption>
+</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将文件添加到仓库</span></span><br><span class="line">git add readme.txt</span><br><span class="line"><span class="comment"># 将文件提交到仓库,-m &lt;提交说明&gt;</span></span><br><span class="line">git commit -m <span class="string">&quot;wrote a readme file&quot;</span></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421104350344.png" alt="image-20230421104350344">
+<figcaption aria-hidden="true">image-20230421104350344</figcaption>
+</figure>
+<h2 id="添加和提交">添加和提交</h2>
+<p>需要提交的文件修改全部放到暂存区，然后一次性提交暂存区的所有修改。</p>
+<p>往版本库添加时分两步：</p>
+<ul>
+<li>git add 把文件修改添加到暂存区</li>
+<li>git commit 把暂存区的所有内容提交到当前分支</li>
+</ul>
+<p>创建版本库时git自动创建唯一master分支。</p>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421114654775.png" alt="image-20230421114654775">
+<figcaption aria-hidden="true">image-20230421114654775</figcaption>
+</figure>
+<p>修改readme.txt文件</p>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421104605464.png" alt="image-20230421104605464">
+<figcaption aria-hidden="true">image-20230421104605464</figcaption>
+</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看修改结果</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 查看上次是如何修改的，修改内容</span></span><br><span class="line">git diff readme.txt</span><br><span class="line"><span class="comment"># 添加修改</span></span><br><span class="line">git add readme.txt</span><br><span class="line"><span class="comment"># 查看添加状态</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 提交修改</span></span><br><span class="line">git commit -m <span class="string">&quot;add 666&quot;</span></span><br><span class="line"><span class="comment"># 查看提交状态</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421105618941.png" alt="image-20230421105618941">
+<figcaption aria-hidden="true">image-20230421105618941</figcaption>
+</figure>
+<h2 id="版本回退">版本回退</h2>
+<ul>
+<li>git会把每次提交串成一条历史时间线。</li>
+<li>HEAD表示当前版本，HEAD^表示上个版本，HEAD~100表示往上100个版本</li>
+</ul>
+<p>Git内部有个指向当前版本的HEAD指针，回退版本时，仅把HEAD指针改变。</p>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421111547768.png" alt="image-20230421111547768">
+<figcaption aria-hidden="true">image-20230421111547768</figcaption>
+</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看提交的历史记录,以便确定要回退到哪个版本。</span></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421110635353.png" alt="image-20230421110635353">
+<figcaption aria-hidden="true">image-20230421110635353</figcaption>
+</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 回退到上个版本</span></span><br><span class="line">git reset --hard HEAD^</span><br><span class="line"><span class="comment"># 查看版本库状态</span></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></table></figure>
+<p>当你用<code>$ git reset --hard HEAD^</code>回退到<code>add distributed</code>版本时，再想恢复到<code>append GPL</code>，就必须找到<code>append GPL</code>的commit
+id。Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看命令历史记录，以便确定要回到未来的哪个版本。</span></span><br><span class="line">git reflog</span><br><span class="line"><span class="comment"># 回退到未来指定版本</span></span><br><span class="line">git reset --hard 5cef</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20230421112342557.png" alt="image-20230421112342557">
+<figcaption aria-hidden="true">image-20230421112342557</figcaption>
+</figure>
+<h2 id="文件操作">文件操作</h2>
+<ul>
+<li><p>版本号<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410153815148.png" alt="版本号"><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410153955885.png" alt="image-20250410153955885"></p></li>
+<li><figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410163306535.png" alt="image-20250410163306535">
+<figcaption aria-hidden="true">image-20250410163306535</figcaption>
+</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.查看版本号</span></span><br><span class="line">T@T MINGW64 /d/workspace/GitHub/local-test/.git/objects/78 (GIT_DIR!)</span><br><span class="line">$ git cat-file -p 783b265a43066b3a54c790416d49ecc90d6948f3</span><br><span class="line"><span class="comment"># -输出了提交信息</span></span><br><span class="line"><span class="comment"># -tree表示</span></span><br><span class="line">tree 6f9509c88bed7080d496fc5e1d87a9315e30549d</span><br><span class="line">author luotaofun &lt;luotao0213@163.com&gt; 1744270243 +0800</span><br><span class="line">committer luotaofun &lt;luotao0213@163.com&gt; 1744270243 +0800</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.继续查看tree的版本号</span></span><br><span class="line">T@T MINGW64 /d/workspace/GitHub/local-test/.git/objects/78 (GIT_DIR!)</span><br><span class="line">$ git cat-file -p 6f9509c88bed7080d496fc5e1d87a9315e30549d</span><br><span class="line"><span class="comment"># -输出了`.gitattributes`文件的状态信息</span></span><br><span class="line"><span class="comment"># -100表示</span></span><br><span class="line"><span class="comment"># -644表示</span></span><br><span class="line"><span class="comment"># -blob表示</span></span><br><span class="line">100644 blob dfe0770424b2a19faf507a501ebfc23be8f54e7b    .gitattributes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.继续查看文件状态信息的版本号</span></span><br><span class="line">$ git cat-file -p dfe0770424b2a19faf507a501ebfc23be8f54e7b</span><br><span class="line"><span class="comment"># -输出了`.gitattributes`文件的内容</span></span><br><span class="line"><span class="comment"># Auto detect text files and perform LF normalization</span></span><br><span class="line">* text=auto</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建文件<code>a.txt</code><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410155939477.png" alt="image-20250410155939477"></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4.查看`a.txt`的版本号</span></span><br><span class="line">$ git cat-file -p 94a49596f78b48219e84168a0e50b361670311fa</span><br><span class="line"><span class="comment"># 输出了提交信息，-parent表示关联上一次提交的版本号</span></span><br><span class="line">tree 0e5aed0ee839d351094ef15c2cd4e2fb0af77bd9</span><br><span class="line">parent 783b265a43066b3a54c790416d49ecc90d6948f3</span><br><span class="line">author luotaofun &lt;luotao0213@163.com&gt; 1744271873 +0800</span><br><span class="line">committer luotaofun &lt;luotao0213@163.com&gt; 1744271873 +0800</span><br><span class="line"></span><br><span class="line">Create a.txt</span><br><span class="line"></span><br><span class="line">创建 a.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.继续查看tree的版本号</span></span><br><span class="line">T@T MINGW64 /d/workspace/GitHub/local-test/.git/objects/78 (GIT_DIR!)</span><br><span class="line">$ git cat-file -p 0e5aed0ee839d351094ef15c2cd4e2fb0af77bd9</span><br><span class="line"><span class="comment"># -输出了两个文件状态</span></span><br><span class="line">100644 blob dfe0770424b2a19faf507a501ebfc23be8f54e7b    .gitattributes</span><br><span class="line">100644 blob 29ccdc7b0a1eb0c1becea6c2c453e1575576d528    a.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改<code>a.txt</code><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410161223502.png" alt="image-20250410161223502"></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 6.查看修改的版本号</span></span><br><span class="line">T@T MINGW64 /d/workspace/GitHub/local-test/.git/objects/78 (GIT_DIR!)</span><br><span class="line">$ git cat-file -p acd1ab595bb13b1d819d7c9b7fd8e35225fc4beb</span><br><span class="line"><span class="comment"># -输出了提交信息，-parent是上一次的提交</span></span><br><span class="line">tree 89499f0db48618787bc552ae5b3769040b69c875</span><br><span class="line">parent 94a49596f78b48219e84168a0e50b361670311fa</span><br><span class="line">author luotaofun &lt;luotao0213@163.com&gt; 1744272717 +0800</span><br><span class="line">committer luotaofun &lt;luotao0213@163.com&gt; 1744272717 +0800</span><br><span class="line"></span><br><span class="line">Update a.txt</span><br><span class="line"></span><br><span class="line">修改a.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.查看tree</span></span><br><span class="line">T@T MINGW64 /d/workspace/GitHub/local-test/.git/objects/78 (GIT_DIR!)</span><br><span class="line">$ git cat-file -p 89499f0db48618787bc552ae5b3769040b69c875</span><br><span class="line"><span class="comment"># 产生了新的文件版本号`405188380b2a0ea90f03dbc99686eaf85f9e827f`即修改的a.txt</span></span><br><span class="line">100644 blob dfe0770424b2a19faf507a501ebfc23be8f54e7b    .gitattributes</span><br><span class="line">100644 blob 405188380b2a0ea90f03dbc99686eaf85f9e827f    a.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除<code>a.txt</code><img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410162650182.png" alt="image-20250410162650182"></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 8.查看删除版本号</span></span><br><span class="line">T@T MINGW64 /d/workspace/GitHub/local-test/.git/objects/78 (GIT_DIR!)</span><br><span class="line">$ git cat-file -p c4446069ad813da8a2926cf442c5fb042e818481</span><br><span class="line"><span class="comment"># -输出了提交信息，parent是上一次修改的版本号</span></span><br><span class="line">tree 6f9509c88bed7080d496fc5e1d87a9315e30549d</span><br><span class="line">parent acd1ab595bb13b1d819d7c9b7fd8e35225fc4beb</span><br><span class="line">author luotaofun &lt;luotao0213@163.com&gt; 1744273591 +0800</span><br><span class="line">committer luotaofun &lt;luotao0213@163.com&gt; 1744273591 +0800</span><br><span class="line"></span><br><span class="line">Delete a.txt</span><br><span class="line"></span><br><span class="line">删除`a.txt`</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="命令操作">命令操作</h1>
+<figure>
+<img src="/2023/04/21/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20250410165007818.png" alt="image-20250410165007818">
+<figcaption aria-hidden="true">image-20250410165007818</figcaption>
+</figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># 在当前目录生成隐藏的 .git 子目录（存储版本历史、配置等元数据）</span></span><br><span class="line"> git init</span><br><span class="line"> </span><br><span class="line"> <span class="comment">#添加所有未跟踪的文件</span></span><br><span class="line"> git add .</span><br><span class="line"><span class="comment"># 克隆特定分支</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/luotaofun/job.git</span><br><span class="line"></span><br><span class="line"><span class="comment">#  查看 Git 仓库当前状态</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交历史</span></span><br><span class="line">$ git <span class="built_in">log</span> --oneline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加到 Git 的暂存区（Staging Area），开始被版本控制跟踪</span></span><br><span class="line">git add a.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将暂存区的内容永久保存到 Git 仓库的历史记录中</span></span><br><span class="line">git commit -m <span class="string">&quot;feat: 新增用户注册功能&quot;</span></span><br><span class="line">   </span><br><span class="line"><span class="comment">#修正最近提交信息：</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;新提交消息&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="后悔药">后悔药</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 撤销暂存：</span></span><br><span class="line">git reset HEAD a.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复文件到指定提交版本【之前】(不丢失提交过程，相当于新增了一个反向提交)</span></span><br><span class="line">git revert 想要恢复的版本的下一个版本号</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复文件到指定提交版本</span></span><br><span class="line"><span class="built_in">cp</span> README.md README.md.backup     <span class="comment"># 先备份文件</span></span><br><span class="line">git restore --<span class="built_in">source</span>=404b56f 文件路径</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;恢复 README.md 文件&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制重置到某一个版本(reset会丢失提交过程，彻底回退到旧版本)：</span></span><br><span class="line">git reset --hard 版本号</span><br></pre></td></tr></table></figure>
+<h2 id="git-log">git log</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># 查看最近10条简略提交历史</span></span><br><span class="line">git <span class="built_in">log</span> --oneline -10</span><br><span class="line"></span><br><span class="line"> <span class="comment"># 搜索包含「初始化」的提交</span></span><br><span class="line">git <span class="built_in">log</span> --all --grep=<span class="string">&quot;初始化&quot;</span> </span><br></pre></td></tr></table></figure>
+<h2 id="远程分支操作">远程分支操作</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看远程仓库详情</span></span><br><span class="line">git remote -v</span><br><span class="line"><span class="comment"># 添加远程仓库：将指定的远程仓库 URL 绑定到别名 origin。使本地仓库能够与远程仓库进行交互（如拉取、推送代码）</span></span><br><span class="line">git remote add origin 仓库地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成ssh公钥后需要去远程仓库配置生产的公钥</span></span><br><span class="line">ssh-keygen -t rsa -C<span class="string">&quot;ssh地址&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看本地分支与远程分支的关联关系。</span></span><br><span class="line">    git branch -vv</span><br><span class="line"><span class="comment"># 基于远程 main 分支创建并切换</span></span><br><span class="line">git checkout -b main origin/main</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建并切换dev分支</span></span><br><span class="line">git checkout -b dev</span><br><span class="line"><span class="comment"># 等价于以下两条命令：</span></span><br><span class="line">git branch dev      <span class="comment"># 创建分支</span></span><br><span class="line">git checkout dev    <span class="comment"># 切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#基于远程main分支创建并切换</span></span><br><span class="line">git checkout -b main origin/main </span><br><span class="line"></span><br><span class="line"><span class="comment"># 【删除】分支</span></span><br><span class="line">git branch -d dev</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取 origin仓库的最新代码合并到本地分支：方法一</span></span><br><span class="line"> git pull origin 本地分支名  </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 拉取 origin仓库的最新代码合并到本地分支：方法二</span></span><br><span class="line"><span class="comment"># 从远程仓库分支获取最新代码</span></span><br><span class="line">git fetch origin &lt;远程分支名&gt;   </span><br><span class="line"><span class="comment"># 切换到目标本地分支</span></span><br><span class="line">git checkout &lt;本地分支名&gt;</span><br><span class="line"><span class="comment"># 查看本地分支与远程 dev 分支的差异</span></span><br><span class="line">git diff 本地分支 origin/dev </span><br><span class="line"><span class="comment"># 将远程分支合并到当前本地分支</span></span><br><span class="line">git merge origin/&lt;远程分支名&gt; </span><br><span class="line"><span class="comment"># 推送合并后的本地分支</span></span><br><span class="line">git push origin &lt;本地分支名&gt;</span><br><span class="line"><span class="comment"># 解决冲突,作为一个新提交commit</span></span><br><span class="line">git add xxx</span><br><span class="line">git commit -m <span class="string">&#x27;解决冲突XXX&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地分支的【提交历史】变基到远程分支</span></span><br><span class="line">git rebase origin/&lt;远程分支名&gt;</span><br><span class="line"><span class="comment"># 解决冲突后，使用以下命令继续变基：</span></span><br><span class="line">git add &lt;冲突文件&gt;</span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br><span class="line"><span class="comment"># 变基完成后，将本地分支推送到远程仓库。由于变基会重写提交历史，需要使用强制推送：</span></span><br><span class="line">git push --force origin &lt;本地分支名&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="推送问题">推送问题</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将本地推送到远程仓库，并设置远程分支为【上游分支】，Git 会将本地分支与远程分支关联起来：</span></span><br><span class="line">git push --set-upstream origin &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br><span class="line"><span class="comment"># 等价于：git push -u origin  &lt;本地分支名&gt;:&lt;远程分支名&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：【强制推送】本地分支会覆盖远程分支的提交历史</span></span><br><span class="line">git push --force origin &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加子模块</span></span><br><span class="line">git submodule add 子模块仓库地址</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="分支重命名">分支重命名</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重命名前备份</span></span><br><span class="line">   git branch backup-old-branch old-branch</span><br><span class="line">   </span><br><span class="line"> <span class="comment"># 本地重命名move</span></span><br><span class="line">   git branch -m 当前分支名称 新分支名称 </span><br><span class="line"><span class="comment"># :当前分支名称表示删除远程的分支</span></span><br><span class="line">   git push 远程仓库名 :当前分支名称 新分支名称  <span class="comment"># 同步重命名到远程仓库</span></span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+<p>​</p>
+
+    </div>
+
+    
+    
+      
+<div class="signature signature-post">Best Tao.</div>
+
+    
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/21/erp-InventoryManagementSystem/" rel="prev" title="InventoryManagementSystem">
+                  <i class="fa fa-chevron-left"></i> InventoryManagementSystem
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/01/15/GithubPagesHexo/" rel="next" title="GithubPagesHexo">
+                  GithubPagesHexo <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LuoTao</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://lib.baomitu.com/mermaid/9.0.1/mermaid.min.js","integrity":"sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"943bd9e9d17a8943df5c1e9a42a10a87"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

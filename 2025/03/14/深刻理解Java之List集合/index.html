@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="深刻理解Java之List集合   image-20250314132644267  1. List接口概述 1.1 基本特性 List接口继承自Collection接口，代表一个有序的、可重复的元素集合。其主要特点：  有序性：元素存储和添加的顺序一致 可重复性：允许存储相同的元素 索引访问：可以通过索引精确访问元素 动态扩容：大多数实现类支持动态调整容量 存储引用数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深刻理解Java之List集合">
+<meta property="og:url" content="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="Taoの博客">
+<meta property="og:description" content="深刻理解Java之List集合   image-20250314132644267  1. List接口概述 1.1 基本特性 List接口继承自Collection接口，代表一个有序的、可重复的元素集合。其主要特点：  有序性：元素存储和添加的顺序一致 可重复性：允许存储相同的元素 索引访问：可以通过索引精确访问元素 动态扩容：大多数实现类支持动态调整容量 存储引用数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314132644267.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314144120517.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314124911847.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314125024121.png">
+<meta property="article:published_time" content="2025-03-13T17:23:57.000Z">
+<meta property="article:modified_time" content="2025-06-13T23:46:18.893Z">
+<meta property="article:author" content="LuoTao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314132644267.png">
+
+
+<link rel="canonical" href="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/","path":"2025/03/14/深刻理解Java之List集合/","title":"深刻理解Java之List集合"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>深刻理解Java之List集合 | Taoの博客</title>
+  
+
+
+
+
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com/3.4.4"></script>
+
+<!-- Google Fonts (Noto Sans SC for Chinese, Poppins for English) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+<!-- Apache ECharts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Taoの博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Best Tao.</p>
+
+    <!-- Music Player -->
+    <div class="music-player-container mt-4">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    <!--音乐播放器-->
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3java%E4%B9%8Blist%E9%9B%86%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">深刻理解Java之List集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E6%8E%A5%E5%8F%A3%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">1. List接口概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list%E5%9C%A8%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 List在集合框架中的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list%E6%8E%A5%E5%8F%A3%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 List接口定义的主要方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E7%9A%84%E4%B8%BB%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">2. List的主要实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist---%E6%95%B4%E9%BD%90%E6%8E%92%E5%88%97%E7%9A%84%E7%81%AB%E8%BD%A6%E8%BD%A6%E5%8E%A2"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 ArrayList -
+“整齐排列的火车车厢”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist---%E6%89%8B%E6%8B%89%E6%89%8B%E7%9A%84%E4%BA%BA%E9%93%BE"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 LinkedList - “手拉手的人链”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector---%E5%B8%A6%E9%94%81%E7%9A%84%E4%BF%9D%E9%99%A9%E6%9F%9C"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 Vector - “带锁的保险柜”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stack---%E4%B9%A6%E5%A0%86"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 Stack - “书堆”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arraylist%E4%B8%8Elinkedlist%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94"><span class="nav-number">1.3.</span> <span class="nav-text">3.
+ArrayList与LinkedList的深度对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E7%9A%84%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.4.</span> <span class="nav-text">4. List的常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAlist"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 创建List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 访问元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4 修改元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">1.4.5.</span> <span class="nav-text">4.5 删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86list"><span class="nav-number">1.4.6.</span> <span class="nav-text">4.6 遍历List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8Flist"><span class="nav-number">1.4.7.</span> <span class="nav-text">4.7 排序List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">5. List的线程安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84list"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 线程不安全的List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84list"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 创建线程安全的List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.6.</span> <span class="nav-text">6. List的性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist%E4%BC%98%E5%8C%96"><span class="nav-number">1.6.1.</span> <span class="nav-text">6.1 ArrayList优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist%E4%BC%98%E5%8C%96"><span class="nav-number">1.6.2.</span> <span class="nav-text">6.2 LinkedList优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.7.</span> <span class="nav-text">7. List的实际应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.7.1.</span> <span class="nav-text">7.1 ArrayList应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.7.2.</span> <span class="nav-text">7.2 LinkedList应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B%E5%88%86%E9%A1%B5%E5%A4%84%E7%90%86"><span class="nav-number">1.7.3.</span> <span class="nav-text">7.3 实际案例：分页处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.8.</span> <span class="nav-text">8. List的最佳实践</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LuoTao"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">LuoTao</p>
+  <div class="site-description" itemprop="description"><font color="#FFFFFF">Best Tao.</font></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://wx.qq.com/" title="微信 → https:&#x2F;&#x2F;wx.qq.com&#x2F;" rel="noopener" target="_blank"><i class="weixin fa-fw"></i>微信</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/3452255853" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;3452255853" rel="noopener" target="_blank"><i class="QQ fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/luotaofun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luotaofun" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luotao0213@163.com" title="E-Mail → mailto:luotao0213@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/luotaofun" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luotaofun.github.io/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="LuoTao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">Best Tao.</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="深刻理解Java之List集合 | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深刻理解Java之List集合
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-14 01:23:57" itemprop="dateCreated datePublished" datetime="2025-03-14T01:23:57+08:00">2025-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-14 07:46:18" itemprop="dateModified" datetime="2025-06-14T07:46:18+08:00">2025-06-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="深刻理解java之list集合">深刻理解Java之List集合</h1>
+<figure>
+<img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314132644267.png" alt="image-20250314132644267">
+<figcaption aria-hidden="true">image-20250314132644267</figcaption>
+</figure>
+<h2 id="list接口概述">1. List接口概述</h2>
+<h3 id="基本特性">1.1 基本特性</h3>
+<p>List接口继承自Collection接口，代表一个有序的、可重复的元素集合。其主要特点：</p>
+<ul>
+<li><strong>有序性</strong>：元素存储和添加的顺序一致</li>
+<li><strong>可重复性</strong>：允许存储相同的元素</li>
+<li><strong>索引访问</strong>：可以通过索引精确访问元素</li>
+<li><strong>动态扩容</strong>：大多数实现类支持动态调整容量</li>
+<li>存储引用数据类型</li>
+</ul>
+<p><strong>生活比喻</strong>：List就像电影院的一排座位 -
+每个座位都有明确的编号(0, 1, 2…)，按顺序排列 -
+同一个人可以买多个座位(可重复) -
+你可以直接找到”第5号座位”而不需要从头数过去 -
+如果需要，影院可以增加更多座位(动态扩容)</p>
+<h3 id="list在集合框架中的位置">1.2 List在集合框架中的位置</h3>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Collection (接口)</span><br><span class="line">├── List (接口)</span><br><span class="line">│   ├── ArrayList (实现类)</span><br><span class="line">│   ├── LinkedList (实现类)</span><br><span class="line">│   ├── Vector (实现类)</span><br><span class="line">│   │   └── Stack (子类)</span><br><span class="line">│   └── ...</span><br><span class="line">├── Set (接口)</span><br><span class="line">└── Queue (接口)</span><br></pre></td></tr></table></figure>
+<h3 id="list接口定义的主要方法">1.3 List接口定义的主要方法</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加元素到指定位置</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> index, E element)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取指定索引的元素</span></span><br><span class="line">E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换指定索引的元素</span></span><br><span class="line">E <span class="title function_">set</span><span class="params">(<span class="type">int</span> index, E element)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除指定索引的元素</span></span><br><span class="line">E <span class="title function_">remove</span><span class="params">(<span class="type">int</span> index)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找元素首次出现的索引</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(Object o)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找元素最后一次出现的索引</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(Object o)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取子列表</span></span><br><span class="line">List&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> fromIndex, <span class="type">int</span> toIndex)</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="list的主要实现类">2. List的主要实现类</h2>
+<h3 id="arraylist---整齐排列的火车车厢">2.1 ArrayList -
+“整齐排列的火车车厢”</h3>
+<p>ArrayList是List接口最常用的实现类，基于动态数组实现，查询快，但由于不可变性，增删会复制创建新数组。</p>
+<p><strong>内部结构</strong>： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ArrayList的核心是一个Object数组</span></span><br><span class="line"><span class="keyword">transient</span> Object[] elementData;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实际元素数量</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> size;</span><br></pre></td></tr></table></figure></p>
+<p><strong>工作原理</strong>： - 初始容量为10（默认构造函数） -
+当容量不足时，自动扩容为原容量的1.5倍 -
+扩容涉及数组复制，是一个相对昂贵的操作</p>
+<p><strong>性能特点</strong>： - 随机访问性能极佳：O(1) -
+尾部添加元素通常为O(1)，但可能触发扩容 -
+中间插入/删除元素性能较差：O(n)，因为需要移动元素 - 非线程安全</p>
+<p><strong>生活比喻</strong>：
+ArrayList就像一列火车车厢，整齐地排列在铁轨上： -
+想找到第N号车厢非常容易，直接数过去就行（随机访问快） -
+在中间加入新车厢很麻烦，需要把后面所有车厢都移动（中间插入慢） -
+在尾部加车厢相对简单，但偶尔需要换一条更长的铁轨（扩容操作） -
+每个车厢紧挨着，占用空间紧凑（内存效率高）</p>
+<p><strong>代码示例</strong>： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建ArrayList</span></span><br><span class="line">List&lt;String&gt; fruits = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加元素</span></span><br><span class="line">fruits.add(<span class="string">&quot;Apple&quot;</span>);</span><br><span class="line">fruits.add(<span class="string">&quot;Banana&quot;</span>);</span><br><span class="line">fruits.add(<span class="string">&quot;Orange&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定位置添加</span></span><br><span class="line">fruits.add(<span class="number">1</span>, <span class="string">&quot;Mango&quot;</span>);  <span class="comment">// [Apple, Mango, Banana, Orange]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 访问元素</span></span><br><span class="line"><span class="type">String</span> <span class="variable">fruit</span> <span class="operator">=</span> fruits.get(<span class="number">0</span>);  <span class="comment">// Apple</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改元素</span></span><br><span class="line">fruits.set(<span class="number">0</span>, <span class="string">&quot;Pineapple&quot;</span>);  <span class="comment">// [Pineapple, Mango, Banana, Orange]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除元素</span></span><br><span class="line">fruits.remove(<span class="number">2</span>);  <span class="comment">// [Pineapple, Mango, Orange]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找元素</span></span><br><span class="line"><span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> fruits.indexOf(<span class="string">&quot;Mango&quot;</span>);  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 大小</span></span><br><span class="line"><span class="type">int</span> <span class="variable">siz</span> <span class="operator">=</span> fruits.size();</span><br></pre></td></tr></table></figure></p>
+<h3 id="linkedlist---手拉手的人链">2.2 LinkedList - “手拉手的人链”</h3>
+<p>LinkedList是基于双向链表实现的List接口，同时也实现了Deque接口。增删快，只需要改节点的指针，当时查询慢，需要从头开始找。</p>
+<p><strong>内部结构</strong>： <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 链表节点类</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Node</span>&lt;E&gt; &#123;</span><br><span class="line">    E item;           <span class="comment">// 元素值</span></span><br><span class="line">    Node&lt;E&gt; next;     <span class="comment">// 后继节点</span></span><br><span class="line">    Node&lt;E&gt; prev;     <span class="comment">// 前驱节点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链表大小</span></span><br><span class="line"><span class="keyword">transient</span> <span class="type">int</span> size;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 头节点和尾节点</span></span><br><span class="line"><span class="keyword">transient</span> Node&lt;E&gt; first;</span><br><span class="line"><span class="keyword">transient</span> Node&lt;E&gt; last;</span><br></pre></td></tr></table></figure></p>
+<p><strong>工作原理</strong>： - 每个元素都是一个包含前后引用的节点 -
+添加元素时创建新节点并调整相关节点的引用 -
+删除元素时调整相关节点的引用</p>
+<p><strong>性能特点</strong>： - 随机访问性能较差：O(n)，需要从头/尾遍历
+- 插入/删除元素性能极佳：O(1)，只需调整引用 -
+内存占用较大，每个元素需要额外存储前后引用 - 非线程安全</p>
+<p><strong>生活比喻</strong>： LinkedList就像一群手拉手的人形成的人链：
+- 要找到第50个人，你必须从头（或尾）数过去（随机访问慢） -
+在任何位置插入新人很容易，只需要松开两个人的手，让新人拉住他们（插入快）
+- 每个人除了自己外，还要记住前后两个人是谁（额外内存开销） -
+人链的两端可以很方便地加入或移除人员（两端操作高效）</p>
+<p><strong>代码示例</strong>：</p>
+<figure>
+<img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314144120517.png" alt="image-20250314144120517">
+<figcaption aria-hidden="true">image-20250314144120517</figcaption>
+</figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建LinkedList</span></span><br><span class="line">LinkedList&lt;String&gt; tasks = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加元素</span></span><br><span class="line">tasks.add(<span class="string">&quot;Task 1&quot;</span>);</span><br><span class="line">tasks.add(<span class="string">&quot;Task 3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在指定位置添加</span></span><br><span class="line">tasks.add(<span class="number">1</span>, <span class="string">&quot;Task 2&quot;</span>);  <span class="comment">// [Task 1, Task 2, Task 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 作为双端队列使用</span></span><br><span class="line">tasks.addFirst(<span class="string">&quot;Task 0&quot;</span>);  <span class="comment">// [Task 0, Task 1, Task 2, Task 3]</span></span><br><span class="line">tasks.addLast(<span class="string">&quot;Task 4&quot;</span>);   <span class="comment">// [Task 0, Task 1, Task 2, Task 3, Task 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取元素</span></span><br><span class="line"><span class="type">String</span> <span class="variable">first</span> <span class="operator">=</span> tasks.getFirst();  <span class="comment">// Task 0</span></span><br><span class="line"><span class="type">String</span> <span class="variable">last</span> <span class="operator">=</span> tasks.getLast();    <span class="comment">// Task 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除元素</span></span><br><span class="line">tasks.removeFirst();  <span class="comment">// [Task 1, Task 2, Task 3, Task 4]</span></span><br><span class="line">tasks.removeLast();   <span class="comment">// [Task 1, Task 2, Task 3]</span></span><br></pre></td></tr></table></figure>
+<h3 id="vector---带锁的保险柜">2.3 Vector - “带锁的保险柜”</h3>
+<p>Vector是List接口的古老实现类，与ArrayList类似，但是线程安全的。</p>
+<p><strong>内部结构</strong>： - 与ArrayList类似，基于数组实现 -
+方法使用synchronized关键字同步</p>
+<p><strong>性能特点</strong>： - 随机访问性能好：O(1) -
+由于同步机制，性能比ArrayList差 -
+扩容时默认增长为原容量的2倍（而ArrayList是1.5倍） - 线程安全</p>
+<p><strong>生活比喻</strong>：
+Vector就像一个带锁的保险柜，每次只允许一个人操作： -
+查找和存取物品的方式与普通柜子相同 -
+但每次操作都需要先开锁，用完再锁上（同步操作的开销） -
+安全性高，但效率低</p>
+<p><strong>适用场景</strong>： - 需要线程安全的动态数组 -
+多线程环境下共享集合 -
+注：现代Java应用中，通常使用Collections.synchronizedList()或CopyOnWriteArrayList代替Vector</p>
+<h3 id="stack---书堆">2.4 Stack - “书堆”</h3>
+<p>Stack是Vector的子类，实现了后进先出(LIFO)的栈结构。</p>
+<p><strong>主要方法</strong>： -
+<code>push(E item)</code>：将元素压入栈顶 -
+<code>pop()</code>：移除并返回栈顶元素 -
+<code>peek()</code>：返回栈顶元素但不移除 -
+<code>empty()</code>：检查栈是否为空 -
+<code>search(Object o)</code>：查找元素在栈中的位置</p>
+<p><strong>生活比喻</strong>： Stack就像一堆叠放的书： -
+你只能从顶部放书或取书 - 要拿到底部的书，必须先移除上面所有的书</p>
+<p><strong>注意</strong>：Stack类已被视为过时设计，现代Java应用通常使用Deque接口的实现（如ArrayDeque）作为栈。</p>
+<h2 id="arraylist与linkedlist的深度对比">3.
+ArrayList与LinkedList的深度对比</h2>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 29%">
+<col style="width: 32%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr>
+<th>特性</th>
+<th>ArrayList</th>
+<th>LinkedList</th>
+<th>生活比喻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内部实现</td>
+<td>动态数组</td>
+<td>双向链表</td>
+<td>整齐排列的停车场 vs 分散但互相连接的停车位</td>
+</tr>
+<tr>
+<td>随机访问</td>
+<td>O(1)，极快</td>
+<td>O(n)，较慢</td>
+<td>翻书找页码 vs 看连续剧找某一集</td>
+</tr>
+<tr>
+<td>插入/删除（中间）</td>
+<td>O(n)，需移动元素</td>
+<td>O(1)，仅调整引用</td>
+<td>排队插队(所有人后移) vs 手拉手人链中加人(只调整相邻两人)</td>
+</tr>
+<tr>
+<td>插入/删除（末尾）</td>
+<td>平均O(1)，可能扩容</td>
+<td>O(1)</td>
+<td>在队尾加人 vs 在人链尾部加人</td>
+</tr>
+<tr>
+<td>内存占用</td>
+<td>较少</td>
+<td>较多（存储前后引用）</td>
+<td>紧凑的公寓楼 vs 带花园的独栋别墅</td>
+</tr>
+<tr>
+<td>迭代性能</td>
+<td>较好（内存连续）</td>
+<td>较差（内存分散）</td>
+<td>连续高速公路 vs 有红绿灯的城市道路</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>随机访问、尾部操作</td>
+<td>频繁插入删除、两端操作</td>
+<td>图书馆查书 vs 排队叫号系统</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list的常用操作">4. List的常用操作</h2>
+<figure>
+<img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314124911847.png" alt="image-20250314124911847">
+<figcaption aria-hidden="true">image-20250314124911847</figcaption>
+</figure>
+<figure>
+<img src="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BList%E9%9B%86%E5%90%88/image-20250314125024121.png" alt="image-20250314125024121">
+<figcaption aria-hidden="true">image-20250314125024121</figcaption>
+</figure>
+<h3 id="创建list">4.1 创建List</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 空ArrayList</span></span><br><span class="line">List&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定初始容量</span></span><br><span class="line">List&lt;String&gt; list2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基于已有集合创建</span></span><br><span class="line">List&lt;String&gt; list3 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(anotherCollection);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用Arrays.asList创建固定大小的List</span></span><br><span class="line">List&lt;String&gt; list4 = Arrays.asList(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>);</span><br><span class="line"><span class="comment">// 注意：Arrays.asList返回的List不支持add/remove操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Java 9+: 使用List.of创建不可变List</span></span><br><span class="line">List&lt;String&gt; list5 = List.of(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用Stream创建</span></span><br><span class="line">List&lt;Integer&gt; list6 = IntStream.range(<span class="number">1</span>, <span class="number">6</span>)</span><br><span class="line">                              .boxed()</span><br><span class="line">                              .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>： -
+创建空ArrayList就像买了一个空相册，准备放照片 -
+指定初始容量就像提前准备好20个格子的收纳盒 -
+Arrays.asList就像买了一个已经放了照片的相册，但相册大小固定</p>
+<h3 id="添加元素">4.2 添加元素</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; colors = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加单个元素</span></span><br><span class="line">colors.add(<span class="string">&quot;Red&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在指定位置添加</span></span><br><span class="line">colors.add(<span class="number">0</span>, <span class="string">&quot;Blue&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加多个元素</span></span><br><span class="line">colors.addAll(Arrays.asList(<span class="string">&quot;Green&quot;</span>, <span class="string">&quot;Yellow&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在指定位置添加集合</span></span><br><span class="line">colors.addAll(<span class="number">1</span>, Arrays.asList(<span class="string">&quot;Purple&quot;</span>, <span class="string">&quot;Orange&quot;</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="访问元素">4.3 访问元素</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; planets = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(</span><br><span class="line">    Arrays.asList(<span class="string">&quot;Mercury&quot;</span>, <span class="string">&quot;Venus&quot;</span>, <span class="string">&quot;Earth&quot;</span>, <span class="string">&quot;Mars&quot;</span>, <span class="string">&quot;Jupiter&quot;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过索引访问</span></span><br><span class="line"><span class="type">String</span> <span class="variable">earth</span> <span class="operator">=</span> planets.get(<span class="number">2</span>);  <span class="comment">// Earth</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找元素位置</span></span><br><span class="line"><span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> planets.indexOf(<span class="string">&quot;Mars&quot;</span>);  <span class="comment">// 3</span></span><br><span class="line"><span class="type">int</span> <span class="variable">lastIndex</span> <span class="operator">=</span> planets.lastIndexOf(<span class="string">&quot;Earth&quot;</span>);  <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查是否包含元素</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">contains</span> <span class="operator">=</span> planets.contains(<span class="string">&quot;Venus&quot;</span>);  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取子列表（视图，非副本）</span></span><br><span class="line">List&lt;String&gt; innerPlanets = planets.subList(<span class="number">0</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="修改元素">4.4 修改元素</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(</span><br><span class="line">    Arrays.asList(<span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>, <span class="string">&quot;David&quot;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换元素</span></span><br><span class="line">names.set(<span class="number">1</span>, <span class="string">&quot;Robert&quot;</span>);  <span class="comment">// [Alice, Robert, Charlie, David]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 批量替换（Java 8+）</span></span><br><span class="line">names.replaceAll(name -&gt; name.toUpperCase());</span><br><span class="line"><span class="comment">// [ALICE, ROBERT, CHARLIE, DAVID]</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除元素">4.5 删除元素</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; animals = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(</span><br><span class="line">    Arrays.asList(<span class="string">&quot;Dog&quot;</span>, <span class="string">&quot;Cat&quot;</span>, <span class="string">&quot;Bird&quot;</span>, <span class="string">&quot;Fish&quot;</span>, <span class="string">&quot;Cat&quot;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除指定位置的元素</span></span><br><span class="line"><span class="type">String</span> <span class="variable">removed</span> <span class="operator">=</span> animals.remove(<span class="number">2</span>);  <span class="comment">// Bird</span></span><br><span class="line"><span class="comment">// 现在是 [Dog, Cat, Fish, Cat]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除指定元素（首次出现）</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isRemoved</span> <span class="operator">=</span> animals.remove(<span class="string">&quot;Cat&quot;</span>);  <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 现在是 [Dog, Fish, Cat]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 批量删除</span></span><br><span class="line">animals.removeAll(Arrays.asList(<span class="string">&quot;Fish&quot;</span>, <span class="string">&quot;Cat&quot;</span>));</span><br><span class="line"><span class="comment">// 现在是 [Dog]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 条件删除（Java 8+）</span></span><br><span class="line">animals.add(<span class="string">&quot;Elephant&quot;</span>);</span><br><span class="line">animals.add(<span class="string">&quot;Snake&quot;</span>);</span><br><span class="line">animals.removeIf(animal -&gt; animal.length() &gt; <span class="number">3</span>);</span><br><span class="line"><span class="comment">// 现在是 [Dog]</span></span><br></pre></td></tr></table></figure>
+<h3 id="遍历list">4.6 遍历List</h3>
+<table>
+<thead>
+<tr>
+<th>iterator方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hasNext()</td>
+<td>判断集合中是否还有下一个元素</td>
+</tr>
+<tr>
+<td>next()</td>
+<td>返回集合中的下一个元素</td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>删除迭代器返回的元素</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; fruits = Arrays.asList(<span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Banana&quot;</span>, <span class="string">&quot;Cherry&quot;</span>, <span class="string">&quot;Date&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 使用for循环（索引）</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; fruits.size(); i++) &#123;</span><br><span class="line">    System.out.println(fruits.get(i));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 使用增强for循环</span></span><br><span class="line"><span class="keyword">for</span> (String fruit : fruits) &#123;</span><br><span class="line">    System.out.println(fruit);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 使用迭代器时，集合中的元素删除只能通过迭代器提供remove方法</span></span><br><span class="line">Iterator&lt;String&gt; iterator = fruits.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">f</span> <span class="operator">=</span> iterator.next()</span><br><span class="line">    <span class="keyword">if</span>(f==<span class="string">&quot;Banana&quot;</span>)&#123;</span><br><span class="line">        iterator.remove();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 使用ListIterator（可双向遍历）</span></span><br><span class="line">ListIterator&lt;String&gt; listIterator = fruits.listIterator();</span><br><span class="line"><span class="keyword">while</span> (listIterator.hasNext()) &#123;</span><br><span class="line">    System.out.println(listIterator.next());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 反向遍历</span></span><br><span class="line"><span class="keyword">while</span> (listIterator.hasPrevious()) &#123;</span><br><span class="line">    System.out.println(listIterator.previous());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 使用forEach方法（Java 8+）</span></span><br><span class="line">fruits.forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6. 使用Stream API（Java 8+）</span></span><br><span class="line">fruits.stream()</span><br><span class="line">      .filter(f -&gt; f.startsWith(<span class="string">&quot;A&quot;</span>))</span><br><span class="line">      .map(String::toUpperCase)</span><br><span class="line">      .forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>： - for循环（索引）：就像按座位号点名 -
+增强for循环：就像派发礼物，每个人都要领到，但不关心座位号 -
+迭代器：就像列队检查，检查完一个人后，才移动到下一个人 - Stream
+API：就像设置了一条传送带，水果经过清洗(filter)、切片(map)等处理</p>
+<h3 id="排序list">4.7 排序List</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(</span><br><span class="line">    Arrays.asList(<span class="string">&quot;Zack&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;Bob&quot;</span>, <span class="string">&quot;Charlie&quot;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 使用Collections.sort（自然顺序）</span></span><br><span class="line">Collections.sort(names);</span><br><span class="line"><span class="comment">// [Alice, Bob, Charlie, Zack]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 使用List.sort（Java 8+）</span></span><br><span class="line">names.sort(Comparator.naturalOrder());</span><br><span class="line"><span class="comment">// [Alice, Bob, Charlie, Zack]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 自定义比较器</span></span><br><span class="line">names.sort(Comparator.comparing(String::length));</span><br><span class="line"><span class="comment">// 按长度排序: [Bob, Zack, Alice, Charlie]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 反向排序</span></span><br><span class="line">names.sort(Comparator.reverseOrder());</span><br><span class="line"><span class="comment">// [Zack, Charlie, Bob, Alice]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 复合排序</span></span><br><span class="line">names.sort(</span><br><span class="line">    Comparator.comparing(String::length)</span><br><span class="line">              .thenComparing(Comparator.naturalOrder())</span><br><span class="line">);</span><br><span class="line"><span class="comment">// 先按长度，再按字母顺序</span></span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>： - 自然顺序排序就像按字母表顺序排队 -
+自定义比较器就像可以选择按年龄、身高或成绩给学生排队 -
+复合排序就像先按年级分组，再按成绩排序</p>
+<h2 id="list的线程安全性">5. List的线程安全性</h2>
+<h3 id="线程不安全的list">5.1 线程不安全的List</h3>
+<p>ArrayList和LinkedList都不是线程安全的，在多线程环境下可能出现： -
+ConcurrentModificationException - 数据不一致 - 元素丢失</p>
+<p><strong>生活比喻</strong>：
+就像没有管理员的图书馆书架，多人同时取放书可能导致混乱（有人正在整理的书架被其他人打乱）</p>
+<h3 id="创建线程安全的list">5.2 创建线程安全的List</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 使用Collections.synchronizedList</span></span><br><span class="line">List&lt;String&gt; syncList = Collections.synchronizedList(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用时需要手动同步迭代操作</span></span><br><span class="line"><span class="keyword">synchronized</span> (syncList) &#123;</span><br><span class="line">    Iterator&lt;String&gt; iterator = syncList.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 使用CopyOnWriteArrayList（适合读多写少的场景）</span></span><br><span class="line">List&lt;String&gt; cowList = <span class="keyword">new</span> <span class="title class_">CopyOnWriteArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="comment">// 写操作会复制整个底层数组，读操作无锁</span></span><br><span class="line"><span class="comment">// 迭代器是快照，不会抛出ConcurrentModificationException</span></span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>： -
+synchronizedList就像有管理员的图书馆，一次只允许一个人操作书架，其他人必须等待
+-
+CopyOnWriteArrayList就像特殊的图书馆，每次有人要修改书架，都会先复制一份完整的书架进行修改，读者始终看到的是完整的旧版本，直到修改完成</p>
+<h2 id="list的性能优化">6. List的性能优化</h2>
+<h3 id="arraylist优化">6.1 ArrayList优化</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 指定初始容量，避免频繁扩容</span></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(<span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 批量添加元素</span></span><br><span class="line">list.addAll(collection);  <span class="comment">// 优于循环添加</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 使用ensureCapacity预分配空间</span></span><br><span class="line">ArrayList&lt;String&gt; arrayList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">arrayList.ensureCapacity(<span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 使用trimToSize释放多余空间</span></span><br><span class="line">arrayList.trimToSize();</span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>： -
+指定初始容量就像搬家时一开始就租足够大的卡车，比先租小车再换大车要高效得多
+- trimToSize就像搬完家后退掉大卡车，换成刚好够用的小车，节省空间</p>
+<h3 id="linkedlist优化">6.2 LinkedList优化</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 使用合适的方法</span></span><br><span class="line">LinkedList&lt;String&gt; linkedList = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"><span class="comment">// 使用addFirst/addLast而非add(0, element)</span></span><br><span class="line">linkedList.addFirst(<span class="string">&quot;First&quot;</span>);  <span class="comment">// 比add(0, &quot;First&quot;)更高效</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 避免随机访问</span></span><br><span class="line"><span class="comment">// 不要使用for (int i = 0; i &lt; list.size(); i++)</span></span><br><span class="line"><span class="comment">// 而应使用迭代器或增强for循环</span></span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>： - 使用addFirst而非add(0,
+element)就像直接告诉门卫”我要见队伍最前面的人”，而不是让门卫带你从队伍头走到尾</p>
+<h2 id="list的实际应用场景">7. List的实际应用场景</h2>
+<h3 id="arraylist应用场景">7.1 ArrayList应用场景</h3>
+<ul>
+<li>实现动态数组</li>
+<li>频繁随机访问的数据集合</li>
+<li>数据量较大但变化较少的集合</li>
+<li>需要快速迭代的场景</li>
+</ul>
+<p><strong>生活比喻</strong>：
+ArrayList就像一本书的目录或索引，需要快速查找但不经常修改</p>
+<h3 id="linkedlist应用场景">7.2 LinkedList应用场景</h3>
+<ul>
+<li>实现队列或栈</li>
+<li>频繁插入/删除操作的场景</li>
+<li>实现LRU缓存</li>
+<li>需要从两端操作的集合</li>
+</ul>
+<p><strong>生活比喻</strong>：
+LinkedList就像餐厅的等位名单，经常有人加入或离开队伍</p>
+<h3 id="实际案例分页处理">7.3 实际案例：分页处理</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Pagination</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> List&lt;T&gt; data;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> pageSize;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Pagination</span><span class="params">(List&lt;T&gt; data, <span class="type">int</span> pageSize)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.data = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(data);  <span class="comment">// 创建副本，避免外部修改</span></span><br><span class="line">        <span class="built_in">this</span>.pageSize = pageSize;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> List&lt;T&gt; <span class="title function_">getPage</span><span class="params">(<span class="type">int</span> pageNumber)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">startIndex</span> <span class="operator">=</span> (pageNumber - <span class="number">1</span>) * pageSize;</span><br><span class="line">        <span class="type">int</span> <span class="variable">endIndex</span> <span class="operator">=</span> Math.min(startIndex + pageSize, data.size());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (startIndex &gt;= data.size() || startIndex &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Collections.emptyList();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> data.subList(startIndex, endIndex);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getTotalPages</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>) Math.ceil((<span class="type">double</span>) data.size() / pageSize);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line">List&lt;Product&gt; allProducts = productRepository.findAll();</span><br><span class="line">Pagination&lt;Product&gt; pagination = <span class="keyword">new</span> <span class="title class_">Pagination</span>&lt;&gt;(allProducts, <span class="number">10</span>);</span><br><span class="line">List&lt;Product&gt; page1 = pagination.getPage(<span class="number">1</span>);  <span class="comment">// 获取第一页</span></span><br></pre></td></tr></table></figure>
+<p><strong>生活比喻</strong>：
+分页处理就像一本厚书的章节划分，让读者能够一次阅读适量的内容，而不是一次展示所有内容</p>
+<h2 id="list的最佳实践">8. List的最佳实践</h2>
+<ol type="1">
+<li><p><strong>选择合适的实现类</strong></p>
+<ul>
+<li>随机访问多，选择ArrayList</li>
+<li>插入/删除多，选择LinkedList</li>
+<li>需要线程安全，使用CopyOnWriteArrayList或synchronizedList</li>
+</ul>
+<p><strong>比喻</strong>：就像选择交通工具 -
+需要在固定站点上下客，选择公交车(ArrayList)；需要灵活穿梭于各个小巷，选择摩托车(LinkedList)</p></li>
+<li><p><strong>避免频繁扩容</strong></p>
+<ul>
+<li>预估容量，使用带容量参数的构造函数</li>
+<li>批量添加元素时使用addAll而非循环add</li>
+</ul>
+<p><strong>比喻</strong>：一开始就买足够大的水桶，而不是先买小桶再换大桶</p></li>
+<li><p><strong>正确使用迭代器</strong></p>
+<ul>
+<li>使用迭代器遍历时不要使用集合的remove方法，应使用迭代器的remove方法
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误方式</span></span><br><span class="line"><span class="keyword">for</span> (String item : list) &#123;</span><br><span class="line">    <span class="keyword">if</span> (condition) list.remove(item);  <span class="comment">// ConcurrentModificationException</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确方式</span></span><br><span class="line">Iterator&lt;String&gt; it = list.iterator();</span><br><span class="line"><span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">item</span> <span class="operator">=</span> it.next();</span><br><span class="line">    <span class="keyword">if</span> (condition) it.remove();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>比喻</strong>：就像在移动的传送带上拿东西 -
+直接改变传送带的结构会导致故障，应该通过传送带提供的控制按钮来移除物品</p></li>
+<li><p><strong>合理使用视图和包装器</strong></p>
+<ul>
+<li>subList返回的是原List的视图，修改会影响原List</li>
+<li>unmodifiableList创建只读视图，防止修改</li>
+</ul>
+<p><strong>比喻</strong>：subList就像房间的窗户，通过窗户看到的变化反映了房间的实际变化；unmodifiableList就像博物馆的展品，只能看不能动</p></li>
+<li><p><strong>注意List.of和Arrays.asList的限制</strong></p>
+<ul>
+<li>List.of和Arrays.asList创建的List不支持添加/删除操作</li>
+<li>Arrays.asList创建的List大小固定，但元素可修改</li>
+<li>List.of创建的List完全不可变</li>
+</ul>
+<p><strong>比喻</strong>：Arrays.asList就像固定格数的相册，可以替换照片但不能增减格子；List.of就像密封的时间胶囊，一旦封存就不能改变</p></li>
+<li><p><strong>利用Stream API进行复杂操作</strong></p>
+<ul>
+<li>使用Stream API进行过滤、映射、归约等操作 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; evenNumbers = numbers.stream()</span><br><span class="line">                                  .filter(n -&gt; n % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">                                  .collect(Collectors.toList());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>比喻</strong>：Stream
+API就像工厂的生产线，原材料(数据)经过一系列工序(操作)，最终成为成品</p></li>
+<li><p><strong>避免装箱/拆箱开销</strong></p>
+<ul>
+<li>对于基本类型，考虑使用专门的实现如IntArrayList（第三方库）</li>
+<li>或使用数组代替List</li>
+</ul>
+<p><strong>比喻</strong>：装箱/拆箱就像每次进出商场都要把东西包装/拆包，很耗时间</p></li>
+<li><p><strong>注意equals和hashCode</strong></p>
+<ul>
+<li>自定义类作为List元素时，正确实现equals和hashCode方法</li>
+<li>这对contains、remove等方法的正确工作至关重要</li>
+</ul>
+<p><strong>比喻</strong>：equals就像人脸识别系统，如果设计不当，可能会把双胞胎认成同一个人或把同一个人的不同表情认成不同人</p></li>
+</ol>
+<p>通过深入理解List集合的内部机制和使用技巧，结合生活化的比喻，我们可以在实际开发中更加高效地使用这一重要的数据结构，编写出更加高效、可靠的代码。</p>
+
+    </div>
+
+    
+    
+      
+<div class="signature signature-post">Best Tao.</div>
+
+    
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/13/%E8%AF%A6%E8%A7%A3Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" rel="prev" title="详解Java异常处理机制">
+                  <i class="fa fa-chevron-left"></i> 详解Java异常处理机制
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/14/%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3Java%E4%B9%8BSet%E9%9B%86%E5%90%88/" rel="next" title="深刻理解Java之Set集合">
+                  深刻理解Java之Set集合 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LuoTao</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://lib.baomitu.com/mermaid/9.0.1/mermaid.min.js","integrity":"sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"be3dae377fe6e2afac1e9833f00eaa3e"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="数据库设计 数据库概述 这是一个个人博客系统的数据库设计，采用关系型数据库MySQL实现。整个数据库设计遵循以下原则： - 数据完整性：使用主键、外键约束确保数据的一致性 - 范式设计：遵循第三范式，减少数据冗余 - 性能优化：合理设计索引，提高查询效率 - 可扩展性：预留字段和表结构，便于未来功能扩展 用户表 (users) 12345678910111213141516-- 用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot2-Vue3-Axios搭建myblog">
+<meta property="og:url" content="https://luotaofun.github.io/2025/03/16/SpringBoot2-Vue3-Axios%E6%90%AD%E5%BB%BAmyblog/index.html">
+<meta property="og:site_name" content="Taoの博客">
+<meta property="og:description" content="数据库设计 数据库概述 这是一个个人博客系统的数据库设计，采用关系型数据库MySQL实现。整个数据库设计遵循以下原则： - 数据完整性：使用主键、外键约束确保数据的一致性 - 范式设计：遵循第三范式，减少数据冗余 - 性能优化：合理设计索引，提高查询效率 - 可扩展性：预留字段和表结构，便于未来功能扩展 用户表 (users) 12345678910111213141516-- 用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-16T04:33:51.000Z">
+<meta property="article:modified_time" content="2025-06-13T23:46:17.746Z">
+<meta property="article:author" content="LuoTao">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://luotaofun.github.io/2025/03/16/SpringBoot2-Vue3-Axios%E6%90%AD%E5%BB%BAmyblog/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://luotaofun.github.io/2025/03/16/SpringBoot2-Vue3-Axios%E6%90%AD%E5%BB%BAmyblog/","path":"2025/03/16/SpringBoot2-Vue3-Axios搭建myblog/","title":"SpringBoot2-Vue3-Axios搭建myblog"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SpringBoot2-Vue3-Axios搭建myblog | Taoの博客</title>
+  
+
+
+
+
+<!-- TailwindCSS -->
+<script src="https://cdn.tailwindcss.com/3.4.4"></script>
+
+<!-- Google Fonts (Noto Sans SC for Chinese, Poppins for English) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+<!-- Apache ECharts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Taoの博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Best Tao.</p>
+
+    <!-- Music Player -->
+    <div class="music-player-container mt-4">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">45</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+    <!--音乐播放器-->
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">数据库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%A1%A8-users"><span class="nav-number">1.2.</span> <span class="nav-text">用户表 (users)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E8%A1%A8-articles"><span class="nav-number">1.3.</span> <span class="nav-text">文章表 (articles)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E8%A1%A8-categories"><span class="nav-number">1.4.</span> <span class="nav-text">分类表 (categories)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-2"><span class="nav-number">1.4.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-2"><span class="nav-number">1.4.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E8%A1%A8-tags"><span class="nav-number">1.5.</span> <span class="nav-text">标签表 (tags)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-3"><span class="nav-number">1.5.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-3"><span class="nav-number">1.5.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-3"><span class="nav-number">1.5.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB%E5%85%B3%E8%81%94%E8%A1%A8-article_category"><span class="nav-number">1.6.</span> <span class="nav-text">文章分类关联表
+(article_category)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-4"><span class="nav-number">1.6.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-4"><span class="nav-number">1.6.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-4"><span class="nav-number">1.6.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE%E5%85%B3%E8%81%94%E8%A1%A8-article_tag"><span class="nav-number">1.7.</span> <span class="nav-text">文章标签关联表 (article_tag)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-5"><span class="nav-number">1.7.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-5"><span class="nav-number">1.7.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-5"><span class="nav-number">1.7.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA%E8%A1%A8-comments"><span class="nav-number">1.8.</span> <span class="nav-text">评论表 (comments)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-6"><span class="nav-number">1.8.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-6"><span class="nav-number">1.8.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-6"><span class="nav-number">1.8.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%85%A7%E7%89%87%E8%A1%A8-photos"><span class="nav-number">1.9.</span> <span class="nav-text">照片表 (photos)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-7"><span class="nav-number">1.9.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-7"><span class="nav-number">1.9.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-7"><span class="nav-number">1.9.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%E8%A1%A8-settings"><span class="nav-number">1.10.</span> <span class="nav-text">系统设置表 (settings)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-8"><span class="nav-number">1.10.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-8"><span class="nav-number">1.10.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-8"><span class="nav-number">1.10.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5%E8%A1%A8-links"><span class="nav-number">1.11.</span> <span class="nav-text">友情链接表 (links)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-9"><span class="nav-number">1.11.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-9"><span class="nav-number">1.11.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-9"><span class="nav-number">1.11.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97%E8%A1%A8-visit_logs"><span class="nav-number">1.12.</span> <span class="nav-text">访问日志表 (visit_logs)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5-10"><span class="nav-number">1.12.1.</span> <span class="nav-text">设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-10"><span class="nav-number">1.12.2.</span> <span class="nav-text">字段说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-10"><span class="nav-number">1.12.3.</span> <span class="nav-text">后端实现思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.13.</span> <span class="nav-text">索引设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5"><span class="nav-number">1.13.1.</span> <span class="nav-text">索引设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E8%AF%B4%E6%98%8E"><span class="nav-number">1.13.2.</span> <span class="nav-text">索引说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="nav-number">1.13.3.</span> <span class="nav-text">性能优化思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.14.</span> <span class="nav-text">示例数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AFapi%E8%AE%BE%E8%AE%A1%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.15.</span> <span class="nav-text">后端API设计建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3api"><span class="nav-number">1.15.1.</span> <span class="nav-text">用户相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%9B%B8%E5%85%B3api"><span class="nav-number">1.15.2.</span> <span class="nav-text">文章相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E7%9B%B8%E5%85%B3api"><span class="nav-number">1.15.3.</span> <span class="nav-text">分类相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E7%9B%B8%E5%85%B3api"><span class="nav-number">1.15.4.</span> <span class="nav-text">标签相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3api"><span class="nav-number">1.15.5.</span> <span class="nav-text">评论相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%85%A7%E7%89%87%E7%9B%B8%E5%85%B3api"><span class="nav-number">1.15.6.</span> <span class="nav-text">照片相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AEapi"><span class="nav-number">1.15.7.</span> <span class="nav-text">系统设置API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E5%AE%9E%E7%8E%B0%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.16.</span> <span class="nav-text">前后端交互实现建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%B1%95%E7%A4%BA"><span class="nav-number">1.16.1.</span> <span class="nav-text">数据获取与展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83"><span class="nav-number">1.16.2.</span> <span class="nav-text">用户认证与授权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E4%B8%8E%E7%BB%B4%E6%8A%A4"><span class="nav-number">1.16.3.</span> <span class="nav-text">数据管理与维护</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.17.</span> <span class="nav-text">性能优化建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96"><span class="nav-number">1.17.1.</span> <span class="nav-text">数据库优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96"><span class="nav-number">1.17.2.</span> <span class="nav-text">前端优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Evue3%E5%92%8Caxios%E7%9A%84%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.18.</span> <span class="nav-text">基于Vue3和Axios的用户注册和登录功能实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="nav-number">1.19.</span> <span class="nav-text">1. 项目概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E6%A0%88%E9%80%89%E6%8B%A9"><span class="nav-number">1.20.</span> <span class="nav-text">2. 技术栈选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.21.</span> <span class="nav-text">3. 项目结构设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.22.</span> <span class="nav-text">4. 用户状态管理实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.23.</span> <span class="nav-text">5. 注册页面实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.24.</span> <span class="nav-text">6. 登录页面实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%85%A5%E5%8F%A3%E9%85%8D%E7%BD%AE"><span class="nav-number">1.25.</span> <span class="nav-text">7. 应用入口配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="nav-number">1.26.</span> <span class="nav-text">8. 路由配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vite%E9%85%8D%E7%BD%AE"><span class="nav-number">1.27.</span> <span class="nav-text">9. Vite配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E8%80%83%E8%99%91"><span class="nav-number">1.28.</span> <span class="nav-text">10. 安全性考虑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E4%BC%98%E5%8C%96"><span class="nav-number">1.29.</span> <span class="nav-text">11. 用户体验优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E6%89%A9%E5%B1%95%E6%96%B9%E5%90%91"><span class="nav-number">1.30.</span> <span class="nav-text">12. 后续扩展方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.31.</span> <span class="nav-text">13. 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="nav-number">1.32.</span> <span class="nav-text">14. 后端开发过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E6%A0%88%E9%80%89%E6%8B%A9-1"><span class="nav-number">1.32.1.</span> <span class="nav-text">14.1 技术栈选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.32.2.</span> <span class="nav-text">14.2 用户注册登录模块开发步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE"><span class="nav-number">1.32.2.1.</span> <span class="nav-text">1. 项目初始化与依赖配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.32.2.2.</span> <span class="nav-text">2. 数据库设计与实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E7%B1%BB%E4%B8%8Edto%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.32.2.3.</span> <span class="nav-text">3. 实体类与DTO设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.32.2.4.</span> <span class="nav-text">4. 数据访问层实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.32.2.5.</span> <span class="nav-text">5. 业务逻辑层实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jwt%E8%AE%A4%E8%AF%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.32.2.6.</span> <span class="nav-text">6. JWT认证实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring-security%E9%85%8D%E7%BD%AE"><span class="nav-number">1.32.2.7.</span> <span class="nav-text">7. Spring Security配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.32.2.8.</span> <span class="nav-text">8. 控制器实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">1.32.2.9.</span> <span class="nav-text">9. 异常处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">1.32.2.10.</span> <span class="nav-text">10. 跨域配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E8%80%83%E8%99%91-1"><span class="nav-number">1.32.3.</span> <span class="nav-text">14.3 安全性考虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.32.4.</span> <span class="nav-text">14.4 性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E6%89%A9%E5%B1%95%E6%96%B9%E5%90%91-1"><span class="nav-number">1.32.5.</span> <span class="nav-text">14.5 后续扩展方向</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LuoTao"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">LuoTao</p>
+  <div class="site-description" itemprop="description"><font color="#FFFFFF">Best Tao.</font></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://wx.qq.com/" title="微信 → https:&#x2F;&#x2F;wx.qq.com&#x2F;" rel="noopener" target="_blank"><i class="weixin fa-fw"></i>微信</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/3452255853" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;3452255853" rel="noopener" target="_blank"><i class="QQ fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/luotaofun" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;luotaofun" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:luotao0213@163.com" title="E-Mail → mailto:luotao0213@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/luotaofun" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luotaofun.github.io/2025/03/16/SpringBoot2-Vue3-Axios%E6%90%AD%E5%BB%BAmyblog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="LuoTao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taoの博客">
+      <meta itemprop="description" content="<font color="#FFFFFF">Best Tao.</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SpringBoot2-Vue3-Axios搭建myblog | Taoの博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringBoot2-Vue3-Axios搭建myblog
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-16 12:33:51" itemprop="dateCreated datePublished" datetime="2025-03-16T12:33:51+08:00">2025-03-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-14 07:46:17" itemprop="dateModified" datetime="2025-06-14T07:46:17+08:00">2025-06-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="数据库设计">数据库设计</h1>
+<h2 id="数据库概述">数据库概述</h2>
+<p>这是一个个人博客系统的数据库设计，采用关系型数据库MySQL实现。整个数据库设计遵循以下原则：
+- 数据完整性：使用主键、外键约束确保数据的一致性 -
+范式设计：遵循第三范式，减少数据冗余 -
+性能优化：合理设计索引，提高查询效率 -
+可扩展性：预留字段和表结构，便于未来功能扩展</p>
+<h2 id="用户表-users">用户表 (users)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-- 用户表：存储所有用户信息</span><br><span class="line">-- 包含用户身份验证、权限控制和个人资料管理的字段</span><br><span class="line">CREATE TABLE users (</span><br><span class="line">id BIGINT PRIMARY KEY AUTO_INCREMENT, -- 用户ID，主键</span><br><span class="line">username VARCHAR(50) NOT NULL UNIQUE, -- 用户名，唯一</span><br><span class="line">password VARCHAR(255) NOT NULL, -- 密码，存储加密后的值</span><br><span class="line">nickname VARCHAR(50), -- 用户昵称</span><br><span class="line">avatar VARCHAR(255), -- 头像URL</span><br><span class="line">email VARCHAR(100) NOT NULL UNIQUE, -- 邮箱，唯一</span><br><span class="line">role ENUM(&#x27;admin&#x27;, &#x27;user&#x27;) DEFAULT &#x27;user&#x27;, -- 用户角色</span><br><span class="line">bio TEXT, -- 个人简介</span><br><span class="line">created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 创建时间</span><br><span class="line">updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 更新时间</span><br><span class="line">last_login TIMESTAMP, -- 最后登录时间</span><br><span class="line">status TINYINT DEFAULT 1 COMMENT &#x27;1: active, 0: inactive&#x27; -- 账户状态</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念">设计理念</h3>
+<p>用户表是整个系统的核心表，存储所有用户信息。设计考虑了用户身份验证、权限控制和个人资料管理的需求。</p>
+<h3 id="字段说明">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键，唯一标识每个用户</li>
+<li><code>username</code>: 用户登录名，要求唯一</li>
+<li><code>password</code>: 存储加密后的密码（不应存储明文密码）</li>
+<li><code>nickname</code>: 用户昵称，用于显示</li>
+<li><code>avatar</code>: 用户头像图片的URL路径</li>
+<li><code>email</code>: 用户邮箱，用于通知和找回密码，要求唯一</li>
+<li><code>role</code>: 用户角色，区分管理员和普通用户</li>
+<li><code>bio</code>: 用户个人简介</li>
+<li><code>created_at</code>: 账户创建时间</li>
+<li><code>updated_at</code>: 账户信息最后更新时间</li>
+<li><code>last_login</code>: 最后登录时间</li>
+<li><code>status</code>: 账户状态，用于禁用/启用账户</li>
+</ul>
+<h3 id="后端实现思路">后端实现思路</h3>
+<ol type="1">
+<li><strong>用户注册</strong>：验证用户名和邮箱唯一性，对密码进行加密（使用bcrypt等算法），然后插入记录</li>
+<li><strong>用户登录</strong>：根据用户名查询用户，验证密码，更新last_login时间</li>
+<li><strong>权限控制</strong>：基于role字段实现权限管理，只有admin角色可以访问管理功能</li>
+<li><strong>个人资料管理</strong>：提供API允许用户更新nickname、avatar、bio等信息</li>
+<li><strong>账户状态管理</strong>：管理员可以通过修改status字段禁用/启用用户账户</li>
+</ol>
+<h2 id="文章表-articles">文章表 (articles)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-- 文章表：存储博客文章内容</span><br><span class="line">-- 支持草稿、已发布、私密三种状态</span><br><span class="line">CREATE TABLE articles (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 文章ID，主键</span><br><span class="line">    title       VARCHAR(255) NOT NULL,              -- 文章标题</span><br><span class="line">    content     LONGTEXT NOT NULL,                  -- 文章内容，支持大量文本</span><br><span class="line">    excerpt     VARCHAR(500),                       -- 文章摘要</span><br><span class="line">    author_id   BIGINT NOT NULL,                    -- 作者ID</span><br><span class="line">    status      ENUM(&#x27;draft&#x27;, &#x27;published&#x27;, &#x27;private&#x27;) DEFAULT &#x27;draft&#x27;, -- 文章状态</span><br><span class="line">    views       INT DEFAULT 0,                      -- 浏览次数</span><br><span class="line">    likes       INT DEFAULT 0,                      -- 点赞数</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 创建时间</span><br><span class="line">    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 更新时间</span><br><span class="line">    published_at TIMESTAMP,                         -- 发布时间</span><br><span class="line">    FOREIGN KEY (author_id) REFERENCES users(id)    -- 外键约束</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-1">设计理念</h3>
+<p>文章表存储博客的核心内容，设计考虑了文章的创建、编辑、发布流程，以及统计数据的需求。</p>
+<h3 id="字段说明-1">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键，唯一标识每篇文章</li>
+<li><code>title</code>: 文章标题</li>
+<li><code>content</code>:
+文章正文内容，使用LONGTEXT类型支持大量文本</li>
+<li><code>excerpt</code>: 文章摘要，用于列表页显示</li>
+<li><code>author_id</code>: 作者ID，关联到users表</li>
+<li><code>status</code>: 文章状态，支持草稿、已发布、私密三种状态</li>
+<li><code>views</code>: 浏览次数</li>
+<li><code>likes</code>: 点赞数</li>
+<li><code>created_at</code>: 创建时间</li>
+<li><code>updated_at</code>: 最后更新时间</li>
+<li><code>published_at</code>:
+发布时间，只有状态为published时才有值</li>
+</ul>
+<h3 id="后端实现思路-1">后端实现思路</h3>
+<ol type="1">
+<li><strong>文章CRUD</strong>：实现基本的创建、读取、更新、删除功能</li>
+<li><strong>草稿管理</strong>：允许用户保存草稿，稍后继续编辑</li>
+<li><strong>发布流程</strong>：当文章从draft变为published时，设置published_at为当前时间</li>
+<li><strong>访问控制</strong>：
+<ul>
+<li>published状态的文章所有人可见</li>
+<li>draft状态的文章只有作者可见</li>
+<li>private状态的文章只有作者可见，但可以通过特定链接分享</li>
+</ul></li>
+<li><strong>统计功能</strong>：
+<ul>
+<li>每次文章被访问时增加views计数</li>
+<li>实现点赞功能，增加likes计数</li>
+</ul></li>
+</ol>
+<h2 id="分类表-categories">分类表 (categories)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 分类表：存储文章分类信息</span><br><span class="line">-- 支持多级分类结构</span><br><span class="line">CREATE TABLE categories (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 分类ID，主键</span><br><span class="line">    name        VARCHAR(50) NOT NULL,               -- 分类名称</span><br><span class="line">    slug        VARCHAR(50) NOT NULL UNIQUE,        -- URL友好的标识符</span><br><span class="line">    description TEXT,                               -- 分类描述</span><br><span class="line">    parent_id   BIGINT,                             -- 父分类ID，用于多级分类</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 创建时间</span><br><span class="line">    FOREIGN KEY (parent_id) REFERENCES categories(id) -- 外键约束，自引用</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-2">设计理念</h3>
+<p>分类表用于对文章进行分类管理，支持多级分类结构，便于内容组织和导航。</p>
+<h3 id="字段说明-2">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键，唯一标识每个分类</li>
+<li><code>name</code>: 分类名称</li>
+<li><code>slug</code>: URL友好的标识符，用于构建分类页面的URL</li>
+<li><code>description</code>: 分类描述</li>
+<li><code>parent_id</code>: 父分类ID，用于构建分类层次结构</li>
+<li><code>created_at</code>: 创建时间</li>
+</ul>
+<h3 id="后端实现思路-2">后端实现思路</h3>
+<ol type="1">
+<li><strong>分类管理</strong>：提供CRUD接口，只有管理员可以创建和修改分类</li>
+<li><strong>层次结构</strong>：通过parent_id实现分类的树形结构，可以查询子分类和父分类</li>
+<li><strong>URL构建</strong>：使用slug构建SEO友好的URL，如<code>/category/tech</code></li>
+<li><strong>分类统计</strong>：统计每个分类下的文章数量</li>
+<li><strong>分类导航</strong>：在前端显示分类树，便于用户浏览</li>
+</ol>
+<h2 id="标签表-tags">标签表 (tags)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 标签表：存储文章标签信息</span><br><span class="line">-- 支持通过标签对文章进行分类和检索</span><br><span class="line">CREATE TABLE tags (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 标签ID，主键</span><br><span class="line">    name        VARCHAR(50) NOT NULL,               -- 标签名称</span><br><span class="line">    slug        VARCHAR(50) NOT NULL UNIQUE,        -- URL友好的标识符</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- 创建时间</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-3">设计理念</h3>
+<p>标签表用于实现文章的标签功能，与分类不同，标签是一种更灵活的内容组织方式，一篇文章可以有多个标签。</p>
+<h3 id="字段说明-3">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键，唯一标识每个标签</li>
+<li><code>name</code>: 标签名称</li>
+<li><code>slug</code>: URL友好的标识符，用于构建标签页面的URL</li>
+<li><code>created_at</code>: 创建时间</li>
+</ul>
+<h3 id="后端实现思路-3">后端实现思路</h3>
+<ol type="1">
+<li><strong>标签管理</strong>：提供CRUD接口，管理员可以管理标签，作者可以在发文时创建新标签</li>
+<li><strong>标签云</strong>：根据使用频率显示不同大小的标签</li>
+<li><strong>相关文章</strong>：通过共同标签查找相关文章</li>
+<li><strong>URL构建</strong>：使用slug构建SEO友好的URL，如<code>/tag/javascript</code></li>
+</ol>
+<h2 id="文章分类关联表-article_category">文章分类关联表
+(article_category)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- 文章分类关联表：实现文章与分类的多对多关系</span><br><span class="line">-- 一篇文章可以属于多个分类，一个分类可以包含多篇文章</span><br><span class="line">CREATE TABLE article_category (</span><br><span class="line">    article_id   BIGINT,                            -- 文章ID</span><br><span class="line">    category_id  BIGINT,                            -- 分类ID</span><br><span class="line">    PRIMARY KEY (article_id, category_id),          -- 联合主键，确保唯一性</span><br><span class="line">    FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE,  -- 外键约束，级联删除</span><br><span class="line">    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE -- 外键约束，级联删除</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-4">设计理念</h3>
+<p>这是一个多对多关系的中间表，用于关联文章和分类。一篇文章可以属于多个分类，一个分类可以包含多篇文章。</p>
+<h3 id="字段说明-4">字段说明</h3>
+<ul>
+<li><code>article_id</code>: 文章ID，关联到articles表</li>
+<li><code>category_id</code>: 分类ID，关联到categories表</li>
+<li>联合主键(article_id,
+category_id)确保一篇文章在一个分类中只出现一次</li>
+</ul>
+<h3 id="后端实现思路-4">后端实现思路</h3>
+<ol type="1">
+<li><strong>关联管理</strong>：在文章创建和更新时，同时更新分类关联</li>
+<li><strong>级联删除</strong>：当文章或分类被删除时，自动删除关联记录</li>
+<li><strong>分类文章列表</strong>：通过此表查询特定分类下的所有文章</li>
+<li><strong>文章分类显示</strong>：通过此表查询文章所属的所有分类</li>
+</ol>
+<h2 id="文章标签关联表-article_tag">文章标签关联表 (article_tag)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- 文章标签关联表：实现文章与标签的多对多关系</span><br><span class="line">-- 一篇文章可以有多个标签，一个标签可以应用于多篇文章</span><br><span class="line">CREATE TABLE article_tag (</span><br><span class="line">    article_id  BIGINT,                           -- 文章ID</span><br><span class="line">    tag_id      BIGINT,                           -- 标签ID</span><br><span class="line">    PRIMARY KEY (article_id, tag_id),             -- 联合主键，确保唯一性</span><br><span class="line">    FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE,  -- 外键约束，级联删除</span><br><span class="line">    FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE           -- 外键约束，级联删除</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-5">设计理念</h3>
+<p>这是一个多对多关系的中间表，用于关联文章和标签。一篇文章可以有多个标签，一个标签可以应用于多篇文章。</p>
+<h3 id="字段说明-5">字段说明</h3>
+<ul>
+<li><code>article_id</code>: 文章ID，关联到articles表</li>
+<li><code>tag_id</code>: 标签ID，关联到tags表</li>
+<li>联合主键(article_id, tag_id)确保一篇文章不会重复应用同一个标签</li>
+</ul>
+<h3 id="后端实现思路-5">后端实现思路</h3>
+<ol type="1">
+<li><strong>关联管理</strong>：在文章创建和更新时，同时更新标签关联</li>
+<li><strong>级联删除</strong>：当文章或标签被删除时，自动删除关联记录</li>
+<li><strong>标签文章列表</strong>：通过此表查询包含特定标签的所有文章</li>
+<li><strong>文章标签显示</strong>：通过此表查询文章的所有标签</li>
+<li><strong>标签推荐</strong>：基于已有标签推荐相关标签</li>
+</ol>
+<h2 id="评论表-comments">评论表 (comments)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-- 评论表：存储文章评论信息</span><br><span class="line">-- 支持嵌套评论（回复评论）和评论审核</span><br><span class="line">CREATE TABLE comments (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 评论ID，主键</span><br><span class="line">    content     TEXT NOT NULL,                      -- 评论内容</span><br><span class="line">    article_id  BIGINT NOT NULL,                    -- 所属文章ID</span><br><span class="line">    user_id     BIGINT NOT NULL,                    -- 评论者用户ID</span><br><span class="line">    parent_id   BIGINT,                             -- 父评论ID，用于嵌套评论</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 创建时间</span><br><span class="line">    status      ENUM(&#x27;pending&#x27;, &#x27;approved&#x27;, &#x27;spam&#x27;) DEFAULT &#x27;pending&#x27;, -- 评论状态</span><br><span class="line">    FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE, -- 外键约束，级联删除</span><br><span class="line">    FOREIGN KEY (user_id) REFERENCES users(id),                         -- 外键约束</span><br><span class="line">    FOREIGN KEY (parent_id) REFERENCES comments(id)                     -- 外键约束</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-6">设计理念</h3>
+<p>评论表用于实现文章评论功能，支持嵌套评论（回复评论），并包含审核机制防止垃圾评论。</p>
+<h3 id="字段说明-6">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键，唯一标识每条评论</li>
+<li><code>content</code>: 评论内容</li>
+<li><code>article_id</code>: 评论所属文章ID</li>
+<li><code>user_id</code>: 评论者用户ID</li>
+<li><code>parent_id</code>: 父评论ID，用于实现嵌套评论</li>
+<li><code>created_at</code>: 评论创建时间</li>
+<li><code>status</code>: 评论状态，用于审核流程</li>
+</ul>
+<h3 id="后端实现思路-6">后端实现思路</h3>
+<ol type="1">
+<li><strong>评论CRUD</strong>：实现基本的创建、读取、更新、删除功能</li>
+<li><strong>嵌套评论</strong>：通过parent_id构建评论树，支持回复功能</li>
+<li><strong>评论审核</strong>：
+<ul>
+<li>新评论默认为pending状态</li>
+<li>管理员可以将评论标记为approved或spam</li>
+<li>只显示approved状态的评论</li>
+</ul></li>
+<li><strong>通知系统</strong>：当评论被回复时，通知原评论作者</li>
+<li><strong>反垃圾措施</strong>：实现基本的垃圾评论过滤</li>
+</ol>
+<h2 id="照片表-photos">照片表 (photos)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 照片表：存储用户上传的图片信息</span><br><span class="line">-- 支持个人相册功能和隐私控制</span><br><span class="line">CREATE TABLE photos (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 照片ID，主键</span><br><span class="line">    url         VARCHAR(255) NOT NULL,              -- 照片URL路径</span><br><span class="line">    description TEXT,                               -- 照片描述</span><br><span class="line">    user_id     BIGINT NOT NULL,                    -- 上传者用户ID</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 上传时间</span><br><span class="line">    status      ENUM(&#x27;private&#x27;, &#x27;public&#x27;) DEFAULT &#x27;public&#x27;, -- 照片状态</span><br><span class="line">    FOREIGN KEY (user_id) REFERENCES users(id)      -- 外键约束</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-7">设计理念</h3>
+<p>照片表用于存储用户上传的图片信息，支持个人相册功能，可以在博客中展示生活照片。</p>
+<h3 id="字段说明-7">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键，唯一标识每张照片</li>
+<li><code>url</code>: 照片的URL路径</li>
+<li><code>description</code>: 照片描述</li>
+<li><code>user_id</code>: 上传者用户ID</li>
+<li><code>created_at</code>: 上传时间</li>
+<li><code>status</code>: 照片状态，控制可见性</li>
+</ul>
+<h3 id="后端实现思路-7">后端实现思路</h3>
+<ol type="1">
+<li><strong>图片上传</strong>：
+<ul>
+<li>实现文件上传功能，支持常见图片格式</li>
+<li>生成缩略图，优化加载速度</li>
+<li>存储原图和处理后的图片路径</li>
+</ul></li>
+<li><strong>相册管理</strong>：
+<ul>
+<li>按时间或自定义分组显示照片</li>
+<li>支持批量操作（删除、修改状态等）</li>
+</ul></li>
+<li><strong>隐私控制</strong>：
+<ul>
+<li>private状态的照片只有上传者可见</li>
+<li>public状态的照片所有人可见</li>
+</ul></li>
+<li><strong>前端展示</strong>：
+<ul>
+<li>支持照片墙、轮播图等多种展示方式</li>
+<li>实现照片预览和放大功能</li>
+</ul></li>
+</ol>
+<h2 id="系统设置表-settings">系统设置表 (settings)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- 系统设置表：存储全局配置信息</span><br><span class="line">-- 采用键值对形式，便于扩展和管理</span><br><span class="line">CREATE TABLE settings (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 设置ID，主键</span><br><span class="line">    key_name    VARCHAR(50) NOT NULL UNIQUE,        -- 设置键名，唯一</span><br><span class="line">    value       TEXT,                               -- 设置值</span><br><span class="line">    type        VARCHAR(20) DEFAULT &#x27;string&#x27;,       -- 值类型</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 创建时间</span><br><span class="line">    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 更新时间</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-8">设计理念</h3>
+<p>系统设置表用于存储全局配置信息，采用键值对的形式，便于扩展和管理。</p>
+<h3 id="字段说明-8">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键</li>
+<li><code>key_name</code>: 设置项的键名，唯一</li>
+<li><code>value</code>: 设置项的值</li>
+<li><code>type</code>: 值的数据类型，用于前端表单验证和显示</li>
+<li><code>created_at</code>: 创建时间</li>
+<li><code>updated_at</code>: 更新时间</li>
+</ul>
+<h3 id="后端实现思路-8">后端实现思路</h3>
+<ol type="1">
+<li><strong>设置管理</strong>：
+<ul>
+<li>提供管理界面修改设置</li>
+<li>支持不同类型的设置项（文本、数字、布尔值、JSON等）</li>
+</ul></li>
+<li><strong>缓存机制</strong>：
+<ul>
+<li>将设置缓存在内存中，减少数据库查询</li>
+<li>设置更新时刷新缓存</li>
+</ul></li>
+<li><strong>应用配置</strong>：
+<ul>
+<li>网站标题、描述、关键词等SEO相关设置</li>
+<li>主题颜色、布局等外观设置</li>
+<li>每页显示文章数等分页设置</li>
+</ul></li>
+<li><strong>功能开关</strong>：
+<ul>
+<li>控制某些功能的开启/关闭</li>
+<li>如评论功能、注册功能等</li>
+</ul></li>
+</ol>
+<h2 id="友情链接表-links">友情链接表 (links)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-- 友情链接表：管理博客的友情链接</span><br><span class="line">-- 支持自定义排序和状态控制</span><br><span class="line">CREATE TABLE links (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 链接ID，主键</span><br><span class="line">    name        VARCHAR(50) NOT NULL,               -- 链接名称</span><br><span class="line">    url         VARCHAR(255) NOT NULL,              -- 链接URL</span><br><span class="line">    description TEXT,                               -- 链接描述</span><br><span class="line">    logo        VARCHAR(255),                       -- 链接网站logo</span><br><span class="line">    sort_order  INT DEFAULT 0,                      -- 排序顺序</span><br><span class="line">    status      TINYINT DEFAULT 1 COMMENT &#x27;1: active, 0: inactive&#x27;, -- 链接状态</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 创建时间</span><br><span class="line">    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 更新时间</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-9">设计理念</h3>
+<p>友情链接表用于管理博客的友情链接，支持自定义排序和状态控制。</p>
+<h3 id="字段说明-9">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键</li>
+<li><code>name</code>: 链接名称</li>
+<li><code>url</code>: 链接URL</li>
+<li><code>description</code>: 链接描述</li>
+<li><code>logo</code>: 链接网站的logo图片URL</li>
+<li><code>sort_order</code>: 排序顺序，数值越小越靠前</li>
+<li><code>status</code>: 链接状态，控制是否显示</li>
+<li><code>created_at</code>: 创建时间</li>
+<li><code>updated_at</code>: 更新时间</li>
+</ul>
+<h3 id="后端实现思路-9">后端实现思路</h3>
+<ol type="1">
+<li><strong>链接管理</strong>：
+<ul>
+<li>提供CRUD接口，只有管理员可以管理友情链接</li>
+<li>支持拖拽排序</li>
+</ul></li>
+<li><strong>状态控制</strong>：
+<ul>
+<li>可以临时禁用某些链接而不删除</li>
+<li>定期检查链接有效性，自动标记失效链接</li>
+</ul></li>
+<li><strong>前端展示</strong>：
+<ul>
+<li>在侧边栏或页脚展示友情链接</li>
+<li>可以按分类展示不同类型的链接</li>
+</ul></li>
+</ol>
+<h2 id="访问日志表-visit_logs">访问日志表 (visit_logs)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 访问日志表：记录网站访问情况</span><br><span class="line">-- 用于统计分析和安全监控</span><br><span class="line">CREATE TABLE visit_logs (</span><br><span class="line">    id          BIGINT PRIMARY KEY AUTO_INCREMENT,  -- 日志ID，主键</span><br><span class="line">    ip          VARCHAR(50),                        -- 访问者IP</span><br><span class="line">    user_agent  VARCHAR(255),                       -- 浏览器和系统信息</span><br><span class="line">    url         VARCHAR(255),                       -- 访问的URL</span><br><span class="line">    user_id     BIGINT,                             -- 访问者用户ID（如已登录）</span><br><span class="line">    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 访问时间</span><br><span class="line">    FOREIGN KEY (user_id) REFERENCES users(id)      -- 外键约束</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="设计理念-10">设计理念</h3>
+<p>访问日志表用于记录网站访问情况，便于统计分析和安全监控。</p>
+<h3 id="字段说明-10">字段说明</h3>
+<ul>
+<li><code>id</code>: 自增主键</li>
+<li><code>ip</code>: 访问者IP地址</li>
+<li><code>user_agent</code>: 浏览器和操作系统信息</li>
+<li><code>url</code>: 访问的URL路径</li>
+<li><code>user_id</code>: 访问者用户ID（如果已登录）</li>
+<li><code>created_at</code>: 访问时间</li>
+</ul>
+<h3 id="后端实现思路-10">后端实现思路</h3>
+<ol type="1">
+<li><strong>日志记录</strong>：
+<ul>
+<li>通过中间件记录每次请求</li>
+<li>可以设置过滤规则，不记录静态资源请求</li>
+</ul></li>
+<li><strong>访问统计</strong>：
+<ul>
+<li>统计PV（页面浏览量）和UV（独立访客数）</li>
+<li>分析热门页面和访问趋势</li>
+</ul></li>
+<li><strong>用户行为分析</strong>：
+<ul>
+<li>跟踪用户浏览路径</li>
+<li>分析用户兴趣偏好</li>
+</ul></li>
+<li><strong>安全监控</strong>：
+<ul>
+<li>检测异常访问模式</li>
+<li>识别潜在的攻击行为</li>
+</ul></li>
+<li><strong>数据清理</strong>：
+<ul>
+<li>定期归档或删除旧日志</li>
+<li>考虑使用分区表优化性能</li>
+</ul></li>
+</ol>
+<h2 id="索引设计">索引设计</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">-- 文章表索引</span><br><span class="line">CREATE INDEX idx_articles_author ON articles(author_id);  -- 优化按作者查询</span><br><span class="line">CREATE INDEX idx_articles_status ON articles(status);     -- 优化按状态查询</span><br><span class="line">CREATE INDEX idx_articles_created ON articles(created_at); -- 优化按创建时间排序</span><br><span class="line"></span><br><span class="line">-- 分类表索引</span><br><span class="line">CREATE INDEX idx_categories_slug ON categories(slug);     -- 优化按slug查询</span><br><span class="line">CREATE INDEX idx_categories_parent ON categories(parent_id); -- 优化层次结构查询</span><br><span class="line"></span><br><span class="line">-- 标签表索引</span><br><span class="line">CREATE INDEX idx_tags_slug ON tags(slug);                 -- 优化按slug查询</span><br><span class="line"></span><br><span class="line">-- 评论表索引</span><br><span class="line">CREATE INDEX idx_comments_article ON comments(article_id); -- 优化按文章查询评论</span><br><span class="line">CREATE INDEX idx_comments_user ON comments(user_id);      -- 优化按用户查询评论</span><br><span class="line">CREATE INDEX idx_comments_parent ON comments(parent_id);  -- 优化嵌套评论查询</span><br><span class="line"></span><br><span class="line">-- 照片表索引</span><br><span class="line">CREATE INDEX idx_photos_user ON photos(user_id);          -- 优化按用户查询照片</span><br><span class="line">CREATE INDEX idx_photos_status ON photos(status);         -- 优化按状态查询照片</span><br><span class="line"></span><br><span class="line">-- 访问日志索引</span><br><span class="line">CREATE INDEX idx_visit_logs_user ON visit_logs(user_id);  -- 优化按用户查询日志</span><br><span class="line">CREATE INDEX idx_visit_logs_created ON visit_logs(created_at); -- 优化按时间查询日志</span><br></pre></td></tr></table></figure>
+<h3 id="索引设计理念">索引设计理念</h3>
+<p>索引是提高查询性能的关键，本设计根据常见查询模式添加了适当的索引。</p>
+<h3 id="索引说明">索引说明</h3>
+<ol type="1">
+<li><strong>外键索引</strong>：对所有外键字段创建索引，优化关联查询</li>
+<li><strong>查询条件索引</strong>：对常用查询条件创建索引，如status字段</li>
+<li><strong>排序索引</strong>：对常用排序字段创建索引，如created_at</li>
+<li><strong>唯一索引</strong>：对需要唯一性约束的字段创建唯一索引，如slug</li>
+</ol>
+<h3 id="性能优化思路">性能优化思路</h3>
+<ol type="1">
+<li><strong>复合索引</strong>：对经常一起使用的多个字段创建复合索引</li>
+<li><strong>索引监控</strong>：定期分析索引使用情况，删除不必要的索引</li>
+<li><strong>查询优化</strong>：编写高效的SQL查询，充分利用索引</li>
+<li><strong>分页优化</strong>：使用索引优化大数据量的分页查询</li>
+</ol>
+<h2 id="示例数据">示例数据</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">-- 插入管理员用户</span><br><span class="line">INSERT INTO users (username, password, nickname, email, role, bio) </span><br><span class="line">VALUES (&#x27;admin&#x27;, &#x27;hashed_password&#x27;, &#x27;LuoTao&#x27;, &#x27;admin@example.com&#x27;, &#x27;admin&#x27;, &#x27;热爱编程和技术分享的开发者，专注于Web前端开发。&#x27;);</span><br><span class="line"></span><br><span class="line">-- 插入示例分类</span><br><span class="line">INSERT INTO categories (name, slug, description) VALUES</span><br><span class="line">(&#x27;技术&#x27;, &#x27;tech&#x27;, &#x27;技术相关文章&#x27;),</span><br><span class="line">(&#x27;生活&#x27;, &#x27;life&#x27;, &#x27;生活随笔&#x27;),</span><br><span class="line">(&#x27;教程&#x27;, &#x27;tutorial&#x27;, &#x27;技术教程&#x27;);</span><br><span class="line"></span><br><span class="line">-- 插入示例标签</span><br><span class="line">INSERT INTO tags (name, slug) VALUES</span><br><span class="line">(&#x27;Vue.js&#x27;, &#x27;vuejs&#x27;),</span><br><span class="line">(&#x27;JavaScript&#x27;, &#x27;javascript&#x27;),</span><br><span class="line">(&#x27;CSS&#x27;, &#x27;css&#x27;),</span><br><span class="line">(&#x27;生活感悟&#x27;, &#x27;life-thoughts&#x27;);</span><br><span class="line"></span><br><span class="line">-- 插入示例文章</span><br><span class="line">INSERT INTO articles (title, content, excerpt, author_id, status, published_at) VALUES</span><br><span class="line">(&#x27;开始使用 Vue.js 构建现代化网站&#x27;, &#x27;文章内容...&#x27;, &#x27;Vue.js 是一个流行的 JavaScript 框架，它可以帮助我们构建交互式的 Web 应用...&#x27;, 1, &#x27;published&#x27;, NOW()),</span><br><span class="line">(&#x27;理解 Vue Router 的核心概念&#x27;, &#x27;文章内容...&#x27;, &#x27;路由是单页应用程序的重要组成部分，Vue Router 提供了强大的路由功能...&#x27;, 1, &#x27;published&#x27;, NOW()),</span><br><span class="line">(&#x27;使用 Composition API 优化代码&#x27;, &#x27;文章内容...&#x27;, &#x27;Vue 3 引入的 Composition API 为代码组织提供了更灵活的方式...&#x27;, 1, &#x27;published&#x27;, NOW());</span><br><span class="line"></span><br><span class="line">-- 插入文章分类关联</span><br><span class="line">INSERT INTO article_category (article_id, category_id) VALUES</span><br><span class="line">(1, 1), (1, 3), (2, 1), (2, 3), (3, 1);</span><br><span class="line"></span><br><span class="line">-- 插入文章标签关联</span><br><span class="line">INSERT INTO article_tag (article_id, tag_id) VALUES</span><br><span class="line">(1, 1), (1, 2), (2, 1), (3, 1);</span><br><span class="line"></span><br><span class="line">-- 插入示例照片</span><br><span class="line">INSERT INTO photos (url, description, user_id) VALUES</span><br><span class="line">(&#x27;/photos/photo1.jpg&#x27;, &#x27;周末远足&#x27;, 1),</span><br><span class="line">(&#x27;/photos/photo2.jpg&#x27;, &#x27;读书时光&#x27;, 1),</span><br><span class="line">(&#x27;/photos/photo3.jpg&#x27;, &#x27;咖啡时光&#x27;, 1),</span><br><span class="line">(&#x27;/photos/photo4.jpg&#x27;, &#x27;coding日常&#x27;, 1);</span><br><span class="line"></span><br><span class="line">-- 插入系统设置</span><br><span class="line">INSERT INTO settings (key_name, value, type) VALUES</span><br><span class="line">(&#x27;site_name&#x27;, &#x27;LuoTao\&#x27;s Blog&#x27;, &#x27;string&#x27;),</span><br><span class="line">(&#x27;site_description&#x27;, &#x27;分享技术，记录生活&#x27;, &#x27;string&#x27;),</span><br><span class="line">(&#x27;theme_color&#x27;, &#x27;#3498db&#x27;, &#x27;string&#x27;),</span><br><span class="line">(&#x27;posts_per_page&#x27;, &#x27;10&#x27;, &#x27;integer&#x27;);</span><br></pre></td></tr></table></figure>
+<h2 id="后端api设计建议">后端API设计建议</h2>
+<h3 id="用户相关api">用户相关API</h3>
+<ul>
+<li><code>POST /api/auth/register</code> - 用户注册</li>
+<li><code>POST /api/auth/login</code> - 用户登录</li>
+<li><code>GET /api/auth/profile</code> - 获取当前用户信息</li>
+<li><code>PUT /api/auth/profile</code> - 更新用户信息</li>
+<li><code>GET /api/users/:id</code> - 获取指定用户公开信息</li>
+</ul>
+<h3 id="文章相关api">文章相关API</h3>
+<ul>
+<li><code>GET /api/articles</code> - 获取文章列表（支持分页、筛选）</li>
+<li><code>GET /api/articles/:id</code> - 获取文章详情</li>
+<li><code>POST /api/articles</code> - 创建文章</li>
+<li><code>PUT /api/articles/:id</code> - 更新文章</li>
+<li><code>DELETE /api/articles/:id</code> - 删除文章</li>
+<li><code>POST /api/articles/:id/like</code> - 点赞文章</li>
+</ul>
+<h3 id="分类相关api">分类相关API</h3>
+<ul>
+<li><code>GET /api/categories</code> - 获取分类列表</li>
+<li><code>GET /api/categories/:id</code> - 获取分类详情</li>
+<li><code>GET /api/categories/:id/articles</code> -
+获取分类下的文章</li>
+<li><code>POST /api/categories</code> - 创建分类</li>
+<li><code>PUT /api/categories/:id</code> - 更新分类</li>
+<li><code>DELETE /api/categories/:id</code> - 删除分类</li>
+</ul>
+<h3 id="标签相关api">标签相关API</h3>
+<ul>
+<li><code>GET /api/tags</code> - 获取标签列表</li>
+<li><code>GET /api/tags/:id/articles</code> - 获取标签下的文章</li>
+<li><code>POST /api/tags</code> - 创建标签</li>
+<li><code>PUT /api/tags/:id</code> - 更新标签</li>
+<li><code>DELETE /api/tags/:id</code> - 删除标签</li>
+</ul>
+<h3 id="评论相关api">评论相关API</h3>
+<ul>
+<li><code>GET /api/articles/:id/comments</code> - 获取文章评论</li>
+<li><code>POST /api/articles/:id/comments</code> - 发表评论</li>
+<li><code>PUT /api/comments/:id</code> - 更新评论</li>
+<li><code>DELETE /api/comments/:id</code> - 删除评论</li>
+<li><code>POST /api/comments/:id/reply</code> - 回复评论</li>
+</ul>
+<h3 id="照片相关api">照片相关API</h3>
+<ul>
+<li><code>GET /api/photos</code> - 获取照片列表</li>
+<li><code>POST /api/photos</code> - 上传照片</li>
+<li><code>PUT /api/photos/:id</code> - 更新照片信息</li>
+<li><code>DELETE /api/photos/:id</code> - 删除照片</li>
+</ul>
+<h3 id="系统设置api">系统设置API</h3>
+<ul>
+<li><code>GET /api/settings</code> - 获取系统设置</li>
+<li><code>PUT /api/settings</code> - 更新系统设置</li>
+</ul>
+<h2 id="前后端交互实现建议">前后端交互实现建议</h2>
+<h3 id="数据获取与展示">数据获取与展示</h3>
+<ol type="1">
+<li><strong>首页文章列表</strong>：
+<ul>
+<li>前端通过<code>GET /api/articles?page=1&amp;limit=10</code>获取最新文章</li>
+<li>后端返回分页数据，包含文章基本信息和作者信息</li>
+<li>前端渲染文章列表，支持懒加载更多文章</li>
+</ul></li>
+<li><strong>分类/标签页</strong>：
+<ul>
+<li>前端通过<code>GET /api/categories/:id/articles</code>或<code>GET /api/tags/:id/articles</code>获取特定分类或标签下的文章</li>
+<li>后端返回分页数据，同时返回分类/标签的详细信息</li>
+<li>前端渲染文章列表，并显示分类/标签信息</li>
+</ul></li>
+<li><strong>文章详情页</strong>：
+<ul>
+<li>前端通过<code>GET /api/articles/:id</code>获取文章详情</li>
+<li>后端返回文章内容、作者信息、分类、标签等完整数据</li>
+<li>后端同时增加文章的views计数</li>
+<li>前端渲染文章内容，支持Markdown格式</li>
+</ul></li>
+<li><strong>评论系统</strong>：
+<ul>
+<li>前端通过<code>GET /api/articles/:id/comments</code>获取文章评论</li>
+<li>后端返回评论数据，包括嵌套结构</li>
+<li>前端渲染评论树，支持回复功能</li>
+<li>用户发表评论时，前端发送<code>POST /api/articles/:id/comments</code>请求</li>
+</ul></li>
+</ol>
+<h3 id="用户认证与授权">用户认证与授权</h3>
+<ol type="1">
+<li><strong>登录流程</strong>：
+<ul>
+<li>用户提交用户名和密码</li>
+<li>后端验证凭据，生成JWT令牌</li>
+<li>前端存储令牌，后续请求携带令牌</li>
+<li>实现自动登录和令牌刷新机制</li>
+</ul></li>
+<li><strong>权限控制</strong>：
+<ul>
+<li>基于用户角色控制页面访问权限</li>
+<li>管理员可以访问管理后台</li>
+<li>普通用户只能管理自己的内容</li>
+<li>未登录用户只能查看公开内容</li>
+</ul></li>
+</ol>
+<h3 id="数据管理与维护">数据管理与维护</h3>
+<ol type="1">
+<li><strong>数据备份策略</strong>：
+<ul>
+<li>每日自动备份数据库</li>
+<li>定期将备份文件转移到异地存储</li>
+<li>实现备份恢复机制</li>
+</ul></li>
+<li><strong>数据清理策略</strong>：
+<ul>
+<li>定期清理访问日志表</li>
+<li>对大表进行分区管理</li>
+<li>实现数据归档功能</li>
+</ul></li>
+</ol>
+<h2 id="性能优化建议">性能优化建议</h2>
+<h3 id="数据库优化">数据库优化</h3>
+<ol type="1">
+<li><strong>查询优化</strong>：
+<ul>
+<li>使用EXPLAIN分析查询执行计划</li>
+<li>优化复杂查询，避免全表扫描</li>
+<li>合理使用JOIN，避免过多连接</li>
+</ul></li>
+<li><strong>缓存策略</strong>：
+<ul>
+<li>使用Redis缓存热门数据</li>
+<li>实现查询缓存，减少数据库负载</li>
+<li>定期刷新缓存，保持数据一致性</li>
+</ul></li>
+<li><strong>数据库配置</strong>：
+<ul>
+<li>调整MySQL配置参数</li>
+<li>优化InnoDB缓冲池大小</li>
+<li>配置适当的连接池</li>
+</ul></li>
+</ol>
+<h3 id="前端优化">前端优化</h3>
+<ol type="1">
+<li><strong>资源加载</strong>：
+<ul>
+<li>使用CDN加速静态资源</li>
+<li>压缩CSS和JavaScript文件</li>
+<li>实现图片懒加载</li>
+</ul></li>
+<li><strong>渲染优化</strong>：
+<ul>
+<li>使用虚拟滚动处理长列表</li>
+<li>实现组件懒加载</li>
+<li>优化DOM操作，减少重排重绘</li>
+</ul></li>
+<li><strong>用户体验</strong>：
+<ul>
+<li>添加加载状态提示</li>
+<li>实现平滑过渡动画</li>
+<li>优化表单交互体验</li>
+</ul></li>
+</ol>
+<h2 id="基于vue3和axios的用户注册和登录功能实现">基于Vue3和Axios的用户注册和登录功能实现</h2>
+<h2 id="项目概述">1. 项目概述</h2>
+<p>本文档详细记录了使用Vue
+3和Axios实现用户注册和登录功能的完整过程。该功能是博客系统的基础组件，为用户提供账号创建和身份验证服务。</p>
+<h2 id="技术栈选择">2. 技术栈选择</h2>
+<ul>
+<li><strong>前端框架</strong>：Vue 3 - 采用Composition
+API提供更灵活的组件逻辑组织方式</li>
+<li><strong>状态管理</strong>：Pinia - Vue
+3官方推荐的状态管理库，替代Vuex</li>
+<li><strong>HTTP客户端</strong>：Axios -
+功能强大的基于Promise的HTTP客户端</li>
+<li><strong>路由管理</strong>：Vue Router 4 - 与Vue
+3配套的路由管理库</li>
+<li><strong>构建工具</strong>：Vite -
+现代前端构建工具，提供更快的开发体验</li>
+</ul>
+<h2 id="项目结构设计">3. 项目结构设计</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vue-blog/</span><br><span class="line">├── src/</span><br><span class="line">│   ├── assets/           # 静态资源</span><br><span class="line">│   ├── components/       # 通用组件</span><br><span class="line">│   ├── stores/           # Pinia状态管理</span><br><span class="line">│   │   └── userStore.js  # 用户状态管理</span><br><span class="line">│   ├── views/            # 页面组件</span><br><span class="line">│   │   ├── LoginPage.vue # 登录页面</span><br><span class="line">│   │   └── RegisterPage.vue # 注册页面</span><br><span class="line">│   ├── router/           # 路由配置</span><br><span class="line">│   │   └── index.js      # 路由定义</span><br><span class="line">│   ├── App.vue           # 根组件</span><br><span class="line">│   └── main.js           # 应用入口</span><br><span class="line">├── vite.config.js        # Vite配置</span><br><span class="line">└── package.json          # 项目依赖</span><br></pre></td></tr></table></figure>
+<h2 id="用户状态管理实现">4. 用户状态管理实现</h2>
+<p>使用Pinia创建用户状态管理模块，处理用户注册、登录、获取用户信息和登出功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/stores/userStore.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineStore &#125; <span class="keyword">from</span> <span class="string">&#x27;pinia&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建axios实例</span></span><br><span class="line"><span class="keyword">const</span> apiClient = axios.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">env</span>.<span class="property">VITE_API_URL</span> || <span class="string">&#x27;/api&#x27;</span>,</span><br><span class="line">  <span class="attr">headers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求拦截器，添加认证token</span></span><br><span class="line">apiClient.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">use</span>(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> token = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;token&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (token) &#123;</span><br><span class="line">    config.<span class="property">headers</span>.<span class="property">Authorization</span> = <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> useUserStore = <span class="title function_">defineStore</span>(<span class="string">&#x27;user&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">state</span>: <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">    <span class="attr">currentUser</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">isAuthenticated</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">loading</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">error</span>: <span class="literal">null</span></span><br><span class="line">  &#125;),</span><br><span class="line">  </span><br><span class="line">  <span class="attr">getters</span>: &#123;</span><br><span class="line">    <span class="attr">isAdmin</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> state.<span class="property">currentUser</span>?.<span class="property">role</span> === <span class="string">&#x27;admin&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">    <span class="comment">// 用户注册</span></span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">register</span>(<span class="params">userData</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">true</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">error</span> = <span class="literal">null</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> apiClient.<span class="title function_">post</span>(<span class="string">&#x27;/auth/register&#x27;</span>, userData);</span><br><span class="line">        <span class="keyword">return</span> response.<span class="property">data</span>;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">error</span> = error.<span class="property">response</span>?.<span class="property">data</span>?.<span class="property">message</span> || <span class="string">&#x27;注册失败&#x27;</span>;</span><br><span class="line">        <span class="keyword">throw</span> error;</span><br><span class="line">      &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 用户登录</span></span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">login</span>(<span class="params">credentials</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">true</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">error</span> = <span class="literal">null</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> apiClient.<span class="title function_">post</span>(<span class="string">&#x27;/auth/login&#x27;</span>, credentials);</span><br><span class="line">        <span class="keyword">const</span> &#123; token, user &#125; = response.<span class="property">data</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;token&#x27;</span>, token);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">currentUser</span> = user;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">isAuthenticated</span> = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">error</span> = error.<span class="property">response</span>?.<span class="property">data</span>?.<span class="property">message</span> || <span class="string">&#x27;登录失败&#x27;</span>;</span><br><span class="line">        <span class="keyword">throw</span> error;</span><br><span class="line">      &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取当前用户信息</span></span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">fetchCurrentUser</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;token&#x27;</span>)) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">isAuthenticated</span> = <span class="literal">false</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">currentUser</span> = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">true</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> apiClient.<span class="title function_">get</span>(<span class="string">&#x27;/auth/profile&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">currentUser</span> = response.<span class="property">data</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">isAuthenticated</span> = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> response.<span class="property">data</span>;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">error</span> = error.<span class="property">response</span>?.<span class="property">data</span>?.<span class="property">message</span> || <span class="string">&#x27;获取用户信息失败&#x27;</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">isAuthenticated</span> = <span class="literal">false</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">currentUser</span> = <span class="literal">null</span>;</span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(<span class="string">&#x27;token&#x27;</span>);</span><br><span class="line">        <span class="keyword">throw</span> error;</span><br><span class="line">      &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 用户登出</span></span><br><span class="line">    <span class="title function_">logout</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(<span class="string">&#x27;token&#x27;</span>);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">isAuthenticated</span> = <span class="literal">false</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">currentUser</span> = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="注册页面实现">5. 注册页面实现</h2>
+<p>注册页面包含用户名、邮箱、昵称（可选）、密码和确认密码字段，并实现了前端表单验证。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- src/views/RegisterPage.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;register-page&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;register-container&quot;&gt;</span><br><span class="line">      &lt;h1 class=&quot;title&quot;&gt;创建账号&lt;/h1&gt;</span><br><span class="line">      &lt;div v-if=&quot;error&quot; class=&quot;error-alert&quot;&gt;&#123;&#123; error &#125;&#125;&lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;form @submit.prevent=&quot;handleRegister&quot; class=&quot;register-form&quot;&gt;</span><br><span class="line">        &lt;!-- 用户名输入 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;username&quot;&gt;用户名&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;username&quot; </span><br><span class="line">            v-model=&quot;form.username&quot; </span><br><span class="line">            type=&quot;text&quot; </span><br><span class="line">            required</span><br><span class="line">            :class=&quot;&#123;&#x27;is-invalid&#x27;: validationErrors.username&#125;&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;div v-if=&quot;validationErrors.username&quot; class=&quot;invalid-feedback&quot;&gt;</span><br><span class="line">            &#123;&#123; validationErrors.username &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;small class=&quot;form-text&quot;&gt;用户名长度为3-20个字符，只能包含字母、数字和下划线&lt;/small&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 邮箱输入 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;email&quot;&gt;邮箱&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;email&quot; </span><br><span class="line">            v-model=&quot;form.email&quot; </span><br><span class="line">            type=&quot;email&quot; </span><br><span class="line">            required</span><br><span class="line">            :class=&quot;&#123;&#x27;is-invalid&#x27;: validationErrors.email&#125;&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;div v-if=&quot;validationErrors.email&quot; class=&quot;invalid-feedback&quot;&gt;</span><br><span class="line">            &#123;&#123; validationErrors.email &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 昵称输入（可选） --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;nickname&quot;&gt;昵称 (选填)&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;nickname&quot; </span><br><span class="line">            v-model=&quot;form.nickname&quot; </span><br><span class="line">            type=&quot;text&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 密码输入 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;password&quot;&gt;密码&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;password&quot; </span><br><span class="line">            v-model=&quot;form.password&quot; </span><br><span class="line">            type=&quot;password&quot; </span><br><span class="line">            required</span><br><span class="line">            :class=&quot;&#123;&#x27;is-invalid&#x27;: validationErrors.password&#125;&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;div v-if=&quot;validationErrors.password&quot; class=&quot;invalid-feedback&quot;&gt;</span><br><span class="line">            &#123;&#123; validationErrors.password &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;small class=&quot;form-text&quot;&gt;密码长度至少为8个字符，必须包含字母和数字&lt;/small&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 确认密码输入 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;confirmPassword&quot;&gt;确认密码&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;confirmPassword&quot; </span><br><span class="line">            v-model=&quot;form.confirmPassword&quot; </span><br><span class="line">            type=&quot;password&quot; </span><br><span class="line">            required</span><br><span class="line">            :class=&quot;&#123;&#x27;is-invalid&#x27;: validationErrors.confirmPassword&#125;&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;div v-if=&quot;validationErrors.confirmPassword&quot; class=&quot;invalid-feedback&quot;&gt;</span><br><span class="line">            &#123;&#123; validationErrors.confirmPassword &#125;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 提交按钮 --&gt;</span><br><span class="line">        &lt;button type=&quot;submit&quot; class=&quot;btn-register&quot; :disabled=&quot;isLoading&quot;&gt;</span><br><span class="line">          &lt;span v-if=&quot;isLoading&quot;&gt;注册中...&lt;/span&gt;</span><br><span class="line">          &lt;span v-else&gt;注册&lt;/span&gt;</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 登录链接 --&gt;</span><br><span class="line">        &lt;div class=&quot;login-link&quot;&gt;</span><br><span class="line">          已有账号？&lt;router-link to=&quot;/login&quot;&gt;立即登录&lt;/router-link&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, reactive, computed &#125; from &#x27;vue&#x27;;</span><br><span class="line">import &#123; useRouter &#125; from &#x27;vue-router&#x27;;</span><br><span class="line">import &#123; useUserStore &#125; from &#x27;../stores/userStore&#x27;;</span><br><span class="line"></span><br><span class="line">const router = useRouter();</span><br><span class="line">const userStore = useUserStore();</span><br><span class="line"></span><br><span class="line">// 表单数据</span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  nickname: &#x27;&#x27;,</span><br><span class="line">  password: &#x27;&#x27;,</span><br><span class="line">  confirmPassword: &#x27;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 表单验证错误</span><br><span class="line">const validationErrors = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  email: &#x27;&#x27;,</span><br><span class="line">  password: &#x27;&#x27;,</span><br><span class="line">  confirmPassword: &#x27;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 从store获取状态</span><br><span class="line">const error = computed(() =&gt; userStore.error);</span><br><span class="line">const isLoading = computed(() =&gt; userStore.loading);</span><br><span class="line"></span><br><span class="line">// 表单验证</span><br><span class="line">const validateForm = () =&gt; &#123;</span><br><span class="line">  let isValid = true;</span><br><span class="line">  </span><br><span class="line">  // 重置验证错误</span><br><span class="line">  Object.keys(validationErrors).forEach(key =&gt; &#123;</span><br><span class="line">    validationErrors[key] = &#x27;&#x27;;</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  // 用户名验证</span><br><span class="line">  if (!/^[a-zA-Z0-9_]&#123;3,20&#125;$/.test(form.username)) &#123;</span><br><span class="line">    validationErrors.username = &#x27;用户名长度为3-20个字符，只能包含字母、数字和下划线&#x27;;</span><br><span class="line">    isValid = false;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  // 邮箱验证</span><br><span class="line">  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) &#123;</span><br><span class="line">    validationErrors.email = &#x27;请输入有效的邮箱地址&#x27;;</span><br><span class="line">    isValid = false;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  // 密码验证</span><br><span class="line">  if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]&#123;8,&#125;$/.test(form.password)) &#123;</span><br><span class="line">    validationErrors.password = &#x27;密码长度至少为8个字符，必须包含字母和数字&#x27;;</span><br><span class="line">    isValid = false;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  // 确认密码验证</span><br><span class="line">  if (form.password !== form.confirmPassword) &#123;</span><br><span class="line">    validationErrors.confirmPassword = &#x27;两次输入的密码不一致&#x27;;</span><br><span class="line">    isValid = false;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  return isValid;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 处理注册</span><br><span class="line">const handleRegister = async () =&gt; &#123;</span><br><span class="line">  // 表单验证</span><br><span class="line">  if (!validateForm()) &#123;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  try &#123;</span><br><span class="line">    // 准备注册数据，移除确认密码字段</span><br><span class="line">    const &#123; confirmPassword, ...registerData &#125; = form;</span><br><span class="line">    </span><br><span class="line">    // 使用store的register action</span><br><span class="line">    await userStore.register(registerData);</span><br><span class="line">    </span><br><span class="line">    // 注册成功，显示提示并跳转到登录页</span><br><span class="line">    router.push(&#123;</span><br><span class="line">      path: &#x27;/login&#x27;,</span><br><span class="line">      query: &#123; registered: &#x27;true&#x27; &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; catch (error) &#123;</span><br><span class="line">    // 错误已在store中处理</span><br><span class="line">    console.error(&#x27;Registration error:&#x27;, error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="登录页面实现">6. 登录页面实现</h2>
+<p>登录页面包含用户名/邮箱和密码字段，并支持显示注册成功的提示信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- src/views/LoginPage.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;login-page&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;login-container&quot;&gt;</span><br><span class="line">      &lt;h1 class=&quot;title&quot;&gt;用户登录&lt;/h1&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;!-- 注册成功提示 --&gt;</span><br><span class="line">      &lt;div v-if=&quot;registrationSuccess&quot; class=&quot;success-alert&quot;&gt;</span><br><span class="line">        注册成功！请使用您的账号密码登录。</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div v-if=&quot;error&quot; class=&quot;error-alert&quot;&gt;&#123;&#123; error &#125;&#125;&lt;/div&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;form @submit.prevent=&quot;handleLogin&quot; class=&quot;login-form&quot;&gt;</span><br><span class="line">        &lt;!-- 用户名/邮箱输入 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;username&quot;&gt;用户名或邮箱&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;username&quot; </span><br><span class="line">            v-model=&quot;form.username&quot; </span><br><span class="line">            type=&quot;text&quot; </span><br><span class="line">            required</span><br><span class="line">            placeholder=&quot;请输入用户名或邮箱&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 密码输入 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">          &lt;label for=&quot;password&quot;&gt;密码&lt;/label&gt;</span><br><span class="line">          &lt;input </span><br><span class="line">            id=&quot;password&quot; </span><br><span class="line">            v-model=&quot;form.password&quot; </span><br><span class="line">            type=&quot;password&quot; </span><br><span class="line">            required</span><br><span class="line">            placeholder=&quot;请输入密码&quot;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 提交按钮 --&gt;</span><br><span class="line">        &lt;div class=&quot;form-actions&quot;&gt;</span><br><span class="line">          &lt;button type=&quot;submit&quot; class=&quot;btn-login&quot; :disabled=&quot;isLoading&quot;&gt;</span><br><span class="line">            &lt;span v-if=&quot;isLoading&quot;&gt;登录中...&lt;/span&gt;</span><br><span class="line">            &lt;span v-else&gt;登录&lt;/span&gt;</span><br><span class="line">          &lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 注册链接 --&gt;</span><br><span class="line">        &lt;div class=&quot;register-link&quot;&gt;</span><br><span class="line">          还没有账号？&lt;router-link to=&quot;/register&quot;&gt;立即注册&lt;/router-link&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, reactive, computed, onMounted &#125; from &#x27;vue&#x27;;</span><br><span class="line">import &#123; useRouter, useRoute &#125; from &#x27;vue-router&#x27;;</span><br><span class="line">import &#123; useUserStore &#125; from &#x27;../stores/userStore&#x27;;</span><br><span class="line"></span><br><span class="line">const router = useRouter();</span><br><span class="line">const route = useRoute();</span><br><span class="line">const userStore = useUserStore();</span><br><span class="line"></span><br><span class="line">// 表单数据</span><br><span class="line">const form = reactive(&#123;</span><br><span class="line">  username: &#x27;&#x27;,</span><br><span class="line">  password: &#x27;&#x27;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 注册成功标志</span><br><span class="line">const registrationSuccess = ref(false);</span><br><span class="line"></span><br><span class="line">// 从store获取状态</span><br><span class="line">const error = computed(() =&gt; userStore.error);</span><br><span class="line">const isLoading = computed(() =&gt; userStore.loading);</span><br><span class="line"></span><br><span class="line">// 组件挂载时检查URL参数</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  // 检查URL参数，显示注册成功提示</span><br><span class="line">  if (route.query.registered === &#x27;true&#x27;) &#123;</span><br><span class="line">    registrationSuccess.value = true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 处理登录</span><br><span class="line">const handleLogin = async () =&gt; &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    await userStore.login(form);</span><br><span class="line">    // 登录成功，跳转到首页</span><br><span class="line">    router.push(&#x27;/&#x27;);</span><br><span class="line">  &#125; catch (error) &#123;</span><br><span class="line">    // 错误已在store中处理</span><br><span class="line">    console.error(&#x27;Login error:&#x27;, error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="应用入口配置">7. 应用入口配置</h2>
+<p>在应用入口文件中配置Axios、Pinia和Vue Router。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createPinia &#125; <span class="keyword">from</span> <span class="string">&#x27;pinia&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建axios实例</span></span><br><span class="line"><span class="keyword">const</span> apiClient = axios.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">env</span>.<span class="property">VITE_API_URL</span> || <span class="string">&#x27;/api&#x27;</span>,</span><br><span class="line">  <span class="attr">headers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求拦截器，添加认证token</span></span><br><span class="line">apiClient.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">use</span>(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> token = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;token&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (token) &#123;</span><br><span class="line">    config.<span class="property">headers</span>.<span class="property">Authorization</span> = <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line"><span class="keyword">const</span> pinia = <span class="title function_">createPinia</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局注册axios</span></span><br><span class="line">app.<span class="property">config</span>.<span class="property">globalProperties</span>.<span class="property">$axios</span> = apiClient;</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(router)</span><br><span class="line">   .<span class="title function_">use</span>(pinia)</span><br><span class="line">   .<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="路由配置">8. 路由配置</h2>
+<p>配置Vue Router，定义登录和注册页面的路由。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/router/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Home&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/HomePage.vue&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/login&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Login&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/LoginPage.vue&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/register&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Register&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;../views/RegisterPage.vue&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 其他路由...</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">  <span class="attr">history</span>: <span class="title function_">createWebHistory</span>(),</span><br><span class="line">  routes,</span><br><span class="line">  <span class="title function_">scrollBehavior</span>(<span class="params">to, <span class="keyword">from</span>, savedPosition</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">      <span class="keyword">return</span> savedPosition;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">top</span>: <span class="number">0</span> &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+<h2 id="vite配置">9. Vite配置</h2>
+<p>配置Vite构建工具，设置路径别名和API代理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vite.config.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;path&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="title function_">vue</span>()],</span><br><span class="line">  <span class="attr">resolve</span>: &#123;</span><br><span class="line">    <span class="attr">alias</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;@&#x27;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./src&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">server</span>: &#123;</span><br><span class="line">    <span class="attr">proxy</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">        <span class="attr">target</span>: <span class="string">&#x27;http://localhost:8080&#x27;</span>,</span><br><span class="line">        <span class="attr">changeOrigin</span>: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="安全性考虑">10. 安全性考虑</h2>
+<ol type="1">
+<li><strong>密码处理</strong>：
+<ul>
+<li>前端不存储明文密码</li>
+<li>密码在后端使用BCrypt等算法加密存储</li>
+<li>密码验证在后端进行</li>
+</ul></li>
+<li><strong>Token管理</strong>：
+<ul>
+<li>使用JWT进行身份验证</li>
+<li>Token存储在localStorage中</li>
+<li>请求拦截器自动添加Token到请求头</li>
+</ul></li>
+<li><strong>表单验证</strong>：
+<ul>
+<li>前端实现基本的表单验证</li>
+<li>后端再次验证所有输入数据</li>
+<li>防止XSS和SQL注入攻击</li>
+</ul></li>
+</ol>
+<h2 id="用户体验优化">11. 用户体验优化</h2>
+<ol type="1">
+<li><strong>加载状态</strong>：
+<ul>
+<li>显示加载中状态，防止用户重复提交</li>
+<li>禁用提交按钮直到加载完成</li>
+</ul></li>
+<li><strong>错误处理</strong>：
+<ul>
+<li>显示友好的错误消息</li>
+<li>表单验证错误直接显示在相应字段下方</li>
+</ul></li>
+<li><strong>成功反馈</strong>：
+<ul>
+<li>注册成功后跳转到登录页并显示成功提示</li>
+<li>登录成功后跳转到首页</li>
+</ul></li>
+</ol>
+<h2 id="后续扩展方向">12. 后续扩展方向</h2>
+<ol type="1">
+<li><strong>记住我功能</strong>：允许用户选择保持登录状态</li>
+<li><strong>社交媒体登录</strong>：集成第三方登录选项</li>
+<li><strong>两步验证</strong>：增加额外的安全层</li>
+<li><strong>密码重置</strong>：实现忘记密码功能</li>
+<li><strong>用户资料管理</strong>：允许用户更新个人信息和头像</li>
+</ol>
+<h2 id="总结">13. 总结</h2>
+<p>本实现使用Vue
+3和Axios成功构建了用户注册和登录功能，采用了现代前端开发最佳实践：</p>
+<ul>
+<li>使用Composition API组织组件逻辑</li>
+<li>使用Pinia进行状态管理</li>
+<li>实现了前端表单验证</li>
+<li>使用Axios处理HTTP请求</li>
+<li>实现了用户友好的错误处理和加载状态</li>
+</ul>
+<h2 id="后端开发过程">14. 后端开发过程</h2>
+<h3 id="技术栈选择-1">14.1 技术栈选择</h3>
+<p>后端采用Spring Boot框架实现RESTful
+API，为前端提供用户注册、登录和认证服务。</p>
+<ul>
+<li><strong>核心框架</strong>：Spring Boot 2.6.x</li>
+<li><strong>安全框架</strong>：Spring Security + JWT</li>
+<li><strong>数据访问</strong>：MyBatis 3.x</li>
+<li><strong>数据库</strong>：MySQL</li>
+<li><strong>构建工具</strong>：Maven</li>
+</ul>
+<h3 id="用户注册登录模块开发步骤">14.2 用户注册登录模块开发步骤</h3>
+<h4 id="项目初始化与依赖配置">1. 项目初始化与依赖配置</h4>
+<p>首先在<code>pom.xml</code>中添加必要的依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Spring Security --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- JWT --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.jsonwebtoken<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jjwt<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Validation --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-validation<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Lombok --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="数据库设计与实现">2. 数据库设计与实现</h4>
+<p>创建用户表SQL脚本：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> users (</span><br><span class="line">    id <span class="type">BIGINT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    username <span class="type">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">UNIQUE</span>,</span><br><span class="line">    password <span class="type">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    nickname <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    avatar <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    email <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">UNIQUE</span>,</span><br><span class="line">    role <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;user&#x27;</span>,</span><br><span class="line">    bio TEXT,</span><br><span class="line">    created_at <span class="type">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">    updated_at <span class="type">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">    last_login <span class="type">TIMESTAMP</span> <span class="keyword">NULL</span>,</span><br><span class="line">    status TINYINT <span class="keyword">DEFAULT</span> <span class="number">1</span> COMMENT <span class="string">&#x27;1: active, 0: inactive&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="实体类与dto设计">3. 实体类与DTO设计</h4>
+<p>创建用户实体类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> String nickname;</span><br><span class="line">    <span class="keyword">private</span> String avatar;</span><br><span class="line">    <span class="keyword">private</span> String email;</span><br><span class="line">    <span class="keyword">private</span> String role;</span><br><span class="line">    <span class="keyword">private</span> String bio;</span><br><span class="line">    <span class="keyword">private</span> LocalDateTime createdAt;</span><br><span class="line">    <span class="keyword">private</span> LocalDateTime updatedAt;</span><br><span class="line">    <span class="keyword">private</span> LocalDateTime lastLogin;</span><br><span class="line">    <span class="keyword">private</span> Integer status;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建数据传输对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserRegistrationDto</span> &#123;</span><br><span class="line">    <span class="meta">@NotBlank(message = &quot;用户名不能为空&quot;)</span></span><br><span class="line">    <span class="meta">@Size(min = 3, max = 20, message = &quot;用户名长度必须在3-20个字符之间&quot;)</span></span><br><span class="line">    <span class="meta">@Pattern(regexp = &quot;^[a-zA-Z0-9_]+$&quot;, message = &quot;用户名只能包含字母、数字和下划线&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@NotBlank(message = &quot;密码不能为空&quot;)</span></span><br><span class="line">    <span class="meta">@Size(min = 8, message = &quot;密码长度至少为8个字符&quot;)</span></span><br><span class="line">    <span class="meta">@Pattern(regexp = &quot;^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]&#123;8,&#125;$&quot;, </span></span><br><span class="line"><span class="meta">             message = &quot;密码必须包含至少一个字母和一个数字&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@NotBlank(message = &quot;邮箱不能为空&quot;)</span></span><br><span class="line">    <span class="meta">@Email(message = &quot;邮箱格式不正确&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String email;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String nickname;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数据访问层实现">4. 数据访问层实现</h4>
+<p>创建MyBatis Mapper接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserMapper</span> &#123;</span><br><span class="line">    User <span class="title function_">findById</span><span class="params">(Long id)</span>;</span><br><span class="line">    User <span class="title function_">findByUsername</span><span class="params">(String username)</span>;</span><br><span class="line">    User <span class="title function_">findByEmail</span><span class="params">(String email)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">existsByUsername</span><span class="params">(String username)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">existsByEmail</span><span class="params">(String email)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(User user)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(User user)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">updateLastLogin</span><span class="params">(<span class="meta">@Param(&quot;id&quot;)</span> Long id, <span class="meta">@Param(&quot;lastLogin&quot;)</span> LocalDateTime lastLogin)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置XML映射文件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.luotao.demo.mapper.UserMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 结果映射 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">&quot;userResultMap&quot;</span> <span class="attr">type</span>=<span class="string">&quot;com.luotao.demo.model.User&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 映射字段 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- SQL语句定义 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findByUsername&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;userResultMap&quot;</span>&gt;</span></span><br><span class="line">        SELECT * FROM users WHERE username = #&#123;username&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 其他SQL语句... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="业务逻辑层实现">5. 业务逻辑层实现</h4>
+<p>创建用户服务接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    User <span class="title function_">registerUser</span><span class="params">(UserRegistrationDto registrationDto)</span>;</span><br><span class="line">    User <span class="title function_">findByUsername</span><span class="params">(String username)</span>;</span><br><span class="line">    User <span class="title function_">findByEmail</span><span class="params">(String email)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">existsByUsername</span><span class="params">(String username)</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">existsByEmail</span><span class="params">(String email)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">updateUser</span><span class="params">(User user)</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">updateLastLogin</span><span class="params">(Long id)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现用户服务：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> UserMapper userMapper;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> PasswordEncoder passwordEncoder;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UserServiceImpl</span><span class="params">(UserMapper userMapper, PasswordEncoder passwordEncoder)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userMapper = userMapper;</span><br><span class="line">        <span class="built_in">this</span>.passwordEncoder = passwordEncoder;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">registerUser</span><span class="params">(UserRegistrationDto registrationDto)</span> &#123;</span><br><span class="line">        <span class="comment">// 检查用户名和邮箱是否已存在</span></span><br><span class="line">        <span class="comment">// 创建新用户</span></span><br><span class="line">        <span class="comment">// 加密密码</span></span><br><span class="line">        <span class="comment">// 保存用户</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 其他方法实现...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="jwt认证实现">6. JWT认证实现</h4>
+<p>创建JWT令牌提供者：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JwtTokenProvider</span> &#123;</span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;security.jwt.token.secret-key:secret&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String secretKey;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;security.jwt.token.expire-length:3600000&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> <span class="variable">validityInMilliseconds</span> <span class="operator">=</span> <span class="number">3600000</span>; <span class="comment">// 1h</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> UserDetailsService userDetailsService;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 初始化方法</span></span><br><span class="line">    <span class="comment">// 创建令牌方法</span></span><br><span class="line">    <span class="comment">// 验证令牌方法</span></span><br><span class="line">    <span class="comment">// 从请求中解析令牌方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建JWT过滤器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JwtTokenFilter</span> <span class="keyword">extends</span> <span class="title class_">OncePerRequestFilter</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> JwtTokenProvider jwtTokenProvider;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doFilterInternal</span><span class="params">(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)</span></span><br><span class="line">            <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="comment">// 从请求中获取令牌</span></span><br><span class="line">        <span class="comment">// 验证令牌</span></span><br><span class="line">        <span class="comment">// 设置认证信息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="spring-security配置">7. Spring Security配置</h4>
+<p>配置安全相关设置：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecurityConfig</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> JwtTokenProvider jwtTokenProvider;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> UserDetailsService userDetailsService;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 配置认证管理器</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 配置HTTP安全</span></span><br><span class="line">        <span class="comment">// 禁用CSRF</span></span><br><span class="line">        <span class="comment">// 配置无状态会话</span></span><br><span class="line">        <span class="comment">// 配置请求授权</span></span><br><span class="line">        <span class="comment">// 添加JWT过滤器</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> AuthenticationManager <span class="title function_">authenticationManagerBean</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 暴露认证管理器Bean</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> PasswordEncoder <span class="title function_">passwordEncoder</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 配置密码编码器</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="控制器实现">8. 控制器实现</h4>
+<p>创建认证控制器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api/auth&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AuthController</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> UserService userService;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> AuthenticationManager authenticationManager;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> JwtTokenProvider jwtTokenProvider;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    </span><br><span class="line">    <span class="meta">@PostMapping(&quot;/register&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;?&gt; registerUser(<span class="meta">@Valid</span> <span class="meta">@RequestBody</span> UserRegistrationDto registrationDto) &#123;</span><br><span class="line">        <span class="comment">// 注册用户</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@PostMapping(&quot;/login&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;?&gt; login(<span class="meta">@Valid</span> <span class="meta">@RequestBody</span> LoginRequest loginRequest) &#123;</span><br><span class="line">        <span class="comment">// 认证用户</span></span><br><span class="line">        <span class="comment">// 生成JWT令牌</span></span><br><span class="line">        <span class="comment">// 返回令牌和用户信息</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@GetMapping(&quot;/profile&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;?&gt; getCurrentUser() &#123;</span><br><span class="line">        <span class="comment">// 获取当前用户信息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="异常处理">9. 异常处理</h4>
+<p>创建全局异常处理器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GlobalExceptionHandler</span> &#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler(ResourceAlreadyExistsException.class)</span></span><br><span class="line">    <span class="meta">@ResponseStatus(HttpStatus.CONFLICT)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String, String&gt;&gt; <span class="title function_">handleResourceAlreadyExistsException</span><span class="params">(ResourceAlreadyExistsException ex)</span> &#123;</span><br><span class="line">        <span class="comment">// 处理资源已存在异常</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@ExceptionHandler(MethodArgumentNotValidException.class)</span></span><br><span class="line">    <span class="meta">@ResponseStatus(HttpStatus.BAD_REQUEST)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Map&lt;String, Object&gt;&gt; <span class="title function_">handleValidationExceptions</span><span class="params">(MethodArgumentNotValidException ex)</span> &#123;</span><br><span class="line">        <span class="comment">// 处理参数验证异常</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 处理其他异常...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="跨域配置">10. 跨域配置</h4>
+<p>配置跨域请求：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addCorsMappings</span><span class="params">(CorsRegistry registry)</span> &#123;</span><br><span class="line">        registry.addMapping(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .allowedOrigins(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .allowedMethods(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;POST&quot;</span>, <span class="string">&quot;PUT&quot;</span>, <span class="string">&quot;DELETE&quot;</span>, <span class="string">&quot;OPTIONS&quot;</span>)</span><br><span class="line">                .allowedHeaders(<span class="string">&quot;*&quot;</span>)</span><br><span class="line">                .allowCredentials(<span class="literal">true</span>)</span><br><span class="line">                .maxAge(<span class="number">3600</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安全性考虑-1">14.3 安全性考虑</h3>
+<ol type="1">
+<li><strong>密码安全</strong>：
+<ul>
+<li>使用BCrypt算法加密存储密码</li>
+<li>不在任何地方存储或传输明文密码</li>
+<li>密码验证在服务端进行</li>
+</ul></li>
+<li><strong>JWT安全</strong>：
+<ul>
+<li>使用安全的密钥签名JWT令牌</li>
+<li>设置合理的令牌过期时间</li>
+<li>验证每个请求的令牌有效性</li>
+</ul></li>
+<li><strong>输入验证</strong>：
+<ul>
+<li>使用Bean Validation验证所有输入数据</li>
+<li>防止SQL注入和XSS攻击</li>
+<li>全局异常处理确保友好的错误响应</li>
+</ul></li>
+</ol>
+<h3 id="性能优化">14.4 性能优化</h3>
+<ol type="1">
+<li><strong>数据库优化</strong>：
+<ul>
+<li>为频繁查询的字段创建索引</li>
+<li>使用连接池管理数据库连接</li>
+</ul></li>
+<li><strong>缓存策略</strong>：
+<ul>
+<li>可以考虑使用Redis缓存热点数据</li>
+<li>减少数据库访问频率</li>
+</ul></li>
+<li><strong>无状态设计</strong>：
+<ul>
+<li>使用JWT实现无状态认证</li>
+<li>提高系统可扩展性</li>
+</ul></li>
+</ol>
+<h3 id="后续扩展方向-1">14.5 后续扩展方向</h3>
+<ol type="1">
+<li><strong>邮箱验证</strong>：实现注册邮箱验证功能</li>
+<li><strong>密码重置</strong>：添加忘记密码和重置功能</li>
+<li><strong>第三方登录</strong>：集成GitHub、Google等第三方登录</li>
+<li><strong>用户资料管理</strong>：完善用户资料编辑功能</li>
+<li><strong>权限管理</strong>：细化权限控制，实现基于角色的访问控制</li>
+</ol>
+
+    </div>
+
+    
+    
+      
+<div class="signature signature-post">Best Tao.</div>
+
+    
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/14/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E9%94%81%E6%9C%BA%E5%88%B6/" rel="prev" title="深入理解Java锁机制">
+                  <i class="fa fa-chevron-left"></i> 深入理解Java锁机制
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/16/SpringBoot-Vue.js-Axios%E6%90%AD%E5%BB%BAdemo/" rel="next" title="SpringBoot-Vue.js-Axios搭建demo">
+                  SpringBoot-Vue.js-Axios搭建demo <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LuoTao</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://lib.baomitu.com/mermaid/9.0.1/mermaid.min.js","integrity":"sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"6b0feb15be36165e2b84a7d60c1197af"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
