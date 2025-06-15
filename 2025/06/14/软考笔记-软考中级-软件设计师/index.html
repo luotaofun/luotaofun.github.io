@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250609183747331.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250610140709512.png">
 <meta property="article:published_time" content="2025-06-14T11:19:28.000Z">
-<meta property="article:modified_time" content="2025-06-14T12:07:22.611Z">
+<meta property="article:modified_time" content="2025-06-15T06:35:03.045Z">
 <meta property="article:author" content="LuoTao">
 <meta property="article:tag" content="resume">
 <meta name="twitter:card" content="summary">
@@ -276,9 +276,15 @@ Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href=
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-06-14 19:19:28 / 修改时间：20:07:22" itemprop="dateCreated datePublished" datetime="2025-06-14T19:19:28+08:00">2025-06-14</time>
+      <time title="创建时间：2025-06-14 19:19:28" itemprop="dateCreated datePublished" datetime="2025-06-14T19:19:28+08:00">2025-06-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-15 14:35:03" itemprop="dateModified" datetime="2025-06-15T14:35:03+08:00">2025-06-15</time>
     </span>
 
   
@@ -589,8 +595,31 @@ $$</span></p>
     E --> F["商为0，停止计算"];
     F --> G["余数从下往上排列 (1010)₂"];</pre>
 <h2 id="十进制转二进制使用减法">十进制转二进制使用减法</h2>
-$$
-<p>$$</p>
+<p><span class="math display">$$
+\begin{matrix}
+2^0 = &amp; 1 \\
+2^1 = &amp; 2 \\
+2^2 = &amp; 4 \\
+2^3 = &amp; 8 \\
+2^4 = &amp; 16 \\
+2^5 = &amp; 32 \\
+2^6 = &amp; 64 \\
+2^7 = &amp; 128 \\
+2^8 = &amp; 256 \\
+2^9 = &amp; 512 \\
+2^{10} = &amp; 1024
+\end{matrix}
+\begin{matrix}
+&amp; {小于且离 10 最近的乘幂为 2^3 = 8  }\\
+&amp; {10 - 2^3 = 2} \\
+&amp; {小于且离  2  最近的乘幂为  2^1 = 2 }\\
+&amp; {2 - 2^1 = 0 \quad (结束)}
+\\
+&amp; 位号：3 &amp; 2 &amp; 1 &amp; 0 \\
+&amp; 取值：1 &amp; 0 &amp; 1 &amp; 0 \\
+&amp; 结果：10 的二进制=(1010)_2  
+\end{matrix}
+$$</span></p>
 <h2 id="二进制与八进制互转">二进制与八进制互转</h2>
 <p><strong>二进制转八进制 (三位分组，421法)：</strong>
 1位八进制数可以表示从 0 到 7 的数字，而 3位二进制数正好也能表示从 0 到 7
@@ -796,35 +825,35 @@ $$</span></p>
    &amp; \text{从右向左分组 (每4位):} &amp; 110 \quad 1011 \\
    &amp; \text{补0后分组:} &amp; \mathbf{0110} \quad \mathbf{1011} \\
    &amp; \text{对应十六进制:} &amp; \downarrow \qquad \downarrow \\
-   &amp; &amp; (0\cdot8+1\cdot4+1\cdot2+0\cdot1)=6_{16} \quad
-(1\cdot8+0\cdot4+1\cdot2+1\cdot1)=B_{16} \\
-   &amp; \text{整数部分结果:} &amp; (6B)_{16} \\
+   &amp; &amp; (0\cdot8+1\cdot4+1\cdot2+0\cdot1)=6_16\quad
+(1\cdot8+0\cdot4+1\cdot2+1\cdot1)=B_16 \\
+   &amp; \text{整数部分结果:} &amp; (6B)_16 \\
 \hline
 \text{2. 小数部分处理:} &amp; (.101101)_2 \\
    &amp; \text{从左向右分组 (每4位):} &amp; 1011 \quad 01 \\
    &amp; \text{补0后分组:} &amp; \mathbf{1011} \quad \mathbf{0100} \\
    &amp; \text{对应十六进制:} &amp; \downarrow \qquad \downarrow \\
-   &amp; &amp; (1\cdot8+0\cdot4+1\cdot2+1\cdot1)=B_{16} \quad
-(0\cdot8+1\cdot4+0\cdot2+0\cdot1)=4_{16} \\
-   &amp; \text{小数部分结果:} &amp; (.B4)_{16} \\
+   &amp; &amp; (1\cdot8+0\cdot4+1\cdot2+1\cdot1)=B_16\quad
+(0\cdot8+1\cdot4+0\cdot2+0\cdot1)=4_16 \\
+   &amp; \text{小数部分结果:} &amp; (.B4)_16 \\
 \hline
-\text{3. 合并结果:} &amp; (6B.B4)_{16}
+\text{3. 合并结果:} &amp; (6B.B4)_16
 \end{array}
 $$</span></p>
 <p><strong>十六进制转二进制 (一位拆四位)：</strong>
 规则：将十六进制数的每一位直接用其对应的4位二进制数替换。整数部分高位的0通常可以省略（除非单独一位0），小数部分末尾的0也可以省略。</p>
 <p><span class="math display">$$
 \begin{array}{lll}
-{\text{示例：将十六进制数 } (6B.B4)_{16} \text{ 转换为二进制数。}} \\
+{\text{示例：将十六进制数 } (6B.B4)_16\text{ 转换为二进制数。}} \\
 \hline
-\text{1. 整数部分处理:} &amp; (6B)_{16} \\
+\text{1. 整数部分处理:} &amp; (6B)_16\\
    &amp; \text{每位十六进制转4位二进制:} &amp; 6 &amp; B \\
    &amp; &amp; \downarrow &amp; \downarrow \\
    &amp; &amp; 0110 &amp; 1011 \\
    &amp; \text{合并并去除前导0:} &amp; (01101011)_2 \rightarrow
 (1101011)_2 \\
 \hline
-\text{2. 小数部分处理:} &amp; (.B4)_{16} \\
+\text{2. 小数部分处理:} &amp; (.B4)_16\\
    &amp; \text{每位十六进制转4位二进制:} &amp; B &amp; 4 \\
    &amp; &amp; \downarrow &amp; \downarrow \\
    &amp; &amp; 1011 &amp; 0100 \\
@@ -859,24 +888,24 @@ $$</span></p>
 \mathbf{1011} \quad \mathbf{0000})_2 \\
 \hline
 \text{3. 二进制转十六进制 (四位转一位):} \\
-   &amp; 0110_2 \rightarrow 6_{16} \\
-   &amp; 1011_2 \rightarrow B_{16} \\
-   &amp; 1011_2 \rightarrow B_{16} \\
-   &amp; 0000_2 \rightarrow 0_{16} \\
-   &amp; \text{合并结果 (去除小数末尾的0): } (6B.B0)_{16} \rightarrow
-(6B.B)_{16} \\
+   &amp; 0110_2 \rightarrow 6_16\\
+   &amp; 1011_2 \rightarrow B_16\\
+   &amp; 1011_2 \rightarrow B_16\\
+   &amp; 0000_2 \rightarrow 0_16\\
+   &amp; \text{合并结果 (去除小数末尾的0): } (6B.B0)_16\rightarrow
+(6B.B)_16\\
 \hline
-\text{最终结果:} &amp; (153.54)_8 = (6B.B)_{16}
+\text{最终结果:} &amp; (153.54)_8 = (6B.B)_16
 \end{array}
 $$</span></p>
 <p><strong>十六进制转八进制：</strong>
 规则：先将每一位十六进制数转换为4位二进制数，然后将得到的完整二进制串重新按3位一组进行划分（从小数点开始，分别向左、向右，不足3位则补0），最后将每3位二进制数转换为对应的八进制数。</p>
 <p><span class="math display">$$
 \begin{array}{lll}
-{\text{示例：将十六进制数 } (6B.B)_{16} \text{ 转换为八进制数。}} \\
+{\text{示例：将十六进制数 } (6B.B)_16\text{ 转换为八进制数。}} \\
 \hline
 \text{1. 十六进制转二进制 (一位拆四位):} \\
-   &amp; (6B.B)_{16} \\
+   &amp; (6B.B)_16\\
    &amp; \text{整数部分: } 6 \rightarrow 0110, \quad B \rightarrow 1011
 &amp; \Rightarrow (01101011)_2 \\
    &amp; \text{小数部分: } B \rightarrow 1011 &amp; \Rightarrow
@@ -899,7 +928,7 @@ $$</span></p>
    &amp; 100_2 \rightarrow 4_8 \\
    &amp; \text{合并结果: } (153.54)_8 \\
 \hline
-\text{最终结果:} &amp; (6B.B)_{16} = (153.54)_8
+\text{最终结果:} &amp; (6B.B)_16= (153.54)_8
 \end{array}
 $$</span></p>
 <h2 id="计算机中的运算采用的是补码">计算机中的运算采用的是补码</h2>
@@ -1135,14 +1164,12 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <p>将这些值代入加权求和公式： 数值 = <span class="math inline">(−1 × 2<sup><em>n</em> − 1</sup>) + (0 × 2<sup><em>n</em> − 2</sup>) + (0 × 2<sup><em>n</em> − 3</sup>) + … + (0 × 2<sup>1</sup>) + (0 × 2<sup>0</sup>)</span>
 数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup> + 0 + 0 + … + 0 + 0</span>
 数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup></span></p>
-<strong>结论：</strong> 两种方法都表明，n 位补码 <code>100...0</code>
+<p><strong>结论：</strong> 两种方法都表明，n 位补码 <code>100...0</code>
 表示的十进制数值是 <span class="math inline">−2<sup><em>n</em> − 1</sup></span>。这是 n
-位补码能够表示的最小负数（即绝对值最大的负数）。
-<ul>
-<li>这是补码表示的一个特点，负数范围比正数范围多一个最小负数<span class="math inline">−2<sup><em>n</em> − 1</sup></span>。</li>
-<li>例如，对于8位补码 (n=8)，最小负数为 <code>10000000</code>，即 <span class="math inline">−2<sup>8 − 1</sup> = −2<sup>7</sup> = −128</span>。</li>
-</ul>
+位补码能够表示的最小负数（即绝对值最大的负数）</p>
 </blockquote>
+<pre><code>*   这是补码表示的一个特点，负数范围比正数范围多一个最小负数$$-2^&#123;n-1&#125;$$。
+*   例如，对于8位补码 (n=8)，最小负数为 `10000000`，即 $-2^&#123;8-1&#125; = -2^7 = -128$。</code></pre>
 <ul>
 <li><strong>最大负数（绝对值最小）：</strong> 其补码表示为
 <code>111...1</code> (n个1)。这个值是 <span class="math inline">−1</span>。</li>
@@ -1193,10 +1220,10 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 综合正数、零和负数的表示，n位补码（包含一个符号位）可以直接表示的数值范围是：
 <strong><span class="math inline">[−2<sup><em>n</em> − 1</sup>, 2<sup><em>n</em> − 1</sup> − 1]</span></strong></p></li>
 </ol>
-<p><strong>示例（以 n=4 位补码为例）：</strong> * <span class="math inline"><em>n</em> = 4</span>, <span class="math inline"><em>n</em> − 1 = 3</span> * 最小负数：<span class="math inline">−2<sup>4 − 1</sup> = −2<sup>3</sup> = −8</span>
-(补码 <code>1000</code>) * 最大正数：<span class="math inline">2<sup>4 − 1</sup> − 1 = 2<sup>3</sup> − 1 = 8 − 1 = 7</span>
+<p><strong>示例（以 n=4 位补码为例）：</strong> * <span class="math inline"><em>n</em> = 4</span>, <span class="math inline"><em>n</em> − 1 = 3</span> * 最小负数<span class="math display">−2<sup>4 − 1</sup> = −2<sup>3</sup> = −8</span>
+(补码 <code>1000</code>) * 最大正数<span class="math display">2<sup>4 − 1</sup> − 1 = 2<sup>3</sup> − 1 = 8 − 1 = 7</span>
 (补码 <code>0111</code>) * 零：<code>0</code> (补码 <code>0000</code>) *
-范围：<span class="math inline">[−8, 7]</span></p>
+范围<span class="math display">[−8, 7]</span></p>
 <p><strong>记忆要点：</strong></p>
 <ul>
 <li><p>n位补码比n位原码和反码能多表示一个最小的负数 (<span class="math inline">−2<sup><em>n</em> − 1</sup></span>)。</p>
@@ -1234,7 +1261,7 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <span class="math inline">−2<sup><em>n</em> − 1</sup></span>，后者比前者更小（更负）。</li>
 <li>因此它能表示的<strong>最小负数</strong>比原码和反码更小（例如，8位补码能表示-128，而8位原码/反码只能表示到-127）。</li>
 <li>因此它表示的<strong>不同整数的总个数</strong>比原码和反码多一个
-<span class="math inline">−2<sup><em>n</em> − 1</sup></span>最小的负数（<span class="math inline">2<sup><em>n</em></sup></span> 个 vs <span class="math inline">2<sup><em>n</em></sup> − 1</span> 个）。</li>
+<span class="math inline">−2<sup><em>n</em> − 1</sup></span>最小的负数（<span class="math display">2<sup><em>n</em></sup></span>个 vs <span class="math display">2<sup><em>n</em></sup> − 1</span> 个）。</li>
 </ul></li>
 </ol>
 <p><strong>总结与对比：</strong></p>
@@ -1291,8 +1318,8 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 </table>
 </blockquote></li>
 <li><p>零的表示是唯一的 (<code>00...0</code>)。</p></li>
-<li><p>正数范围：<span class="math inline">[0, 2<sup><em>n</em> − 1</sup> − 1]</span></p></li>
-<li><p>负数范围：<span class="math inline">[−2<sup><em>n</em> − 1</sup>, −1]</span></p></li>
+<li><p>正数范围<span class="math display">[0, 2<sup><em>n</em> − 1</sup> − 1]</span></p></li>
+<li><p>负数范围<span class="math display">[−2<sup><em>n</em> − 1</sup>, −1]</span></p></li>
 </ul>
 <h2 id="例题如果2x的补码是90h那么x的真值是">例题：如果2X的补码是90H，那么X的真值是？</h2>
 <figure>
@@ -1387,14 +1414,16 @@ A，第四位（从右向左数）是否全为零？</h2>
 A
 与一个只有目标位为1，其余位为0的掩码进行逻辑与操作。如果结果为0，则说明
 A 的目标位为0。</li>
-<li><strong>选项分析</strong>： <span class="math display">$$
+<li><strong>选项分析</strong></li>
+</ul>
+<p><span class="math display">$$
 \begin{array}{|c|l|l|}
 \hline
 \textbf{选项} &amp; \textbf{表达式} &amp; \textbf{分析与结论} \\
 \hline
 \text{A} &amp; A \&amp; \text{0x000F} == 0 &amp;
 \begin{array}{l}
-\text{检查 A 的最低四位 (Mask: } (000F)_{16} = (1111)_2 \text{) 是否全为
+\text{检查 A 的最低四位 (Mask: } (000F)_16= (1111)_2 \text{) 是否全为
 0。} \\
 \text{若低四位为 } (0000)_2 \text{, 则 } (0000)_2 \&amp; (1111)_2 =
 (0000)_2 \rightarrow 0 \text{。} \\
@@ -1426,8 +1455,7 @@ A 的目标位为0。</li>
 \end{array} \\
 \hline
 \end{array}
-$$</span></li>
-</ul>
+$$</span></p>
 <h2 id="例题布尔表达式的短路求值">例题：布尔表达式的短路求值</h2>
 <p><strong>题目</strong>：对布尔表达式进行短路求值是指，无须对表达式中所有操作数或运算符进行计算就可确定表达式的值。对于表达式
 <code>a or ((c &lt; d) and b)</code>，当（ ）时可进行短路计算。</p>
@@ -1449,7 +1477,7 @@ $$</span></li>
 <code>true</code>，整个表达式的值就确定为
 <code>true</code>，右侧的复杂表达式 <code>((c &lt; d) and b)</code>
 将被完全跳过，不进行任何计算。这就实现了短路求值。</p>
-<p><strong>选项分析</strong>：</p>
+<p><strong>选项分析</strong></p>
 <p><span class="math display">$$
 \begin{array}{|c|l|l|}
 \hline

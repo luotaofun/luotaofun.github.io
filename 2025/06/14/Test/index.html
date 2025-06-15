@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="graph TD     subgraph A [&quot;计算机硬件系统Computer Hardware System&quot;]         direction LR         H(&quot;主机Host&quot;) --&gt; M[&quot;主存 (内存)Main Memory&quot;]         H --&gt; CPU                  P(&quot;外设Peripheral Devices&quot;) --&gt;">
+    <meta name="description" content="$$ \begin{array}{lll} {\text{示例：将二进制数 } (1101011.101101)_2 \text{ 转换为十六进制数。}} \\ \hline \text{1. 整数部分处理:} &amp; (1101011)_2 \\    &amp; \text{从右向左分组 (每4位):} &amp; 110 \quad 1011 \\    &amp; \te">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Taoの博客">
 <meta property="og:url" content="https://luotaofun.github.io/2025/06/14/Test/index.html">
 <meta property="og:site_name" content="Taoの博客">
-<meta property="og:description" content="graph TD     subgraph A [&quot;计算机硬件系统Computer Hardware System&quot;]         direction LR         H(&quot;主机Host&quot;) --&gt; M[&quot;主存 (内存)Main Memory&quot;]         H --&gt; CPU                  P(&quot;外设Peripheral Devices&quot;) --&gt;">
+<meta property="og:description" content="$$ \begin{array}{lll} {\text{示例：将二进制数 } (1101011.101101)_2 \text{ 转换为十六进制数。}} \\ \hline \text{1. 整数部分处理:} &amp; (1101011)_2 \\    &amp; \text{从右向左分组 (每4位):} &amp; 110 \quad 1011 \\    &amp; \te">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-14T10:27:20.297Z">
-<meta property="article:modified_time" content="2025-06-14T12:07:18.929Z">
+<meta property="article:modified_time" content="2025-06-14T14:30:37.282Z">
 <meta property="article:author" content="LuoTao">
 <meta name="twitter:card" content="summary">
 
@@ -147,7 +147,7 @@
   <aside class="sidebar">
     <!--音乐播放器-->
 	
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -160,6 +160,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">4</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -264,7 +265,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-06-14 18:27:20 / 修改时间：20:07:18" itemprop="dateCreated datePublished" datetime="2025-06-14T18:27:20+08:00">2025-06-14</time>
+      <time title="创建时间：2025-06-14 18:27:20 / 修改时间：22:30:37" itemprop="dateCreated datePublished" datetime="2025-06-14T18:27:20+08:00">2025-06-14</time>
     </span>
 
   
@@ -277,122 +278,43 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <pre class="mermaid">graph TD
-    subgraph A ["计算机硬件系统<br>Computer Hardware System"]
-        direction LR
-        H("主机<br>Host") --> M["主存 (内存)<br>Main Memory"]
-        H --> CPU
-        
-        P("外设<br>Peripheral Devices") --> I["输入设备<br>(键盘, 鼠标)"]
-        P --> O["输出设备<br>Output Devices<br>(显示器)"]
-        P --> E["外存 (辅存)<br>Secondary Storage<br>(硬盘, U盘)"]
-    end
-
-    CPU <--> B("总线<br>Bus")
-    M <--> B
-    P <--> B
-
-    subgraph CPU ["Central Processing Unit"]
-        direction LR
-        ARU("运算器<br>Arithmetic Unit")
-        CU("控制器<br>Control Unit")
-    end
-    
-    %% 样式定义
-    style H fill:#FFFACD,stroke:#BDB76B
-    style P fill:#F0F8FF,stroke:#B0C4DE
-    style CPU fill:#FFDAB9,stroke:#A0522D
-    style M fill:#E6E6FA,stroke:#9370DB
-    style I fill:#D4EDDA,stroke:#28A745
-    style O fill:#D4EDDA,stroke:#28A745
-    style E fill:#D4EDDA,stroke:#28A745</pre>
-<p><span class="math display">$$
+        <p><span class="math display">$$
 \begin{array}{lll}
-{\text{示例：将十六进制数 } (6B.B)_{16} \text{ 转换为八进制数。}} \\\\
+{\text{示例：将二进制数 } (1101011.101101)_2 \text{ 转换为十六进制数。}}
+\\
 \hline
-\text{1. 十六进制转二进制 (一位拆四位):} \\\\
-   &amp; (6B.B)_{16} \\\\
-   &amp; \text{整数部分: } 6 \rightarrow 0110, \quad B \rightarrow 1011
-&amp; \Rightarrow (01101011)_2 \\\\
-   &amp; \text{小数部分: } B \rightarrow 1011 &amp; \Rightarrow
-(.1011)_2 \\\\
-   &amp; \text{合并二进制: } (01101011.1011)_2 \\\\
+\text{1. 整数部分处理:} &amp; (1101011)_2 \\
+   &amp; \text{从右向左分组 (每4位):} &amp; 110 \quad 1011 \\
+   &amp; \text{补0后分组:} &amp; \mathbf{0110} \quad \mathbf{1011} \\
+   &amp; \text{对应十六进制:} &amp; \downarrow \qquad \downarrow \\
+   &amp; &amp; (0\cdot8+1\cdot4+1\cdot2+0\cdot1)=6_16 \quad
+(1\cdot8+0\cdot4+1\cdot2+1\cdot1)=B_16 \\
+   &amp; \text{整数部分结果:} &amp; (6B)_16 \\
 \hline
-\text{2. 二进制重新分组 (三位一组):} \\\\
-   &amp; \text{整数部分 (从右向左): } 01101011 \rightarrow 001 \quad 101
-\quad 011 &amp; \text{(补前导0后为 001 101 011)} \\\\
-   &amp; \text{小数部分 (从左向右): } 1011 \rightarrow 101 \quad 1 &amp;
-\text{(补末尾0后为 101 100)} \\\\
-   &amp; \text{分组后二进制: } (\mathbf{001} \quad \mathbf{101} \quad
-\mathbf{011} . \mathbf{101} \quad \mathbf{100})_2 \\\\
+\text{2. 小数部分处理:} &amp; (.101101)_2 \\
+   &amp; \text{从左向右分组 (每4位):} &amp; 1011 \quad 01 \\
+   &amp; \text{补0后分组:} &amp; \mathbf{1011} \quad \mathbf{0100} \\
+   &amp; \text{对应十六进制:} &amp; \downarrow \qquad \downarrow \\
+   &amp; &amp; (1\cdot8+0\cdot4+1\cdot2+1\cdot1)=B_16 \quad
+(0\cdot8+1\cdot4+0\cdot2+0\cdot1)=4_16 \\
+   &amp; \text{小数部分结果:} &amp; (.B4)_16 \\
 \hline
-\text{3. 二进制转八进制 (三位转一位):} \\\\
-   &amp; 001_2 \rightarrow 1_8 \\\\
-   &amp; 101_2 \rightarrow 5_8 \\\\
-   &amp; 011_2 \rightarrow 3_8 \\\\
-   &amp; 101_2 \rightarrow 5_8 \\\\
-   &amp; 100_2 \rightarrow 4_8 \\\\
-   &amp; \text{合并结果: } (153.54)_8 \\\\
-\hline
-\text{最终结果:} &amp; (6B.B)_{16} = (153.54)_8
+\text{3. 合并结果:} &amp; (6B.B4)_16
 \end{array}
 $$</span></p>
-<p><span class="math display">$$
-\begin{array}{l}
-\text{为了保证系统不发生死锁，最坏的情况是每个进程都已经获得了 k-1
-个资源，} \\
-\text{并且都在等待最后一个资源。此时，只要再多一个资源，就能满足至少一个进程，}
-\\
-\text{使其执行完毕并释放资源，从而避免死锁。} \\
-\\
-\textbf{符号定义：} \\
-\quad \begin{array}{ll}
-N &amp; \text{：并发进程的数量} \\
-K &amp; \text{：每个进程需要某种资源的最大数量} \\
-R_{\text{min}} &amp; \text{：保证不发生死锁的最小资源数} \\
-\end{array} \\
-\\
-\textbf{计算公式：} \\
-\quad R_{\text{min}} = N \times (K - 1) + 1 \\
-\\
-\hline \\
-\textbf{例题：} \\
-\text{某系统有6个并发进程竞争资源R，每个进程都需要3个R，} \\
-\text{保证系统不会发生死锁，R的最小值为？} \\
-\\
-\textbf{解：} \\
-\quad \begin{array}{lcl}
-N &amp;=&amp; 6 \\
-K &amp;=&amp; 3 \\
-R_{\text{min}} &amp;=&amp; N \times (K - 1) + 1 \\
-        &amp;=&amp; 6 \times (3 - 1) + 1 \\
-        &amp;=&amp; 6 \times 2 + 1 \\
-        &amp;=&amp; 12 + 1 \\
-        &amp;=&amp; 13 \\
-\end{array} \\
-\\
-\textbf{解释：} \\
-\text{如果只有12个资源R，可能出现6个进程各获得2个资源（共用12个），} \\
-\text{此时每个进程都还需1个资源才能执行。由于无剩余资源，将发生死锁。}
-\\
-\text{若有13个资源R，在每个进程获得2个资源后（共用12个），还剩1个资源。}
-\\
-\text{此资源可分配给任一进程，使其完成并释放资源，} \\
-\text{从而其他进程也能相继完成。} \\
-\end{array}
-$$</span></p>
+<h2 id="section">2</h2>
 <p><span class="math display">$$
 \begin{array}{lll}
-{\text{示例：将十六进制数 } (6B.B4)_{16} \text{ 转换为二进制数。}} \\
+{\text{示例：将十六进制数 } (6B.B4)_16 \text{ 转换为二进制数。}} \\
 \hline
-\text{1. 整数部分处理:} &amp; (6B)_{16} \\
+\text{1. 整数部分处理:} &amp; (6B)_16 \\
    &amp; \text{每位十六进制转4位二进制:} &amp; 6 &amp; B \\
    &amp; &amp; \downarrow &amp; \downarrow \\
    &amp; &amp; 0110 &amp; 1011 \\
    &amp; \text{合并并去除前导0:} &amp; (01101011)_2 \rightarrow
 (1101011)_2 \\
 \hline
-\text{2. 小数部分处理:} &amp; (.B4)_{16} \\
+\text{2. 小数部分处理:} &amp; (.B4)_16 \\
    &amp; \text{每位十六进制转4位二进制:} &amp; B &amp; 4 \\
    &amp; &amp; \downarrow &amp; \downarrow \\
    &amp; &amp; 1011 &amp; 0100 \\
@@ -400,6 +322,70 @@ $$</span></p>
 \rightarrow (.1011)_2 \\
 \hline
 \text{3. 最终合并结果:} &amp; (1101011.1011)_2
+\end{array}
+$$</span></p>
+<h2 id="section-1">3</h2>
+<p><span class="math display">$$
+\begin{array}{lll}
+{\text{示例：将八进制数 } (153.54)_8 \text{ 转换为十六进制数。}} \\
+\hline
+\text{1. 八进制转二进制 (一位拆三位):} \\
+   &amp; (153.54)_8 \\
+   &amp; \text{整数部分: } 1 \rightarrow 001, \quad 5 \rightarrow 101,
+\quad 3 \rightarrow 011 &amp; \Rightarrow (001101011)_2 \\
+   &amp; \text{小数部分: } 5 \rightarrow 101, \quad 4 \rightarrow 100
+&amp; \Rightarrow (.101100)_2 \\
+   &amp; \text{合并二进制: } (001101011.101100)_2 \\
+\hline
+\text{2. 二进制重新分组 (四位一组):} \\
+   &amp; \text{整数部分 (从右向左): } 001101011 \rightarrow 0110 \quad
+1011 &amp; \text{(补前导0后为 0110 1011)} \\
+   &amp; \text{小数部分 (从左向右): } 101100 \rightarrow 1011 \quad 00
+&amp; \text{(补末尾0后为 1011 0000)} \\
+   &amp; \text{分组后二进制: } (\mathbf{0110} \quad \mathbf{1011} .
+\mathbf{1011} \quad \mathbf{0000})_2 \\
+\hline
+\text{3. 二进制转十六进制 (四位转一位):} \\
+   &amp; 0110_2 \rightarrow 6_16 \\
+   &amp; 1011_2 \rightarrow B_16 \\
+   &amp; 1011_2 \rightarrow B_16 \\
+   &amp; 0000_2 \rightarrow 0_16 \\
+   &amp; \text{合并结果 (去除小数末尾的0): } (6B.B0)_16 \rightarrow
+(6B.B)_16 \\
+\hline
+\text{最终结果:} &amp; (153.54)_8 = (6B.B)_16
+\end{array}
+$$</span></p>
+<h2 id="section-2">4</h2>
+<p><span class="math display">$$
+\begin{array}{lll}
+{\text{示例：将十六进制数 } (6B.B)_16 \text{ 转换为八进制数。}} \\
+\hline
+\text{1. 十六进制转二进制 (一位拆四位):} \\
+   &amp; (6B.B)_16 \\
+   &amp; \text{整数部分: } 6 \rightarrow 0110, \quad B \rightarrow 1011
+&amp; \Rightarrow (01101011)_2 \\
+   &amp; \text{小数部分: } B \rightarrow 1011 &amp; \Rightarrow
+(.1011)_2 \\
+   &amp; \text{合并二进制: } (01101011.1011)_2 \\
+\hline
+\text{2. 二进制重新分组 (三位一组):} \\
+   &amp; \text{整数部分 (从右向左): } 01101011 \rightarrow 001 \quad 101
+\quad 011 &amp; \text{(补前导0后为 001 101 011)} \\
+   &amp; \text{小数部分 (从左向右): } 1011 \rightarrow 101 \quad 1 &amp;
+\text{(补末尾0后为 101 100)} \\
+   &amp; \text{分组后二进制: } (\mathbf{001} \quad \mathbf{101} \quad
+\mathbf{011} . \mathbf{101} \quad \mathbf{100})_2 \\
+\hline
+\text{3. 二进制转八进制 (三位转一位):} \\
+   &amp; 001_2 \rightarrow 1_8 \\
+   &amp; 101_2 \rightarrow 5_8 \\
+   &amp; 011_2 \rightarrow 3_8 \\
+   &amp; 101_2 \rightarrow 5_8 \\
+   &amp; 100_2 \rightarrow 4_8 \\
+   &amp; \text{合并结果: } (153.54)_8 \\
+\hline
+\text{最终结果:} &amp; (6B.B)_16 = (153.54)_8
 \end{array}
 $$</span></p>
 
