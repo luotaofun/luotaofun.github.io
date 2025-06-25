@@ -20,14 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="2025年5月真题 Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制文件)System Binaries - 基本系统管理命令 (如 ifco">
+    <meta name="description" content="软考笔记-软考中级-软件设计师   image-20250604131919824  Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软考笔记-软考中级-软件设计师">
 <meta property="og:url" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/index.html">
 <meta property="og:site_name" content="Taoの博客">
-<meta property="og:description" content="2025年5月真题 Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制文件)System Binaries - 基本系统管理命令 (如 ifco">
+<meta property="og:description" content="软考笔记-软考中级-软件设计师   image-20250604131919824  Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250604131919824.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625121957329.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250603152044787.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250603151703495.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250603151959224.png">
@@ -35,8 +36,35 @@
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250609182050301.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250609183747331.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250610140709512.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250616204200609.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617032120081.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250622142958493.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617160001214.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617172602953.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617182317510.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250621190832252.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250622153004192.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623062654322.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623075655229.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623084634144.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623093435738.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623172600480.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623170844331.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623171441757.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623172330427.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623173827442.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623174935530.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623175635152.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623180153879.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625110044997.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625112138871.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625112718370.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624142736475.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624150533174.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624151139610.png">
+<meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624190749141.png">
 <meta property="article:published_time" content="2025-06-14T11:19:28.000Z">
-<meta property="article:modified_time" content="2025-06-15T06:35:03.045Z">
+<meta property="article:modified_time" content="2025-06-25T09:05:24.019Z">
 <meta property="article:author" content="LuoTao">
 <meta property="article:tag" content="resume">
 <meta name="twitter:card" content="summary">
@@ -112,7 +140,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">46</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">40</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -170,10 +198,13 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B45%E6%9C%88%E7%9C%9F%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">2025年5月真题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E5%A4%96%E9%83%A8%E8%AE%BE%E5%A4%87%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AD%98%E6%94%BE%E5%9C%A8%E5%93%AA%E4%B8%AA%E8%B7%AF%E5%BE%84"><span class="nav-number">1.1.</span> <span class="nav-text">Linux外部设备，以文件形式存储，存放在哪个路径？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%90%E7%B3%BB%E7%BB%9F%E6%9C%896%E4%B8%AA%E5%B9%B6%E5%8F%91%E8%BF%9B%E7%A8%8B%E7%AB%9E%E4%BA%89%E8%B5%84%E6%BA%90r%E6%AF%8F%E4%B8%AA%E8%BF%9B%E7%A8%8B%E9%83%BD%E9%9C%80%E8%A6%813%E4%B8%AAr%E4%BF%9D%E8%AF%81%E7%B3%BB%E7%BB%9F%E4%B8%8D%E4%BC%9A%E5%8F%91%E7%94%9F%E6%AD%BB%E9%94%81r%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B8%BA"><span class="nav-number">1.2.</span> <span class="nav-text">某系统有6个并发进程竞争资源R，每个进程都需要3个R，保证系统不会发生死锁，R的最小值为？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%89%B9%E6%80%A7acid"><span class="nav-number">1.3.</span> <span class="nav-text">数据库事务特性ACID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88"><span class="nav-number">2.</span> <span class="nav-text">软考笔记-软考中级-软件设计师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">2.1.</span> <span class="nav-text">计算机系统基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8C%89%E4%BD%8D%E6%9D%83%E5%B1%95%E5%BC%80%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.2.</span> <span class="nav-text">二进制按位权展开表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%ACr%E8%BF%9B%E5%88%B6%E4%BD%BF%E7%94%A8%E9%99%A4%E5%9F%BA%E5%8F%96%E4%BD%99%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">十进制转R进制使用除基取余法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%BF%E7%94%A8%E5%87%8F%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">十进制转二进制使用减法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%85%AB%E8%BF%9B%E5%88%B6%E4%BA%92%E8%BD%AC"><span class="nav-number">2.5.</span> <span class="nav-text">二进制与八进制互转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%BA%92%E8%BD%AC"><span class="nav-number">2.6.</span> <span class="nav-text">二进制与十六进制互转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%BA%92%E8%BD%AC-%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%BA%E6%A1%A5%E6%A2%81"><span class="nav-number">2.7.</span> <span class="nav-text">八进制与十六进制互转
-(以二进制为桥梁)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E9%87%87%E7%94%A8%E7%9A%84%E6%98%AF%E8%A1%A5%E7%A0%81"><span class="nav-number">2.8.</span> <span class="nav-text">计算机中的运算采用的是补码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E9%87%87%E7%94%A8n%E4%BD%8D%E8%A1%A5%E7%A0%81%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA%E7%AC%A6%E5%8F%B7%E4%BD%8D%E8%A1%A8%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%95%B0%E5%80%BC"><span class="nav-number">2.9.</span> <span class="nav-text">例题：采用n位补码（包含一个符号位）表示数据，可以直接表示的数值？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%A6%82%E6%9E%9C2x%E7%9A%84%E8%A1%A5%E7%A0%81%E6%98%AF90h%E9%82%A3%E4%B9%88x%E7%9A%84%E7%9C%9F%E5%80%BC%E6%98%AF"><span class="nav-number">2.10.</span> <span class="nav-text">例题：如果2X的补码是90H，那么X的真值是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-number">2.11.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-logical-operations"><span class="nav-number">2.12.</span> <span class="nav-text">逻辑运算 (Logical Operations)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%88%A4%E6%96%AD%E5%AD%97%E9%95%BF%E4%B8%BA16%E4%BD%8D%E7%9A%84%E6%95%B4%E6%95%B0-a%E7%AC%AC%E5%9B%9B%E4%BD%8D%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E6%95%B0%E6%98%AF%E5%90%A6%E5%85%A8%E4%B8%BA%E9%9B%B6"><span class="nav-number">2.13.</span> <span class="nav-text">例题：判断字长为16位的整数
-A，第四位（从右向左数）是否全为零？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%9F%AD%E8%B7%AF%E6%B1%82%E5%80%BC"><span class="nav-number">2.14.</span> <span class="nav-text">例题：布尔表达式的短路求值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E7%A0%81%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C-parity-check"><span class="nav-number">2.15.</span> <span class="nav-text">校验码：奇偶校验 (Parity
-Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%A5%87%E6%95%B0%E4%B8%AA%E6%95%B0%E6%8D%AE%E4%BD%8D%E5%87%BA%E9%94%99%E5%88%99%E5%8F%AF%E6%A3%80%E6%B5%8B%E5%87%BA%E8%AF%A5%E9%94%99%E8%AF%AF%E4%BD%86%E6%97%A0%E6%B3%95%E7%BA%A0%E9%94%99"><span class="nav-number">2.16.</span> <span class="nav-text">例题：奇数个数据位出错，则可检测出该错误但无法纠错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crc%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="nav-number">2.17.</span> <span class="nav-text">CRC循环冗余校验码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E6%98%8E%E6%A0%A1%E9%AA%8C%E7%A0%81-hamming-code"><span class="nav-number">2.18.</span> <span class="nav-text">海明校验码 (Hamming Code)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E6%98%8E%E6%A0%A1%E9%AA%8C%E4%BD%8D-r%E7%9A%84%E6%B1%82%E5%8F%96"><span class="nav-number">2.19.</span> <span class="nav-text">海明校验位 (R)的求取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E6%B5%B7%E6%98%8E%E7%A0%81%E6%A0%A1%E9%AA%8C"><span class="nav-number">2.20.</span> <span class="nav-text">例题：海明码校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E7%A0%81%E5%AF%B9%E6%AF%94"><span class="nav-number">2.21.</span> <span class="nav-text">校验码对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cpu%E7%BB%84%E6%88%90%E8%BF%90%E7%AE%97%E5%99%A8%E4%B8%8E%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">2.22.</span> <span class="nav-text">CPU组成（运算器与控制器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8Faddressing-modes"><span class="nav-number">2.23.</span> <span class="nav-text">寻址方式（Addressing Modes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cisc%E4%B8%8Erisc%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB"><span class="nav-number">2.24.</span> <span class="nav-text">CISC与RISC指令集体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="nav-number">2.25.</span> <span class="nav-text">流水线技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.26.</span> <span class="nav-text">存储系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E5%AD%98%E5%82%A8"><span class="nav-number">2.27.</span> <span class="nav-text">层次化存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache"><span class="nav-number">2.28.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98%E7%BC%96%E5%9D%80%E8%AE%A1%E7%AE%97"><span class="nav-number">2.29.</span> <span class="nav-text">主存编址计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF"><span class="nav-number">2.30.</span> <span class="nav-text">输入输出技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF"><span class="nav-number">2.31.</span> <span class="nav-text">总线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="nav-number">2.32.</span> <span class="nav-text">可靠性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">2.33.</span> <span class="nav-text">性能指标</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88"><span class="nav-number">1.</span> <span class="nav-text">软考笔记-软考中级-软件设计师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E5%A4%96%E9%83%A8%E8%AE%BE%E5%A4%87%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AD%98%E6%94%BE%E5%9C%A8%E5%93%AA%E4%B8%AA%E8%B7%AF%E5%BE%84"><span class="nav-number">1.1.</span> <span class="nav-text">Linux外部设备，以文件形式存储，存放在哪个路径？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%89%B9%E6%80%A7acid"><span class="nav-number">1.2.</span> <span class="nav-text">数据库事务特性ACID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E5%B9%B6%E5%8F%91"><span class="nav-number">1.3.</span> <span class="nav-text">数据库事务并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.4.</span> <span class="nav-text">封锁协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.5.</span> <span class="nav-text">计算机系统基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8C%89%E4%BD%8D%E6%9D%83%E5%B1%95%E5%BC%80%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.6.</span> <span class="nav-text">二进制按位权展开表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%ACr%E8%BF%9B%E5%88%B6%E4%BD%BF%E7%94%A8%E9%99%A4%E5%9F%BA%E5%8F%96%E4%BD%99%E6%B3%95"><span class="nav-number">1.7.</span> <span class="nav-text">十进制转R进制使用除基取余法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%BF%E7%94%A8%E5%87%8F%E6%B3%95"><span class="nav-number">1.8.</span> <span class="nav-text">十进制转二进制使用减法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%85%AB%E8%BF%9B%E5%88%B6%E4%BA%92%E8%BD%AC"><span class="nav-number">1.9.</span> <span class="nav-text">二进制与八进制互转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%BA%92%E8%BD%AC"><span class="nav-number">1.10.</span> <span class="nav-text">二进制与十六进制互转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E4%BA%92%E8%BD%AC-%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%BA%E6%A1%A5%E6%A2%81"><span class="nav-number">1.11.</span> <span class="nav-text">八进制与十六进制互转
+(以二进制为桥梁)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E9%87%87%E7%94%A8%E7%9A%84%E6%98%AF%E8%A1%A5%E7%A0%81"><span class="nav-number">1.12.</span> <span class="nav-text">计算机中的运算采用的是补码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E9%87%87%E7%94%A8n%E4%BD%8D%E8%A1%A5%E7%A0%81%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA%E7%AC%A6%E5%8F%B7%E4%BD%8D%E8%A1%A8%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%95%B0%E5%80%BC"><span class="nav-number">1.13.</span> <span class="nav-text">例题：采用n位补码（包含一个符号位）表示数据，可以直接表示的数值？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%A6%82%E6%9E%9C2x%E7%9A%84%E8%A1%A5%E7%A0%81%E6%98%AF90h%E9%82%A3%E4%B9%88x%E7%9A%84%E7%9C%9F%E5%80%BC%E6%98%AF"><span class="nav-number">1.14.</span> <span class="nav-text">例题：如果2X的补码是90H，那么X的真值是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-number">1.15.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-logical-operations"><span class="nav-number">1.16.</span> <span class="nav-text">逻辑运算 (Logical Operations)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%88%A4%E6%96%AD%E5%AD%97%E9%95%BF%E4%B8%BA16%E4%BD%8D%E7%9A%84%E6%95%B4%E6%95%B0-a%E7%AC%AC%E5%9B%9B%E4%BD%8D%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E6%95%B0%E6%98%AF%E5%90%A6%E5%85%A8%E4%B8%BA%E9%9B%B6"><span class="nav-number">1.17.</span> <span class="nav-text">例题：判断字长为16位的整数
+A，第四位（从右向左数）是否全为零？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%9F%AD%E8%B7%AF%E6%B1%82%E5%80%BC"><span class="nav-number">1.18.</span> <span class="nav-text">例题：布尔表达式的短路求值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E7%A0%81%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C-parity-check"><span class="nav-number">1.19.</span> <span class="nav-text">校验码：奇偶校验 (Parity
+Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E5%A5%87%E6%95%B0%E4%B8%AA%E6%95%B0%E6%8D%AE%E4%BD%8D%E5%87%BA%E9%94%99%E5%88%99%E5%8F%AF%E6%A3%80%E6%B5%8B%E5%87%BA%E8%AF%A5%E9%94%99%E8%AF%AF%E4%BD%86%E6%97%A0%E6%B3%95%E7%BA%A0%E9%94%99"><span class="nav-number">1.20.</span> <span class="nav-text">例题：奇数个数据位出错，则可检测出该错误但无法纠错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crc%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="nav-number">1.21.</span> <span class="nav-text">CRC循环冗余校验码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E6%98%8E%E6%A0%A1%E9%AA%8C%E7%A0%81-hamming-code"><span class="nav-number">1.22.</span> <span class="nav-text">海明校验码 (Hamming Code)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E6%98%8E%E6%A0%A1%E9%AA%8C%E4%BD%8D-r%E7%9A%84%E6%B1%82%E5%8F%96"><span class="nav-number">1.23.</span> <span class="nav-text">海明校验位 (R)的求取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E6%B5%B7%E6%98%8E%E7%A0%81%E6%A0%A1%E9%AA%8C"><span class="nav-number">1.24.</span> <span class="nav-text">例题：海明码校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E7%A0%81%E5%AF%B9%E6%AF%94"><span class="nav-number">1.25.</span> <span class="nav-text">校验码对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cpu%E7%BB%84%E6%88%90%E8%BF%90%E7%AE%97%E5%99%A8%E4%B8%8E%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">1.26.</span> <span class="nav-text">CPU组成（运算器与控制器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8Faddressing-modes"><span class="nav-number">1.27.</span> <span class="nav-text">寻址方式（Addressing Modes）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cisc%E4%B8%8Erisc%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%93%E7%B3%BB"><span class="nav-number">1.28.</span> <span class="nav-text">CISC与RISC指令集体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF-pipeline-technology"><span class="nav-number">1.29.</span> <span class="nav-text">流水线技术| Pipeline
+Technology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.30.</span> <span class="nav-text">磁盘管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E5%AD%98%E5%82%A8"><span class="nav-number">1.31.</span> <span class="nav-text">层次化存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache"><span class="nav-number">1.32.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98%E7%BC%96%E5%9D%80%E8%AE%A1%E7%AE%97"><span class="nav-number">1.33.</span> <span class="nav-text">主存编址计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="nav-number">1.34.</span> <span class="nav-text">页式存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="nav-number">1.35.</span> <span class="nav-text">段式存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="nav-number">1.36.</span> <span class="nav-text">段页式存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E5%BC%8F-vs-%E9%A1%B5%E5%BC%8F-vs-%E6%AE%B5%E9%A1%B5%E5%BC%8F"><span class="nav-number">1.37.</span> <span class="nav-text">段式 vs 页式 vs 段页式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF"><span class="nav-number">1.38.</span> <span class="nav-text">输入输出技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF"><span class="nav-number">1.39.</span> <span class="nav-text">总线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="nav-number">1.40.</span> <span class="nav-text">可靠性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">1.41.</span> <span class="nav-text">性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.42.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.43.</span> <span class="nav-text">进程和线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pv%E6%93%8D%E4%BD%9C"><span class="nav-number">1.44.</span> <span class="nav-text">PV操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E8%B5%84%E6%BA%90%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-number">1.45.</span> <span class="nav-text">死锁资源数计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E8%B5%84%E6%BA%90%E5%9B%BE"><span class="nav-number">1.46.</span> <span class="nav-text">进程资源图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#io%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.47.</span> <span class="nav-text">IO管理软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-number">1.48.</span> <span class="nav-text">文件管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E7%A4%BA%E5%9B%BE"><span class="nav-number">1.49.</span> <span class="nav-text">位示图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.50.</span> <span class="nav-text">索引文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86"><span class="nav-number">1.51.</span> <span class="nav-text">作业管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">1.52.</span> <span class="nav-text">数据库体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84three-level-schema-architecture%E4%B8%8E%E4%B8%A4%E7%BA%A7%E6%98%A0%E5%B0%84two-level-mapping"><span class="nav-number">1.53.</span> <span class="nav-text">数据库三级模式结构(Three-Level
+Schema Architecture)与两级映射(Two-Level Mapping)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93"><span class="nav-number">1.54.</span> <span class="nav-text">数据仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B"><span class="nav-number">1.55.</span> <span class="nav-text">数据库设计过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#er%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.56.</span> <span class="nav-text">ER模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.57.</span> <span class="nav-text">逻辑结构设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#er%E5%9B%BE%E8%BD%AC%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.58.</span> <span class="nav-text">ER图转关系模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E4%B8%8E%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="nav-number">1.59.</span> <span class="nav-text">sql与关系代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#armstrong%E9%98%BF%E5%A7%86%E6%96%AF%E7%89%B9%E6%9C%97%E5%85%AC%E7%90%86%E4%BD%93%E7%B3%BB"><span class="nav-number">1.60.</span> <span class="nav-text">Armstrong(阿姆斯特朗)公理体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%99%E9%80%89%E9%94%AE%E6%B1%82%E5%8F%96"><span class="nav-number">1.61.</span> <span class="nav-text">候选键求取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E8%8C%83%E5%BC%8F"><span class="nav-number">1.62.</span> <span class="nav-text">三范式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc%E8%8C%83%E5%BC%8Fbcnf"><span class="nav-number">1.63.</span> <span class="nav-text">BC范式(BCNF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%BC%8F%E5%88%A4%E6%96%AD"><span class="nav-number">1.64.</span> <span class="nav-text">范式判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BF%9D%E6%8C%81%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="nav-number">1.65.</span> <span class="nav-text">判断是否保持函数依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%97%A0%E6%8D%9F%E5%88%86%E8%A7%A3"><span class="nav-number">1.66.</span> <span class="nav-text">判断无损分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#osiopen-system-interconnection"><span class="nav-number">1.67.</span> <span class="nav-text">OSI（Open System
+Interconnection）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -188,12 +219,12 @@ Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href=
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -284,7 +315,7 @@ Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href=
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-06-15 14:35:03" itemprop="dateModified" datetime="2025-06-15T14:35:03+08:00">2025-06-15</time>
+      <time title="修改时间：2025-06-25 17:05:24" itemprop="dateModified" datetime="2025-06-25T17:05:24+08:00">2025-06-25</time>
     </span>
 
   
@@ -297,7 +328,11 @@ Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href=
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="年5月真题">2025年5月真题</h1>
+        <h1 id="软考笔记-软考中级-软件设计师">软考笔记-软考中级-软件设计师</h1>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250604131919824.png" alt="image-20250604131919824">
+<figcaption aria-hidden="true">image-20250604131919824</figcaption>
+</figure>
 <h2 id="linux外部设备以文件形式存储存放在哪个路径">Linux外部设备，以文件形式存储，存放在哪个路径？</h2>
 <pre class="mermaid">graph TD
     A["/ (根目录)<br>Root - 整个文件系统的起点"] --> B["bin (用户二进制文件)<br>User Binaries - 基本用户命令 (如 ls, cp)"]
@@ -475,51 +510,6 @@ Check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href=
 </tr>
 </tbody>
 </table>
-<h2 id="某系统有6个并发进程竞争资源r每个进程都需要3个r保证系统不会发生死锁r的最小值为">某系统有6个并发进程竞争资源R，每个进程都需要3个R，保证系统不会发生死锁，R的最小值为？</h2>
-<p><span class="math display">$$
-\begin{array}{l}
-\text{为了保证系统不发生死锁，最坏的情况是每个进程都已经获得了 k-1
-个资源，} \\
-\text{并且都在等待最后一个资源。此时，只要再多一个资源，就能满足至少一个进程，}
-\\
-\text{使其执行完毕并释放资源，从而避免死锁。} \\
-\\
-\textbf{符号定义：} \\
-\quad \begin{array}{ll}
-N &amp; \text{：并发进程的数量} \\
-K &amp; \text{：每个进程需要某种资源的最大数量} \\
-R_{\text{min}} &amp; \text{：保证不发生死锁的最小资源数} \\
-\end{array} \\
-\\
-\textbf{计算公式：} \\
-\quad R_{\text{min}} = N \times (K - 1) + 1 \\
-\\
-\hline \\
-\textbf{例题：} \\
-\text{某系统有6个并发进程竞争资源R，每个进程都需要3个R，} \\
-\text{保证系统不会发生死锁，R的最小值为？} \\
-\\
-\textbf{解：} \\
-\quad \begin{array}{lcl}
-N &amp;=&amp; 6 \\
-K &amp;=&amp; 3 \\
-R_{\text{min}} &amp;=&amp; N \times (K - 1) + 1 \\
-        &amp;=&amp; 6 \times (3 - 1) + 1 \\
-        &amp;=&amp; 6 \times 2 + 1 \\
-        &amp;=&amp; 12 + 1 \\
-        &amp;=&amp; 13 \\
-\end{array} \\
-\\
-\textbf{解释：} \\
-\text{如果只有12个资源R，可能出现6个进程各获得2个资源（共用12个），} \\
-\text{此时每个进程都还需1个资源才能执行。由于无剩余资源，将发生死锁。}
-\\
-\text{若有13个资源R，在每个进程获得2个资源后（共用12个），还剩1个资源。}
-\\
-\text{此资源可分配给任一进程，使其完成并释放资源，} \\
-\text{从而其他进程也能相继完成。} \\
-\end{array}
-$$</span></p>
 <h2 id="数据库事务特性acid">数据库事务特性ACID</h2>
 <pre class="mermaid">graph TD
     T_def["<strong>事务 (Transaction)</strong><br>访问并可能操作各种数据项的一组数据库操作序列"] --> A
@@ -531,7 +521,7 @@ $$</span></p>
     B --> B_desc["事务中的全部操作<br>要么整体提交 (commit) 成功<br>要么整体回滚 (rollback) 失败"]
     C --> C_desc["事务执行前后<br>数据库 (DB) 从一个一致状态<br>转变到另一个一致状态<br>始终符合完整性约束"]
     D --> D_desc["并发执行的多个事务之间<br>应相互独立，互不干扰<br>一个事务的中间结果对其他事务不可见"]
-    E --> E_desc["事务一旦成功提交 (commit)<br>其对数据库的修改就是永久性的<br>即使发生系统故障也不会丢失"]
+    E --> E_desc["事务一旦成功提交 (commit)<br>其对数据库的修改就是永久性的<br>即使发生系统故障也不会丢失<br>重启后会DBMS先扫描日志，对拥有commit标志的事务放到redo队列中，从begin到commit之间的所有操作重做一遍以保证事务的持久性"]
 
     %% 样式定义
     style T_def fill:#FFFACD,stroke:#BDB76B,stroke-width:2px,color:#556B2F
@@ -544,11 +534,69 @@ $$</span></p>
     style C_desc fill:#F0F8FF,stroke:#B0C4DE,stroke-width:1px,color:#2F4F4F
     style D_desc fill:#F0F8FF,stroke:#B0C4DE,stroke-width:1px,color:#2F4F4F
     style E_desc fill:#F0F8FF,stroke:#B0C4DE,stroke-width:1px,color:#2F4F4F</pre>
-<h1 id="软考笔记-软考中级-软件设计师">软考笔记-软考中级-软件设计师</h1>
+<h2 id="数据库事务并发">数据库事务并发</h2>
+<table>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 55%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr>
+<th>问题</th>
+<th>特点</th>
+<th>记忆关键词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>丢失更新/丢失修改</td>
+<td>读到同一个数据后多次写回导致前面的写被覆盖。写被其他事务覆盖</td>
+<td>读同写盖</td>
+</tr>
+<tr>
+<td>不可重复读</td>
+<td>验算前被其他事务修改，导致验算不对</td>
+<td>验算</td>
+</tr>
+<tr>
+<td>脏读</td>
+<td>读到其他事务rollback前的中间的无效脏数据</td>
+<td>读到无效（被rollback）的中间数据</td>
+</tr>
+</tbody>
+</table>
 <figure>
-<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250604131919824.png" alt="image-20250604131919824">
-<figcaption aria-hidden="true">image-20250604131919824</figcaption>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625121957329.png" alt="image-20250625121957329">
+<figcaption aria-hidden="true">image-20250625121957329</figcaption>
 </figure>
+<h2 id="封锁协议">封锁协议</h2>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 68%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr>
+<th>名称</th>
+<th>特点</th>
+<th>记忆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S锁/读锁/共享锁</td>
+<td>若事务T对数据对象A加上S锁，其他事务只能再加S锁，不能对A再加其他锁</td>
+<td>SS锁</td>
+</tr>
+<tr>
+<td>X锁/写锁/独占锁/排他锁</td>
+<td>若事务T对数据对象A加上X锁，其他事务不能对A再加任何锁</td>
+<td>独占锁</td>
+</tr>
+</tbody>
+</table>
 <h2 id="计算机系统基础知识">计算机系统基础知识</h2>
 <figure>
 <img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250603152044787.png" alt="image-20250603152044787">
@@ -842,6 +890,7 @@ $$</span></p>
 $$</span></p>
 <p><strong>十六进制转二进制 (一位拆四位)：</strong>
 规则：将十六进制数的每一位直接用其对应的4位二进制数替换。整数部分高位的0通常可以省略（除非单独一位0），小数部分末尾的0也可以省略。</p>
+<hr>
 <p><span class="math display">$$
 \begin{array}{lll}
 {\text{示例：将十六进制数 } (6B.B4)_16\text{ 转换为二进制数。}} \\
@@ -1220,13 +1269,13 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 综合正数、零和负数的表示，n位补码（包含一个符号位）可以直接表示的数值范围是：
 <strong><span class="math inline">[−2<sup><em>n</em> − 1</sup>, 2<sup><em>n</em> − 1</sup> − 1]</span></strong></p></li>
 </ol>
-<p><strong>示例（以 n=4 位补码为例）：</strong> * <span class="math inline"><em>n</em> = 4</span>, <span class="math inline"><em>n</em> − 1 = 3</span> * 最小负数<span class="math display">−2<sup>4 − 1</sup> = −2<sup>3</sup> = −8</span>
-(补码 <code>1000</code>) * 最大正数<span class="math display">2<sup>4 − 1</sup> − 1 = 2<sup>3</sup> − 1 = 8 − 1 = 7</span>
+<p><strong>示例（以 n=4 位补码为例）：</strong> * <span class="math inline"><em>n</em> = 4</span>, <span class="math inline"><em>n</em> − 1 = 3</span> * 最小负数 <span class="math inline">−2<sup>4 − 1</sup> = −2<sup>3</sup> = −8</span>
+(补码 <code>1000</code>) * 最大正数 <span class="math inline">2<sup>4 − 1</sup> − 1 = 2<sup>3</sup> − 1 = 8 − 1 = 7</span>
 (补码 <code>0111</code>) * 零：<code>0</code> (补码 <code>0000</code>) *
-范围<span class="math display">[−8, 7]</span></p>
+范围 <span class="math inline">[−8, 7]</span></p>
 <p><strong>记忆要点：</strong></p>
 <ul>
-<li><p>n位补码比n位原码和反码能多表示一个最小的负数 (<span class="math inline">−2<sup><em>n</em> − 1</sup></span>)。</p>
+<li><p>n位补码比n位原码和反码能多表示一个最小的负数 ( <span class="math inline">−2<sup><em>n</em> − 1</sup></span> )。</p>
 <blockquote>
 <p><strong>详细解释：</strong></p>
 <p><strong>核心原因：零的表示方式不同</strong></p>
@@ -1261,7 +1310,8 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <span class="math inline">−2<sup><em>n</em> − 1</sup></span>，后者比前者更小（更负）。</li>
 <li>因此它能表示的<strong>最小负数</strong>比原码和反码更小（例如，8位补码能表示-128，而8位原码/反码只能表示到-127）。</li>
 <li>因此它表示的<strong>不同整数的总个数</strong>比原码和反码多一个
-<span class="math inline">−2<sup><em>n</em> − 1</sup></span>最小的负数（<span class="math display">2<sup><em>n</em></sup></span>个 vs <span class="math display">2<sup><em>n</em></sup> − 1</span> 个）。</li>
+<span class="math inline">−2<sup><em>n</em> − 1</sup></span>最小的负数（
+<span class="math inline">2<sup><em>n</em></sup></span> 个 vs <span class="math inline">2<sup><em>n</em></sup> − 1</span> 个）。</li>
 </ul></li>
 </ol>
 <p><strong>总结与对比：</strong></p>
@@ -1318,8 +1368,8 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 </table>
 </blockquote></li>
 <li><p>零的表示是唯一的 (<code>00...0</code>)。</p></li>
-<li><p>正数范围<span class="math display">[0, 2<sup><em>n</em> − 1</sup> − 1]</span></p></li>
-<li><p>负数范围<span class="math display">[−2<sup><em>n</em> − 1</sup>, −1]</span></p></li>
+<li><p>正数范围 <span class="math inline">[0, 2<sup><em>n</em> − 1</sup> − 1]</span></p></li>
+<li><p>负数范围 <span class="math inline">[−2<sup><em>n</em> − 1</sup>, −1]</span></p></li>
 </ul>
 <h2 id="例题如果2x的补码是90h那么x的真值是">例题：如果2X的补码是90H，那么X的真值是？</h2>
 <figure>
@@ -1335,7 +1385,7 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <li>补码 <span class="math inline">10010000<sub>2</sub></span></li>
 <li>减1 (得到反码)：<span class="math inline">10010000<sub>2</sub> − 1 = 10001111<sub>2</sub></span>
 (这是 <span class="math inline">2<em>X</em></span> 的反码)</li>
-<li>符号位不变，数值位取反 (得到原码)：<span class="math inline">1</span> (符号) <span class="math inline">1110000<sub>2</sub></span> (数值位 <span class="math inline">0001111<sub>2</sub></span> 取反) → <span class="math inline">11110000<sub>2</sub></span> (这是 <span class="math inline">2<em>X</em></span> 的原码)。</li>
+<li>符号位不变，数值位取反 (得到原码)：1 (符号) <span class="math inline">1110000<sub>2</sub></span> (数值位 <span class="math inline">0001111<sub>2</sub></span> 取反) → <span class="math inline">11110000<sub>2</sub></span> (这是 <span class="math inline">2<em>X</em></span> 的原码)。</li>
 </ul></li>
 <li><span class="math inline">2<em>X</em></span> 的原码 <span class="math inline">1(<em>符</em><em>号</em>)1110000<sub>2</sub></span>
 表示十进制 <span class="math inline">−(64 + 32 + 16) = −112</span>。</li>
@@ -1841,19 +1891,20 @@ $$</span></p>
 <pre class="mermaid">graph TD
     subgraph A ["计算机硬件系统<br>Computer Hardware System"]
         direction LR
-        H("主机<br>Host") --> M["主存 (内存)<br>Main Memory"]
+        H("主机<br>Host") --> M["<strong>主存 (内存)</strong><br>Main Memory"]
         H --> CPU
         
-        P("外设<br>Peripheral Devices") --> I["输入设备<br>(键盘, 鼠标)"]
+        P("<strong>I/O 设备 (外设)</strong><br>I/O Devices") --> I["输入设备<br>Input Devices<br>(键盘, 鼠标)"]
         P --> O["输出设备<br>Output Devices<br>(显示器)"]
         P --> E["外存 (辅存)<br>Secondary Storage<br>(硬盘, U盘)"]
     end
 
-    CPU <--> B("总线<br>Bus")
+    CPU <--> Cache["<strong>高速缓存</strong><br>Cache<br>弥补CPU与主存之间的速度差异"]
+    Cache <--> B("总线<br>Bus")
     M <--> B
     P <--> B
 
-    subgraph CPU ["Central Processing Unit"]
+    subgraph CPU ["<strong>中央处理器</strong><br>Central Processing Unit"]
         direction LR
         ARU("运算器<br>Arithmetic Unit")
         CU("控制器<br>Control Unit")
@@ -1863,10 +1914,12 @@ $$</span></p>
     style H fill:#FFFACD,stroke:#BDB76B
     style P fill:#F0F8FF,stroke:#B0C4DE
     style CPU fill:#FFDAB9,stroke:#A0522D
+    style Cache fill:#F5DEB3,stroke:#D2B48C,stroke-width:2px
     style M fill:#E6E6FA,stroke:#9370DB
     style I fill:#D4EDDA,stroke:#28A745
     style O fill:#D4EDDA,stroke:#28A745
     style E fill:#D4EDDA,stroke:#28A745</pre>
+<hr>
 <pre class="mermaid">graph TD
     CPU["<strong>中央处理器<br>Central Processing Unit (CPU)</strong>"] --> ARU["运算器<br>Arithmetic Unit<br>工厂流水线的加工区"]
     CPU --> CU["控制器<br>Control Unit<br>工厂流水线的控制中心"]
@@ -1896,6 +1949,83 @@ $$</span></p>
     style CU fill:#ADD8E6,stroke:#4682B4
     style ARU_COMP fill:#F0F8FF,stroke:#B0C4DE
     style CU_COMP fill:#F0F8FF,stroke:#B0C4DE</pre>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 11%">
+<col style="width: 22%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr>
+<th>模块</th>
+<th>子部件</th>
+<th>英文全称 (缩写)</th>
+<th>主要功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>运算器</strong><br>Arithmetic Unit</td>
+<td>算术逻辑单元</td>
+<td>Arithmetic Logic Unit (ALU)</td>
+<td>负责数据的算术运算与逻辑运算</td>
+</tr>
+<tr>
+<td></td>
+<td>累加寄存器</td>
+<td>Accumulator Register (AC)</td>
+<td>通用寄存器，为 ALU 提供工作区，暂存数据</td>
+</tr>
+<tr>
+<td></td>
+<td>数据缓冲寄存器</td>
+<td>Data Register (DR)</td>
+<td>写内存时暂存指令或数据</td>
+</tr>
+<tr>
+<td></td>
+<td>状态条件寄存器</td>
+<td>Program Status Word (PSW)</td>
+<td>存放状态标志与控制标志<br>(<em>部分教材归入控制器</em>)</td>
+</tr>
+<tr>
+<td><strong>控制器</strong><br>Control Unit</td>
+<td>程序计数器</td>
+<td>Program Counter (PC)</td>
+<td><strong>存储下一条即将执行指令的地址</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>指令寄存器</td>
+<td>Instruction Register (IR)</td>
+<td>存储<strong>当前</strong>将执行的指令</td>
+</tr>
+<tr>
+<td></td>
+<td>指令译码器</td>
+<td>Instruction Decoder (ID)</td>
+<td>对指令中操作码段进行分析解释</td>
+</tr>
+<tr>
+<td></td>
+<td>时序部件</td>
+<td>Timing &amp; Control Unit</td>
+<td>提供时序控制信号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>真题：</strong>计算机中提供指令地址的程序计数器PC在<strong>控制器</strong>中。</p>
+<p><strong>真题：</strong>CPU执行算数运算或者逻辑运算时，常将源操作数和结果暂存在<strong>累加器AC</strong>中。</p>
+<hr>
+<blockquote>
+<p>把 <strong>CPU</strong> 想象成<strong>公司</strong>： - <strong>ALU =
+生产部门</strong>，负责“加工”数据产品； - <strong>寄存器组 =
+仓库</strong>，短期存放原料和半成品； - <strong>控制器 =
+调度中心</strong>，根据“生产计划”（指令）下达各类调度指令； -
+<strong>总线 = 传送带</strong>，负责各部门之间物料流转。</p>
+</blockquote>
+<hr>
 <pre class="mermaid">flowchart TD
     A("开始<br>CPU执行程序的过程本质上是不断重复“取指令 -> 分析指令 -> 执行指令”的循环<br>就像厨师做菜，不断重复“看菜谱 -> 理解步骤 -> 执行烹饪”的过程") --> B{"PC 提供下一条指令地址<br>就像厨师看菜谱的页码指示器"}
     B --> C["通过地址总线<br>从主存中取出指令<br>就像厨师翻到指定的菜谱页"]
@@ -1906,32 +2036,57 @@ $$</span></p>
     G --> H{"循环或结束<br>就像厨师完成一道菜后决定是否继续下一道"}
     H --> B</pre>
 <h2 id="寻址方式addressing-modes">寻址方式（Addressing Modes）</h2>
+<p><strong>真题：</strong>在机器指令的地址字段中，直接指出操作数本身的寻址方式称为<strong>立即寻址</strong></p>
+<blockquote>
+<p>把 <strong>寻址方式</strong> 想象成 <strong>找书</strong>： -
+立即寻址 = 直接拿到书 (书=数据)。 - 直接寻址 = 得到书架号，去书架取书。
+- 间接寻址 = 得到卡片箱号→卡片上写书架号→再去书架取书 (两跳)。 -
+寄存器寻址 = 手里拿着小篮子(寄存器)装书。 - 寄存器间接 =
+篮子里放着书架号，再去取书。 - 隐含寻址 = 默认口袋(AC)里的书。</p>
+</blockquote>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250616204200609.png" alt="寻址方式">
+<figcaption aria-hidden="true">寻址方式</figcaption>
+</figure>
 <pre class="mermaid">graph TD
     subgraph A ["指令格式<br>Instruction Format"]
         OP("操作码<br>Operation Code") -->|"给出具体操作"| OPCODE
         ADDR["地址码<br>Address Field"] -->|"指向数据位置"| ADDRESS
-    end
+    end</pre>
+<hr>
+<pre class="mermaid">graph TD
+    ROOT["<strong>寻址方式<br>Addressing Modes</strong>"]
+    IMM["立即寻址<br>Immediate Addressing<br>操作数=常数本身"]
+    DIR["直接寻址<br>Direct Addressing<br>地址字段=操作数地址"]
+    IND["间接寻址<br>Indirect Addressing<br>地址字段=指向操作数地址的地址"]
+    REG["寄存器寻址<br>Register Addressing<br>地址字段=寄存器编号<br>寄存器存操作数"]
+    RIND["寄存器间接寻址<br>Register-Indirect Addressing<br>寄存器存操作数地址"]
+    IMPL["隐含寻址<br>Implicit Addressing<br>默认寄存器 AC"]
 
-    subgraph B ["寻址方式分类<br>Addressing Modes Classification"]
-        direction LR
-        IMM("立即寻址<br>Immediate Addressing<br>信封上直接写钱数") -->|"操作数直接在指令中"| IMM_EX
-        DIR("直接寻址<br>Direct Addressing<br>信封上写银行账户号") -->|"地址在指令中"| DIR_EX
-        IND("间接寻址<br>Indirect Addressing<br>信封上写账户号，再去地址") -->|"间接地址在指令中"| IND_EX
-        REG("寄存器寻址<br>Register Addressing<br>信封上写钱包") -->|"寄存器中放操作数"| REG_EX
-        REG_IND("寄存器间接寻址<br>Register Indirect Addressing<br>信封上写钱包，再去地址") -->|"寄存器中放地址"| REG_IND_EX
-        IMPL("隐含寻址<br>Implicit Addressing<br>默认从钱包取钱") -->|"默认使用累加寄存器AC"| IMPL_EX
-    end
+    ROOT --> IMM
+    ROOT --> DIR
+    ROOT --> IND
+    ROOT --> REG
+    ROOT --> RIND
+    ROOT --> IMPL
 
-    %% 样式定义
-    style A fill:#FFDAB9,stroke:#A0522D
-    style B fill:#ADD8E6,stroke:#4682B4
-    style IMM fill:#D4EDDA,stroke:#28A745
-    style DIR fill:#D4EDDA,stroke:#28A745
-    style IND fill:#D4EDDA,stroke:#28A745
-    style REG fill:#D4EDDA,stroke:#28A745
-    style REG_IND fill:#D4EDDA,stroke:#28A745
-    style IMPL fill:#D4EDDA,stroke:#28A745</pre>
+    %% 样式
+    classDef cat fill:#E8F5FF,stroke:#409EFF;
+    class IMM,DIR,IND,REG,RIND,IMPL cat;</pre>
+<hr>
+<pre class="mermaid">sequenceDiagram
+    autonumber
+    Instruction ->> Memory: 读 指令地址字段 (存放 A 的地址P)
+    Note right of Instruction: 地址字段 = P
+    Instruction ->> Memory: 读 存储单元 P (内容 = A 的地址)
+    Memory -->> Register: 返回 A 的地址
+    CPU ->> Memory: 根据 A 的地址 读取操作数 A</pre>
 <h2 id="cisc与risc指令集体系">CISC与RISC指令集体系</h2>
+<ul>
+<li>RISC：指令长度定长格式、寻址方式较少，主要以多<strong>寄存器寻址</strong>为主、增加寄存器数目以减少访存次数、硬布线实现指令解码</li>
+<li>CIS：指令长度变长格式、多寻址、<strong>微程序</strong>控制</li>
+</ul>
 <pre class="mermaid">graph TD
     A[计算机指令集体系发展<br>Evolution of Computer Instruction Set Architectures] --> B(指令集设计哲学<br>Instruction Set Design Philosophy);
 
@@ -2054,15 +2209,3224 @@ suitable for pipelining)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="流水线技术">流水线技术</h2>
-<h2 id="存储系统">存储系统</h2>
+<h2 id="流水线技术-pipeline-technology">流水线技术| Pipeline
+Technology</h2>
+<p>流水线方式下可以同时（<strong>准并行</strong>）执行多条指令</p>
+<hr>
+<p><span class="math display">$$
+\begin{aligned}
+&amp; \textbf{题目} \\
+&amp; \quad \text{一条指令的执行过程可分解为取指、分析和执行三步，} \\
+&amp; \quad \text{在取指时间 } t_{\text{取指}}=3\Delta t\text{、分析时间
+} t_{\text{分析}}=2\Delta t\text{、} \\
+&amp; \quad \text{执行时间 } t_{\text{执行}}=4\Delta t \text{
+的情况下，} \\
+&amp; \quad \text{求 10 条指令的串行与流水线执行时间。} \\
+\\
+&amp; \textbf{解题过程} \\
+&amp; \text{1. 串行执行时间 } (T_{\text{serial}}) \\
+&amp; \quad T_{\text{serial}} = 10 \times (3\Delta t + 2\Delta t +
+4\Delta t) = \boxed{90\Delta t} \\
+\\
+&amp; \text{2. 流水线周期 (Pipeline Cycle, t)} \\
+&amp; \quad \text{定义：执行时间最长的一段} \\
+&amp; \quad t = \max\{t_1, t_2, \dots, t_k\} \\
+&amp; \qquad  = \max\{3\Delta t, 2\Delta t, 4\Delta t\} = \boxed{4\Delta
+t} \\
+\\
+&amp; \text{3. 流水线执行时间 } (T_{\text{pipe}}) \\
+&amp; \quad \text{思路：(首条指令用时)} + (\text{剩余 n-1 条指令用时})
+\\
+&amp; \quad k=3, n=10, t=4\Delta t \\
+&amp; \quad \text{使用理论公式：}\\
+&amp; \quad T_{\text{pipe}} = \left( \sum_{i=1}^{k} t_i \right) + (n-1)t
+\\
+&amp; \qquad\quad = (9\Delta t) + (10-1) \times 4\Delta t \\
+&amp; \qquad\quad = 9\Delta t + 36\Delta t = \boxed{45\Delta t} \\
+\\
+&amp; \quad \text{使用实践公式：} \\
+&amp; \quad T_{\text{pipe}}' = k \cdot t + (n-1)t \\
+&amp; \qquad\quad = (k+n-1)t \\
+&amp; \qquad\quad = (3+10-1) \times 4\Delta t \\
+&amp; \qquad\quad = 12 \times 4\Delta t = 48\Delta t \\
+\\
+&amp; \text{4. 计算 10 条指令的吞吐率 } (\text{TP}) \\
+&amp; \quad \text{TP} = \frac{\text{指令数 } n}{T_{\text{pipe}}} \\
+&amp; \qquad = \frac{10}{45\Delta t} = \boxed{\frac{2}{9\Delta t}} \\
+\\
+&amp; \text{5. 计算最大吞吐率 } \quad TP_{\text{max}}= \lim_{n \to
+\infty} \frac{n}{(k+n-1)t}= \frac{1}{t} = \boxed{\frac{1}{4\Delta
+t}}   \\
+&amp; \quad \text{当 } n \to \infty \text{
+时，吞吐率达到最大值，等于周期的倒数。} \\
+\\
+&amp; \text{6. 流水线方式**不可提高单条**指令的执行速度：} \\
+&amp; \quad \text{串行和流水线方式的执行时间都是为3+2+4+(1-1)x4}
+\end{aligned}
+$$</span></p>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617032120081.png" alt="image-20250617032120081">
+<figcaption aria-hidden="true">image-20250617032120081</figcaption>
+</figure>
+<h2 id="磁盘管理">磁盘管理</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目与解析} \\
+\hline \\
+\begin{array}{l}
+\text{读取磁盘数据的时间应包括以下三个部分：} \\
+\text{(1) 找磁道的时间 (寻道时间)} \\
+\text{(2) 找块(扇区)的时间，即旋转延迟时间} \\
+\text{(3) 传输时间} \\\\
+\text{某磁盘磁头从一个磁道移至另一个磁道需要10ms。文件在磁盘上非连续存放，}
+\\
+\text{逻辑上相邻数据块的平均移动距离为10个磁道，每块的旋转延迟时间及传输时间}
+\\
+\text{分别为100ms和2ms，则读取一个100块的文件需要 }
+\underline{\hspace{1cm}} \text{ ms时间。} \\\\
+\text{A. 10200} \quad \text{B. 11000} \quad \text{C. 11200} \quad
+\text{D. 20200}
+\end{array}
+\\
+\textbf{解题分析:} \\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{分析项} &amp; \textbf{计算过程} &amp; \textbf{结论与辨析} \\
+\hline
+\text{读取单个块的时间} &amp; T_{block} = T_{seek} + T_{latency} +
+T_{transfer} &amp; \begin{array}{l}
+\text{由于文件非连续存放，读取每一块都需要一次完整} \\
+\text{的寻道、旋转和传输过程。} \end{array} \\
+\hline
+\text{平均寻道时间} &amp; 10 \text{ (磁道)} \times 10 \text{ (ms/磁道)}
+= 100 \text{ ms} &amp; \begin{array}{l}
+\text{逻辑上相邻块的平均移动距离是10个磁道，} \\
+\text{因此每次寻道的平均时间是 100ms。} \end{array} \\
+\hline
+\text{旋转延迟时间} &amp; 100 \text{ ms} &amp;
+\text{题目已知，每块的旋转延迟时间为 100ms。} \\
+\hline
+\text{传输时间} &amp; 2 \text{ ms} &amp;
+\text{题目已知，每块的传输时间为 2ms。} \\
+\hline
+\text{总时间} &amp; \begin{array}{l} T_{total} = \text{块数} \times
+T_{block} \\ = 100 \times (100 + 100 + 2) \\ = 100 \times 202 \\ = 20200
+\text{ ms} \end{array} &amp; \begin{array}{l}
+\text{将读取单块所需的各项时间相加，再乘以总块数100，} \\
+\text{得到总读取时间。} \\ \textbf{因此，选项 D 正确。} \end{array} \\
+\hline
+\end{array}
+\\
+\textbf{最终结论:} \\
+\text{读取一个100块的非连续文件需要 20200 ms。}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\begin{array}{l}
+\text{假设磁盘块与缓冲区大小相同，每个盘块读入缓冲区的时间为15µs，} \\
+\text{由缓冲区送至用户区的时间是5µs，在用户区内系统对每块数据的处理} \\
+\text{时间为1µs，若用户需要将大小为10个磁盘块的Doc1文件逐块从磁盘} \\
+\text{读入缓冲区，并送至用户区进行处理，那么采用单缓冲区需要花费的时间}
+\\
+\text{为 ( D ) µs；采用双缓冲区需要花费的时间为 ( C ) µs。} \\\\
+\text{A. 150} \quad \text{B. 151} \quad \text{C. 156} \quad \text{D.
+201}
+\end{array}
+\\
+\textbf{解题分析 (修正版):} \\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{分析项} &amp; \textbf{计算与模型} &amp; \textbf{结论与辨析} \\
+\hline
+\text{定义变量} &amp; \begin{array}{l}
+T_i = \text{磁盘到缓冲区时间} = 15 \mu s \\
+T_m = \text{缓冲区到用户区时间} = 5 \mu s \\
+T_c = \text{用户区处理时间} = 1 \mu s \\
+N = \text{数据块总数} = 10
+\end{array} &amp; \text{明确各项操作耗时。} \\
+\hline
+\text{单缓冲区} &amp; \begin{array}{l}
+\textbf{模型:} \text{ I/O操作与CPU处理形成部分重叠。} \\
+\text{处理第k块数据的CPU时间(}T_c\text{)可以和第k+1块} \\
+\text{数据的I/O时间(}T_i\text{)重叠。但由于只有一个缓冲区，} \\
+\text{第k+1块的}T_i\text{必须等待第k块的}T_m\text{完成。} \\
+\textbf{总时间} = (N-1) \times (T_i + T_m) + (T_i + T_m + T_c) \\
+\text{该公式表示前9个块的CPU处理时间被完全覆盖，} \\
+\text{总耗时是前9个块的I/O+传送时间，加上最后} \\
+\text{一个块的完整处理时间。} \\
+= (10-1) \times (15+5) + (15+5+1) \\
+= 9 \times 20 + 21 \\
+= 180 + 21 = 201 \mu s
+\end{array} &amp; \begin{array}{l}
+\text{总耗时 201 µs。} \\
+\text{对应选项 D。}
+\end{array} \\
+\hline
+\text{双缓冲区} &amp; \begin{array}{l}
+\textbf{模型:} \text{ I/O操作与CPU操作形成流水线并行。} \\
+\text{CPU总工作时间 } T_{cpu} = T_m + T_c = 5 + 1 = 6 \mu s \\
+\text{流水线瓶颈周期为 } \max(T_i, T_{cpu}) = \max(15, 6) = 15 \mu s \\
+\textbf{总时间} = (\text{填满第一个缓冲区}) + (N-1) \times
+(\text{流水线周期}) \\
+\qquad \qquad + (\text{处理最后一个缓冲区数据}) \\
+= T_i + (N-1) \times \max(T_i, T_{cpu}) + T_{cpu} \\
+= 15 + (10-1) \times 15 + 6 \\
+= 15 + 135 + 6 = 156 \mu s
+\end{array} &amp; \begin{array}{l}
+\text{总耗时 156 µs。} \\
+\text{对应选项 C。}
+\end{array} \\
+\hline
+\end{array}
+\\
+\textbf{最终结论:} \\
+\text{采用单缓冲区需要 201 µs，采用双缓冲区需要 156 µs。}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\begin{array}{l}
+\text{假设磁盘臂位于15号柱面上，进程的请求序列如下表表示，如果采用} \\
+\text{最短移臂调度算法 (SSTF)，那么系统的响应序列应为 ( B )。} \\
+\end{array}
+\\\\
+\begin{array}{|c|c|c|c|}
+\hline
+\textbf{请求序列} &amp; \textbf{柱面号} &amp; \textbf{磁头号} &amp;
+\textbf{扇区号} \\
+\hline
+\text{①} &amp; 12 &amp; 8 &amp; 9 \\
+\hline
+\text{②} &amp; 19 &amp; 6 &amp; 5 \\
+\hline
+\text{③} &amp; 23 &amp; 9 &amp; 6 \\
+\hline
+\text{④} &amp; 19 &amp; 10 &amp; 5 \\
+\hline
+\text{⑤} &amp; 12 &amp; 8 &amp; 4 \\
+\hline
+\text{⑥} &amp; 28 &amp; 3 &amp; 10 \\
+\hline
+\end{array}
+\\\\
+\begin{array}{ll}
+\text{A. ①②③④⑤⑥} &amp; \text{B. ⑤①②④③⑥} \\
+\text{C. ②③④⑤①⑥} &amp; \text{D. ④②③⑤①⑥} \\
+\end{array}
+\\
+\textbf{解题分析 (SSTF 算法):} \\
+\begin{array}{|c|c|c|c|l|}
+\hline
+\textbf{步骤} &amp; \textbf{当前磁头位置} &amp; \textbf{待处理请求
+(柱面号)} &amp; \textbf{计算与决策} &amp; \textbf{服务序列} \\
+\hline
+\text{Start} &amp; 15 &amp; \text{\{①(12), ②(19), ③(23), ④(19), ⑤(12),
+⑥(28)\}} &amp; \text{初始位置在 15。} &amp; \text{} \\
+\hline
+1 &amp; 15 &amp; \text{\{12, 19, 23, 28\}} &amp; \begin{array}{l}
+\text{计算与各柱面距离：} \\ |15-12|=3 \\ |15-19|=4 \\ |15-23|=8 \\
+|15-28|=13 \\ \text{选择最近的 12 号柱面。} \end{array} &amp; \text{} \\
+\hline
+2 &amp; 12 &amp; \text{\{②(19), ③(23), ④(19), ⑥(28)\}} &amp;
+\begin{array}{l} \text{处理 12 号柱面的所有请求：⑤, ①。} \\
+\text{计算与剩余请求距离：} \\ |12-19|=7 \\ |12-23|=11 \\ |12-28|=16 \\
+\text{选择最近的 19 号柱面。} \end{array} &amp; \text{⑤, ①} \\
+\hline
+3 &amp; 19 &amp; \text{\{③(23), ⑥(28)\}} &amp; \begin{array}{l}
+\text{处理 19 号柱面的所有请求：②, ④。} \\ \text{计算与剩余请求距离：}
+\\ |19-23|=4 \\ |19-28|=9 \\ \text{选择最近的 23 号柱面。} \end{array}
+&amp; \text{⑤, ①, ②, ④} \\
+\hline
+4 &amp; 23 &amp; \text{\{⑥(28)\}} &amp; \begin{array}{l} \text{处理 23
+号柱面的请求：③。} \\ \text{计算与剩余请求距离：} \\ |23-28|=5 \\
+\text{选择唯一的 28 号柱面。} \end{array} &amp; \text{⑤, ①, ②, ④, ③} \\
+\hline
+5 &amp; 28 &amp; \text{\{\}} &amp; \text{处理 28 号柱面的请求：⑥。}
+&amp; \text{⑤, ①, ②, ④, ③, ⑥} \\
+\hline
+\end{array}
+\\\\
+\textbf{最终结论:} \text{应选择磁道（柱面）最短。 响应序列为
+⑤①②④③⑥，选择 B。}
+\end{array}
+$$</span></p>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250622142958493.png" alt="image-20250622142958493">
+<figcaption aria-hidden="true">image-20250622142958493</figcaption>
+</figure>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\begin{array}{l}
+\text{某磁盘每道被划分为 11 个物理块，每块存放 1 个逻辑记录。} \\
+\text{逻辑记录 } R_0,R_1,\dots ,R_{10} \text{
+顺序存放在同一道上，如下表：} \\
+\end{array}
+\\\\[-6pt]
+\begin{array}{|c|ccccccccccc|}
+\hline
+\textbf{物理块序号} &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6
+&amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 \\
+\hline
+\textbf{逻辑记录}   &amp; R_0 &amp; R_1 &amp; R_2 &amp; R_3 &amp; R_4
+&amp; R_5 &amp; R_6 &amp; R_7 &amp; R_8 &amp; R_9 &amp; R_{10} \\
+\hline
+\end{array}
+\\\\[-2pt]
+\begin{array}{l}
+\text{已知磁盘旋转周期 } T_{\text{rev}} = 33\,\text{ms},\;
+\text{磁头此刻位于 } R_0 \text{ 的起始处。} \\
+\text{若采用单缓冲顺序处理，CPU 处理每条记录耗时 } T_p = 3\,\text{ms}。
+\\
+\text(1) 处理完 11 条记录所需的最长时间为   \underline ~~~~ 。 \\
+\text(2) 若对记录进行“交错”优化存放，可使总时间最短为 (  \underline
+~~~~  )。 \\
+\end{array}
+\\\\
+\textbf{选项 (单位 ms):} \quad
+\begin{array}{ll}
+(21)\;A.~33 &amp; B.~336 &amp; C.~366 &amp; D.~376 \\
+(22)\;A.~33 &amp; B.~66  &amp; C.~86  &amp; D.~93  \\
+\end{array}
+\\\\
+\textbf{解题分析} \\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{情形} &amp; \textbf{计算过程} &amp; \textbf{结论} \\
+\hline
+\text{单缓冲} &amp;
+\begin{array}{l}
+\text{★ 扇区间隔 } T_s = T_{\text{rev}} / 11 = 3\,\text{ms}. \\
+\text{★ 读+处理一条记录需 } T_r + T_p = 3 + 3 = 6\,\text{ms}. \\
+\text{★ CPU 忙 6\,ms 时，磁盘已转过 } 6/3 = 2 \text{ 个扇区，} \\
+\quad\text{错过紧邻的下一条记录→必须再等一整圈。}\\
+\text{★ 每处理完一条记录后需等待 } T_{\text{rev}} - 3 = 30\,\text{ms}.
+\\
+\text{★ 总时间 } T_{\max} = \\
+\quad T_r + T_p                                   % 读+处理 R0
+\;+\; 10 \times (T_{\text{rev}} - T_s + T_r + T_p) \\
+\quad = 6 + 10 \times (30 + 6) = 6 + 360 = 366\,\text{ms}.
+\end{array}
+&amp; \text{最长 } 366\,\text{ms (选 C)} \\
+\hline
+\text{交错优化} &amp;
+\begin{array}{l}
+\text{★ 重新排列记录，使每读完+处理 } 6\,\text{ms} \text{ 后，} \\
+\quad\text{磁头正好到达下一条记录起始处 (2:1 交错)。} \\
+\text{★ 每条记录无需额外等待，仅花 } 6\,\text{ms}. \\
+\text{★ 总时间 } T_{\min} = 11 \times 6 - 3 \\
+\quad (R_0 初始无读取延迟，仅算一次处理 3\,ms) \\
+\quad = 66 - 3 = 63\,\text{ms}\approx  66\,\text{ms}. \\
+\end{array}
+&amp; \text{最短 } 66\,\text{ms (选 B)} \\
+\hline
+\end{array}
+\\\\
+\textbf{答案:}\;
+(21)\;C\;(366\,\text{ms}),\;
+(22)\;B\;(66\,\text{ms}).
+\end{array}
+$$</span></p>
 <h2 id="层次化存储">层次化存储</h2>
+<ul>
+<li><strong>局部性原理</strong>
+体现为：你一旦开始研究某个主题（如“计算机网络”），在接下来的一段时间里，你很可能会反复翻阅桌面上那几本网络相关的书（时间局部性，体现循环体结构，刚被访问的内容立即又被访问），并且会把它们旁边的其他章节也顺便看了（空间局部性，体现顺序结构，刚被访问的内容的临近的空间很快被访问）。</li>
+<li>虚拟存储体系由<strong>主存和辅存</strong>两级存储器构成</li>
+<li>三级存储体系由<strong>cache和主存和辅存</strong>构成</li>
+<li>在微机系统中，BIOS（基本输入输出系统）保存在<strong>主板上的ROM（Read-Only
+Memory只读存储器，掉电不丢失）</strong></li>
+<li>主板上的<strong>RAM</strong>（Random-Access
+Memory随机存取存储器，掉电丢失）</li>
+</ul>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617160001214.png" alt="image-20250617160001214">
+<figcaption aria-hidden="true">image-20250617160001214</figcaption>
+</figure>
 <h2 id="cache">Cache</h2>
+<ul>
+<li>直接相联映像（电路简单，冲突率高），全相联映像相反（主存任意一块装入cache中任意位置，装满替换），组相联映像折中</li>
+<li>cache与主存间的地址映射由<strong>硬件自动完成</strong></li>
+<li>cache的内容是主存部分内容的<strong>拷贝</strong></li>
+<li>bache的命中率不随其容量增大而线性提高，而是越来越<strong>平缓</strong></li>
+<li>cache位于主存与CPU之间，并不会扩大主存容量</li>
+</ul>
+<hr>
+<p><span class="math display">$$
+\begin{aligned}
+t_a &amp;= H \times t_c + (1-H) \times t_m \\
+\\
+\text{其中:} \\
+t_a &amp;= \text{系统平均访存时间 (Average Memory Access Time)} \\
+H &amp;= \text{Cache 的命中率 (Cache Hit Rate)} \\
+t_c &amp;= \text{Cache 的存取时间 (Cache Access Time)} \\
+t_m &amp;= \text{主存的存取时间 (Main Memory Access Time)} \\
+(1-H) &amp;= \text{失效率 / 未命中率 (Miss Rate)}
+\end{aligned}
+$$</span></p>
+<hr>
 <h2 id="主存编址计算">主存编址计算</h2>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617172602953.png" alt="image-20250617172602953">
+<figcaption aria-hidden="true">image-20250617172602953</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250617182317510.png" alt="image-20250617182317510">
+<figcaption aria-hidden="true">image-20250617182317510</figcaption>
+</figure>
+<hr>
+<p><span class="math display">$$
+\begin{aligned}
+&amp;\text{1. 问题描述 (Problem Description)} \\
+&amp;\quad \text{内存按字节编址，地址从 A0000H 到 CFFFFH。} \\
+&amp;\quad \text{若使用 64K x 8bit 的存储芯片，至少需要几片？} \\
+\\
+&amp;\text{2. 解题步骤 (Solution Steps)} \\
+&amp;\quad \text{a. 计算总容量 (Calculate Total Capacity)} \\
+&amp;\qquad \text{地址单元数} &amp;&amp;= (\text{末地址} - \text{首地址}
++ 1) \\
+&amp; &amp;&amp;= \text{CFFFFH} - \text{A0000H} + 1 \\
+&amp; &amp;&amp;= \text{D0000H} - \text{A0000H} \\
+&amp; &amp;&amp;= 30000\text{H} \\
+\\
+&amp;\qquad \text{总容量} &amp;&amp;= \text{地址单元数} \times
+\text{编址单位} \\
+&amp; &amp;&amp;= 30000\text{H} \times 1\text{B} \quad
+(\text{按字节编址, 1B = 8bit}) \\
+&amp; &amp;&amp;= (3 \times 16^4) \text{ B} \\
+&amp; &amp;&amp;= (3 \times 2^{16}) \text{ B} \\
+\\
+&amp;\qquad \text{单位换算} &amp;&amp;= \frac{3 \times 2^{16} \text{
+B}}{2^{10} \text{ B/KB}} = (3 \times 2^6) \text{ KB} = 192 \text{ KB} \\
+\\
+&amp;\quad \text{b. 计算所需芯片数量 (Calculate Number of Chips)} \\
+&amp;\qquad \text{所需芯片数} &amp;&amp;=
+\frac{\text{总容量}}{\text{单个芯片容量}} \quad (\text{单个芯片容量} =
+64\text{K} \times 8 \text{ bit} = 64\text{KB}) \\
+&amp; &amp;&amp;= \frac{192 \text{ KB}}{64 \text{ KB}} \\
+&amp; &amp;&amp;= 3 \text{ 片 (chips)}
+\end{aligned}
+$$</span></p>
+<h2 id="页式存储">页式存储</h2>
+<ul>
+<li><p>把程序的 逻辑地址空间 和计算机的 物理内存
+都分割成大小完全相等、固定不变的块。逻辑空间中的块我们称为 “页
+(Page)”，而物理内存中的块称为 “页框 (Page Frame)”。最主要的目的就是解决
+<strong>外部碎片</strong>
+问题，并且允许一个程序的物理内存可以不是连续的</p></li>
+<li><p>可以让不同进程的页表项指向同一个物理页框，非常方便地实现共享代码或数据</p></li>
+<li><p>一个进程的最后一个页面通常装不满，这部分无法被利用的空间就成了内部碎片</p></li>
+</ul>
+<blockquote>
+<p>我们可以把页式存储想象成 <strong>查一本厚字典</strong> 的过程：</p>
+<ul>
+<li><strong>整个程序</strong> 就像是这本厚厚的字典。</li>
+<li><strong>逻辑地址</strong>
+就像是我们要查的某个具体的字，比如“页”。这个字的地址可以描述为“在拼音索引的
+Y 部分，第 5 个字”。</li>
+<li>这里的 <strong>“拼音索引 Y 部分”</strong> 就相当于
+<strong>页号</strong>，而 <strong>“第 5 个字”</strong> 就是
+<strong>页内偏移</strong>。</li>
+<li><strong>页表 (Page Table)</strong> 就相当于字典最前面的
+<strong>“拼音检字表”</strong>。我们根据“Y”这个页号，在检字表里查到它对应的正文页码，比如说第
+888 页。</li>
+<li>这个 <strong>“888 页”</strong> 就是
+<strong>物理页框号</strong>。</li>
+<li>最后，我们翻到第 888 页，再数 5
+个字，就精确地找到了“页”这个字。这个过程就完成了一次地址转换。</li>
+</ul>
+<p>这个比喻的核心是，我们不需要知道所有正文页（物理内存）是如何乱序存放的，只需要通过一个有序的索引（页表），就能精确地找到我们需要的数据。</p>
+</blockquote>
+<hr>
+<pre class="mermaid">flowchart LR
+    subgraph "CPU"
+        A["生成逻辑地址<br>(页号 P, 页内偏移 d)"]
+    end
+
+    subgraph "MMU (内存管理单元)"
+        B{查询快表 TLB}
+        C["TLB 命中<br>直接获取页框号 P'"]
+        D{"TLB 未命中<br>查询内存中的页表"}
+        E["<strong>第一次访存</strong><br>通过页表寄存器(PTR)找到页表<br>计算并读取页表项"]
+        F[获取页框号 P']
+        G[更新 TLB]
+    end
+
+    subgraph "物理内存"
+        H["<strong>第二次访存</strong><br>访问目标数据"]
+    end
+
+    A --> B
+    B -- "Hit" --> C
+    B -- "Miss" --> D
+    D --> E
+    E --> F
+    F --> G
+    C --> I{"拼接物理地址<br>(页框号 P' + 页内偏移 d)"}
+    G --> I
+    I --> H
+
+    %% 样式
+    style E fill:#FF6347,stroke:#8B0000,stroke-width:2px
+    style H fill:#FF6347,stroke:#8B0000,stroke-width:2px
+    style B fill:#ADD8E6,stroke:#4682B4,stroke-width:2px</pre>
+<ol type="1">
+<li><p><strong>CPU 生成地址</strong>：CPU 产生一个逻辑地址，它由
+<strong>页号 (P)</strong> 和 <strong>页内偏移 (d)</strong>
+两部分组成。</p></li>
+<li><p><strong>快表 (TLB) 查询</strong>：为了加速，系统会先用
+<strong>页号</strong> 去查询 <strong>快表
+(TLB)</strong>，它是一个页表项的高速缓存。</p>
+<ul>
+<li>如果 <strong>命中 (Hit)</strong>，就直接从 TLB 拿到对应的
+<strong>物理页框号</strong>，这个过程非常快。</li>
+<li>如果 <strong>未命中
+(Miss)</strong>，就需要执行下一步，去内存中查找完整的页表。</li>
+</ul></li>
+<li><p><strong>页表 (Page Table) 查询</strong>：</p>
+<ul>
+<li>系统会访问 <strong>页表寄存器
+(PTR)</strong>，它存放着当前进程页表在内存中的起始地址。</li>
+<li>通过 <code>页表起始地址 + 页号 * 页表项大小</code>
+的公式，计算出目标页表项在内存中的位置，然后
+<strong>第一次访问内存</strong>，读取这个页表项，从中得到
+<strong>物理页框号</strong>。</li>
+<li>拿到页框号后，系统会将其更新到 TLB 中，方便下次快速访问。</li>
+</ul></li>
+<li><p><strong>形成物理地址</strong>：将从 TLB 或页表中获取的
+<strong>物理页框号</strong> 与原始的 <strong>页内偏移</strong>
+拼接起来，就构成了最终的物理地址。</p></li>
+<li><p><strong>访问数据</strong>：根据这个物理地址，进行
+<strong>第二次访问内存</strong>，读取或写入真正需要的数据。</p></li>
+</ol>
+<hr>
+<pre class="mermaid">graph TD
+    subgraph "进程A页表 (Process A Page Table)"
+        direction LR
+        A_LP0("逻辑页 0<br>Logical Page 0") --> PhysPage8
+        A_LP1("逻辑页 1<br>Logical Page 1") --> PhysPage3
+        A_LP2("逻辑页 2<br>Logical Page 2") --> PhysPage5
+        A_LP3("逻辑页 3<br>Logical Page 3") --> PhysPage2
+        A_LP4("逻辑页 4<br>Logical Page 4") --> PhysPage4
+        A_LP5("逻辑页 5<br>Logical Page 5")
+    end
+
+    subgraph "进程B页表 (Process B Page Table)"
+        direction LR
+        B_LP0("逻辑页 0<br>Logical Page 0") --> PhysPage1
+        B_LP1("逻辑页 1<br>Logical Page 1") --> PhysPage6
+        B_LP2("逻辑页 2<br>Logical Page 2") --> PhysPage9
+        B_LP3("逻辑页 3<br>Logical Page 3") --> PhysPage7
+        B_LP4("逻辑页 4<br>Logical Page 4") --> PhysPage0
+        B_LP5("逻辑页 5<br>Logical Page 5") --> PhysPage4
+    end
+
+    subgraph "物理内存 (Physical Memory)"
+        direction TB
+        PhysPage0("物理页 0<br>Physical Page 0")
+        PhysPage1("物理页 1<br>Physical Page 1")
+        PhysPage2("物理页 2<br>Physical Page 2")
+        PhysPage3("物理页 3<br>Physical Page 3")
+        PhysPage4("物理页 4<br>Physical Page 4")
+        PhysPage5("物理页 5<br>Physical Page 5")
+        PhysPage6("物理页 6<br>Physical Page 6")
+        PhysPage7("物理页 7<br>Physical Page 7")
+        PhysPage8("物理页 8<br>Physical Page 8")
+        PhysPage9("物理页 9<br>Physical Page 9")
+    end
+
+    %% 高亮显示与题目相关的映射
+    linkStyle 1 stroke:red,stroke-width:2px;      
+    linkStyle 4 stroke:blue,stroke-width:2px;     
+    linkStyle 10 stroke:blue,stroke-width:2px;</pre>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{某操作系统采用分页存储管理方式，下图给出了进程A和进程B的页表结构。}
+\\
+\text{如果物理页的大小为1K字节，那么进程A中逻辑地址为1024 (十进制)} \\
+\text{的变量存放在 (I) 号物理内存页中。} \\
+\text{假设进程A的逻辑页4与进程B的逻辑页5要共享物理页4，那么应该在进程A}
+\\
+\text{页表的逻辑页4和进程B页表的逻辑页5对应的物理页处分别填 (II)。} \\
+\\
+\text{(I) \quad A. 8 \qquad B. 3 \qquad C. 5 \qquad D. 2} \\
+\text{(II) \quad A. 4, 4 \qquad B. 4, 5 \qquad C. 5, 4 \qquad D. 5, 5}
+\\
+\\
+\hline \\
+\\
+\textbf{第一问解析：逻辑地址到物理页的转换} \\
+\\
+\text{1. } \textbf{核心公式：} \\
+逻辑地址=页号+页内地址 \\
+物理地址=页帧号+页内地址 \\
+\\
+\text{2. } \textbf{计算：} \\
+\qquad \text{总容量(页面大小)} =存储单元个数 \times 编址内容= 1\text{K}
+= 2^{10} \times 1\text{ 字节} \\
+\qquad \text{存储单元个数} = 2^{10}=1024 \qquad
+即地址编号从0到1023,则需要10个二进制才能表示这些不同的地址编号 \\
+\qquad \text{逻辑地址} = 1024 \qquad 转换为二进制是 \underbrace
+1_{\text{页号}} \underbrace {00\ 0000\ 0000}_{\text{页内地址 (低10位)}}
+\quad 则1是页号，后面10个0是页内地址\\
+\\
+\text{3. } \textbf{查表：} \\
+\qquad \text{根据计算，逻辑地址 1024 位于进程A的【逻辑页1】中。} \\
+\qquad \text{查询“进程A页面”表，逻辑页1对应的物理页是【3】。} \\
+\\
+\textbf{第一问结论：B (3)} \\
+\\
+\hline \\
+\\
+\textbf{第二问解析：页面共享} \\
+\\
+\text{1. } \textbf{核心原理：}
+\text{页面共享是指不同进程的页表项指向【同一个】物理页。} \\
+\\
+\text{2. } \textbf{根据题意：} \\
+\qquad \text{进程A的逻辑页4} \rightarrow \text{物理页4} \\
+\qquad \text{进程B的逻辑页5} \rightarrow \text{物理页4} \\
+\\
+\text{3. } \textbf{填表：} \\
+\qquad \text{在“进程A页面”表中，逻辑页4对应的物理页应填【4】。} \\
+\qquad \text{在“进程B页面”表中，逻辑页5对应的物理页应填【4】。} \\
+\\
+\textbf{第二问结论：A (4, 4)} \\
+\end{array}
+$$</span></p>
+<h2 id="段式存储">段式存储</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题} \\
+\hline \\
+\begin{array}{l}
+\text{设某进程的段表如下所示，逻辑地址 } \underline{\hspace{1cm}} \text{
+可以转换为对应的物理地址。} \\\\
+\textbf{已知段表 (Segment Table):} \\
+\begin{array}{|c|c|c|}
+\hline
+\textbf{段号 (S)} &amp; \textbf{基地址 (Base)} &amp; \textbf{段长
+(Length)} \\
+\hline
+0 &amp; 1598 &amp; 600 \\
+1 &amp; 486 &amp; 50 \\
+2 &amp; 90 &amp; 100 \\
+3 &amp; 1327 &amp; 2988 \\
+4 &amp; 1952 &amp; 960 \\
+\hline
+\end{array}
+\\ \\
+\textbf{选项:} \\
+\text{A. (0, 1597)、(1, 30) 和 (3, 1390)} \\
+\text{B. (0, 128)、(1, 30) 和 (3, 1390)} \\
+\text{C. (0, 1597)、(2, 98) 和 (3, 1390)} \\
+\text{D. (0, 128)、(2, 98) 和 (4, 1066)}
+\end{array}
+\\
+\textbf{解题分析 (核心：段内偏移 d &lt; 段长 L):} \\
+\begin{array}{|c|c|c|l|}
+\hline
+\textbf{选项} &amp; \textbf{待检查地址 (S, d)} &amp; \textbf{检查 (d
+&lt; L?)} &amp; \textbf{分析与结论} \\
+\hline
+\text{A} &amp; (0, 1597) &amp; 1597 \not&lt; 600 &amp; \text{段 0 段长为
+600，偏移 1597 越界。选项 A 错误。} \\
+\hline
+\text{B} &amp; \begin{array}{l} (0, 128) \\ (1, 30) \\ (3, 1390)
+\end{array} &amp; \begin{array}{l} 128 &lt; 600 \\ 30 &lt; 50 \\ 1390
+&lt; 2988 \end{array} &amp; \begin{array}{l} \text{地址(0, 128)合法。}
+\\ \text{地址(1, 30)合法。} \\ \text{地址(3, 1390)合法。} \\
+\textbf{选项 B 全部合法。} \end{array} \\
+\hline
+\text{C} &amp; (0, 1597) &amp; 1597 \not&lt; 600 &amp; \text{段 0 段长为
+600，偏移 1597 越界。选项 C 错误。} \\
+\hline
+\text{D} &amp; (4, 1066) &amp; 1066 \not&lt; 960 &amp; \text{段 4 段长为
+960，偏移 1066 越界。选项 D 错误。} \\
+\hline
+\end{array}
+\\
+\textbf{最终结论:} \\
+\text{选项 B 中的所有逻辑地址均合法，可以成功转换为物理地址。}
+\end{array}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph TD
+    subgraph "逻辑地址=段号+段内偏移量"
+        direction TB
+        S0["Segment 0<br>主程序 (Main Program)"]
+        S1["Segment 1<br>子程序A (Subroutine A)"]
+        S2["Segment 2<br>共享库 (Shared Library)"]
+        S3["Segment 3<br>堆栈 (Stack)"]
+    end
+
+    subgraph "物理内存 (Physical Memory)"
+        direction TB
+        M0["空闲块"]
+        M1["物理块A (存放S1)"]
+        M2["空闲块"]
+        M3["物理块B (存放S3)"]
+        M4["物理块C (存放S0)"]
+        M5["..."]
+    end
+
+    subgraph "地址映射核心 (Address Mapping Core)"
+        ST["<strong>段表 (Segment Table)</strong><br>段号/段长/基址(物理内存中的起始地址)<br>每个进程拥有自己的段表"] -- "存储于内存中" --> 物理内存
+        STR["<strong>段表寄存器 (Segment Table Register)</strong><br>存放当前进程段表的<br>起始地址和长度"] --> ST
+    end
+
+    S0 -->|映射到| ST
+    S1 -->|映射到| ST
+    S3 -->|映射到| ST
+
+    ST -->|查询后定位| M4
+    ST -->|查询后定位| M1
+    ST -->|查询后定位| M3
+    
+    subgraph "判断合法段地址：<br>(段号不会超过最大段号，段内偏移量不会超过相应段落的段长)"
+    end
+    
+    %% 样式定义
+    style S0 fill:#FFFACD,stroke:#BDB76B
+    style S1 fill:#FFFACD,stroke:#BDB76B
+    style S2 fill:#FFFACD,stroke:#BDB76B
+    style S3 fill:#FFFACD,stroke:#BDB76B
+    style M1 fill:#ADD8E6,stroke:#4682B4
+    style M3 fill:#ADD8E6,stroke:#4682B4
+    style M4 fill:#ADD8E6,stroke:#4682B4
+    style ST fill:#98FB98,stroke:#3CB371,stroke-width:2px
+    style STR fill:#FFDAB9,stroke:#A0522D,stroke-width:2px</pre>
+<h2 id="段页式存储">段页式存储</h2>
+<p><strong>逻辑地址</strong> = <code>段号 (S)</code> +
+<code>页号 (P)</code> + <code>页内偏移 (d)</code></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解 II} \\
+\hline \\
+\begin{array}{l}
+\text{假设段页式存储管理系统中的地址结构如下图所示，则系统 ( )。} \\\\
+\textbf{逻辑地址结构 (32位):} \\
+\begin{array}{|c|c|c|}
+\hline
+\text{31..24} &amp; \text{23..13} &amp; \text{12..0} \\
+\hline
+\text{段号 (8位)} &amp; \text{页号 (11位)} &amp; \text{页内地址 (13位)}
+\\
+\hline
+\end{array} \\\\
+\textbf{选项:} \\
+\text{A. 最多可有256个段，每个段的大小均为2048个页，页的大小为8K} \\
+\text{B. 最多可有256个段，每个段最大允许有2048个页，页的大小为8K} \\
+\text{C. 最多可有512个段，每个段的大小均为1024个页，页的大小为4K} \\
+\text{D. 最多可有512个段，每个段最大允许有1024个页，页的大小为4K}
+\end{array}
+\textbf{解题分析:} \\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{分析项} &amp; \textbf{计算过程} &amp; \textbf{结论与辨析} \\
+\hline
+\text{最大段数} &amp; 2^8 = 256 &amp; \begin{array}{l} \text{段号占 8
+位，所以系统最多支持 } 2^8 = 256 \text{ 个段。} \\ \text{立即排除选项 C
+和 D。} \end{array} \\
+\hline
+\text{页大小} &amp; 2^{13} \text{ B} = 8 \text{ KB} &amp;
+\begin{array}{l} \text{页内地址占 13 位，所以页大小为 } 2^{13} = 2^{3}K
+\text{ 即 8K。} \\ \text{再次确认选项 C 和 D 错误。} \end{array} \\
+\hline
+\text{每段最大页数} &amp; 2^{11} = 2048 &amp; \begin{array}{l}
+\text{页号占 11 位，所以每个段最多可以映射到 } 2^{11} = 2048 \text{
+个页。} \\ \text{这是“最大允许”的数量，而非“固定”大小。} \end{array} \\
+\hline
+\text{选项辨析} &amp; \text{A vs. B} &amp; \begin{array}{l}
+\text{A选项说“大小均为”，这是错误的。段是逻辑单位，大小可变，} \\
+\text{不一定用满所有可分配的页。} \\
+\text{B选项说“最大允许有”，这准确描述了地址空间的上限。} \\
+\textbf{因此，选项 B 正确。} \end{array} \\
+\hline
+\end{array}
+\textbf{最终结论:} \\
+\text{选项 B 是唯一完全正确的描述。}
+\end{array}
+$$</span></p>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250621190832252.png" alt="image-20250621190832252">
+<figcaption aria-hidden="true">image-20250621190832252</figcaption>
+</figure>
+<h2 id="段式-vs-页式-vs-段页式">段式 vs 页式 vs 段页式</h2>
+<table>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">页式存储 (Paging)</th>
+<th style="text-align: left;">段式存储 (Segmentation)</th>
+<th style="text-align: left;">段页式存储 (Segmented Paging)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>划分单位</strong></td>
+<td style="text-align: left;">物理块 (大小固定)</td>
+<td style="text-align: left;">逻辑段 (功能独立)</td>
+<td style="text-align: left;">逻辑段 + 物理块</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>大小</strong></td>
+<td style="text-align: left;"><strong>固定</strong></td>
+<td style="text-align: left;"><strong>可变</strong></td>
+<td style="text-align: left;">段可变，页固定</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>地址空间</strong></td>
+<td style="text-align: left;"><strong>一维</strong> (线性地址)</td>
+<td style="text-align: left;"><strong>二维</strong> (段号,
+段内偏移)</td>
+<td style="text-align: left;"><strong>三维</strong> (段号, 页号,
+页内偏移)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>内存碎片</strong></td>
+<td style="text-align: left;"><strong>内部碎片</strong></td>
+<td style="text-align: left;"><strong>外部碎片</strong></td>
+<td style="text-align: left;"><strong>内部碎片</strong> (最后一页)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>共享与保护</strong></td>
+<td style="text-align: left;">不直观，较难实现</td>
+<td style="text-align: left;"><strong>方便</strong>，以逻辑单位进行</td>
+<td style="text-align: left;"><strong>方便</strong>，以逻辑单位进行</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>访存次数</strong></td>
+<td style="text-align: left;"><strong>2次</strong> (无快表)</td>
+<td style="text-align: left;"><strong>2次</strong> (无快表)</td>
+<td style="text-align: left;"><strong>3次</strong> (无快表)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>核心目的</strong></td>
+<td style="text-align: left;">提高内存利用率</td>
+<td style="text-align: left;">满足程序逻辑需求</td>
+<td style="text-align: left;">兼顾二者，取长补短</td>
+</tr>
+</tbody>
+</table>
 <h2 id="输入输出技术">输入输出技术</h2>
+<ul>
+<li>常用的IO控制方式有无条件传送、中断、程序查询、DMA方式</li>
+<li>DMA不需要CPU执行程序指令来传送数据</li>
+<li>CPU是在<strong>一个总线周期结束时</strong>响应DMA请求的。DMA
+控制器通过“周期窃取”或“周期挪用”的方式与 CPU 分时使用总线。CPU
+在执行一条指令的过程中，会包含若干个总线周期（如取指、读写数据等）。CPU
+会在每个总线周期的末尾检查是否有 DMA
+请求，如果有，就将下一个总线周期的使用权交给 DMAC</li>
+</ul>
+<pre class="mermaid">graph TD
+    subgraph "核心控制方式对比"
+        direction TB
+        spacer_top("I/O 控制是计算机系统管理内存与外部设备之间数据交换的核心技术。由于CPU/内存的速度与外设的速度存在巨大差异，需要高效的控制方式来协调数据传输，以最大化系统性能。")
+
+        subgraph I/O_Control ["I/O 控制方式<br>I/O Control Methods"]
+            direction LR
+            
+            C["<strong>CPU 控制<br>CPU Controlled</strong>"] --> P["<strong>程序查询方式<br>Programmed I/O</strong>"]
+            C --> I["<strong>中断驱动方式<br>Interrupt-driven I/O</strong>"]
+            
+            D["<strong>DMA 控制<br>DMA Controlled</strong>"] --> DMA["<strong>直接内存访问<br>Direct Memory Access (DMA)</strong>"]
+            D --> CH["<strong>通道方式<br>Channel I/O</strong>"]
+        end
+
+        %% Link spacer to the first nodes to create space
+        spacer_top --> C
+        spacer_top --> D
+
+        subgraph Details [特点与对比]
+            P_Desc["<strong>特点:</strong> CPU 主动轮询 (Polling) 设备状态。<br><strong>CPU介入:</strong> 全程占用，直到数据传输完成。<br><strong>优点:</strong> 硬件简单。<br><strong>缺点:</strong> CPU 利用率极低，无法并行工作。<br><strong>场景比喻:</strong> 老师 (CPU) 不断问学生 (外设) “你看完没？”，期间无法做其他事。"]
+            I_Desc["<strong>特点:</strong> 外设准备就绪后，向 CPU 发送中断信号。比如鼠标键盘<br><strong>CPU介入:</strong> 数据传输开始和结束时介入，响应中断并处理数据。<br><strong>优点:</strong> CPU 无需等待，可与 I/O 并行工作，利用率高。<br><strong>缺点:</strong> 每次中断仍需 CPU 处理，频繁中断会消耗大量 CPU 时间。<br><strong>场景比喻:</strong> 老师 (CPU) 布置任务后去做别的事，学生 (外设) 完成后举手 (中断) 报告。"]
+            DMA_Desc["<strong>特点:</strong> CPU只做初始化，其他工作交给DMA自带的DMAC，CPU不参与数据传输过程。由 DMA 控制器 (DMAC) 全权负责内存与外设间的数据传输。比如移动硬盘<br>(DMAC向总线裁决逻辑提出总线请求;CPU执行完当前总线周期即可释放控制权，此时DMA响应，通过DMAC通知IO接口开始DMA传输)<br><strong>CPU介入:</strong> 仅在传输开始前（发出指令）和结束后（接收中断）介入<br><strong>优点:</strong> 数据传输不占用 CPU，速度快，适合高速块设备。<br><strong>缺点:</strong> 硬件逻辑更复杂。<br><strong>场景比喻:</strong> 老师 (CPU) 委托助教 (DMAC) 分发学习资料，自己只需下达指令和接收完成报告。"]
+            CH_Desc["<strong>特点:</strong> DMA 的进一步发展，使用通道处理器 (I/O Processor) 管理多个外设。<br><strong>CPU介入:</strong> 仅向通道发出 I/O 指令，由通道执行复杂的通道程序。<br><strong>优点:</strong> 极大解放 CPU，实现更高程度的并行。<br><strong>缺点:</strong> 硬件成本最高，通常用于大型机。<br><strong>场景比喻:</strong> 助教 (DMAC) 升级为能管理多个班级、执行复杂教学计划的“系助教” (通道)。"]
+        end
+
+        P --> P_Desc
+        I --> I_Desc
+        DMA --> DMA_Desc
+        CH --> CH_Desc
+
+        %% 样式定义
+        style I/O_Control fill:#F5F5DC,stroke:#8B4513
+        style Details fill:#F0FFF0,stroke:#2E8B57
+        style C fill:#FFE4E1,stroke:#CD5C5C
+        style D fill:#E0FFFF,stroke:#4682B4
+        style P fill:#FFFACD,stroke:#BDB76B
+        style I fill:#FFFACD,stroke:#BDB76B
+        style DMA fill:#ADD8E6,stroke:#4682B4
+        style CH fill:#ADD8E6,stroke:#4682B4
+    end</pre>
+<hr>
+<pre class="mermaid"> sequenceDiagram
+    title 中断处理流程 (Interrupt Handling Process)
+    autonumber
+    participant D as "外部设备<br>Device"
+    participant CPU
+    
+    D->>CPU: 发出中断请求 (IRQ)
+    CPU->>CPU: 完成当前指令
+    CPU->>CPU: 检查并响应中断
+    activate CPU
+    CPU->>CPU: 保护现场 (通过中断向量表保存中断服务程序的入口地址、PC, 寄存器等)
+    Note right of CPU: "保护现场"是为了在中断处理结束后<br>能准确返回到原程序的断点继续执行，<br>而非直接为了防止数据丢失。
+    CPU->>CPU: 执行中断服务程序 (ISR)
+    CPU->>D: 处理 I/O 数据
+    CPU->>CPU: 恢复现场 (通过中断向量表的入口地址找到IO服务程序，恢复PC, 寄存器等)
+    deactivate CPU
+    CPU->>CPU: 返回原程序断点继续执行</pre>
+<hr>
+<pre class="mermaid">sequenceDiagram
+    title DMA 传输流程 (Direct Memory Access Transfer Process)
+    autonumber
+
+    participant CPU
+    participant DMAC as "DMA 控制器<br>DMAC"
+    participant Bus as "系统总线<br>System Bus"
+    participant Mem as "内存<br>Memory"
+    participant IO as "I/O 设备<br>I/O Device"
+
+    CPU->>DMAC: 发出I/O指令 (含源/目标地址,长度)
+    CPU->>CPU: 继续执行其他程序
+    
+    activate DMAC
+    DMAC->>Bus: 请求总线控制权
+    
+    CPU->>Bus: (在总线周期末) 释放总线控制权
+    Bus-->>DMAC: 授予总线控制权
+    
+    Note over DMAC, IO: DMAC 控制数据传输 (周期窃取)
+    loop 数据块传输
+        DMAC->>Mem: 经总线读/写数据
+        DMAC->>IO: 经总线读/写数据
+    end
+    
+    DMAC->>Bus: 释放总线控制权
+    deactivate DMAC
+    
+    DMAC->>CPU: 发送中断信号 (传输完成)
+    
+    activate CPU
+    CPU->>CPU: 响应中断, 进行后续处理
+    deactivate CPU</pre>
 <h2 id="总线">总线</h2>
+<p>分时双工 (Time-sharing Duplex)</p>
+<ul>
+<li><strong>共享 (Shared)</strong>:
+所有挂接在总线上的设备共享这条通路。</li>
+<li><strong>分时 (Time-sharing)</strong>:
+在同一时刻，只允许一个设备发送信息，但可以有多个设备接收信息。</li>
+<li>单总线结构设计简单但是性能不高</li>
+</ul>
+<blockquote>
+<p><strong>场景比喻</strong>:
+就像一个公司的会议室（总线），同一时间只允许一个人发言（发送），但所有参会人员（其他设备）都可以听（接收）。</p>
+</blockquote>
+<hr>
+<pre class="mermaid">graph TD
+    subgraph "总线分类维度 (Bus Classification Dimensions)"
+        direction TB
+
+        subgraph "按功能划分<br>By Function"
+            direction LR
+            DataBus["数据总线<br>Data Bus<br>在CPU与随机存取器RAM (random access memory)之间来回传送需要处理或需要存储的数据"]
+            AddressBus["地址总线<br>Address Bus<br>指定在RAM中存储的数据的地址"]
+            ControlBus["控制总线<br>Control Bus<br>将微处理控制单元的信号，传送到周边设备"]
+        end
+
+        subgraph "按在计算机系统中的位置划分<br>By Position in Computer System"
+            direction LR
+            InternalBus["内部总线 (芯片级)<br>Internal Bus (Chip-level)芯片内部的总线，连接CPU内部的寄存器、ALU等部件。"]
+            SystemBus["系统总线 (板级)<br>System Bus (Board-level)连接CPU、内存、I/O控制器等主要功能板卡的板级总线。通常我们所说的总线就是指系统总线。"]
+            ExternalBus["外部/通信总线<br>External/Communication Bus用于计算机之间或计算机与外部设备之间的通信，如USB、SATA、PCIe等"]
+        end
+
+        subgraph "按数据传输格式划分<br>By Data Transmission Format"
+            direction LR
+            ParallelBus["并行总线<br>Parallel Bus<br>多条数据线同时传输多位数据，速度快，成本高，适合近距离高速传输（如内存总线）"]
+            SerialBus["串行总线<br>Serial Bus<br>数据按位顺序在一条数据线上逐位传输，成本低，适合长距离传输（如USB、SATA）"]
+        end
+    end</pre>
 <h2 id="可靠性">可靠性</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{软件可靠性是指系统在给定的时间间隔内、在给定条件下无失效运行的概率。}
+\\
+\text{若 MTTF(Mean Time To Failure,失败前时间) 和 MTTR
+分别表示平均无故障时间和平均修复时间，} \\
+\text{则下列哪个公式可用于计算软件可靠性？} \\
+\\
+\hline \\
+\\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{选项} &amp; \textbf{公式} &amp; \textbf{分析与结论} \\
+\hline
+\text{A} &amp; \Large \frac{\text{MTTF}}{1 + \text{MTTF}} &amp;
+    \begin{array}{l}
+    \text{该公式是 MTTF 的【单调递增】函数。} \\
+    \text{当 MTTF (平均无故障时间) 增大时，表达式的值也随之增大，} \\
+    \text{无限趋近于 1。这完全符合“无故障时间越长，系统越可靠”的逻辑。}
+\\
+    \textbf{结论：正确}
+    \end{array} \\
+\hline
+\text{B} &amp; \Large \frac{1}{1 + \text{MTTF}} &amp;
+    \begin{array}{l}
+    \text{该公式是 MTTF 的【单调递减】函数。} \\
+    \text{当 MTTF 增大时，表达式的值反而减小。} \\
+    \text{这描述的是“失效率”或“不可靠性”，与题目要求相反。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{C} &amp; \Large \frac{\text{MTTR}}{1 + \text{MTTR}} &amp;
+    \begin{array}{l}
+    \text{该公式基于 MTTR (平均修复时间)。} \\
+    \text{MTTR 主要用于衡量系统的【可维护性】或【可用性】，} \\
+    \text{而非直接衡量“无故障”能力的【可靠性】，与题意不符。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{D} &amp; \Large \frac{1}{1 + \text{MTTR}} &amp;
+    \begin{array}{l}
+    \text{该公式同样基于 MTTR，与可靠性的核心定义不符。} \\
+    \text{它更像是对“不可维护性”或某种形式的“不可用性”的度量，} \\
+    \text{与题目要求相去甚远。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{某系统由3个部件构成，每个部件的千小时可靠度都为R，} \\
+\text{该系统的千小时可靠度为 } (1-(1-R)^2)R, \text{则该系统的构成方式是
+( \quad )。} \\
+\\
+\text{A. 3个部件串联} \\
+\text{B. 3个部件并联} \\
+\text{C. 前两个部件并联后与第三个部件串联} \\
+\text{D. 第一个部件与后两个部件并联构成的子系统串联} \\
+\\
+\hline \\
+\\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{选项} &amp; \textbf{构成方式与公式} &amp; \textbf{分析与结论} \\
+\hline
+\text{A} &amp;
+    \begin{array}{c} \text{3个部件串联} \\ R_{sys} = R \times R \times R
+= R^3 \end{array} &amp;
+    \begin{array}{l}
+    \text{公式与题干不符。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{B} &amp;
+    \begin{array}{c} \text{3个部件并联} \\ R_{sys} = 1 - (1-R)^3
+\end{array} \\ &amp;
+    \begin{array}{l}
+    \text{公式与题干不符。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{C} &amp;
+    \begin{array}{c} \text{前两个并联，再与第三个串联} \\ \text{即 (C₁
+|| C₂) --- C₃} \\ R_{sys} = [1 - (1-R)(1-R)] \times R \\ = (1-(1-R)^2)R
+\end{array} \\ &amp;
+    \begin{array}{l}
+    \text{该公式的结构和计算结果与题干完全吻合。} \\
+    \text{先计算前两个并联部分的可靠度 } (1-(1-R)^2), \\
+    \text{再将其与第三个部件串联，乘以 R。} \\
+    \textbf{结论：正确}
+    \end{array} \\
+\hline
+\text{D} &amp;
+    \begin{array}{c} \text{第一个与后两个的并联子系统串联} \\ \text{即
+C₁ --- (C₂ || C₃)} \\ R_{sys} = R \times [1 - (1-R)(1-R)] \\ =
+R(1-(1-R)^2) \end{array} \\ &amp;
+    \begin{array}{l}
+    \text{虽然由于乘法交换律，其【计算结果】与C选项相同，} \\
+    \text{但其结构更自然地对应表达式 } R(1-(1-R)^2)\text{。} \\
+    \text{题干给出的表达式 } (1-(1-R)^2)R \text{
+与C选项的描述顺序更匹配。} \\
+    \textbf{结论：描述不如C选项精确}
+    \end{array} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph LR
+    subgraph "串联系统"
+    spacer_top("各个部件可靠性的乘积<br>R_串 = R₁ × R₂ × ... × Rₙ")
+        subgraph " "
+            direction LR
+            Input["输入"] --> R1["部件1<br>R₁"]
+            R1 --> R2["部件2<br>R₂"]
+            R2 --> ...
+            ... --> Rn["部件n<br>Rₙ"]
+            Rn --> Output["输出"]
+        end
+    end</pre>
+<hr>
+<pre class="mermaid">graph TD
+    subgraph "并联系统"
+        spacer_top("1-所有部件都失效的概率<br>R_并 = 1 - (1 - R₁) × (1 - R₂) × ... × (1 - Rₙ)") 
+        subgraph " "
+            Input["输入"] --> Fork
+            Fork --> R1["部件1<br>R₁"]
+            Fork --> R2["部件2<br>R₂"]
+            R1 --> Join
+            R2 --> Join
+            Join --> Output["输出"]
+        end
+    end</pre>
+<hr>
+<pre class="mermaid">graph LR
+    subgraph "混合系统"
+        spacer_top("将子系统作为一个整体和其他部件串联<br>R_系统 = R₁ × [1 - (1 - R₂) × (1 - R₃)]") 
+        subgraph " "
+            direction LR
+            Input["输入"] --> R1["部件1<br>R₁"]
+            subgraph "子系统 (并联)"
+                R2["部件2<br>R₂"]
+                R3["部件3<br>R₃"]
+            end
+            R1 --> R2
+            R1 --> R3
+            R2 --> Output["输出"]
+            R3 --> Output
+        end
+    end</pre>
 <h2 id="性能指标">性能指标</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{推导：32位地址总线能够直接寻址的最大内存空间为4GB} \\
+\text{地址总线的位数决定了CPU能够直接访问的内存单元数量。} \\
+\text{如果地址总线有N位，那么它可以表示 } 2^N \text{个不同的地址。} \\
+\text{每个地址通常对应一个字节 (Byte) 的存储空间。} \\
+\\
+\textbf{对于32位地址总线：} \\
+\text{总的寻址能力为 } 2^{32} \text{ 字节。} \\
+\text{我们知道：} \\
+1 \text{ KB (Kilobyte)} = 2^{10} \text{ 字节} \\
+1 \text{ MB (Megabyte)} = 2^{10} \text{ KB} = 2^{20} \text{ 字节} \\
+1 \text{ GB (Gigabyte)} = 2^{10} \text{ MB} = 2^{30} \text{ 字节} \\
+\\
+\text{所以，} \\
+2^{32} \text{ 字节} = 2^2 \times 2^{30} \text{ 字节} \\
+\quad \quad \quad = 4 \times 1 \text{ GB} \\
+\quad \quad \quad = 4 \text{ GB} \\
+\end{array}
+$$</span></p>
+<hr>
+<table>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">指标 (Metric)</th>
+<th style="text-align: left;">定义 (Definition)</th>
+<th style="text-align: left;">公式 (Formula)</th>
+<th style="text-align: left;">场景比喻 (Scenario Analogy)</th>
+<th style="text-align: left;">注意事项 (Notes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">字长<br>Word Length</td>
+<td style="text-align: left;">指CPU一次能并行处理的二进制数据的位数，位数越大性能越高。</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">就像工厂里的生产线，字长决定了一次能搬运的零件数量。32位字长就像一次搬32个零件，64位字长就像一次搬64个零件，显然64位效率更高。</td>
+<td style="text-align: left;">“32 位” 通常指 地址总线的位数（即 CPU
+用于生成内存地址的二进制位数）。地址总线的宽度直接决定了 CPU
+能访问的最大内存空间（即寻址空间），如32位对应4GB寻址空间。</td>
+</tr>
+<tr>
+<td style="text-align: left;">主频 (Main Frequency)</td>
+<td style="text-align: left;">指CPU内数字脉冲振荡器每秒钟发出的脉冲数。</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">就像工厂里生产线的节拍。节拍越快（主频越高），单位时间内生产的产品就越多</td>
+<td style="text-align: left;">单位是赫兹（Hz），常用GHz表示。主频越高，CPU在一秒内执行的操作次数越多，速度越快。</td>
+</tr>
+<tr>
+<td style="text-align: left;">时钟周期 (Clock Cycle)</td>
+<td style="text-align: left;">指完成一个时钟脉冲所需的时间，是主频的倒数。单位是秒（s）</td>
+<td style="text-align: left;"><span class="math inline">$时钟周期 =
+\frac1{主频}$</span></td>
+<td style="text-align: left;">生产线完成一个节拍所需的时间。时间越短，节拍越快。</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">CPI
+每条指令周期数<strong><br></strong>Cycles Per Instruction</td>
+<td style="text-align: left;">执行一条指令所需的平均时钟周期数。</td>
+<td style="text-align: left;"><span class="math inline">$CPI =
+\frac{总时钟周期数}{指令总数}$</span></td>
+<td style="text-align: left;">工人完成一道工序所需的平均工作步数。</td>
+<td style="text-align: left;">CPI 值越小，执行效率越高。</td>
+</tr>
+<tr>
+<td style="text-align: left;">IPC
+每周期指令数<strong><br></strong>Instructions Per Cycle</td>
+<td style="text-align: left;">CPU在一个时钟周期内能够完成的指令条数。</td>
+<td style="text-align: left;"><span class="math inline">$IPC =
+\frac{1}{CPI}$</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">CPI 和 IPC
+互为倒数，衡量CPU流水线效率。IPC 值越大，性能越强。</td>
+</tr>
+<tr>
+<td style="text-align: left;">MIPS每秒百万指令<strong><br></strong>Millions
+of Instructions Per Second</td>
+<td style="text-align: left;">CPU每秒钟能执行的指令数量，以百万条为单位。</td>
+<td style="text-align: left;"><span class="math inline">$MIPS =
+\frac{主频 (Hz)}{平均CPI \times 10^6}$</span></td>
+<td style="text-align: left;">工厂里一条生产线每秒钟能生产的”百万个”零件。</td>
+<td style="text-align: left;">K, M, G在时间/频率中为<span class="math inline">10<sup>3</sup>, 10<sup>6</sup>, 10<sup>9</sup></span>，在存储容量中为<span class="math inline">2<sup>10</sup>, 2<sup>20</sup>, 2<sup>30</sup></span>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">MFLOPS每秒百万浮点运算<strong><br></strong>Millions
+of Floating-point Operations Per Second</td>
+<td style="text-align: left;">CPU每秒钟能执行的浮点运算次数，以百万次为单位。</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">特种工厂里，专门处理复杂、精细零件的生产线每秒能处理的”百万个”任务。</td>
+<td style="text-align: left;">主要用于衡量科学计算等对浮点运算要求高的场景。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{在软件质量属性当中，以下哪一个表示的是软件每分钟可以处理的请求？}
+\\
+\text{A. 吞吐量} \\
+\text{B. 响应时间} \\
+\text{C. 负载} \\
+\text{D. 容量} \\
+\\
+\hline \\
+\textbf{解析：} \\
+\text{本题考察对软件性能指标基本概念的理解。根据定义，\textbf{吞吐量}指单位时间内完成的任务总量，与"每分钟处理的请求"直接对应。}
+\\
+\\
+\begin{array}{|c|l|l|}
+\hline
+\textbf{选项} &amp; \textbf{概念} &amp; \textbf{分析与结论} \\
+\hline
+\text{A} &amp; 吞吐量 (Throughput) &amp; \begin{array}{l}
+\text{指单位时间内系统处理或完成的任务总量，与"每分钟处理的请求"相符。}
+\\ \textbf{结论：正确} \end{array} \\
+\hline
+\text{B} &amp; 响应时间 (Response Time) &amp; \begin{array}{l}
+\text{指从请求提交到收到第一个响应的时间间隔。衡量系统及时性。} \\
+\textbf{结论：错误} \end{array} \\
+\hline
+\text{C} &amp; 负载 (Load) &amp; \begin{array}{l}
+\text{指系统所承受的工作量或同时处理的请求数量。} \\ \textbf{结论：错误}
+\end{array} \\
+\hline
+\text{D} &amp; 容量 (Capacity) &amp; \begin{array}{l} \\
+\text{指系统能存储的最大数据量或处理的最大工作量。} \\
+\textbf{结论：错误} \\ \end{array} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{某个计算机系统的CPU主频是2.8GHz。某个应用程序包括三类指令：A、B、C，}
+\\
+\text{它们执行所需的平均CPI和所占的比例分别如下表所示：} \\
+\\
+\begin{array}{|c|c|c|}
+\hline
+\textbf{指令类型} &amp; \textbf{所需CPI} &amp; \textbf{所占比例} \\
+\hline
+\text{A} &amp; 4 &amp; 35\\% \\
+\text{B} &amp; 2 &amp; 45\\% \\
+\text{C} &amp; 6 &amp; 20\\% \\
+\hline
+\end{array} \\
+\\
+\text{执行该应用程序需要的平均CPI是多少？该计算机的运算速度用MIPS表示，大约是多少？}
+\\
+\\
+\hline \\
+\textbf{解析：} \\
+\text{本题考察平均CPI的加权平均计算以及MIPS的计算。需要注意单位转换。}
+\\
+\\
+\text{1. \textbf{计算平均CPI：}} \\
+\text{平均CPI是各类指令CPI与其所占比例的乘积之和（加权平均）。} \\
+平均CPI = (CPI_A \times 比例_A) + (CPI_B \times 比例_B) + (CPI_C \times
+比例_C) \\
+\text{代入数值：} \\
+平均CPI = (4 \times 0.35) + (2 \times 0.45) + (6 \times 0.20) \\
+平均CPI = 1.4 + 0.9 + 1.2 = 3.5 \\
+\textbf{执行该应用程序需要的平均CPI为 3.5。} \\
+\\
+\text{2. \textbf{计算MIPS：}} \\
+\text{MIPS（每秒百万指令）的计算公式为：} \\
+MIPS = \frac{主频 (Hz)}{平均CPI \times 10^6} \\
+\text{已知CPU主频为 2.8GHz，即 } 2.8 \times 10^9 \text{ Hz。} \\
+注意K, M, G在时间/频率中为10^3, 10^6, 10^9，在存储容量中为2^{10},
+2^{20}, 2^{30}。 \\
+MIPS = \frac{2.8 \times 10^9}{3.5 \times 10^6} \\
+MIPS = \frac{2.8}{3.5} \times \frac{10^9}{10^6} \\
+MIPS = 0.8 \times 10^3 \\
+MIPS = 800 \\
+\textbf{该计算机的运算速度用MIPS表示，大约是 800 MIPS。} \\
+\\
+\textbf{最终答案}：平均CPI为3.5，MIPS为800。
+\end{array}
+$$</span></p>
+<hr>
+<h2 id="操作系统">操作系统</h2>
+<ul>
+<li>嵌入式操作系统能运行在不同的微处理平台上，能针对硬件变化进行结构与功能上的配置，体现了嵌入式操作系统的<strong>可定制性</strong></li>
+</ul>
+<pre class="mermaid">graph TD
+    subgraph SystemArchitecture ["<strong>计算机系统架构概览<br>Computer System Architecture Overview</strong>"]
+        direction LR
+        A["<strong>应用软件<br>Application Software (APP)</strong><br><em>用户直接交互的工具</em>"]
+        B["<strong>系统软件<br>System Software (SS)</strong><br><em>为应用软件提供公共服务</em><br>比如数据库管理系统"]
+        C["<strong>操作系统<br>Operating System (OS)</strong><br><em>应用软件与硬件之间、人机之间的接口</em><br>管理系统的软硬件和数据资源，控制程序运行"<br>管理进程、存储、文件、作业、设备]
+        D["<strong>计算机硬件<br>Computer Hardware (HW)</strong><br><em>构成计算机的物理基础</em>"]
+        A --> B
+        B --> C
+        C --> D
+    end</pre>
+<hr>
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">分类</th>
+<th style="text-align: left;">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">批处理操作系统</td>
+<td style="text-align: left;">单道批：一次一个作业入内存，作业由程序、数据、作业说明书组成。多道批：一次多个作业入内存，特点：多道、宏观上并行微观上串行。</td>
+</tr>
+<tr>
+<td style="text-align: left;">分时操作系统</td>
+<td style="text-align: left;">采用<strong>时间片轮转</strong>的方式为多个用户提供服务，每个用户感觉独占系统。特点：多路性、独立性、交互性和及时性。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>实时操作系统</strong></td>
+<td style="text-align: left;"><strong>实时控制系统和实时信息系统。交互能力要求不高，可靠性要求高
+(规定时间内响应并处理)。</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">网络操作系统</td>
+<td style="text-align: left;">方便有效共享网络资源，提供服务软件和有关协议的集合。主要的网络操作系统有：Unix、Linux和Windows
+Server系统。</td>
+</tr>
+<tr>
+<td style="text-align: left;">分布式操作系统</td>
+<td style="text-align: left;">任意两台计算机可以通过通信交换信息。是网络操作系统的更高级形式，具有透明性、可靠性和高性能等特性。</td>
+</tr>
+<tr>
+<td style="text-align: left;">微机操作系统</td>
+<td style="text-align: left;">Windows:
+Microsoft开发的图形用户界面、多任务、多线程操作系统。Linux:
+免费使用和自由传播的类Unix操作系统，多用户、多任务、多线程和多CPU的操作系统。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>嵌入式操作系统</strong></td>
+<td style="text-align: left;"><strong>运行在智能芯片环境中。特点：微型化、可定制
+(针对硬件变化配置)、实时性、可靠性、易移植性
+(HAL和BSP支持)。</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="进程和线程">进程和线程</h2>
+<table>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">分类</th>
+<th style="text-align: left;">概念 (Concept)</th>
+<th style="text-align: left;">共享资源 (Shared Resources)</th>
+<th style="text-align: left;">不共享资源 (Non-Shared Resources)</th>
+<th style="text-align: left;">场景/比喻 (Scenario/Analogy)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">程序（program）</td>
+<td style="text-align: left;">程序是静态的概念，而进程是动态的，比如打开运行QQ后才会进入进程状态。进程可以有状态变迁和消亡</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">进程 (Process)</td>
+<td style="text-align: left;">进程是程序在一个数据集合上运行的过程(进程是程序的一次执行过程)，是资源调度和分配的基本单位，不会共享资源，可以包含多个线程。由程序块、进程控制块(PCB,进程的唯一标志，用<strong>队列指针</strong>来链接同一状态的进程，可通过指针个数来判断相应状态的进程数)和数据块组成</td>
+<td style="text-align: left;">不共享资源</td>
+<td style="text-align: left;">不共享资源</td>
+<td style="text-align: left;">想象一个独立的工厂
+(Factory)，它有自己的地皮、设备和原材料。工厂内的所有生产活动都由这个工厂独立负责，与其他工厂隔离。</td>
+</tr>
+<tr>
+<td style="text-align: left;">线程 (Thread)</td>
+<td style="text-align: left;">进程内部的更小执行单元
+。进程切换的损耗成本高，所以在进程内部又细分出来线程</td>
+<td style="text-align: left;">内存地址空间 (Memory Address Space)、代码
+(Code)、数据 (Data)、文件 (Files) 等。</td>
+<td style="text-align: left;">程序计数器 (Program Counter)、寄存器
+(Registers) 和栈 (Stack)。</td>
+<td style="text-align: left;">想象一个工厂 (进程) 内的流水线工人
+(Thread)。多个工人在同一工厂内共享工厂的设备、原材料和工作区，但每个工人有自己的工具箱
+(寄存器)、操作步骤 (程序计数器) 和正在处理的任务列表 (栈)。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>就绪：一个进程获得除CPU外的一切所需资源</li>
+<li>运行：获得CPU时间片，在CPU上运行,时间片一到又回到就绪态等CPU调度</li>
+<li>阻塞：等待某个事件发生（请求、IO）而暂时停止运行,等待的事件发生后，重新回到就绪态等CPU调度</li>
+<li>挂起：进程过多，主存资源不足，将进程放到磁盘兑换区暂时不参与调度</li>
+</ul>
+<h2 id="pv操作">PV操作</h2>
+<ul>
+<li>PV操作可以实现资源的互斥使用</li>
+<li>PV是加解锁，会减少资源利用率，并且可能会发生死锁</li>
+<li>Semaphore信号量,S &gt; 0表示有 S 个可用资源,S = 0表示没有可用资源,S
+&lt; 0表示有 |S|
+个进程正在等待该资源（即被阻塞的进程数)。场景示例：想象一个有3个停车位的停车场（共享资源）。初始时，信号量
+S=3。每当一辆车驶入，S减1；每当一辆车驶出，S加1。如果S变为-1，意味着停车场已满，且有1辆车在等待。</li>
+<li>P(S)请求资源：当一辆车试图驶入停车场时，它会执行P操作。停车位数量减1。如果停车位数量变为负数（即没有空位且有车在等），这辆车就会被阻塞，在停车场入口排队等待。</li>
+<li>V(S)释放资源：当一辆车驶出停车场时，它会执行V操作。停车位数量加1。如果此时有车辆在入口排队等待（信号量S小于等于0），系统就会通知一辆等待的车辆，让它进入停车场。</li>
+</ul>
+<hr>
+<pre class="mermaid">graph TD
+    subgraph P_OPERATION ["<strong>P操作<br>P Operation</strong>"]
+        direction LR
+        P_START["S = S - 1"]
+        P_START --> P_CHECK{ S < 0 }
+        P_CHECK -- "是 (T)" --> P_BLOCK["阻塞进程<br>Block Process"]
+        P_CHECK -- "否 (F)" --> P_CONTINUE["继续执行<br>Continue Execution"]
+    end
+
+    subgraph V_OPERATION ["<strong>V操作<br>V Operation</strong>"]
+        direction LR
+        V_START["S = S + 1"]
+        V_START --> V_CHECK{ S <= 0 } v_check -- "是 (t)"> V_WAKEUP["唤醒进程<br>Wakeup Process"]
+        V_CHECK -- "否 (F)" --> V_CONTINUE["继续执行<br>Continue Execution"]
+    end
+
+    BLOCKED_QUEUE["阻塞进程队列<br>Blocked Process Queue"]
+
+    P_BLOCK --> BLOCKED_QUEUE
+    V_WAKEUP --> BLOCKED_QUEUE
+    BLOCKED_QUEUE --> V_WAKEUP
+
+    style P_OPERATION fill:#F0F8FF,stroke:#B0C4DE,stroke-width:2px,color:#2F4F4F
+    style V_OPERATION fill:#FFFACD,stroke:#BDB76B,stroke-width:2px,color:#556B2F
+    style BLOCKED_QUEUE fill:#E6E6FA,stroke:#9370DB,stroke-width:2px,color:#4B0082
+
+    style P_START fill:#ADD8E6,stroke:#4682B4,stroke-width:1px,color:#000080
+    style P_CHECK fill:#B0E0E6,stroke:#5F9EA0,stroke-width:1px,color:#2F4F4F
+    style P_BLOCK fill:#FFDAB9,stroke:#A0522D,stroke-width:1px,color:#A0522D
+    style P_CONTINUE fill:#98FB98,stroke:#3CB371,stroke-width:1px,color:#2E8B57
+
+    style V_START fill:#D8BFD8,stroke:#8A2BE2,stroke-width:1px,color:#4B0082
+    style V_CHECK fill:#E6E6FA,stroke:#9370DB,stroke-width:1px,color:#4B0082
+    style V_WAKEUP fill:#FAEBD7,stroke:#DEB887,stroke-width:1px,color:#A0522D
+    style V_CONTINUE fill:#F0FFFF,stroke:#AFEEEE,stroke-width:1px,color:#2F4F4F</=></pre>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题：}
+\text{假设系统中n个进程共享3台扫描仪，并采用PV操作实现进程同步与互斥。}\\
+\text{若系统信号量S的当前值为-1，进程P1、P2又分别执行了1次P (S)
+操作，}\\
+\text{那么信号量S的值应为 ( )。}
+\\\\
+\textbf{选项：}
+\\
+\quad \text{A. 3}
+\\
+\quad \text{B. -3}
+\\
+\quad \text{C. 1}
+\\
+\quad \text{D. -1}
+\\\\
+\textbf{解题分析：}
+\\
+\quad \text{1. 理解信号量S的初始值：} \\
+\quad \quad \text{系统中有3台扫描仪，这意味着共享资源的数量为3。} \\
+\quad \quad \text{信号量S通常用于表示可用资源的数量。当S &gt; 0
+时，表示有S个可用资源；} \\
+\quad \quad \text{当S = 0 时，表示无可用资源；当S &lt; 0
+时，表示有}|S|\text{个进程正在等待资源。} \\
+\quad \quad
+\text{题目中信号量S的当前值为-1，这表明此时有1个进程正在等待扫描仪资源，}
+\\
+\quad \quad \text{且所有3台扫描仪都已被占用。} \\
+\\
+\quad \text{2. 理解P操作 (wait/请求资源操作)：} \\
+\quad \quad \text{P操作会尝试获取一个资源。如果S &gt; 0，则S减1 (S--)；}
+\\
+\quad \quad \text{如果S $ \le $ 0，则S减1
+(S--)，并且执行P操作的进程会被阻塞，进入等待队列。} \\
+\\
+\quad \text{3. 分析P1和P2执行P操作后的影响：} \\
+\quad \quad \text{初始状态：S = -1} \\
+\quad \quad \text{进程P1执行1次P(S)操作：} \\
+\quad \quad \quad \text{由于S = -1 $ \le $ 0，P1会使S值减1，变为S = -1 -
+1 = -2。} \\
+\quad \quad \quad \text{同时，P1进程会被阻塞，进入等待队列。} \\
+\quad \quad \text{此时系统信号量S的值为：-2} \\
+\\
+\quad \quad \text{进程P2执行1次P(S)操作：} \\
+\quad \quad \quad \text{由于S = -2 $ \le $ 0，P2会使S值减1，变为S = -2 -
+1 = -3。} \\
+\quad \quad \quad \text{同时，P2进程会被阻塞，进入等待队列。} \\
+\quad \quad \text{最终系统信号量S的值为：-3} \\
+\\
+\quad \text{4. 结论：} \\
+\quad \quad \text{经过P1和P2分别执行1次P操作后，信号量S的值最终为-3。}
+\\
+\quad \quad \text{这表示当前有3个进程正在等待扫描仪资源。} \\
+\\
+\textbf{正确答案：} \text{B}
+\end{array}
+$$</span></p>
+<h2 id="死锁资源数计算">死锁资源数计算</h2>
+<blockquote>
+<p>注意审题是求【不发生】死锁，还是求【可能发生】死锁</p>
+</blockquote>
+<p><span class="math display">$$
+\begin{array}{l}
+\text{某系统有6个并发进程竞争资源R，每个进程都需要3个R，保证系统不会发生死锁，R的最小值为？}
+\\
+\text{为了保证系统不发生死锁，最坏的情况是每个进程都已经获得了 (i-1)
+个资源，} \\
+\text{并且都在等待最后一个资源。此时，只要再多一个资源，就能满足至少一个进程，}
+\\
+\text{使其执行完毕并释放资源，从而避免死锁。} \\
+\\
+\textbf{符号定义：} \\
+\quad \begin{array}{ll}
+n &amp; \text{：并发进程的数量} \\
+i &amp; \text{：每个进程需要某种资源的最大数量} \\
+m &amp; \text{：保证不发生死锁的最小资源数} \\
+\end{array} \\
+\\
+\textbf{计算公式：} \\
+\text{核心原理：系统【不发生】死锁的充分条件是 } n \times (i-1) + 1 \le
+m \\
+\text{系统【可能发生】死锁的必要条件是} n \times (i-1) + 1 &gt; m \\
+\\
+\hline \\
+\textbf{例题：} \\
+\text{某系统有6个并发进程竞争资源R，每个进程都需要3个R，} \\
+\text{保证系统不会发生死锁，R的最小值为？} \\
+\\
+\textbf{解：} \\
+\quad \begin{array}{lcl}
+n &amp;=&amp; 6 \\
+i &amp;=&amp; 3 \\
+m &amp;=&amp; n \times (i - 1) + 1 \\
+        &amp;=&amp; 6 \times (3 - 1) + 1 \\
+        &amp;=&amp; 6 \times 2 + 1 \\
+        &amp;=&amp; 12 + 1 \\
+        &amp;=&amp; 13 \\
+\end{array} \\
+\\
+\textbf{解释：} \\
+\text{如果只有12个资源R，可能出现6个进程各获得2个资源（共用12个），} \\
+\text{此时每个进程都还需1个资源才能执行。由于无剩余资源，将发生死锁。}
+\\
+\text{若有13个资源R，在每个进程获得2个资源后（共用12个），还剩1个资源。}
+\\
+\text{此资源可分配给任一进程，使其完成并释放资源，} \\
+\text{从而其他进程也能相继完成。} \\
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{某计算机系统中互斥资源R的可用数为8，系统中有3个进程P1、P2和P3} \\
+\text{竞争R，且每个进程都需要i个R，该系统可能会发生死锁的最小i值为 (
+\quad )。} \\
+\\
+\text{A. 1} \qquad \text{B. 2} \qquad \text{C. 3} \qquad \text{D. 4} \\
+\\
+\hline \\
+\\
+\textbf{解题思路一：代入排除法 (逐一检验)} \\
+\\
+\text{核心原理：系统【不发生】死锁的充分条件是 } n \times (i-1) + 1 \le
+m \\
+\text{其中 n 为进程数，m 为资源数，i 为每个进程所需资源数。} \\
+\\
+\begin{array}{|c|c|l|}
+\hline
+\textbf{选项} &amp; \textbf{i值代入检验 (n=3, m=8)} &amp;
+\textbf{分析与结论} \\
+\hline
+\text{A} &amp;
+    \begin{array}{c} i=1 \\ 3 \times (1-1) + 1 = 1 \le 8 \end{array}
+&amp;
+    \begin{array}{l}
+    \text{满足不发生死锁的条件，系统安全。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{B} &amp;
+    \begin{array}{c} i=2 \\ 3 \times (2-1) + 1 = 4 \le 8 \end{array}
+&amp;
+    \begin{array}{l}
+    \text{满足不发生死锁的条件，系统安全。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{C} &amp;
+    \begin{array}{c} i=3 \\ 3 \times (3-1) + 1 = 7 \le 8 \end{array}
+&amp;
+    \begin{array}{l}
+    \text{满足不发生死锁的条件，系统安全。} \\
+    \textbf{结论：错误}
+    \end{array} \\
+\hline
+\text{D} &amp;
+    \begin{array}{c} i=4 \\ 3 \times (4-1) + 1 = 10 &gt; 8 \end{array}
+&amp;
+    \begin{array}{l}
+    \text{不满足安全条件，系统可能发生死锁。} \\
+    \textbf{结论：正确}
+    \end{array} \\
+\hline
+\end{array} \\
+\\
+\hline \\
+\\
+\textbf{解题思路二：直接求解法} \\
+\\
+\text{系统【可能发生】死锁的必要条件是：} \\
+n \times (i-1) + 1 &gt; m \\
+\text{将已知条件 n=3, m=8 代入不等式：} \\
+3 \times (i-1) + 1 &gt; 8 \\
+3(i-1) &gt; 7 \\
+i-1 &gt; \frac{7}{3} \\
+i &gt; 1 + 2.33... \\
+i &gt; 3.33... \\
+\text{由于 i 必须为整数，所以可能发生死锁的最小 i 值为 4。} \\
+\\
+\textbf{最终答案：D}
+\end{array}
+$$</span></p>
+<h2 id="进程资源图">进程资源图</h2>
+<pre class="mermaid">graph TB
+    subgraph "资源 (Resources)"
+        direction LR
+        R1("R1 (2个实例)")
+        R2("R2 (3个实例)")
+    end
+
+    subgraph "进程 (Processes)"
+        direction LR
+        P1("P1")
+        P2("P2")
+        P3("P3")
+    end
+
+    %% 资源分配
+    R1 --> P1
+    R1 --> P2
+    R2 --> P1
+    R2 --> P3
+
+    %% 资源请求
+    P1 --> R2
+    P2 --> R1
+    P3 --> R2
+
+    style R1 fill:#f9f,stroke:#333,stroke-width:2px
+    style R2 fill:#f9f,stroke:#333,stroke-width:2px</pre>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{题目：} \\
+\text{在如上所示的进程资源图中，( \quad )。} \\
+\\
+\text{A. P1、P2、P3都是非阻塞节点，该图可以化简，所以是非死锁的} \\
+\text{B. P1、P2、P3都是阻塞节点，该图不可以化简，所以是死锁的} \\
+\text{C. P1、P2是非阻塞节点，P3是阻塞节点，该图不可以化简，所以是死锁的}
+\\
+\text{D. P2是阻塞节点，P1、P3是非阻塞节点，该图可以化简，所以是非死锁的}
+\\
+\\
+\hline \\
+\\
+\textbf{核心原理：死锁检测之图化简法} \\
+\text{1. } \textbf{找节点：} \text{寻找一个非阻塞进程
+P，其资源请求能被当前系统【可用】资源满足。} \\
+\text{2. } \textbf{化简图：} \text{若找到，则假定 P
+运行完毕，释放其【已占用】的所有资源，并从图中消去 P。} \\
+\text{3. } \textbf{重复：} \text{重复以上步骤，直到所有进程都被消去。}
+\\
+\text{4. } \textbf{结论：}
+\text{若所有进程都能被消去，则系统【没有发生死锁】。否则，系统【已发生死锁】。}
+\\
+\\
+\textbf{解题步骤：} \\
+\text{1. } \textbf{分析初始状态：} \\
+\qquad \text{R1 总数: 2, 已分配: 2 (P1, P2各1), } \textbf{可用: 0} \\
+\qquad \text{R2 总数: 3, 已分配: 2 (P1, P3各1), } \textbf{可用: 1} \\
+\\
+\text{2. } \textbf{判断各进程状态 (能否被满足)：} \\
+\qquad \text{P1 请求 R2 (需求:1, 可用:1) } \implies \textbf{非阻塞} \\
+\qquad \text{P2 请求 R1 (需求:1, 可用:0) } \implies \textbf{阻塞} \\
+\qquad \text{P3 请求 R2 (需求:1, 可用:1) } \implies \textbf{非阻塞} \\
+\\
+\text{3. } \textbf{模拟图化简：} \\
+\qquad \text{Step 1: 选择非阻塞进程 P1。P1 运行完毕，释放其占有的 R1(1),
+R2(1)。} \\
+\qquad \qquad \text{系统可用资源变为：(0,1) + (1,1) = (1,2)。} \\
+\qquad \text{Step 2: 此时 P2(请求R1), P3(请求R2) 均变为非阻塞。选择 P3
+运行完毕，释放 R2(1)。} \\
+\qquad \qquad \text{系统可用资源变为：(1,2) + (0,1) = (1,3)。} \\
+\qquad \text{Step 3: 选择 P2 运行完毕，释放 R1(1)。} \\
+\\
+\text{4. } \textbf{最终结论：} \\
+\qquad \text{所有进程均可被消去，该图【可以化简】，系统【非死锁】。} \\
+\qquad \text{初始状态下，P2 是阻塞节点，P1 和 P3 是非阻塞节点。} \\
+\\
+\hline \\
+\\
+\begin{array}{|c|l|}
+\hline
+\textbf{选项分析} &amp; \textbf{结论} \\
+\hline
+\text{A} &amp; \text{与事实不符。P2 初始为阻塞节点。} \quad
+\textbf{错误} \\
+\hline
+\text{B} &amp; \text{与事实不符。P1, P3 初始为非阻塞节点。} \quad
+\textbf{错误} \\
+\hline
+\text{C} &amp; \text{与事实不符。P2 是阻塞节点，P3 是非阻塞节点。} \quad
+\textbf{错误} \\
+\hline
+\text{D} &amp; \text{描述与分析结果完全一致。} \quad \textbf{正确} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<h2 id="io管理软件">IO管理软件</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{I/O 设备管理软件共 4 层：用户 I/O
+例程、与设备无关的系统软件、设备驱动程序、中断处理程序。} \\
+\text{图中 ①②③ 分别对应哪三个层次？} \\
+\\
+\textbf{选项} \\
+\text{A.\; 设备驱动程序，虚设备管理，与设备无关的系统软件} \\
+\text{B.\; 设备驱动程序，与设备无关的系统软件，虚设备管理} \\
+\text{C.\; 与设备无关的系统软件，中断处理程序，设备驱动程序} \\
+\text{D.\; 与设备无关的系统软件，设备驱动程序，中断处理程序} \\
+\\
+\textbf{解题分析} \\
+\begin{array}{|c|c|}
+\hline
+① &amp; \text{与设备无关的系统软件} \\
+\hline
+② &amp; \text{设备驱动程序} \\
+\hline
+③ &amp; \text{中断处理程序} \\
+\hline
+\end{array} \\
+\\
+\textbf{答案}: \boxed{\text{D}}
+\end{array}
+$$</span></p>
+<h2 id="文件管理">文件管理</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{若系统在将 ( \quad ) 文件修改的结果写回磁盘时发生崩溃，}\\
+\text{则对系统的影响相对较大。} \\
+\\
+\textbf{选项} \\
+\text{A.\; 目录} \\
+\text{B.\; 空闲块表（位示图）} \\
+\text{C.\; 用户程序} \\
+\text{D.\; 用户数据} \\
+\\
+\textbf{解题分析} \\
+\text{目录项损坏将导致文件名与磁盘块映射关系丢失，}\\
+\text{用户无法通过路径访问文件，影响立即且范围广；}\\
+\text{相比之下，空闲块表损坏的危害通常在后续写入时体现。} \\
+\\
+\textbf{答案}: A
+\end{array}
+$$</span></p>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250622153004192.png" alt="image-20250622153004192">
+<figcaption aria-hidden="true">image-20250622153004192</figcaption>
+</figure>
+<h2 id="位示图">位示图</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{某字长为 32 位的计算机文件管理系统采用位示图 (bitmap)
+记录磁盘使用情况。}\\
+\text{若磁盘容量为 300\,GB，物理块大小为 1\,MB，位示图的大小为 ( \quad )
+个字。}\\
+\\
+\textbf{选项} \\
+\text{A.\;1200} \qquad
+\text{B.\;3200} \qquad
+\text{C.\;6400} \qquad
+\text{D.\;9600} \\
+\\
+\textbf{解题分析} \\
+\begin{array}{|c|l|}
+\hline
+\text{步骤} &amp; \text{计算} \\
+\hline
+\text{1. 物理块数} &amp;
+300\,\text{GB} \div 1\,\text{MB} = 300 \times 1024 = 307200\,\text{块}
+\\
+\hline
+\text{2. 位数} &amp; 1\,\text{块} \leftrightarrow 1\,\text{位}
+\;\Rightarrow\; 307200\,\text{位} \\
+\hline
+\text{3. 字数} &amp; 1\,\text{字}=32\,\text{位};\; 307200 / 32 =
+9600\,\text{字} \\
+\hline
+\end{array} \\
+\\
+\textbf{答案}: \text{D 9600}
+\end{array}
+$$</span></p>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{物理块从 0 开始编号，若某页面存放在 1023 号物理块，}\\
+\text{则在位示图 (bitmap) 中应如何操作？} \\
+\\
+\textbf{思路} \\
+\text{• 每个物理块对应 1 位；1 字节 = 8 位。}\\
+\text{• 先确定 1023 位所处的字节序号，再确定该字节内的具体位。}\\
+\\
+\textbf{解题分析} \\
+\begin{array}{|c|l|}
+\hline
+\textbf{步骤} &amp; \textbf{计算与说明} \\
+\hline
+\text{字节序号} &amp;
+1023 \div 8 = 127 \;\;(\text{整数商}) \\
+\hline
+\text{位序号} &amp;
+1023 \bmod 8 = 7 \quad(\text{从 0 数起的第 7 位}) \\
+\hline
+\text{操作} &amp;
+\text{读取位示图中第 127 个字节，将其第 7 位置为 1 \;(已占用)} \\
+\hline
+\end{array} \\
+\\
+\textbf{结论} \\
+\text{定位到 bitmap 第 127 个字节，将最末一位 (bit 7) 设为 1。}
+\end{array}
+$$</span></p>
+<h2 id="索引文件">索引文件</h2>
+<pre class="mermaid">graph TD
+    A[图书封面<br>Cover Card] --> B0[目录卡 0‒4<br>直接找书]
+    A --> B1[目录卡 5‒6<br>一级索引柜]
+    A --> C[目录卡 7<br>二级索引柜]
+    B1 --> D[256 本书]
+    C --> E[256 个一级索引柜] --> F[每柜 256 本书]</pre>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{某文件系统采用索引节点管理，磁盘块和索引块大小均为 1\,KB。}\\
+\text{每个索引节点含 8 个地址项 } iaddr[0]\sim iaddr[7]，每项
+4\,字节：\\
+\text{• } iaddr[0]\sim iaddr[4] \text{ 为直接地址；}\\
+\text{• } iaddr[5], iaddr[6] \text{ 为一级间接地址；}\\
+\text{• } iaddr[7] \text{ 为二级间接地址。}\\
+\\
+\text{(1) 若要访问逻辑块号 } 445 \text{，系统应采用何种地址访问方式？}\\
+\text{(2) 该文件系统可表示的单文件最大长度是多少 KB？}\\
+\\
+\textbf{解题分析} \\
+\begin{array}{|c|c|l|}
+\hline
+\text{步骤} &amp; \text{计算} &amp; \text{说明} \\
+\hline
+\text{块大小} &amp; 物理/索引块 = 1 KB=1024B ；地址项 = 4 B &amp; 1 KB
+块可存 256 地址项 \\
+\hline
+\text{直接块数} &amp; 5 &amp; iaddr[0]\sim iaddr[4] \\
+\hline
+\text{一级间接容量} &amp; 2 \times 256 = 512 &amp; iaddr[5], iaddr[6] \\
+\hline
+\text{二级间接容量} &amp; 256 \times 256 = 65536 &amp; iaddr[7] \\
+\hline
+\text{总可寻址块} &amp; 5 + 512 + 65536 = 66053 &amp;
+\text{最大文件块数} \\
+\hline
+\text{最大文件长度} &amp; 66053 \times 1\,\text{KB} = 66053\,\text{KB}
+&amp; \\
+\hline
+\end{array} \\
+\\
+\textbf{定位逻辑块 445} \\
+\text{直接块范围 } 0\!-\!4 \Rightarrow 445 &gt; 4; \\
+\text{一级间接 1 (iaddr[5]) 覆盖块 } 5\!-\!260; \\
+\text{一级间接 2 (iaddr[6]) 覆盖块 } 261\!-\!516; \\
+\text{445 在 261\!-\!516 区间内，故需 } \underline 一级间接地址访问。\\
+\\
+\textbf{答案}: \\
+(1)\; \text{一级间接地址访问} \quad
+(2)\; 66053\,\text{KB}
+\end{array}
+$$</span></p>
+<h2 id="作业管理">作业管理</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{已知作业到达与运行时间如下：} \\
+\begin{array}{|c|c|c|}
+\hline
+\text{作业号} &amp; \text{提交时刻} &amp; \text{运行时间} \\
+\hline
+J1 &amp; 6{:}00 &amp; 30 \\
+\hline
+J2 &amp; 6{:}20 &amp; 20 \\
+\hline
+J3 &amp; 6{:}25 &amp; 6 \\
+\hline
+\end{array} \\
+\\
+\textbf{调度过程 (HRRN)} \\
+\begin{array}{|c|c|c|c|}
+\hline
+\text{时刻} &amp; \text{就绪队列} &amp; \text{响应比$R =
+\dfrac{\text{等待时间}+\text{服务时间}}{\text{服务时间}}$} &amp;
+\text{选择} \\
+\hline
+6{:}00 &amp; \{J1\} &amp; (0+30)/30=1 &amp; \text{J1} \\
+\hline
+6{:}30 &amp; \{J2,J3\} &amp; \begin{array}{l}
+J2:(10+20)/20=1.5\\
+J3:(5+6)/6=1.83
+\end{array} &amp; \text{J3} \\
+\hline
+6{:}36 &amp; \{J2\} &amp;  &amp; \text{J2} \\
+\hline
+\end{array} \\
+\\
+\text{像“排队点餐”：先来很久的顾客优先} \\
+\textbf{答案}: \; J1 \rightarrow J3 \rightarrow J2
+\end{array}
+$$</span></p>
+<h2 id="数据库体系结构">数据库体系结构</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{分布式数据库基本透明性选择题} \\
+\hline \\
+\text{在分布式数据库中有分片透明、复制透明、位置透明和逻辑透明等概念，}\\
+\text{其中：} ( \text{  } ) \text{
+指局部数据模型透明，即用户或应用程序无需知道局部使用的是哪种“数据模型”；}
+\\
+( \text{  } ) \text{
+指用户或应用程序不需要知道逻辑上访问的表具体是如何分块存储的。} \\
+\\
+\textbf{选项} \\
+\text{A.\;分片透明} \qquad
+\text{B.\;复制透明} \qquad
+\text{C.\;位置透明} \qquad
+\text{D.\;逻辑透明} \\
+\\
+\textbf{答案解析} \\
+\begin{array}{|c|l|}
+\hline
+\text{选项} &amp; \text{分析} \\
+\hline
+\text{D 逻辑透明} &amp; \text{逻辑透明隐藏各站点的具体数据模型} \\
+\hline
+\text{A 分片透明} &amp; \text{分片透明隐藏数据如何被分块存放} \\
+\hline
+\text{B 复制透明} &amp;
+\text{隐藏同一数据在多个站点的冗余副本，题干未涉及“副本”概念，非答案} \\
+\hline
+\text{C 位置透明} &amp;
+\text{隐藏数据所在站点的物理地址，题干强调“分块”而非“位置”，非答案} \\
+\hline
+\end{array} \\
+\\
+\textbf{最终答案}: (1)\; \text{D 逻辑透明} \quad (2)\; \text{A 分片透明}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{分布式数据库特性选择题} \\
+\hline \\
+\text{当某一场地故障时，系统可以使用其他场地上的副本而不至于使整个系统瘫痪。}\\
+\text{这称为分布式数据库的 (  )。} \\
+\\
+\textbf{选项} \\
+\text{A.\;共享性} \qquad
+\text{B.\;自治性} \qquad
+\text{C.\;可用性} \qquad
+\text{D.\;分布性} \\
+\\
+\textbf{答案解析} \\
+\begin{array}{|c|l|}
+\hline
+\mathrm{选项} &amp; \mathrm{分析} \\
+\hline
+\mathrm{A\ 共享性} &amp;
+\mathrm{强调各站点之间可共享数据与资源，题干关注的是故障恢复，非此特性。}
+\\
+\hline
+\mathrm{B\ 自治性} &amp;
+\mathrm{指各节点能独立运行、自主控制局部数据；与 副本容错关系不大。} \\
+\hline
+\mathrm{C\ 可用性} &amp;
+\mathrm{当部分站点失效时系统仍对外服务，依赖副本保证持续运行——符合题意。}
+\\
+\hline
+\mathrm{D\ 分布性} &amp;
+\mathrm{描述数据物理分散存放且对用户透明；题干重点在容错而非分布透明。}
+\\
+\hline
+\end{array} \\
+\\
+\textbf{最终答案}: \text{C 可用性}
+\end{array}
+$$</span></p>
+<h2 id="数据库三级模式结构three-level-schema-architecture与两级映射two-level-mapping">数据库三级模式结构(Three-Level
+Schema Architecture)与两级映射(Two-Level Mapping)</h2>
+<p><strong>核心记忆口诀与关键概念对比</strong></p>
+<pre class="mermaid">graph TD
+    A["外模式<br>External Schema<br>视图集 View Collection"] -->|"逻辑独立性<br>Logical Independence"| B["概念模式<br>Conceptual Schema<br>基本表 Base Tables"]
+    B -->|"物理独立性<br>Physical Independence"| C["内模式<br>Internal Schema<br>存储文件 Storage Files"]
+    
+    %% 记忆口诀
+    D["记忆口诀<br>Memory Tips"] --> D1["外概内：外模式→概念模式→内模式"]
+    D --> D2["视表文：视图集→基本表→存储文件"]
+    D --> D3["逻物：逻辑独立性→物理独立性"]
+    D --> D4["两级映射：外↔概，概↔内（无外↔内直接映射）"]
+    
+    %% 样式定义
+    style A fill:#FFFACD,stroke:#BDB76B,stroke-width:2px
+    style B fill:#ADD8E6,stroke:#4682B4,stroke-width:2px
+    style C fill:#90EE90,stroke:#3CB371,stroke-width:2px
+    style D fill:#F5DEB3,stroke:#D2B48C,stroke-width:2px
+    style D1 fill:#FFF8DC,stroke:#F4A460
+    style D2 fill:#FFF8DC,stroke:#F4A460
+    style D3 fill:#FFF8DC,stroke:#F4A460
+    style D4 fill:#FFF8DC,stroke:#F4A460</pre>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{关键概念对比总结} \\
+\hline \\
+\begin{array}{|c|c|c|}
+\hline
+\textbf{概念} &amp; \textbf{逻辑独立性} &amp; \textbf{物理独立性} \\
+\hline
+\text{变化层次} &amp; \text{概念模式变化} &amp; \text{内模式变化} \\
+\hline
+\text{修改内容} &amp; \text{外模式/概念模式映射} &amp;
+\text{概念模式/内模式映射} \\
+\hline
+\text{不变内容} &amp; \text{应用程序和外模式} &amp;
+\text{应用程序和逻辑结构} \\
+\hline
+\text{典型场景} &amp; \text{表结构调整、业务变更} &amp;
+\text{数据库迁移、存储优化} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{三级模式对应关系与两级映射总结} \\
+\hline \\
+\begin{array}{|c|c|c|c|}
+\hline
+\textbf{模式级别} &amp; \textbf{别名} &amp; \textbf{对应内容} &amp;
+\textbf{主要特点} \\
+\hline
+\text{外模式} &amp; \text{用户模式} &amp; \text{视图集} &amp;
+\text{面向用户，只读访问，安全性高} \\
+\text{External Schema} &amp; \text{User Schema} &amp; \text{View
+Collection} &amp; \text{数据抽象和封装} \\
+\hline
+\text{概念模式} &amp; \text{模式} &amp; \text{基本表} &amp;
+\text{数据库逻辑结构} \\
+\text{Conceptual Schema} &amp; \text{Schema} &amp; \text{Base Tables}
+&amp; \text{完整性约束定义，全局数据视图} \\
+\hline
+\text{内模式} &amp; \text{物理模式} &amp; \text{存储文件} &amp;
+\text{物理存储结构} \\
+\text{Internal Schema} &amp; \text{Storage Schema} &amp; \text{Storage
+Files} &amp; \text{文件组织方式，存储路径管理} \\
+\hline
+\end{array}
+\\\\
+\textbf{两级映射关系与数据独立性} \\
+\hline \\
+\begin{array}{|c|l|l|l|}
+\hline
+\textbf{映射类型} &amp; \textbf{映射关系} &amp; \textbf{保证的独立性}
+&amp; \textbf{修改内容} \\
+\hline
+\text{第一级映射} &amp; \text{外模式 ↔︎ 概念模式} &amp; \text{逻辑独立性}
+&amp; \text{视图定义和生成规则} \\
+\hline
+\text{第二级映射} &amp; \text{概念模式 ↔︎ 内模式} &amp; \text{物理独立性}
+&amp; \text{存储路径和文件配置} \\
+\hline
+\end{array}
+\\\\
+\textbf{映射过程详解} \\
+\hline \\
+\begin{array}{l}
+\text{1. 外模式/概念模式映射 (External/Conceptual Mapping):} \\
+\quad \text{•
+映射过程：从基本表中抽取所需数据，通过SQL语句或DBMS工具创建视图} \\
+\quad \text{• 应用场景：第三方系统访问、数据安全、接口稳定} \\
+\quad \text{•
+独立性保证：概念模式变化时，修改映射关系，应用程序无需修改} \\
+\\
+\text{2. 概念模式/内模式映射 (Conceptual/Internal Mapping):} \\
+\quad \text{•
+映射过程：逻辑表与物理文件的地址映射，DBMS管理文件路径和存储位置} \\
+\quad \text{• 应用场景：数据库迁移、存储优化、硬件升级} \\
+\quad \text{•
+独立性保证：物理存储变化时，修改地址映射，应用程序和逻辑结构无需修改}
+\end{array}
+\\\\
+\textbf{典型考试题目解析} \\
+\hline \\
+\begin{array}{l}
+\text{例题1：以下关于数据库两级映射的叙述中，正确的是（ ）。} \\
+\text{A. 模式/内模式的映射实现了外模式到内模式之间的相互转换} \\
+\text{B. 模式/内模式的映射实现了概念模式到内模式之间的相互转换} \\
+\text{C. 外模式/模式的映射实现了概念模式到内模式之间的转换} \\
+\text{D. 外模式到内模式的映射实现了外模式到内模式之间的相互转换} \\
+\\
+\text{解析：} \\
+\quad \text{• A选项：模式/内模式映射与外模式无关 ❌} \\
+\quad \text{• B选项：模式/内模式映射确实实现概念模式与内模式间转换 ✅}
+\\
+\quad \text{• C选项：外模式/模式映射与内模式无关 ❌} \\
+\quad \text{• D选项：不存在外模式直接到内模式的映射 ❌} \\
+\quad \text{答案：B} \\
+\\
+\text{例题2：数据的物理独立性和逻辑独立性分别是通过修改（ ）来完成的。}
+\\
+\text{A. 外模式/内模式映射，外模式/模式映射} \\
+\text{B. 外模式/内模式映射，模式/内模式映射} \\
+\text{C. 模式/内模式映射，外模式/内模式映射} \\
+\text{D. 模式/内模式映射，外模式/模式映射} \\
+\\
+\text{解析：} \\
+\quad \text{• 物理独立性：内模式变化时保持应用程序不变 →
+修改模式/内模式映射} \\
+\quad \text{• 逻辑独立性：概念模式变化时保持应用程序不变 →
+修改外模式/模式映射} \\
+\quad \text{• 注意：不存在外模式与内模式的直接映射关系} \\
+\quad \text{答案：D} \\
+\\
+\text{例题3：数据库系统通常采用三级模式结构：外模式、模式和内模式。这三级模式分别对应数据库的（
+）。} \\
+\text{A. 基本表、存储文件和视图} \\
+\text{B. 视图、基本表和存储文件} \\
+\text{C. 基本表、视图和存储文件} \\
+\text{D. 视图、存储文件和基本表} \\
+\\
+\text{解析：} \\
+\quad \text{• 外模式 (External Schema) → 视图 (View)} \\
+\quad \text{• 模式 (Schema) / 概念模式 (Conceptual Schema) → 基本表
+(Base Table)} \\
+\quad \text{• 内模式 (Internal Schema) → 存储文件 (Storage File)} \\
+\quad \text{• 记忆口诀："外概内" 对应 "视表文"} \\
+\quad \text{答案：B}
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph LR
+    %% 三级模式结构
+    subgraph "三级模式结构 Three-Level Schema Structure"
+        A1["<strong>外模式 (External Schema)</strong><br>用户模式 (User Schema)"]
+        A2["对应内容：视图集 (View Collection)<br>特点：只读、安全、数据抽象<br>作用：接口统一、访问控制"]
+        
+        B1["<strong>概念模式 (Conceptual Schema)</strong><br>模式 (Schema)"]
+        B2["对应内容：基本表 (Base Tables)<br>操作：增删改查、建表<br>功能：逻辑数据组织、完整性约束"]
+        
+        C1["<strong>内模式 (Internal Schema)</strong><br>物理模式 (Physical Schema)<br>存储模式 (Storage Schema)"]
+        C2["对应内容：存储文件 (Storage Files)<br>特点：文件系统级别、磁盘存储<br>管理：DBMS管理、存储优化"]
+    end
+    
+    %% 映射关系
+    A1 -->|"外模式/概念模式映射<br>External/Conceptual Mapping<br>保证逻辑独立性"| B1
+    B1 -->|"概念模式/内模式映射<br>Conceptual/Internal Mapping<br>保证物理独立性"| C1
+    
+    A1 --- A2
+    B1 --- B2
+    C1 --- C2
+    
+    %% 独立性说明
+    D["逻辑独立性<br>Logical Independence"] -.->|"概念模式变化时<br>修改外模式/概念模式映射<br>应用程序无需修改"| A1
+    E["物理独立性<br>Physical Independence"] -.->|"内模式变化时<br>修改概念模式/内模式映射<br>逻辑结构无需修改"| B1
+    
+    %% 样式定义
+    style A1 fill:#FFFACD,stroke:#BDB76B,stroke-width:2px
+    style B1 fill:#ADD8E6,stroke:#4682B4,stroke-width:2px
+    style C1 fill:#90EE90,stroke:#3CB371,stroke-width:2px
+    style A2 fill:#F0F8FF,stroke:#B0C4DE
+    style B2 fill:#F0F8FF,stroke:#B0C4DE
+    style C2 fill:#F0FFF0,stroke:#98FB98
+    style D fill:#FFE4E1,stroke:#CD5C5C
+    style E fill:#F0E68C,stroke:#DAA520</pre>
+<h2 id="数据仓库">数据仓库</h2>
+<p><span class="math display">$$
+\begin{array}{lcr}
+\text{例题4：某集团公司下属有多个超市，每个超市的所有销售数据最终要存入公}
+\\
+\text{司的数据仓库中。假设该公司高管需要从时间、地区和商品种类三个维} \\
+\text{度来分析某家电商品的销售数据，那么最适合采用（ ）来完成。} \\
+\text{A. Data Extraction} \\
+\text{B. OLAP} \\
+\text{C. OLTP} \\
+\text{D. ETL} \\
+\\
+\text{解析：} \\
+\quad \text{•
+题目关键信息：数据仓库、多维度分析（时间、地区、商品种类）} \\
+\quad \text{• A. Data
+Extraction（数据抽取）：仅是数据获取过程，不涉及分析} \\
+\quad \text{• B. OLAP（Online Analytical
+Processing，联机分析处理）：专门用于多维数据分析，支持复杂查询} \\
+\quad \text{• C. OLTP（Online Transaction
+Processing，联机事务处理）：用于日常事务处理，不适合复杂分析} \\
+\quad \text{• D. ETL（Extract, Transform,
+Load，抽取、转换、加载）：数据仓库的数据处理过程，非分析工具} \\
+\quad \text{• OLAP特点：支持多维分析、钻取、切片、旋转等操作} \\
+\quad \text{答案：B}
+\end{array}
+$$</span></p>
+<h2 id="数据库设计过程">数据库设计过程</h2>
+<p>关系规范化是在数据库设计的<strong>逻辑设计阶段</strong>进行的</p>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623062654322.png" alt="image-20250623062654322">
+<figcaption aria-hidden="true">image-20250623062654322</figcaption>
+</figure>
+<h2 id="er模型">ER模型</h2>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623075655229.png" alt="image-20250623075655229">
+<figcaption aria-hidden="true">image-20250623075655229</figcaption>
+</figure>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623084634144.png" alt="image-20250623084634144">
+<figcaption aria-hidden="true">image-20250623084634144</figcaption>
+</figure>
+<hr>
+<ul>
+<li>在E-R图中，弱实体通常用<strong>双线矩形</strong>表示，与强实体之间的联系用<strong>双线菱形</strong>表示</li>
+</ul>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623093435738.png" alt="image-20250623093435738">
+<figcaption aria-hidden="true">image-20250623093435738</figcaption>
+</figure>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{E-R图核心概念详解} \\
+\hline \\
+\begin{array}{|c|l|l|l|}
+\hline
+\textbf{概念} &amp; \textbf{定义} &amp; \textbf{表示方法} &amp;
+\textbf{特点说明} \\
+\hline
+\text{实体} &amp; \text{现实世界中能够区别于} &amp; \text{矩形表示}
+&amp; \text{具有相同属性的实体} \\
+\text{Entity} &amp; \text{其他事物的事件或对象} &amp; \text{Rectangle}
+&amp; \text{归为一类称为实体集} \\
+\hline
+\text{属性} &amp; \text{实体某方面的特性} &amp; \text{椭圆形表示} &amp;
+\text{实体和联系都可以} \\
+\text{Attribute} &amp; \text{描述实体或联系的性质} &amp; \text{Ellipse}
+&amp; \text{拥有属性} \\
+\hline
+\text{联系} &amp; \text{实体之间的关联关系} &amp; \text{菱形表示} &amp;
+\text{可以是实体内部联系} \\
+\text{Relationship} &amp; \text{描述实体间的相互作用} &amp;
+\text{Diamond} &amp; \text{或实体间联系} \\
+\hline
+\end{array}
+\\\\
+\textbf{属性分类详解} \\
+\hline \\
+\begin{array}{|c|l|l|}
+\hline
+\textbf{属性类型} &amp; \textbf{定义与特点} &amp; \textbf{典型例子} \\
+\hline
+\text{简单属性} &amp; \text{原子的，不可再分割} &amp;
+\text{姓名、年龄、性别} \\
+\text{Simple Attribute} &amp; \text{最基本的属性单元} &amp;
+\text{学号、身份证号} \\
+\hline
+\text{复合属性} &amp; \text{可以细分为更小部分} &amp;
+\text{地址(省+市+街道)} \\
+\text{Composite Attribute} &amp; \text{由多个简单属性组成} &amp;
+\text{姓名(姓+名)} \\
+\hline
+\text{单值属性} &amp; \text{特定实体只有单独一个值} &amp;
+\text{身份证号、学号} \\
+\text{Single-valued Attribute} &amp; \text{一对一的属性关系} &amp;
+\text{出生日期} \\
+\hline
+\text{多值属性} &amp; \text{可以对应一组值} &amp;
+\text{联系电话、家长姓名} \\
+\text{Multi-valued Attribute} &amp; \text{一对多的属性关系} &amp;
+\text{兴趣爱好} \\
+\hline
+\text{NULL属性} &amp; \text{空属性，表示没有意义} &amp;
+\text{未填写的可选字段} \\
+\text{NULL Attribute} &amp; \text{或不知道的值} &amp;
+\text{暂时未知的信息} \\
+\hline
+\text{派生属性} &amp; \text{可以由其他属性得来} &amp;
+\text{年龄(由出生日期计算)} \\
+\text{Derived Attribute} &amp; \text{计算得出的属性} &amp;
+\text{总额(单价×数量)} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph TD
+    %% 联系类型总览
+    A["联系类型 (Relationship Types)"] --> B["二元联系<br>Binary Relationships"]
+    A --> C["三元联系<br>Ternary Relationships"]
+    A --> D["自联系<br>Self Relationships"]
+    
+    %% 二元联系详解
+    B --> B1["一对一 (1:1)<br>One-to-One"]
+    B --> B2["一对多 (1:N)<br>One-to-Many"]
+    B --> B3["多对多 (M:N)<br>Many-to-Many"]
+    
+    %% 具体例子
+    B1 --> B1_1["班级 ↔ 班长<br>一个班级一个班长<br>一个班长管一个班级"]
+    B2 --> B2_1["班级 ↔ 学生<br>一个班级多个学生<br>一个学生属于一个班级"]
+    B3 --> B3_1["学生 ↔ 课程<br>一个学生选多门课程<br>一门课程被多个学生选"]
+    
+    %% 多重度分析方法
+    E["多重度分析方法<br>Cardinality Analysis Method"] --> F["选择核心实体<br>Choose Core Entity"]
+    F --> G["假设另一端为一<br>Assume Other End as One"]
+    G --> H["分析核心端数量<br>Analyze Core End Quantity"]
+    H --> I["确定多重度<br>Determine Cardinality"]
+    
+    %% 三元联系示例
+    C --> C1["病房-病人-医生<br>Hospital Room-Patient-Doctor"]
+    C --> C2["供应商-项目-零件<br>Supplier-Project-Part"]
+    
+    %% 自联系示例
+    D --> D1["球队内部比赛<br>主队 vs 客队"]
+    D --> D2["联系人发送消息<br>发件人 → 收件人"]
+    
+    %% 样式定义
+    style A fill:#FFDAB9,stroke:#A0522D,stroke-width:2px
+    style B fill:#ADD8E6,stroke:#4682B4
+    style C fill:#90EE90,stroke:#3CB371
+    style D fill:#FFB6C1,stroke:#DC143C
+    style E fill:#F0E68C,stroke:#DAA520,stroke-width:2px
+    style B1 fill:#E6F3FF,stroke:#4A90E2
+    style B2 fill:#E6F3FF,stroke:#4A90E2
+    style B3 fill:#E6F3FF,stroke:#4A90E2</pre>
+<h2 id="逻辑结构设计">逻辑结构设计</h2>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{关系模式基本概念与术语} \\
+\hline \\
+\begin{array}{|c|l|l|l|}
+\hline
+\textbf{概念} &amp; \textbf{定义} &amp; \textbf{特点} &amp;
+\textbf{示例} \\
+\hline
+\text{目(Degree)} &amp; \text{关系模式中属性的个数} &amp;
+\text{表示关系的复杂度} &amp; \text{学生(学号,姓名,年龄)目为3} \\
+\hline
+\text{元组(Tuple)} &amp; \text{关系中的一行记录} &amp;
+\text{表示一个实体实例} &amp; \text{(001,张三,20)} \\
+\hline
+\text{候选码} &amp; \text{可以唯一标识元组} &amp;
+\text{无冗余的属性集合} &amp; \text{学号、身份证号} \\
+\text{Candidate Key} &amp; \text{且无冗余的属性集合} &amp;
+\text{可以有多个} &amp; \text{可以是单属性或多属性组合} \\
+\hline
+\text{主码/主键} &amp; \text{从候选码中选择的一个} &amp;
+\text{唯一且非空} &amp; \text{选择学号作为主键} \\
+\text{Primary Key} &amp; \text{作为主要标识符} &amp; \text{具有逻辑意义}
+&amp; \text{而非身份证号} \\
+\hline
+\text{主属性} &amp; \text{组成候选码的属性} &amp; \text{参与唯一标识}
+&amp; \text{学号、身份证号都是主属性} \\
+\text{Prime Attribute} &amp; \text{具有关键作用} &amp; \text{不可缺少}
+&amp; \text{在任何候选码中出现} \\
+\hline
+\text{非主属性} &amp; \text{不组成候选码的属性} &amp; \text{描述性属性}
+&amp; \text{姓名、年龄等} \\
+\text{Non-prime Attribute} &amp; \text{不参与唯一标识} &amp;
+\text{可以重复} &amp; \text{提供额外信息} \\
+\hline
+\text{外码/外键} &amp; \text{其他关系的主码} &amp; \text{体现参照完整性}
+&amp; \text{成绩表中的学号} \\
+\text{Foreign Key} &amp; \text{建立关系间联系} &amp; \text{可以为空}
+&amp; \text{参照学生表的学号} \\
+\hline
+\text{全码} &amp; \text{所有属性组成候选码} &amp; \text{极特殊情况}
+&amp; \text{关系中所有属性} \\
+\text{All Key} &amp; \text{整个关系作为键} &amp; \text{很少出现} &amp;
+\text{都是候选码组成部分} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{完整性约束详解与实例} \\
+\hline \\
+\begin{array}{|c|l|l|l|}
+\hline
+\textbf{约束类型} &amp; \textbf{约束内容} &amp; \textbf{违反后果} &amp;
+\textbf{实例说明} \\
+\hline
+\text{实体完整性} &amp; \text{主键唯一且非空} &amp;
+\text{无法插入或更新数据} &amp; \text{不能有两个001学号} \\
+\text{Entity Integrity} &amp; \text{PRIMARY KEY约束} &amp;
+\text{系统自动拒绝} &amp; \text{主键不能为NULL} \\
+\hline
+\text{参照完整性} &amp; \text{外键值必须在被参照} &amp;
+\text{无法建立或维护} &amp; \text{成绩表的学号必须} \\
+\text{Referential Integrity} &amp; \text{关系中存在或为空} &amp;
+\text{关系间的联系} &amp; \text{在学生表中存在} \\
+\hline
+\text{用户自定义} &amp; \text{CHECK约束条件} &amp; \text{违反业务规则}
+&amp; \text{年龄CHECK(age&gt;=0 AND age&lt;=150)} \\
+\text{User-Defined} &amp; \text{自定义业务规则} &amp;
+\text{数据不符合要求} &amp; \text{性别CHECK(gender IN('男','女'))} \\
+\hline
+\end{array}
+\end{array}
+$$</span></p>
+<h2 id="er图转关系模式">ER图转关系模式</h2>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623172600480.png" alt="image-20250623172600480">
+<figcaption aria-hidden="true">image-20250623172600480</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623170844331.png" alt="image-20250623170844331">
+<figcaption aria-hidden="true">image-20250623170844331</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623171441757.png" alt="image-20250623171441757">
+<figcaption aria-hidden="true">image-20250623171441757</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623172330427.png" alt="image-20250623172330427">
+<figcaption aria-hidden="true">image-20250623172330427</figcaption>
+</figure>
+<h2 id="sql与关系代数">sql与关系代数</h2>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623173827442.png" alt="image-20250623173827442">
+<figcaption aria-hidden="true">image-20250623173827442</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623174935530.png" alt="image-20250623174935530">
+<figcaption aria-hidden="true">image-20250623174935530</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623175635152.png" alt="image-20250623175635152">
+<figcaption aria-hidden="true">image-20250623175635152</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250623180153879.png" alt="image-20250623180153879">
+<figcaption aria-hidden="true">image-20250623180153879</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625110044997.png" alt="image-20250625110044997">
+<figcaption aria-hidden="true">image-20250625110044997</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625112138871.png" alt="image-20250625112138871">
+<figcaption aria-hidden="true">image-20250625112138871</figcaption>
+</figure>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625112718370.png" alt="image-20250625112718370">
+<figcaption aria-hidden="true">image-20250625112718370</figcaption>
+</figure>
+<h2 id="armstrong阿姆斯特朗公理体系">Armstrong(阿姆斯特朗)公理体系</h2>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624142736475.png" alt="image-20250624142736475">
+<figcaption aria-hidden="true">image-20250624142736475</figcaption>
+</figure>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{Armstrong公理体系推导与记忆} \\
+\hline \\
+\begin{array}{l}
+\text{设关系模式 } R \langle U, F \rangle \text{，其中 } U \text{
+是属性集，} F \text{ 是函数依赖集} \\
+\\
+\textbf{基本公理 (Basic Axioms):} \\
+\\
+\text{A1. 自反律 (Reflexivity):} \\
+\quad \text{若 } Y \subseteq X \subseteq U \text{，则 } X \rightarrow Y
+\text{ 成立} \\
+\quad \text{记忆：子集总是被父集决定} \\
+\quad \text{例：} \{学号,姓名\} \rightarrow \{学号\} \\
+\\
+\text{A2. 增广律 (Augmentation):} \\
+\quad \text{若 } Z \subseteq U \text{ 且 } X \rightarrow Y \text{，则 }
+XZ \rightarrow YZ \text{ 成立} \\
+\quad \text{记忆：两边同时增加相同属性，依赖关系保持} \\
+\quad \text{例：若 } 学号 \rightarrow 姓名 \text{，则 } \{学号,班级\}
+\rightarrow \{姓名,班级\} \\
+\\
+\text{A3. 传递律 (Transitivity):} \\
+\quad \text{若 } X \rightarrow Y \text{ 且 } Y \rightarrow Z \text{，则
+} X \rightarrow Z \text{ 成立} \\
+\quad \text{记忆：函数依赖具有传递性} \\
+\quad \text{例：若 } 学号 \rightarrow 班级 \text{ 且 } 班级 \rightarrow
+班主任 \text{，则 } 学号 \rightarrow 班主任 \\
+\\
+\textbf{推导规则 (Derived Rules):} \\
+\\
+\text{合并规则 (Union Rule):} \\
+\quad \text{由 } X \rightarrow Y \text{ 和 } X \rightarrow Z \text{，得
+} X \rightarrow YZ \\
+\quad \textbf{推导过程：} \\
+\quad \quad \text{1) } X \rightarrow Y \text{ (已知)} \\
+\quad \quad \text{2) } X \rightarrow Z \text{ (已知)} \\
+\quad \quad \text{3) } XY \rightarrow YZ \text{ (由2和A2增广律)} \\
+\quad \quad \text{4) } X \rightarrow XY \text{ (由1和A2增广律)} \\
+\quad \quad \text{5) } X \rightarrow YZ \text{ (由4,3和A3传递律)} \\
+\\
+\text{伪传递规则 (Pseudo-transitivity Rule):} \\
+\quad \text{由 } X \rightarrow Y \text{ 和 } WY \rightarrow Z \text{，得
+} XW \rightarrow Z \\
+\quad \textbf{推导过程：} \\
+\quad \quad \text{1) } X \rightarrow Y \text{ (已知)} \\
+\quad \quad \text{2) } WY \rightarrow Z \text{ (已知)} \\
+\quad \quad \text{3) } XW \rightarrow YW \text{ (由1和A2增广律)} \\
+\quad \quad \text{4) } XW \rightarrow Z \text{ (由3,2和A3传递律)} \\
+\\
+\text{分解规则 (Decomposition Rule):} \\
+\quad \text{由 } X \rightarrow Y \text{ 且 } Z \subseteq Y \text{，得 }
+X \rightarrow Z \\
+\quad \textbf{推导过程：} \\
+\quad \quad \text{1) } X \rightarrow Y \text{ (已知)} \\
+\quad \quad \text{2) } Y \rightarrow Z \text{ (由A1自反律，因为 } Z
+\subseteq Y \text{)} \\
+\quad \quad \text{3) } X \rightarrow Z \text{ (由1,2和A3传递律)} \\
+\\
+\textbf{记忆口诀：} \\
+\quad \text{自反子集被决定，增广两边加相同} \\
+\quad \text{传递依赖可传导，合并分解伪传递} \\
+\quad \text{Armstrong三公理，推导规则要牢记}
+\end{array}
+\end{array}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{array}{l}
+\textbf{例题讲解} \\
+\hline \\
+\text{给定关系模式R&lt;U,
+F&gt;，其中U为属性集，F是U上的一组函数依赖，那}\\
+\text{么Armstrong公理系统的内传递律是指 ( \quad )。} \\
+\\
+\textbf{选项} \\
+\text{A.\; 若X→Y, X→Z，则X→YZ为F所蕴涵} \\
+\text{B.\; 若X→Y, WY→Z，则XW→Z为F所蕴涵} \\
+\text{C.\; 若X→Y, Y→Z为F所蕴涵，则X→Z为F所蕴涵} \\
+\text{D.\; 若X→Y为F所蕴涵，且Z⊆U，则XZ→YZ为F所蕴涵} \\
+\\
+\textbf{解题分析} \\
+\text{Armstrong公理系统包含三个基本推理规则：自反律、增广律、传递律。}\\
+\text{选项A是合并律（Union Rule）；选项C是传递律本身；}\\
+\text{选项D是增广律本身；选项B是伪传递律（Pseudo-transitivity），}\\
+\text{也称为内传递律，是Armstrong公理系统的重要导出规则。} \\
+\\
+\textbf{答案}: B
+\end{array}
+$$</span></p>
+<h2 id="候选键求取">候选键求取</h2>
+<ol type="1">
+<li><strong>入度分析</strong> → 找出入度为0的属性</li>
+<li><strong>遍历验证</strong> → 检查能否推导出所有属性<br>
+</li>
+<li><strong>最小性检查</strong> → 确保无冗余属性</li>
+<li><strong>答案确认</strong> → 验证候选键的唯一性和完整性</li>
+</ol>
+<hr>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{题目：} \text{给定关系} R(A_1, A_2, A_3, A_4)
+\text{上的函数依赖集} \\
+&amp;F = \{A_1 \rightarrow A_2, A_3 \rightarrow A_2, A_2 \rightarrow
+A_3, A_2 \rightarrow A_4\} \\
+&amp;\text{求：} R \text{的候选关键字} \\\\
+&amp;\textbf{选项：} \\
+&amp;\text{A. } A_1 \quad \text{B. } A_1A_3 \quad \text{C. } A_1A_3A_4
+\quad \text{D. } A_1A_2A_3 \\\\
+&amp;\textbf{解题步骤：} \\\\
+&amp;\textbf{第一步：构建有向图并分析入度出度} \\
+&amp;\begin{array}{|c|c|c|c|}
+\hline
+\textbf{属性} &amp; \textbf{入度} &amp; \textbf{出度} &amp;
+\textbf{说明} \\
+\hline
+A_1 &amp; 0 &amp; 1 &amp; \text{入度为0，只有} A_1 \rightarrow A_2 \\
+\hline
+A_2 &amp; 2 &amp; 2 &amp; \text{入度：} A_1 \rightarrow A_2, A_3
+\rightarrow A_2 \\
+&amp; &amp; &amp; \text{出度：} A_2 \rightarrow A_3, A_2 \rightarrow A_4
+\\
+\hline
+A_3 &amp; 1 &amp; 1 &amp; \text{入度：} A_2 \rightarrow A_3 \\
+&amp; &amp; &amp; \text{出度：} A_3 \rightarrow A_2 \\
+\hline
+A_4 &amp; 1 &amp; 0 &amp; \text{入度：} A_2 \rightarrow A_4 \\
+\hline
+\end{array} \\\\
+&amp;\textbf{第二步：确定入度为零的属性集合} \\
+&amp;\text{入度为0的属性集合：} \{A_1\} \\
+&amp;\text{分析原理：入度为0意味着没有其他属性能推导出该属性} \\
+&amp;\text{这样的属性必须包含在候选键中，否则无法被推导出} \\\\
+&amp;\textbf{第三步：验证遍历能力} \\
+&amp;\text{从} A_1 \text{开始的推导路径：} \\
+&amp;A_1 \rightarrow A_2 \quad \text{（直接函数依赖）} \\
+&amp;A_1 \rightarrow A_2 \rightarrow A_3 \quad \text{（传递性）} \\
+&amp;A_1 \rightarrow A_2 \rightarrow A_4 \quad \text{（传递性）} \\
+&amp;\text{遍历验证：} A_1^+ = \{A_1, A_2, A_3, A_4\} = U \\
+&amp;\text{因此} A_1 \text{可以推导出所有属性，满足候选键条件} \\\\
+&amp;\textbf{第四步：最小性验证} \\
+&amp;\text{候选键最小性检查：由于} A_1 \text{是单个属性，不存在真子集}
+\\
+&amp;\text{因此} A_1 \text{满足最小性要求} \\\\
+&amp;\textbf{第五步：其他选项分析} \\
+&amp;\textbf{选项B：} A_1A_3 \text{ - 冗余分析：} A_1 \rightarrow A_2
+\rightarrow A_3 \\
+&amp;\text{因此} A_3 \text{可由} A_1 \text{推导，存在冗余} \\
+&amp;\textbf{选项C：} A_1A_3A_4 \text{ - 冗余分析：} A_1 \rightarrow A_2
+\rightarrow A_3, A_1 \rightarrow A_2 \rightarrow A_4 \\
+&amp;\text{因此} A_3, A_4 \text{均可由} A_1 \text{推导，存在冗余} \\
+&amp;\textbf{选项D：} A_1A_2A_3 \text{ - 冗余分析：} A_1 \rightarrow
+A_2, A_1 \rightarrow A_2 \rightarrow A_3 \\
+&amp;\text{因此} A_2, A_3 \text{均可由} A_1 \text{推导，存在冗余} \\\\
+&amp;\boxed{\textbf{答案：A. } A_1}
+\end{align}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph TD
+    A1[A₁] --> A2[A₂]
+    A3[A₃] --> A2
+    A2 --> A3
+    A2 --> A4[A₄]
+    
+    style A1 fill:#e1f5fe
+    style A2 fill:#f3e5f5
+    style A3 fill:#f3e5f5
+    style A4 fill:#fff3e0</pre>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624150533174.png" alt="image-20250624150533174">
+<figcaption aria-hidden="true">image-20250624150533174</figcaption>
+</figure>
+<hr>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{例题1：} \text{给定关系} R(A_1, A_2, A_3, A_4)
+\text{上的函数依赖集} \\
+&amp;F = \{A_1 \rightarrow A_2, A_3 \rightarrow A_2, A_2 \rightarrow
+A_3, A_2 \rightarrow A_4\} \\
+&amp;\text{选项：A. } A_1 \quad \text{B. } A_1A_3 \quad \text{C. }
+A_1A_3A_4 \quad \text{D. } A_1A_2A_3 \\
+&amp;\text{解答：入度为0的属性：} \{A_1\} \text{，验证：} A_1^+ = U
+\text{，答案：A} \\\\
+&amp;\textbf{例题2：} \text{关系模式} P(A, B, C, D, E, F, G, H, I, J) \\
+&amp;\text{函数依赖：} FD = \{ABD \rightarrow E, AB \rightarrow G, B
+\rightarrow F, C \rightarrow J, CJ \rightarrow I, G \rightarrow H\} \\\\
+&amp;\begin{array}{|c|c|c|c|}
+\hline
+\textbf{属性} &amp; \textbf{入度} &amp; \textbf{出度} &amp;
+\textbf{说明} \\
+\hline
+A &amp; 0 &amp; 0 &amp; \text{入度为0，参与复合依赖} AB \rightarrow G,
+ABD \rightarrow E \\
+\hline
+B &amp; 0 &amp; 1 &amp; \text{入度为0，} B \rightarrow F
+\text{，参与复合依赖} \\
+\hline
+C &amp; 0 &amp; 1 &amp; \text{入度为0，} C \rightarrow J
+\text{，参与复合依赖} CJ \rightarrow I \\
+\hline
+D &amp; 0 &amp; 0 &amp; \text{入度为0，参与复合依赖} ABD \rightarrow E
+\\
+\hline
+E &amp; 1 &amp; 0 &amp; \text{入度：} ABD \rightarrow E \\
+\hline
+F &amp; 1 &amp; 0 &amp; \text{入度：} B \rightarrow F \\
+\hline
+G &amp; 1 &amp; 1 &amp; \text{入度：} AB \rightarrow G \text{，出度：} G
+\rightarrow H \\
+\hline
+H &amp; 1 &amp; 0 &amp; \text{入度：} G \rightarrow H \\
+\hline
+I &amp; 1 &amp; 0 &amp; \text{入度：} CJ \rightarrow I \\
+\hline
+J &amp; 1 &amp; 0 &amp; \text{入度：} C \rightarrow J
+\text{，参与复合依赖} CJ \rightarrow I \\
+\hline
+\end{array} \\\\
+&amp;\text{解答：入度为0的属性：} \{A, B, C, D\} \\
+&amp;\text{验证：} ABCD^+ = \{A,B,C,D,E,F,G,H,I,J\} = U \\
+&amp;\text{答案：} 组合键ABCD \\\\
+&amp;\textbf{例题3：} \text{关系} R(A, B, C) \text{满足函数依赖：} F =
+\{B \rightarrow C, B \rightarrow A, A \rightarrow BC\} \\
+&amp;\text{选项：A. } AB \quad \text{B. } A\text{和}B \quad \text{C. }
+A\text{和}BC \quad \text{D. } AC\text{和}AB \\
+&amp;\text{解答：无入度为0的属性，检查各选项：} \\
+&amp;A^+ = \{A, B, C\} = U \text{，} B^+ = \{A, B, C\} = U \\\\
+&amp;\begin{array}{|c|c|c|c|}
+\hline
+\textbf{属性} &amp; \textbf{入度} &amp; \textbf{出度} &amp;
+\textbf{说明} \\
+\hline
+A &amp; 1 &amp; 2 &amp; \text{入度：} B \rightarrow A \\
+&amp; &amp; &amp; \text{出度：} A \rightarrow B, A \rightarrow C \\
+\hline
+B &amp; 1 &amp; 2 &amp; \text{入度：} A \rightarrow B \\
+&amp; &amp; &amp; \text{出度：} B \rightarrow A, B \rightarrow C \\
+\hline
+C &amp; 2 &amp; 0 &amp; \text{入度：} A \rightarrow C, B \rightarrow C
+\\
+\hline
+\end{array} \\\\
+&amp;\text{因此A和B都是候选键，答案：B} \\\\
+&amp;\textbf{解题规律总结：} \\
+&amp;1. \text{入度分析} \rightarrow \text{找出入度为0的属性} \\
+&amp;2. \text{遍历验证} \rightarrow \text{检查能否推导出所有属性 } \\
+&amp;3. \text{最小性检查 } \rightarrow \text{确保无冗余属性} \\
+&amp;4. \text{答案确认} \rightarrow \text{验证候选键的唯一性和完整性}
+\end{align}
+$$</span></p>
+<hr>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624151139610.png" alt="image-20250624151139610">
+<figcaption aria-hidden="true">image-20250624151139610</figcaption>
+</figure>
+<hr>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{例题：} \text{给定关系} CSZ(CITY, ST, ZIP)
+\text{上的函数依赖集} \\
+&amp;F = \{(CITY, ST) \rightarrow ZIP, ZIP \rightarrow CITY\} \\
+&amp;\text{CITY表示城市，ST表示街道，ZIP表示邮政编码} \\\\
+&amp;\textbf{入度出度分析：} \\
+&amp;\begin{array}{|c|c|c|c|}
+\hline
+\textbf{属性} &amp; \textbf{入度} &amp; \textbf{出度} &amp;
+\textbf{说明} \\
+\hline
+CITY &amp; 1 &amp; 0 &amp; \text{入度：} ZIP \rightarrow CITY
+\text{，参与复合依赖} \\
+\hline
+ST &amp; 0 &amp; 0 &amp; \text{入度为0，参与复合依赖} (CITY,ST)
+\rightarrow ZIP \\
+\hline
+ZIP &amp; 1 &amp; 1 &amp; \text{入度：} (CITY,ST) \rightarrow ZIP
+\text{，出度：} ZIP \rightarrow CITY \\
+\hline
+\end{array} \\\\
+&amp;\textbf{是否能遍历全图：} \\
+&amp;\text{要确定所有属性，ST必须与其他属性组合：} \\
+&amp;\bullet \text{ST + CITY} \rightarrow \text{可以推出ZIP} \\
+&amp;\bullet \text{ST + ZIP} \rightarrow \text{可以推出CITY} \\
+&amp;\bullet \text{仅有ST} \rightarrow \text{无法推出CITY或ZIP} \\\\
+&amp;\text{候选键1：} (ST, CITY) \\
+&amp;(ST, CITY)^+ = \{ST, CITY\} \cup \{ZIP\} = \{ST, CITY, ZIP\} = U
+\quad \checkmark \\
+&amp;\text{候选键2：} (ST, ZIP) \\
+&amp;(ST, ZIP)^+ = \{ST, ZIP\} \cup \{CITY\} = \{ST, CITY, ZIP\} = U
+\quad \checkmark \\\\
+&amp;\text{验证最小性：} \\
+&amp;ST^+ = \{ST\} \neq U \text{，} CITY^+ = \{CITY\} \neq U \text{，}
+ZIP^+ = \{ZIP, CITY\} \neq U \\
+&amp;\text{因此} (ST, CITY) \text{和} (ST, ZIP)
+\text{都是最小候选键}，CITY, ST, ZIP都是主属性，没有非主属性
+\end{align}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph TD
+    CITY[CITY<br>城市]
+    ST[ST<br>街道]
+    ZIP[ZIP<br>邮编]
+
+    CITY_ST[CITY,ST组合] --> ZIP
+    ZIP --> CITY
+
+    CITY -.-> CITY_ST
+    ST -.-> CITY_ST
+
+    style ST fill:#e1f5fe
+    style CITY fill:#f3e5f5
+    style ZIP fill:#f3e5f5
+    style CITY_ST fill:#f0f0f0</pre>
+<hr>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{例题：} \text{给定关系} R(A, B, C) \text{上的函数依赖集} \\
+&amp;F = \{AB \rightarrow C, C \rightarrow B\} \\\\
+&amp;\textbf{入度出度分析：} \\
+&amp;\begin{array}{|c|c|c|c|}
+\hline
+\textbf{属性} &amp; \textbf{入度} &amp; \textbf{出度} &amp;
+\textbf{说明} \\
+\hline
+A &amp; 0 &amp; 0 &amp; \text{入度为0，参与复合依赖} AB \rightarrow C \\
+\hline
+B &amp; 1 &amp; 0 &amp; \text{入度：} C \rightarrow B
+\text{，参与复合依赖} AB \rightarrow C \\
+\hline
+C &amp; 1 &amp; 1 &amp; \text{入度：} AB \rightarrow C \text{，出度：} C
+\rightarrow B \\
+\hline
+\end{array} \\\\
+&amp;\textbf{候选键求解过程：} \\
+&amp;\text{入度为0的属性：} \{A\} \text{，A必须包含在所有候选键中} \\\\
+&amp;\text{验证可能的候选键：} \\
+&amp;\text{候选键1：} AB \\
+&amp;(AB)^+ = \{A, B\} \cup \{C\} = \{A, B, C\} = U \quad \checkmark
+\\\\
+&amp;\text{候选键2：} AC \\
+&amp;(AC)^+ = \{A, C\} \cup \{B\} = \{A, B, C\} = U \quad \checkmark
+\\\\
+&amp;\text{验证最小性：} \\
+&amp;A^+ = \{A\} \neq U \text{，} B^+ = \{B\} \neq U \text{，} C^+ =
+\{C, B\} \neq U \\
+&amp;\text{因此} AB \text{和} AC \text{都是最小候选键} \\\\
+&amp;\textbf{主属性与非主属性识别：} \\
+&amp;\text{候选键集合：} \{AB, AC\} \\
+&amp;\text{主属性：} \{A, B, C\} \text{（所有属性都参与至少一个候选键）}
+\\
+&amp;\text{非主属性：} \{\} \text{（空集）} \\\\
+&amp;\textbf{答案：B} \text{ - 有2个候选关键字AC和AB，并且有3个主属性}
+\end{align}
+$$</span></p>
+<hr>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{例题：} \text{给定关系模式} R(A1, A2, A3, A4)
+\text{上的函数依赖集} \\
+&amp;F = \{A1 \rightarrow A2, A1A2 \rightarrow A3, A1 \rightarrow A4, A2
+\rightarrow A4\} \\\\
+&amp;\textbf{入度出度分析：} \\
+&amp;\begin{array}{|c|c|c|c|}
+\hline
+\textbf{属性} &amp; \textbf{入度} &amp; \textbf{出度} &amp;
+\textbf{说明} \\
+\hline
+A1 &amp; 0 &amp; 2 &amp; \text{入度为0，出度：} A1 \rightarrow A2, A1
+\rightarrow A4 \\
+\hline
+A2 &amp; 1 &amp; 1 &amp; \text{入度：} A1 \rightarrow A2 \text{，出度：}
+A2 \rightarrow A4 \\
+\hline
+A3 &amp; 1 &amp; 0 &amp; \text{入度：} A1A2 \rightarrow A3 \\
+\hline
+A4 &amp; 2 &amp; 0 &amp; \text{入度：} A1 \rightarrow A4, A2 \rightarrow
+A4 \\
+\hline
+\end{array} \\\\
+&amp;\textbf{候选键求解过程：} \\
+&amp;\text{入度为0的属性：} \{A1\} \text{，A1必须包含在所有候选键中}
+\\\\
+&amp;\text{验证A1是否为候选键：} \\
+&amp;A1^+ = \{A1\} \cup \{A2\} \cup \{A4\} \cup \{A3\} = \{A1, A2, A3,
+A4\} = U \quad \checkmark \\\\
+&amp;\text{验证最小性：} \\
+&amp;A1^+ = U \text{，且A1是单个属性，因此A1是最小候选键} \\\\
+&amp;\textbf{主属性与非主属性识别：} \\
+&amp;\text{候选键：} \{A1\} \\
+&amp;\text{主属性：} \{A1\} \\
+&amp;\text{非主属性：} \{A2, A3, A4\} \\\\
+&amp;\textbf{冗余函数依赖分析：} \\
+&amp;\text{由于} A1 \rightarrow A2 \text{和} A1 \rightarrow A4
+\text{，可得} A1 \rightarrow A2A4 \\
+&amp;\text{又因为} A2 \rightarrow A4 \text{，所以} A2 \rightarrow A4
+\text{是冗余的} \\\\
+\end{align}
+$$</span></p>
+<h2 id="三范式">三范式</h2>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{范式判断口诀：} \\
+&amp;\text{一范不可分，二范无部分} \\
+&amp;\text{三范无传递，BC更严格} \\\\
+&amp;\textbf{分解原则：} \\
+&amp;\text{保持依赖，无损连接} \\
+&amp;\text{哪里不满足，就拆哪里}
+\end{align}
+$$</span></p>
+<hr>
+<ul>
+<li><p>只要关系模式未达到第三范式就会出现：插入异常、删除异常、修改异常、数据冗余（查）</p></li>
+<li><p>1NF：原子性，属性不可再分</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不满足1NF：系名称 |<span class="string"> 高级职称人数(教授+副教授)</span></span><br><span class="line"><span class="string">满足1NF：  系名称 </span>|<span class="string"> 教授人数 </span>|<span class="string"> 副教授人数</span></span><br></pre></td></tr></table></figure></li>
+<li><p>2NF（满足1NF）：<strong>无部分</strong>函数依赖候选键，即所有非主属性<strong>完全</strong>依赖候选键</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">关系模式：<span class="built_in">R</span>(学号, 课程号, 成绩, 学分)</span><br><span class="line">函数依赖：学号,课程号 → 成绩</span><br><span class="line">         课程号 → 学分</span><br><span class="line"></span><br><span class="line">候选键：(学号, 课程号)</span><br><span class="line">非主属性：成绩, 学分</span><br><span class="line">问题：学分只依赖于课程号（候选键的一部分）→ 存在部分函数依赖</span><br><span class="line">结论：不满足<span class="number">2</span>NF</span><br><span class="line"></span><br><span class="line">分解为：</span><br><span class="line"><span class="built_in">R1</span>(课程号, 学分)        # 分离部分函数依赖</span><br><span class="line"><span class="built_in">R2</span>(学号, 课程号, 成绩)  # 保留完全函数依赖</span><br></pre></td></tr></table></figure></li>
+<li><p>3NF（满足2NF）：<strong>无传递</strong>函数依赖候选键，即<strong>无</strong>非主属性传递依赖于候选键，比如R(学号、姓名、系号、系名)中，候选键为学号（学号决定系号，但是不决定系名），系名需要通过学号这个候选键传递依赖系号。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">关系模式：<span class="built_in">R</span>(学号, 姓名, 系号, 系名称, 系位置)</span><br><span class="line">函数依赖：学号 → 姓名, 系号</span><br><span class="line">         系号 → 系名称, 系位置</span><br><span class="line"></span><br><span class="line">候选键：学号（单属性）</span><br><span class="line">非主属性：姓名, 系号, 系名称, 系位置</span><br><span class="line">传递依赖：学号 → 系号 → 系名称, 系位置</span><br><span class="line">结论：不满足<span class="number">3</span>NF</span><br><span class="line"></span><br><span class="line">分解为：</span><br><span class="line"><span class="built_in">R1</span>(系号, 系名称, 系位置)  # 分离传递函数依赖</span><br><span class="line"><span class="built_in">R2</span>(学号, 姓名, 系号)      # 保留直接函数依赖</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="bc范式bcnf">BC范式(BCNF)</h2>
+<figure>
+<img src="/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624190749141.png" alt="image-20250624190749141">
+<figcaption aria-hidden="true">image-20250624190749141</figcaption>
+</figure>
+<h2 id="范式判断">范式判断</h2>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{数据库范式分解题目解析} \\\\
+&amp;\textbf{题目描述：} \\
+&amp;\text{关系模式：} P(\text{元件号}, \text{元件名称}, \text{供应商},
+\text{供应商所在地}, \text{库存量}) \\\\
+&amp;\textbf{函数依赖集 F：} \\
+&amp;F_1: \text{元件号} \rightarrow \text{元件名称} \\
+&amp;F_2: (\text{元件号}, \text{供应商}) \rightarrow \text{库存量} \\
+&amp;F_3: \text{供应商} \rightarrow \text{供应商所在地} \\\\
+&amp;\textbf{主键确定：} \\
+&amp;\textbf{元件号入度为0，元件号和供应商组合决定库存量} \\
+&amp;\text{设属性集为：} U = \{\text{元件号}, \text{元件名称},
+\text{供应商}, \text{供应商所在地}, \text{库存量}\} \\
+&amp;\text{要确定主键，需找到候选键} \\
+&amp;\text{因此主键为该组合键：}(\text{元件号}, \text{供应商}) \\\\
+&amp;\textbf{范式分析：} \\
+&amp;\text{检查2NF：是否存在部分函数依赖候选键} \\
+&amp;\quad F_1: \text{元件号} \rightarrow \text{元件名称} \quad
+\text{(部分依赖)} \\
+&amp;\quad F_3: \text{供应商} \rightarrow \text{供应商所在地} \quad
+\text{(部分依赖)} \\
+&amp;\text{存在部分函数依赖，不满足2NF，当前关系仅满足1NF} \\\\
+&amp;\textbf{分解方案分析：} \\
+&amp;\quad R_1(\text{元件号}, \text{元件名称}) \quad \text{主键：元件号}
+\\
+&amp;\quad R_2(\text{元件号}, \text{供应商}, \text{库存量}) \quad
+\text{主键：}(\text{元件号}, \text{供应商}) \\
+&amp;\quad R_3(\text{供应商}, \text{供应商所在地}) \quad
+\text{主键：供应商} \\\\
+&amp;\textbf{范式等级：} \\
+&amp;\quad R_1: \text{元件号} \rightarrow \text{元件名称} \quad
+\text{满足BCNF} \\
+&amp;\quad R_2: (\text{元件号}, \text{供应商}) \rightarrow \text{库存量}
+\quad \text{满足BCNF} \\
+&amp;\quad R_3: \text{供应商} \rightarrow \text{供应商所在地} \quad
+\text{满足BCNF} \\
+&amp;\text{所有子关系都满足BCNF，且保持函数依赖，整体达到3NF} \\\\
+\end{align}
+$$</span></p>
+<hr>
+<h2 id="判断是否保持函数依赖">判断是否保持函数依赖</h2>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例题：</span><br><span class="line">    设U=&#123;A,B,C&#125;,F=&#123;A-&gt;B,B-&gt;C,A-&gt;C&#125;,则分解P=&#123;R1(AB),R2(BC)&#125;是否保持函数依赖？</span><br><span class="line"></span><br><span class="line">分析：</span><br><span class="line">	R1(AB): F1=&#123;A-&gt;B&#125;</span><br><span class="line">	R2(BC): F2=&#123;B-&gt;C&#125;</span><br><span class="line">	可以通过传递依赖推导得出函数依赖：F&#x27;=&#123;A-&gt;B,B-&gt;C&#125;=&gt;&#123;A-&gt;C&#125;，故&#123;A-&gt;C&#125;是冗余函数依赖，可以在分解后的关系模式中不保留，逻辑蕴含，仍保持函数依赖。</span><br></pre></td></tr></table></figure>
+<h2 id="判断无损分解">判断无损分解</h2>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">无损连接分解：</span><br><span class="line">	指将一个关系模式分解成若干关系模式后，通过自然连接（同名属性列取值相等可以合并为一列）等运算仍能还原到原来的关系模式。</span><br><span class="line">	 </span><br><span class="line">例题：</span><br><span class="line">	设R<span class="symbol">=ABC</span>,F=&#123;A-&gt;B&#125;,则分解P=&#123;<span class="built_in">R1</span>(AB),<span class="built_in">R2</span>(AC)&#125;是无损。</span><br><span class="line">	</span><br><span class="line">解析：</span><br><span class="line">	<span class="built_in">R1</span>和<span class="built_in">R2</span>的A为同名属性，自然连接得ABC,且A为左侧决定性因素，故判定无损</span><br><span class="line">	</span><br><span class="line">公式法：</span><br><span class="line">    两个关系模式则可带入公式：</span><br><span class="line">    交集决定差集则无损</span><br><span class="line">    <span class="built_in">R1</span>交集<span class="built_in">R2</span>-&gt;(<span class="built_in">R1</span>-<span class="built_in">R2</span>)</span><br><span class="line">    AB交集AC<span class="symbol">=A</span>,AB-AC<span class="symbol">=B</span>,又A-&gt;B则判定无损</span><br><span class="line">    或</span><br><span class="line">    <span class="built_in">R1</span>交集<span class="built_in">R2</span>-&gt;(<span class="built_in">R2</span>-<span class="built_in">R1</span>)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">例题：</span><br><span class="line">	<span class="variable">U</span><span class="operator">=</span><span class="punctuation">&#123;</span><span class="variable">A</span><span class="operator">,</span><span class="variable">B</span><span class="operator">,</span><span class="built_in">C</span><span class="operator">,</span><span class="built_in">D</span><span class="operator">,</span><span class="built_in">E</span><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="variable">F</span><span class="operator">=</span><span class="punctuation">&#123;</span><span class="variable">A</span><span class="operator">-&gt;</span><span class="variable">B</span><span class="operator">,</span><span class="variable">DE</span><span class="operator">-&gt;</span><span class="variable">B</span><span class="operator">,</span><span class="variable">CB</span><span class="operator">-&gt;</span><span class="built_in">E</span><span class="operator">,</span><span class="built_in">E</span><span class="operator">-&gt;</span><span class="variable">A</span><span class="operator">,</span><span class="variable">B</span><span class="operator">-&gt;</span><span class="built_in">D</span><span class="punctuation">&#125;</span></span><br><span class="line">	求候选键和无损连接并保持函数依赖</span><br><span class="line">	</span><br><span class="line">求候选键：</span><br><span class="line">	<span class="built_in">C</span>的入度为<span class="number">0</span></span><br><span class="line">	又可以通过<span class="punctuation">&#123;</span><span class="built_in">E</span><span class="operator">-&gt;</span><span class="variable">A</span><span class="operator">,</span><span class="variable">A</span><span class="operator">-&gt;</span><span class="variable">B</span><span class="operator">,</span><span class="variable">B</span><span class="operator">-&gt;</span><span class="built_in">D</span><span class="punctuation">&#125;</span>遍历全图</span><br><span class="line">	得出候选键为<span class="variable">CE</span></span><br><span class="line">无损连接并保持函数依赖的分解：</span><br><span class="line">	<span class="variable">P</span><span class="operator">=</span><span class="punctuation">&#123;</span><span class="variable">R1</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="operator">,</span><span class="variable">R2</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="operator">,</span><span class="variable">R3</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{关系模式分解题目解析} \\\\
+&amp;\textbf{题目描述：} \\
+&amp;\text{关系模式：} R(U, F) \\
+&amp;U = \{A, B, C, D, E\} \\
+&amp;F = \{A \rightarrow B, DE \rightarrow B, CB \rightarrow E, E
+\rightarrow A, B \rightarrow D\} \\\\
+&amp;\textbf{第一步：求候选关键字} \\\\
+&amp;\text{分析属性在函数依赖中的角色：} \\
+&amp;\quad \text{• 入度为0的只有C}  \\\\
+&amp;\text{计算包含C的属性组合的闭包：} \\\\
+&amp;\{C, B\}^+ \text{的计算：} \\
+&amp;\quad \{C, B\}^+ = \{C, B\} \\
+&amp;\quad \text{由} CB \rightarrow E: \{C, B, E\} \\
+&amp;\quad \text{由} E \rightarrow A: \{C, B, E, A\} \\
+&amp;\quad \text{由} B \rightarrow D: \{C, B, E, A, D\} = U \\\\
+&amp;\{C, E\}^+ \text{的计算：} \\
+&amp;\quad \{C, E\}^+ = \{C, E\} \\
+&amp;\quad \text{由} E \rightarrow A: \{C, E, A\} \\
+&amp;\quad \text{由} A \rightarrow B: \{C, E, A, B\} \\
+&amp;\quad \text{由} B \rightarrow D: \{C, E, A, B, D\} = U \\\\
+&amp;\textbf{候选关键字：}\{C, B\}, \{C, E\} \\\\
+&amp;\textbf{第二步：范式分析} \\\\
+&amp;\text{主属性：}C, B, E \quad \text{非主属性：}A, D \\\\
+&amp;\text{检查2NF（部分函数依赖）：} \\
+&amp;\quad B \rightarrow D:
+\text{B是候选关键字}\{C,B\}\text{的真子集，D是非主属性} \\
+&amp;\quad E \rightarrow A:
+\text{E是候选关键字}\{C,E\}\text{的真子集，A是非主属性} \\\\
+&amp;\text{存在部分函数依赖，不满足2NF，当前关系仅满足1NF} \\\\
+&amp;\textbf{第三步：无损连接且保持函数依赖的分解} \\\\
+&amp;\text{分解方案：} \\
+&amp;\quad R_1(A, B) \quad \text{保持} A \rightarrow B \\
+&amp;\quad R_2(E, A) \quad \text{保持} E \rightarrow A \\
+&amp;\quad R_3(B, D) \quad \text{保持} B \rightarrow D \\
+&amp;\quad R_4(C, B, E) \quad \text{保持} CB \rightarrow E
+\text{和候选关键字} \\
+&amp;\quad R_5(D, E, B) \quad \text{保持} DE \rightarrow B \\\\
+&amp;\text{简化后的分解：} \\
+&amp;\quad R_1(A, B) \\
+&amp;\quad R_2(E, A) \\
+&amp;\quad R_3(B, D) \\
+&amp;\quad R_4(C, B, E, D) \quad \text{合并保持所有剩余依赖} \\\\
+&amp;\textbf{答案：} \\
+&amp;\text{候选关键字：}\{C, B\}, \{C, E\} \\
+&amp;\text{分解：}R_1(A, B), R_2(E, A), R_3(B, D), R_4(C, B, E, D)
+\end{align}
+$$</span></p>
+<h2 id="osiopen-system-interconnection">OSI（Open System
+Interconnection）</h2>
+<p><span class="math display">$$
+\begin{align}
+&amp;\textbf{分层设计原理} \\\\
+&amp;\text{高层} \xrightarrow{\text{解耦}} \text{中间层}
+\xrightarrow{\text{解耦}} \text{低层} \\
+&amp;\text{应用需求} \quad \longleftrightarrow \quad \text{物理传输}
+\\\\
+&amp;\textbf{用于解决最高层和最低层的耦合问题。} \\
+&amp;\textbf{在实际应用中，七层模型通常被压缩为四层模型使用。} \\\\
+&amp;\textbf{网络系统 = 资源子网 + 通信子网} \\
+&amp;\text{资源子网：} \begin{cases}
+\text{用户终端设备} \\
+\text{服务器系统} \\
+\text{应用程序}
+\end{cases} \\
+&amp;\text{通信子网：} \begin{cases}
+\text{路由器网络} \\
+\text{交换机设备} \\
+\text{传输介质}
+\end{cases}
+\end{align}
+$$</span></p>
+<hr>
+<pre class="mermaid">graph LR
+    A[应用层<br>Application Layer<br>🖥️ 用户接口] --> B[表示层<br>Presentation Layer<br>🔄 数据转换]
+    B --> C[会话层<br>Session Layer<br>🔗 会话管理]
+    C --> D[传输层<br>Transport Layer<br>📦 端到端传输]
+    D --> E[网络层<br>Network Layer<br>🗺️ 路由寻址]
+    E --> F[数据链路层<br>Data Link Layer<br>🔗 帧传输]
+    F --> G[物理层<br>Physical Layer<br>⚡ 比特流]
+
+    style A fill:#ff9999
+    style B fill:#ffcc99
+    style C fill:#ffff99
+    style D fill:#ccff99
+    style E fill:#99ffcc
+    style F fill:#99ccff
+    style G fill:#cc99ff</pre>
+<hr>
+<pre class="mermaid">journey
+    title 在线视频观看的OSI
+    section 用户端
+      打开视频应用: 5: 应用层
+      数据格式转换: 4: 表示层
+      建立会话连接: 4: 会话层
+      TCP连接建立: 5: 传输层
+    section 网络传输
+      IP路由寻址: 5: 网络层
+      以太网帧封装: 4: 数据链路层
+      电信号传输: 3: 物理层
+    section 服务器端
+      信号接收解析: 3: 物理层
+      帧解封装: 4: 数据链路层
+      路由处理: 5: 网络层
+      数据重组: 5: 传输层
+      会话管理: 4: 会话层
+      内容解码: 4: 表示层
+      视频服务: 5: 应用层</pre>
+<hr>
+<table>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 14%">
+<col style="width: 23%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr>
+<th>层次</th>
+<th>传输单位</th>
+<th>核心功能</th>
+<th>关键设备</th>
+<th>地址类型</th>
+<th>协议示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🖥️ <strong>应用层</strong></td>
+<td>数据</td>
+<td>用户接口、网络服务</td>
+<td>-</td>
+<td>-</td>
+<td>HTTP, FTP, SMTP</td>
+</tr>
+<tr>
+<td>🔄 <strong>表示层</strong></td>
+<td>数据</td>
+<td>格式转换、加密压缩</td>
+<td>-</td>
+<td>-</td>
+<td>SSL/TLS, JPEG</td>
+</tr>
+<tr>
+<td>🔗 <strong>会话层</strong></td>
+<td>数据</td>
+<td>会话管理、同步控制</td>
+<td>-</td>
+<td>-</td>
+<td>NetBIOS, RPC</td>
+</tr>
+<tr>
+<td>📦 <strong>传输层</strong></td>
+<td>段(Segment)</td>
+<td>端到端传输、流控</td>
+<td>-</td>
+<td>端口号</td>
+<td>TCP, UDP</td>
+</tr>
+<tr>
+<td>🗺️ <strong>网络层</strong></td>
+<td>包(Packet)</td>
+<td>路由寻址、包转发</td>
+<td>路由器</td>
+<td>IP地址</td>
+<td>IP, ICMP</td>
+</tr>
+<tr>
+<td>🔗 <strong>数据链路层</strong></td>
+<td>帧(Frame)</td>
+<td>帧传输、错误检测</td>
+<td>交换机</td>
+<td>MAC地址</td>
+<td>Ethernet</td>
+</tr>
+<tr>
+<td>⚡ <strong>物理层</strong></td>
+<td>比特流</td>
+<td>信号传输、接口定义</td>
+<td>集线器</td>
+<td>-</td>
+<td>电气信号</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<pre class="mermaid">sequenceDiagram 
+    title "物(Hub)数(Switch)网(Router)传会表应"
+    participant App as 🖥️应用层|用户接口、网络服务 
+    participant Pre as 🔄表示层|格式转换、加密压缩 
+    participant Ses as 🔗会话层|会话管理、同步控制 
+    participant Tra as 📦传输层|端到端传输、流控 
+    participant Net as 🗺️网络层|路由寻址、包转发 
+    participant "Link" as 🔗 数据链路层 | 帧传输、错误检测 
+    participant Phy as ⚡物理层|信号传输、接口定义 
+
+    Note over App,Phy: 数据封装过程 (发送方)
+    App->>Pre: 数据 + AH
+    Pre->>Ses: 数据 + PH
+    Ses->>Tra: 数据 + SH
+    Tra->>Net: 数据 + TH (端口信息)
+    Net->>"Link": 数据 + NH (IP地址)
+    "Link"->>Phy: 数据 + 帧头/帧尾 (MAC地址)
+    Phy->>Phy: 转换为比特流
+
+    Note over Phy,App: 数据解封装过程 (接收方)
+    Phy->>"Link": 比特流解析
+    "Link"->>Net: 去除帧头/帧尾
+    Net->>Tra: 去除网络层头部
+    Tra->>Ses: 去除传输层头部
+    Ses->>Pre: 去除会话层头部
+    Pre->>App: 去除表示层头部
+    App->>App: 提取原始数据</pre>
+<hr>
 
     </div>
 
