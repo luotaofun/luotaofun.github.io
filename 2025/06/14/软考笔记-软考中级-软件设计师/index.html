@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -15,17 +15,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"luotaofun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="软考笔记-软考中级-软件设计师   image-20250604131919824  Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制">
+    <meta name="description" content="软考笔记-软考中级-软件设计师   image-20250604131919824  Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制文件)Syste">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软考笔记-软考中级-软件设计师">
 <meta property="og:url" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/index.html">
 <meta property="og:site_name" content="Taoの博客">
-<meta property="og:description" content="软考笔记-软考中级-软件设计师   image-20250604131919824  Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制">
+<meta property="og:description" content="软考笔记-软考中级-软件设计师   image-20250604131919824  Linux外部设备，以文件形式存储，存放在哪个路径？ graph TD     A[&quot;&#x2F; (根目录)Root - 整个文件系统的起点&quot;] --&gt; B[&quot;bin (用户二进制文件)User Binaries - 基本用户命令 (如 ls, cp)&quot;]     A --&gt; C[&quot;sbin (系统二进制文件)Syste">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250604131919824.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250625121957329.png">
@@ -64,7 +66,7 @@
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624151139610.png">
 <meta property="og:image" content="https://luotaofun.github.io/2025/06/14/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0-%E8%BD%AF%E8%80%83%E4%B8%AD%E7%BA%A7-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/image-20250624190749141.png">
 <meta property="article:published_time" content="2025-06-14T11:19:28.000Z">
-<meta property="article:modified_time" content="2025-06-25T09:05:24.019Z">
+<meta property="article:modified_time" content="2026-11-01T13:15:54.809Z">
 <meta property="article:author" content="LuoTao">
 <meta property="article:tag" content="resume">
 <meta name="twitter:card" content="summary">
@@ -126,8 +128,10 @@
     </a>
       <p class="site-subtitle" itemprop="description">Best Tao.</p>
 
-    <!--音乐播放器-->
-	
+    <!-- Music Player -->
+    <div class="music-player-container mt-4">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
+    </div>
   </div>
 
   <div class="site-nav-right">
@@ -140,7 +144,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">38</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">36</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -184,7 +188,7 @@
 
   <aside class="sidebar">
     <!--音乐播放器-->
-	
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1821787672&auto=0&height=32"></iframe>
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
@@ -219,12 +223,12 @@ Interconnection）</span></a></li></ol></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -315,7 +319,7 @@ Interconnection）</span></a></li></ol></li></ol></div>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-06-25 17:05:24" itemprop="dateModified" datetime="2025-06-25T17:05:24+08:00">2025-06-25</time>
+      <time title="修改时间：2026-11-01 21:15:54" itemprop="dateModified" datetime="2026-11-01T21:15:54+08:00">2026-11-01</time>
     </span>
 
   
@@ -368,7 +372,7 @@ Interconnection）</span></a></li></ol></li></ol></div>
 <col style="width: 43%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>目录路径</th>
 <th>中文名称</th>
 <th>英文全称/含义</th>
@@ -376,133 +380,133 @@ Interconnection）</span></a></li></ol></li></ol></div>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>/</code></td>
 <td>根目录</td>
 <td>/</td>
 <td>整个文件系统的起点</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/root</code></td>
 <td>系统管理员目录</td>
 <td>Root</td>
 <td>系统管理员目录</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/bin</code></td>
 <td>用户二进制文件</td>
 <td>User Binaries</td>
 <td>基本用户命令 (如 ls, cp)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/sbin</code></td>
 <td>系统二进制文件</td>
 <td>System Binaries</td>
 <td>基本系统管理命令 (如 ifconfig, fdisk)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><strong><code>/etc</code></strong></td>
 <td>配置文件</td>
 <td>Etcetera / Editable Text Configurations</td>
 <td>系统配置文件 (如 passwd, fstab)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><strong><code>/dev</code></strong></td>
 <td>设备文件</td>
 <td>Device files</td>
 <td>外部设备（硬盘、u盘、USB、光驱等）会被抽象为设备文件,这些设备文件提供与硬件交互的接口</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/proc</code></td>
 <td>进程信息</td>
 <td>Process information</td>
 <td>内核与进程信息的虚拟文件系统</td>
 </tr>
-<tr>
+<tr class="even">
 <td><strong><code>/var</code></strong></td>
 <td>可变文件</td>
 <td>Variable files</td>
 <td>经常变化扩充的文件 (如日志 /var/log, 邮件 /var/mail)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/tmp</code></td>
 <td>临时文件</td>
 <td>Temporary files</td>
 <td>临时文件 (通常重启后清空)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/usr</code></td>
 <td>用户程序</td>
 <td>Unix System Resources / User Shared Resources</td>
 <td>用户安装的程序和数据 (最大的目录之一)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/usr/bin</code></td>
 <td>非必要用户命令</td>
 <td>User Binaries</td>
 <td>大部分用户命令</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/usr/sbin</code></td>
 <td>非必要系统命令</td>
 <td>System Binaries</td>
 <td>非必要的系统管理命令</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/usr/local</code></td>
 <td>本地安装</td>
 <td>Local</td>
 <td>本地管理员安装的软件 (通常有 bin, lib, share 子目录)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/usr/share</code></td>
 <td>共享数据</td>
 <td>Share</td>
 <td>体系结构无关的共享数据 (如文档、图标)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/usr/lib</code></td>
 <td>用户库文件</td>
 <td>Libraries</td>
 <td>/usr/bin 和 /usr/sbin 中程序所需的共享库</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/home</code></td>
 <td>用户目录</td>
 <td>Home</td>
 <td>用户个人目录 (如 /home/username)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/boot</code></td>
 <td>启动文件</td>
 <td>Boot loader files</td>
 <td>系统启动相关文件 (如内核 vmlinuz, GRUB)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/lib</code></td>
 <td>核心共享库</td>
 <td>Libraries</td>
 <td>/bin和/sbin中程序所需的共享库 (如 ld.so, libc.so.*)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/opt</code></td>
 <td>可选应用</td>
 <td>Optional</td>
 <td>第三方可选应用程序包 (如 Google Chrome)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/mnt</code></td>
 <td>挂载点</td>
 <td>Mount</td>
 <td>临时文件系统挂载点 (管理员手动挂载)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>/media</code></td>
 <td>可移动媒体</td>
 <td>Media</td>
 <td>可移动设备挂载点 (如U盘, CD-ROM)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>/srv</code></td>
 <td>服务数据</td>
 <td>Service</td>
@@ -542,24 +546,24 @@ Interconnection）</span></a></li></ol></li></ol></div>
 <col style="width: 29%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>问题</th>
 <th>特点</th>
 <th>记忆关键词</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>丢失更新/丢失修改</td>
 <td>读到同一个数据后多次写回导致前面的写被覆盖。写被其他事务覆盖</td>
 <td>读同写盖</td>
 </tr>
-<tr>
+<tr class="even">
 <td>不可重复读</td>
 <td>验算前被其他事务修改，导致验算不对</td>
 <td>验算</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>脏读</td>
 <td>读到其他事务rollback前的中间的无效脏数据</td>
 <td>读到无效（被rollback）的中间数据</td>
@@ -578,19 +582,19 @@ Interconnection）</span></a></li></ol></li></ol></div>
 <col style="width: 6%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>特点</th>
 <th>记忆</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>S锁/读锁/共享锁</td>
 <td>若事务T对数据对象A加上S锁，其他事务只能再加S锁，不能对A再加其他锁</td>
 <td>SS锁</td>
 </tr>
-<tr>
+<tr class="even">
 <td>X锁/写锁/独占锁/排他锁</td>
 <td>若事务T对数据对象A加上X锁，其他事务不能对A再加任何锁</td>
 <td>独占锁</td>
@@ -678,41 +682,41 @@ $$</span></p>
 <p>八进制数码与二进制对应关系：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">八进制</th>
 <th style="text-align: center;">3位二进制 (421)</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">000</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">001</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">010</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">011</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">100</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">101</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">110</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">111</td>
 </tr>
@@ -775,89 +779,89 @@ $$</span></p>
 <p><strong>十六进制数码与二进制对应关系：</strong></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">十六进制</th>
 <th style="text-align: center;">等效十进制</th>
 <th style="text-align: center;">4位二进制 (8421)</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0000</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">0001</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">0010</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">0011</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">0100</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">0101</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">0110</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">0111</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">1000</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">1001</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">10</td>
 <td style="text-align: center;">1010</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">B</td>
 <td style="text-align: center;">11</td>
 <td style="text-align: center;">1011</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">C</td>
 <td style="text-align: center;">12</td>
 <td style="text-align: center;">1100</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">D</td>
 <td style="text-align: center;">13</td>
 <td style="text-align: center;">1101</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">E</td>
 <td style="text-align: center;">14</td>
 <td style="text-align: center;">1110</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">F</td>
 <td style="text-align: center;">15</td>
 <td style="text-align: center;">1111</td>
@@ -999,11 +1003,11 @@ $$</span></p>
     style C_rev fill:#90EE90,stroke:#3CB371</pre>
 <blockquote>
 <ul>
-<li>原码、反码：<span class="math inline">+0</span> 和 <span class="math inline">−0</span> 两种表示。</li>
+<li>原码、反码：<span class="math inline"> + 0</span> 和 <span class="math inline"> − 0</span> 两种表示。</li>
 <li>补码、移码：<span class="math inline">0</span> 只有一种表示。</li>
-<li>原码和反码由于存在 <span class="math inline">+0</span> 和 <span class="math inline">−0</span>，实际能表示的数值个数比 <span class="math inline">2<sup><em>N</em></sup></span> 少一个。</li>
-<li>补码通过”人为规定”，将 <span class="math inline">−0</span> 的编码
-(<span class="math inline">100...0</span> 在原码中是 <span class="math inline">−0</span>) 用来表示多一个负数 (<span class="math inline">−2<sup><em>N</em> − 1</sup></span>)，从而实现了
+<li>原码和反码由于存在 <span class="math inline"> + 0</span> 和 <span class="math inline"> − 0</span>，实际能表示的数值个数比 <span class="math inline">2<sup><em>N</em></sup></span> 少一个。</li>
+<li>补码通过”人为规定”，将 <span class="math inline"> − 0</span> 的编码
+(<span class="math inline">100...0</span> 在原码中是 <span class="math inline"> − 0</span>) 用来表示多一个负数 (<span class="math inline"> − 2<sup><em>N</em> − 1</sup></span>)，从而实现了
 <span class="math inline">2<sup><em>N</em></sup></span>
 个唯一数值的表示。</li>
 <li>移码的范围取决于偏置值的选择，但其能表示的真值数量和补码一致。</li>
@@ -1023,7 +1027,7 @@ $$</span></p>
 <col style="width: 6%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">码制 (详细说明)</th>
 <th style="text-align: left;">整数范围</th>
 <th style="text-align: left;">定点小数范围</th>
@@ -1038,13 +1042,13 @@ n=8)</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>原码
 (Sign-Magnitude)</strong><br>符号位加上数值的绝对值的二进制表示。零的表示不唯一：有
 <code>+0</code> (<code>00000000</code>) 和 <code>-0</code>
 (<code>10000000</code>)。</td>
-<td style="text-align: left;"><span class="math display">[−(2<sup><em>N</em> − 1</sup> − 1), 2<sup><em>N</em> − 1</sup> − 1]</span></td>
-<td style="text-align: left;"><span class="math display">[−(1 − 2<sup>−(<em>N</em> − 1)</sup>), 1 − 2<sup>−(<em>N</em> − 1)</sup>]</span></td>
+<td style="text-align: left;"><span class="math display">[−(2<sup><em>N</em> − 1</sup>−1),2<sup><em>N</em> − 1</sup>−1]</span></td>
+<td style="text-align: left;"><span class="math display">[−(1−2<sup>−(<em>N</em>−1)</sup>),1−2<sup>−(<em>N</em>−1)</sup>]</span></td>
 <td style="text-align: left;"><span class="math display">2<sup><em>N</em></sup> − 1</span></td>
 <td style="text-align: left;"><code>+0</code>, <code>-0</code></td>
 <td style="text-align: left;"><code>00000001</code></td>
@@ -1052,12 +1056,12 @@ n=8)</th>
 <td style="text-align: left;"><code>10000010</code></td>
 <td style="text-align: left;">-2</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>反码 (One’s
 Complement)</strong><br>正数: 同原码<br>负数: 原码数值位取反<br>+0:
 <code>00000000</code><br>-0: <code>11111111</code></td>
-<td style="text-align: left;"><span class="math display">[−(2<sup><em>N</em> − 1</sup> − 1), 2<sup><em>N</em> − 1</sup> − 1]</span></td>
-<td style="text-align: left;"><span class="math display">[−(1 − 2<sup>−(<em>N</em> − 1)</sup>), 1 − 2<sup>−(<em>N</em> − 1)</sup>]</span></td>
+<td style="text-align: left;"><span class="math display">[−(2<sup><em>N</em> − 1</sup>−1),2<sup><em>N</em> − 1</sup>−1]</span></td>
+<td style="text-align: left;"><span class="math display">[−(1−2<sup>−(<em>N</em>−1)</sup>),1−2<sup>−(<em>N</em>−1)</sup>]</span></td>
 <td style="text-align: left;"><span class="math display">2<sup><em>N</em></sup> − 1</span></td>
 <td style="text-align: left;"><code>+0</code>, <code>-0</code></td>
 <td style="text-align: left;"><code>00000001</code></td>
@@ -1065,13 +1069,13 @@ Complement)</strong><br>正数: 同原码<br>负数: 原码数值位取反<br>+0
 <td style="text-align: left;"><code>11111111</code></td>
 <td style="text-align: left;">-0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>补码 (Two’s
 Complement)</strong><br><strong>定义:</strong><br>正数:
 同原反码<br>负数: 反码末位+1<br>零表示:唯一
 <code>00000000</code><br>简化了硬件设计。加法和减法可以用相同的电路实现（减法通过加负数的补码）<br>补码比原码/反码能多表示一个最小负数</td>
-<td style="text-align: left;"><span class="math display">[−2<sup><em>N</em> − 1</sup>, 2<sup><em>N</em> − 1</sup> − 1]</span><br>假设字长为3，则<br>最小负数：100<br>最大负数：111<br>最大正数：011</td>
-<td style="text-align: left;"><span class="math display">[−1, 1 − 2<sup>−(<em>N</em> − 1)</sup>]</span></td>
+<td style="text-align: left;"><span class="math display">[−2<sup><em>N</em> − 1</sup>,2<sup><em>N</em> − 1</sup>−1]</span><br>假设字长为3，则<br>最小负数：100<br>最大负数：111<br>最大正数：011</td>
+<td style="text-align: left;"><span class="math display">[−1,1−2<sup>−(<em>N</em>−1)</sup>]</span></td>
 <td style="text-align: left;"><span class="math display">2<sup><em>N</em></sup></span></td>
 <td style="text-align: left;"><code>+0</code> (唯一)</td>
 <td style="text-align: left;"><code>00000001</code></td>
@@ -1079,12 +1083,12 @@ Complement)</strong><br><strong>定义:</strong><br>正数:
 <td style="text-align: left;"><code>00000000</code></td>
 <td style="text-align: left;">0</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>移码
 (Excess/Biased)</strong><br>补码符号位取反,
 其余不变<br>零的表示通常不唯一，取决于偏置值</td>
-<td style="text-align: left;"><span class="math display">[−2<sup><em>N</em> − 1</sup>, 2<sup><em>N</em> − 1</sup> − 1]</span></td>
-<td style="text-align: left;"><span class="math display">[−1, 1 − 2<sup>−(<em>N</em> − 1)</sup>]</span></td>
+<td style="text-align: left;"><span class="math display">[−2<sup><em>N</em> − 1</sup>,2<sup><em>N</em> − 1</sup>−1]</span></td>
+<td style="text-align: left;"><span class="math display">[−1,1−2<sup>−(<em>N</em>−1)</sup>]</span></td>
 <td style="text-align: left;"><span class="math display">2<sup><em>N</em></sup></span></td>
 <td style="text-align: left;">唯一 (取决于偏置)</td>
 <td style="text-align: left;"><code>10000001</code></td>
@@ -1108,9 +1112,9 @@ Complement)</strong><br><strong>定义:</strong><br>正数:
 <li>补码的定义：为算术运算优化
 统一的加法规则：补码的设计目标之一是让加法和减法（通过加负数的补码）可以用一套相同的硬件逻辑来实现，并且符号位也参与运算。
 负权重的引入：为了实现这个目标，补码采用了一种特殊的编码方式。其中，最高位（符号位）被赋予了一个负的权重（即
-<span class="math inline">−2<sup><em>n</em> − 1</sup></span>），而其余各位仍然是正权重。
+<span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>），而其余各位仍然是正权重。
 结果：这种负权重的计算方式使得补码可以直接进行二进制加法，得到正确的结果，无需像原码那样先判断符号再决定是做加法还是减法。例如，3位补码
-111，其值为 <span class="math inline">−1 × 2<sup>2</sup> + 1 × 2<sup>1</sup> + 1 × 2<sup>0</sup> = −4 + 2 + 1 = −1</span>。</li>
+111，其值为 <span class="math inline"> − 1 × 2<sup>2</sup> + 1 × 2<sup>1</sup> + 1 × 2<sup>0</sup> =  − 4 + 2 + 1 =  − 1</span>。</li>
 </ul>
 </blockquote>
 <p><span class="math display">$$
@@ -1151,7 +1155,7 @@ Complement）是一种在计算机中表示有符号整数的常用方法。对�
 1$</span> 数值位有 n-1 位，并且这 n-1 位全为 1。 所以，这里的 k 相当于
 n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span>
 代入上面的公式 <span class="math inline">2<sup><em>k</em></sup> − 1</span>，我们得到这些数值位所代表的值为：
-<span class="math inline">2<sup>(<em>n</em> − 1)</sup> − 1</span>
+<span class="math inline">2<sup>(<em>n</em>−1)</sup> − 1</span>
 因此，当n位补码的符号位为 0，且剩下的 n-1 个数值位全为 1
 时（即二进制形式为 011…1），其表示的十进制值为 <span class="math inline">2<sup><em>n</em> − 1</sup> − 1</span>。这就是n位补码能表示的最大正数。</p>
 </blockquote></li>
@@ -1163,20 +1167,20 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <li>当符号位为 <code>1</code> 时，表示负数。</li>
 <li>负数的补码定义为其绝对值的原码各位取反（得到反码），然后在末位加1。</li>
 <li><strong>最小负数（绝对值最大）：</strong> 其补码表示为
-<code>100...0</code> (一个1后跟n-1个0)。这个值是 <span class="math inline">−2<sup><em>n</em> − 1</sup></span>。
+<code>100...0</code> (一个1后跟n-1个0)。这个值是 <span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>。
 <ul>
-<li>例如，对于8位补码 (n=8)，最小负数是 <span class="math inline">−128</span>，表示为 <code>10000000</code>。</li>
+<li>例如，对于8位补码 (n=8)，最小负数是 <span class="math inline"> − 128</span>，表示为 <code>10000000</code>。</li>
 <li><strong>常见误区与辨析：为什么最小负数不是
 <code>111...1</code>？</strong>
 初学者可能会直观地认为，既然符号位为1表示负数，那么数值位全为1（如
 <code>111...1</code>）应该代表绝对值最大的负数，即最小负数。这种想法更符合原码的逻辑。
 但在补码中，情况不同。我们以3位字长为例来说明：
 <ul>
-<li><strong>补码计算规则 (n=3)：</strong> 值 = <span class="math inline">−<em>b</em><sub>2</sub> ⋅ 2<sup>2</sup> + <em>b</em><sub>1</sub> ⋅ 2<sup>1</sup> + <em>b</em><sub>0</sub> ⋅ 2<sup>0</sup> = −4<em>b</em><sub>2</sub> + 2<em>b</em><sub>1</sub> + <em>b</em><sub>0</sub></span></li>
-<li><strong>对于 <code>111</code> (3位补码)：</strong> 值 = <span class="math inline">−1 ⋅ 4 + 1 ⋅ 2 + 1 ⋅ 1 = −4 + 2 + 1 = −1</span>。</li>
-<li><strong>对于 <code>100</code> (3位补码)：</strong> 值 = <span class="math inline">−1 ⋅ 4 + 0 ⋅ 2 + 0 ⋅ 1 = −4 + 0 + 0 = −4</span>。
-显然，-4 比 -1 更小，所以 <code>100</code> (其值为 <span class="math inline">−2<sup>3 − 1</sup></span>) 才是3位补码的最小负数。
-<strong>核心原因：</strong> 在补码中，最高位（符号位）具有负权 (<span class="math inline">−2<sup><em>n</em> − 1</sup></span>)，其余位具有正权。要得到最小的负数（即绝对值最大的负数），我们需要这个大的负权起作用（最高位为1），并让其余位的正权贡献最小化（即其余所有数值位为0）。如果其余数值位也为1（如
+<li><strong>补码计算规则 (n=3)：</strong> 值 = <span class="math inline"> − <em>b</em><sub>2</sub> ⋅ 2<sup>2</sup> + <em>b</em><sub>1</sub> ⋅ 2<sup>1</sup> + <em>b</em><sub>0</sub> ⋅ 2<sup>0</sup> =  − 4<em>b</em><sub>2</sub> + 2<em>b</em><sub>1</sub> + <em>b</em><sub>0</sub></span></li>
+<li><strong>对于 <code>111</code> (3位补码)：</strong> 值 = <span class="math inline"> − 1 ⋅ 4 + 1 ⋅ 2 + 1 ⋅ 1 =  − 4 + 2 + 1 =  − 1</span>。</li>
+<li><strong>对于 <code>100</code> (3位补码)：</strong> 值 = <span class="math inline"> − 1 ⋅ 4 + 0 ⋅ 2 + 0 ⋅ 1 =  − 4 + 0 + 0 =  − 4</span>。
+显然，-4 比 -1 更小，所以 <code>100</code> (其值为 <span class="math inline"> − 2<sup>3 − 1</sup></span>) 才是3位补码的最小负数。
+<strong>核心原因：</strong> 在补码中，最高位（符号位）具有负权 (<span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>)，其余位具有正权。要得到最小的负数（即绝对值最大的负数），我们需要这个大的负权起作用（最高位为1），并让其余位的正权贡献最小化（即其余所有数值位为0）。如果其余数值位也为1（如
 <code>111...1</code>
 的情况），它们贡献的正值会”抵消”一部分最高位的负值，使得最终结果更接近0（例如得到-1），而不是变得更小（更负）。</li>
 </ul></li>
@@ -1194,14 +1198,14 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <p>设 <code>100...0</code> 所代表的负数值为 <span class="math inline"><em>V</em></span>. 根据定义，这个补码表示 <span class="math inline">2<sup><em>n</em></sup> − |<em>V</em>|</span>。
 所以，我们有： <span class="math inline">2<sup><em>n</em> − 1</sup> = 2<sup><em>n</em></sup> − |<em>V</em>|</span></p>
 <p>现在解出 <span class="math inline">|<em>V</em>|</span>： <span class="math inline">|<em>V</em>| = 2<sup><em>n</em></sup> − 2<sup><em>n</em> − 1</sup></span>
-<span class="math inline">|<em>V</em>| = (2 × 2<sup><em>n</em> − 1</sup>) − 2<sup><em>n</em> − 1</sup></span>
-<span class="math inline">|<em>V</em>| = (2 − 1) × 2<sup><em>n</em> − 1</sup></span>
+<span class="math inline">|<em>V</em>| = (2×2<sup><em>n</em> − 1</sup>) − 2<sup><em>n</em> − 1</sup></span>
+<span class="math inline">|<em>V</em>| = (2−1) × 2<sup><em>n</em> − 1</sup></span>
 <span class="math inline">|<em>V</em>| = 2<sup><em>n</em> − 1</sup></span></p>
-<p>因为符号位（最高位）是 <code>1</code>，所以 <span class="math inline"><em>V</em></span> 是一个负数。 因此，<span class="math inline"><em>V</em> = −|<em>V</em>| = −2<sup><em>n</em> − 1</sup></span>。</p>
+<p>因为符号位（最高位）是 <code>1</code>，所以 <span class="math inline"><em>V</em></span> 是一个负数。 因此，<span class="math inline"><em>V</em> =  − |<em>V</em>| =  − 2<sup><em>n</em> − 1</sup></span>。</p>
 <p><strong>方法二：通过补码的加权求和规则</strong></p>
 <p>一个 n 位的二进制补码 <span class="math inline"><em>b</em><sub><em>n</em> − 1</sub><em>b</em><sub><em>n</em> − 2</sub>...<em>b</em><sub>1</sub><em>b</em><sub>0</sub></span>（其中
 <span class="math inline"><em>b</em><sub><em>n</em> − 1</sub></span>
-是符号位）可以直接按权展开求和，其值为： 数值 = <span class="math inline">(−<em>b</em><sub><em>n</em> − 1</sub> × 2<sup><em>n</em> − 1</sup>) + (<em>b</em><sub><em>n</em> − 2</sub> × 2<sup><em>n</em> − 2</sup>) + … + (<em>b</em><sub>1</sub> × 2<sup>1</sup>) + (<em>b</em><sub>0</sub> × 2<sup>0</sup>)</span></p>
+是符号位）可以直接按权展开求和，其值为： 数值 = <span class="math inline">(−<em>b</em><sub><em>n</em> − 1</sub>×2<sup><em>n</em> − 1</sup>) + (<em>b</em><sub><em>n</em> − 2</sub>×2<sup><em>n</em> − 2</sup>) + … + (<em>b</em><sub>1</sub>×2<sup>1</sup>) + (<em>b</em><sub>0</sub>×2<sup>0</sup>)</span></p>
 对于补码 <code>100...0</code>：
 <ul>
 <li><span class="math inline"><em>b</em><sub><em>n</em> − 1</sub> = 1</span>
@@ -1210,18 +1214,18 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <li>…</li>
 <li><span class="math inline"><em>b</em><sub>0</sub> = 0</span></li>
 </ul>
-<p>将这些值代入加权求和公式： 数值 = <span class="math inline">(−1 × 2<sup><em>n</em> − 1</sup>) + (0 × 2<sup><em>n</em> − 2</sup>) + (0 × 2<sup><em>n</em> − 3</sup>) + … + (0 × 2<sup>1</sup>) + (0 × 2<sup>0</sup>)</span>
-数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup> + 0 + 0 + … + 0 + 0</span>
-数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup></span></p>
+<p>将这些值代入加权求和公式： 数值 = <span class="math inline">(−1×2<sup><em>n</em> − 1</sup>) + (0×2<sup><em>n</em> − 2</sup>) + (0×2<sup><em>n</em> − 3</sup>) + … + (0×2<sup>1</sup>) + (0×2<sup>0</sup>)</span>
+数值 = <span class="math inline"> − 2<sup><em>n</em> − 1</sup> + 0 + 0 + … + 0 + 0</span>
+数值 = <span class="math inline"> − 2<sup><em>n</em> − 1</sup></span></p>
 <p><strong>结论：</strong> 两种方法都表明，n 位补码 <code>100...0</code>
-表示的十进制数值是 <span class="math inline">−2<sup><em>n</em> − 1</sup></span>。这是 n
+表示的十进制数值是 <span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>。这是 n
 位补码能够表示的最小负数（即绝对值最大的负数）</p>
 </blockquote>
 <pre><code>*   这是补码表示的一个特点，负数范围比正数范围多一个最小负数$$-2^&#123;n-1&#125;$$。
 *   例如，对于8位补码 (n=8)，最小负数为 `10000000`，即 $-2^&#123;8-1&#125; = -2^7 = -128$。</code></pre>
 <ul>
 <li><strong>最大负数（绝对值最小）：</strong> 其补码表示为
-<code>111...1</code> (n个1)。这个值是 <span class="math inline">−1</span>。</li>
+<code>111...1</code> (n个1)。这个值是 <span class="math inline"> − 1</span>。</li>
 </ul>
 <blockquote>
 <p><strong>推导过程：</strong></p>
@@ -1234,14 +1238,14 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <p>设 <code>111...1</code> 所代表的负数值为 <span class="math inline"><em>V</em></span>. 根据定义，这个补码表示 <span class="math inline">2<sup><em>n</em></sup> − |<em>V</em>|</span>。
 所以，我们将无符号整数的值与补码的定义式等同起来： <span class="math inline">2<sup><em>n</em></sup> − 1 = 2<sup><em>n</em></sup> − |<em>V</em>|</span></p>
 <p>现在解出 <span class="math inline">|<em>V</em>|</span>：
-从上式两边同时减去 <span class="math inline">2<sup><em>n</em></sup></span>： <span class="math inline">−1 = −|<em>V</em>|</span> 所以， <span class="math inline">|<em>V</em>| = 1</span>。</p>
+从上式两边同时减去 <span class="math inline">2<sup><em>n</em></sup></span>： <span class="math inline"> − 1 =  − |<em>V</em>|</span> 所以， <span class="math inline">|<em>V</em>| = 1</span>。</p>
 <p>因为符号位（最高位 <span class="math inline"><em>b</em><sub><em>n</em> − 1</sub></span>）是
 <code>1</code>，所以 <span class="math inline"><em>V</em></span>
-是一个负数。 因此，<span class="math inline"><em>V</em> = −|<em>V</em>| = −1</span>。</p>
+是一个负数。 因此，<span class="math inline"><em>V</em> =  − |<em>V</em>| =  − 1</span>。</p>
 <p><strong>方法二：通过补码的加权求和规则</strong></p>
 <p>一个 n 位的二进制补码 <span class="math inline"><em>b</em><sub><em>n</em> − 1</sub><em>b</em><sub><em>n</em> − 2</sub>...<em>b</em><sub>1</sub><em>b</em><sub>0</sub></span>（其中
 <span class="math inline"><em>b</em><sub><em>n</em> − 1</sub></span>
-是符号位）可以直接按权展开求和，其值为： 数值 = <span class="math inline">(−<em>b</em><sub><em>n</em> − 1</sub> × 2<sup><em>n</em> − 1</sup>) + (<em>b</em><sub><em>n</em> − 2</sub> × 2<sup><em>n</em> − 2</sup>) + … + (<em>b</em><sub>1</sub> × 2<sup>1</sup>) + (<em>b</em><sub>0</sub> × 2<sup>0</sup>)</span></p>
+是符号位）可以直接按权展开求和，其值为： 数值 = <span class="math inline">(−<em>b</em><sub><em>n</em> − 1</sub>×2<sup><em>n</em> − 1</sup>) + (<em>b</em><sub><em>n</em> − 2</sub>×2<sup><em>n</em> − 2</sup>) + … + (<em>b</em><sub>1</sub>×2<sup>1</sup>) + (<em>b</em><sub>0</sub>×2<sup>0</sup>)</span></p>
 对于补码 <code>111...1</code>：
 <ul>
 <li><span class="math inline"><em>b</em><sub><em>n</em> − 1</sub> = 1</span>
@@ -1250,15 +1254,15 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <li>…</li>
 <li><span class="math inline"><em>b</em><sub>0</sub> = 1</span></li>
 </ul>
-<p>将这些值代入加权求和公式： 数值 = <span class="math inline">(−1 × 2<sup><em>n</em> − 1</sup>) + (1 × 2<sup><em>n</em> − 2</sup>) + (1 × 2<sup><em>n</em> − 3</sup>) + … + (1 × 2<sup>1</sup>) + (1 × 2<sup>0</sup>)</span>
-数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup> + (2<sup><em>n</em> − 2</sup> + 2<sup><em>n</em> − 3</sup> + … + 2<sup>1</sup> + 2<sup>0</sup>)</span></p>
-<p>我们知道括号中的部分 <span class="math inline">(2<sup><em>n</em> − 2</sup> + 2<sup><em>n</em> − 3</sup> + … + 2<sup>1</sup> + 2<sup>0</sup>)</span>
-是一个等比数列的和，其项数为 <span class="math inline"><em>n</em> − 1</span> (从 <span class="math inline">2<sup>0</sup></span>到 <span class="math inline">2<sup><em>n</em> − 2</sup></span>)，首项为 <span class="math inline">2<sup>0</sup> = 1</span>，公比为 <span class="math inline">2</span>。 这个和等于 <span class="math inline">2<sup>(<em>n</em> − 1)</sup> − 1</span>。</p>
-<p>所以，代入回去： 数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup> + (2<sup><em>n</em> − 1</sup> − 1)</span>
-数值 = <span class="math inline">−2<sup><em>n</em> − 1</sup> + 2<sup><em>n</em> − 1</sup> − 1</span>
-数值 = <span class="math inline">−1</span></p>
+<p>将这些值代入加权求和公式： 数值 = <span class="math inline">(−1×2<sup><em>n</em> − 1</sup>) + (1×2<sup><em>n</em> − 2</sup>) + (1×2<sup><em>n</em> − 3</sup>) + … + (1×2<sup>1</sup>) + (1×2<sup>0</sup>)</span>
+数值 = <span class="math inline"> − 2<sup><em>n</em> − 1</sup> + (2<sup><em>n</em> − 2</sup>+2<sup><em>n</em> − 3</sup>+…+2<sup>1</sup>+2<sup>0</sup>)</span></p>
+<p>我们知道括号中的部分 <span class="math inline">(2<sup><em>n</em> − 2</sup>+2<sup><em>n</em> − 3</sup>+…+2<sup>1</sup>+2<sup>0</sup>)</span>
+是一个等比数列的和，其项数为 <span class="math inline"><em>n</em> − 1</span> (从 <span class="math inline">2<sup>0</sup></span>到 <span class="math inline">2<sup><em>n</em> − 2</sup></span>)，首项为 <span class="math inline">2<sup>0</sup> = 1</span>，公比为 <span class="math inline">2</span>。 这个和等于 <span class="math inline">2<sup>(<em>n</em>−1)</sup> − 1</span>。</p>
+<p>所以，代入回去： 数值 = <span class="math inline"> − 2<sup><em>n</em> − 1</sup> + (2<sup><em>n</em> − 1</sup>−1)</span>
+数值 = <span class="math inline"> − 2<sup><em>n</em> − 1</sup> + 2<sup><em>n</em> − 1</sup> − 1</span>
+数值 = <span class="math inline"> − 1</span></p>
 <strong>结论：</strong> 两种方法都表明，n 位补码 <code>111...1</code>
-表示的十进制数值是 <span class="math inline">−1</span>。这是 n
+表示的十进制数值是 <span class="math inline"> − 1</span>。这是 n
 位补码能够表示的最大负数（即绝对值最小的负数）。
 <ul>
 <li>例如，对于8位补码 (n=8)，<code>-1</code> 表示为
@@ -1267,15 +1271,15 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 </blockquote></li>
 <li><p><strong>总体表示范围：</strong>
 综合正数、零和负数的表示，n位补码（包含一个符号位）可以直接表示的数值范围是：
-<strong><span class="math inline">[−2<sup><em>n</em> − 1</sup>, 2<sup><em>n</em> − 1</sup> − 1]</span></strong></p></li>
+<strong><span class="math inline">[−2<sup><em>n</em> − 1</sup>,2<sup><em>n</em> − 1</sup>−1]</span></strong></p></li>
 </ol>
-<p><strong>示例（以 n=4 位补码为例）：</strong> * <span class="math inline"><em>n</em> = 4</span>, <span class="math inline"><em>n</em> − 1 = 3</span> * 最小负数 <span class="math inline">−2<sup>4 − 1</sup> = −2<sup>3</sup> = −8</span>
+<p><strong>示例（以 n=4 位补码为例）：</strong> * <span class="math inline"><em>n</em> = 4</span>, <span class="math inline"><em>n</em> − 1 = 3</span> * 最小负数 <span class="math inline"> − 2<sup>4 − 1</sup> =  − 2<sup>3</sup> =  − 8</span>
 (补码 <code>1000</code>) * 最大正数 <span class="math inline">2<sup>4 − 1</sup> − 1 = 2<sup>3</sup> − 1 = 8 − 1 = 7</span>
 (补码 <code>0111</code>) * 零：<code>0</code> (补码 <code>0000</code>) *
-范围 <span class="math inline">[−8, 7]</span></p>
+范围 <span class="math inline">[−8,7]</span></p>
 <p><strong>记忆要点：</strong></p>
 <ul>
-<li><p>n位补码比n位原码和反码能多表示一个最小的负数 ( <span class="math inline">−2<sup><em>n</em> − 1</sup></span> )。</p>
+<li><p>n位补码比n位原码和反码能多表示一个最小的负数 ( <span class="math inline"> − 2<sup><em>n</em> − 1</sup></span> )。</p>
 <blockquote>
 <p><strong>详细解释：</strong></p>
 <p><strong>核心原因：零的表示方式不同</strong></p>
@@ -1294,23 +1298,23 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <span class="math inline">2<sup><em>n</em></sup></span>
 种不同的编码组合。如果零占用了两种，那么能表示的非零数值就会少一个。</li>
 <li><strong>表示范围：</strong>
-因此，它们能表示的数值范围都是对称的，通常是 <span class="math inline">[−(2<sup><em>n</em> − 1</sup> − 1), 2<sup><em>n</em> − 1</sup> − 1]</span>。
+因此，它们能表示的数值范围都是对称的，通常是 <span class="math inline">[−(2<sup><em>n</em> − 1</sup>−1),2<sup><em>n</em> − 1</sup>−1]</span>。
 <ul>
-<li>例如，对于8位原码/反码，范围是 <span class="math inline">[−127, 127]</span>。</li>
-<li>最小的负数（绝对值最大的）是 <span class="math inline">−(2<sup><em>n</em> − 1</sup> − 1)</span>。</li>
+<li>例如，对于8位原码/反码，范围是 <span class="math inline">[−127,127]</span>。</li>
+<li>最小的负数（绝对值最大的）是 <span class="math inline"> − (2<sup><em>n</em> − 1</sup>−1)</span>。</li>
 </ul></li>
 </ul></li>
 <li><strong>补码 (Two’s Complement)：</strong>
 <ul>
 <li>在 补码 表示法中，由于零的表示是唯一的 (000…0)，原先用于表示 -0
 的那个编码 100…0
-被赋予了一个全新的、非零的数值含义。这个新的含义就是：表示数值 <span class="math inline">−2<sup><em>n</em> − 1</sup></span></li>
-<li>扩展了负数范围： 通过将 100…0 这个编码模式从表示 -0 转变为表示 <span class="math inline">−2<sup><em>n</em> − 1</sup></span>，补码能够比原码和反码多表示一个负数。原码和反码的最小负数是
-<span class="math inline">−(2<sup><em>n</em> − 1</sup> − 1)</span>，而补码的最小负数是
-<span class="math inline">−2<sup><em>n</em> − 1</sup></span>，后者比前者更小（更负）。</li>
+被赋予了一个全新的、非零的数值含义。这个新的含义就是：表示数值 <span class="math inline"> − 2<sup><em>n</em> − 1</sup></span></li>
+<li>扩展了负数范围： 通过将 100…0 这个编码模式从表示 -0 转变为表示 <span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>，补码能够比原码和反码多表示一个负数。原码和反码的最小负数是
+<span class="math inline"> − (2<sup><em>n</em> − 1</sup>−1)</span>，而补码的最小负数是
+<span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>，后者比前者更小（更负）。</li>
 <li>因此它能表示的<strong>最小负数</strong>比原码和反码更小（例如，8位补码能表示-128，而8位原码/反码只能表示到-127）。</li>
 <li>因此它表示的<strong>不同整数的总个数</strong>比原码和反码多一个
-<span class="math inline">−2<sup><em>n</em> − 1</sup></span>最小的负数（
+<span class="math inline"> − 2<sup><em>n</em> − 1</sup></span>最小的负数（
 <span class="math inline">2<sup><em>n</em></sup></span> 个 vs <span class="math inline">2<sup><em>n</em></sup> − 1</span> 个）。</li>
 </ul></li>
 </ol>
@@ -1323,7 +1327,7 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <col style="width: 30%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">特性</th>
 <th style="text-align: left;">原码 (Sign-Magnitude)</th>
 <th style="text-align: left;">反码 (One’s Complement)</th>
@@ -1331,7 +1335,7 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>零的表示</strong></td>
 <td style="text-align: left;"><code>00...0</code>
 (+0)<br><code>10...0</code> (-0)</td>
@@ -1339,37 +1343,37 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 (+0)<br><code>11...1</code> (-0)</td>
 <td style="text-align: left;"><code>00...0</code> (唯一)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>编码
 <code>10...0</code></strong></td>
 <td style="text-align: left;"><code>-0</code></td>
-<td style="text-align: left;"><span class="math inline">−(2<sup><em>n</em> − 1</sup> − 1)</span></td>
-<td style="text-align: left;"><span class="math inline">−2<sup><em>n</em> − 1</sup></span></td>
+<td style="text-align: left;"><span class="math inline"> − (2<sup><em>n</em> − 1</sup>−1)</span></td>
+<td style="text-align: left;"><span class="math inline"> − 2<sup><em>n</em> − 1</sup></span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>最小负数</strong></td>
-<td style="text-align: left;"><span class="math inline">−(2<sup><em>n</em> − 1</sup> − 1)</span></td>
-<td style="text-align: left;"><span class="math inline">−(2<sup><em>n</em> − 1</sup> − 1)</span></td>
-<td style="text-align: left;"><span class="math inline">−2<sup><em>n</em> − 1</sup></span></td>
+<td style="text-align: left;"><span class="math inline"> − (2<sup><em>n</em> − 1</sup>−1)</span></td>
+<td style="text-align: left;"><span class="math inline"> − (2<sup><em>n</em> − 1</sup>−1)</span></td>
+<td style="text-align: left;"><span class="math inline"> − 2<sup><em>n</em> − 1</sup></span></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>最大正数</strong></td>
 <td style="text-align: left;"><span class="math inline">2<sup><em>n</em> − 1</sup> − 1</span></td>
 <td style="text-align: left;"><span class="math inline">2<sup><em>n</em> − 1</sup> − 1</span></td>
 <td style="text-align: left;"><span class="math inline">2<sup><em>n</em> − 1</sup> − 1</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>总范围</strong></td>
-<td style="text-align: left;"><span class="math inline">[−(2<sup><em>n</em> − 1</sup> − 1), 2<sup><em>n</em> − 1</sup> − 1]</span></td>
-<td style="text-align: left;"><span class="math inline">[−(2<sup><em>n</em> − 1</sup> − 1), 2<sup><em>n</em> − 1</sup> − 1]</span></td>
-<td style="text-align: left;"><span class="math inline">[−2<sup><em>n</em> − 1</sup>, 2<sup><em>n</em> − 1</sup> − 1]</span></td>
+<td style="text-align: left;"><span class="math inline">[−(2<sup><em>n</em> − 1</sup>−1),2<sup><em>n</em> − 1</sup>−1]</span></td>
+<td style="text-align: left;"><span class="math inline">[−(2<sup><em>n</em> − 1</sup>−1),2<sup><em>n</em> − 1</sup>−1]</span></td>
+<td style="text-align: left;"><span class="math inline">[−2<sup><em>n</em> − 1</sup>,2<sup><em>n</em> − 1</sup>−1]</span></td>
 </tr>
 </tbody>
 </table>
 </blockquote></li>
 <li><p>零的表示是唯一的 (<code>00...0</code>)。</p></li>
-<li><p>正数范围 <span class="math inline">[0, 2<sup><em>n</em> − 1</sup> − 1]</span></p></li>
-<li><p>负数范围 <span class="math inline">[−2<sup><em>n</em> − 1</sup>, −1]</span></p></li>
+<li><p>正数范围 <span class="math inline">[0,2<sup><em>n</em> − 1</sup>−1]</span></p></li>
+<li><p>负数范围 <span class="math inline">[−2<sup><em>n</em> − 1</sup>,−1]</span></p></li>
 </ul>
 <h2 id="例题如果2x的补码是90h那么x的真值是">例题：如果2X的补码是90H，那么X的真值是？</h2>
 <figure>
@@ -1388,8 +1392,8 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <li>符号位不变，数值位取反 (得到原码)：1 (符号) <span class="math inline">1110000<sub>2</sub></span> (数值位 <span class="math inline">0001111<sub>2</sub></span> 取反) → <span class="math inline">11110000<sub>2</sub></span> (这是 <span class="math inline">2<em>X</em></span> 的原码)。</li>
 </ul></li>
 <li><span class="math inline">2<em>X</em></span> 的原码 <span class="math inline">1(<em>符</em><em>号</em>)1110000<sub>2</sub></span>
-表示十进制 <span class="math inline">−(64 + 32 + 16) = −112</span>。</li>
-<li>所以 <span class="math inline"><em>X</em> = −112/2 = −56</span>。</li>
+表示十进制 <span class="math inline"> − (64+32+16) =  − 112</span>。</li>
+<li>所以 <span class="math inline"><em>X</em> =  − 112/2 =  − 56</span>。</li>
 </ol>
 <h2 id="浮点数">浮点数</h2>
 <figure>
@@ -1405,7 +1409,7 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 <col style="width: 39%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">逻辑运算符</th>
 <th style="text-align: left;">符号 (Symbol)</th>
 <th style="text-align: left;">含义 (Meaning)</th>
@@ -1413,26 +1417,26 @@ n-1。 将 <span class="math inline"><em>k</em> = <em>n</em> − 1</span
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">逻辑与</td>
 <td style="text-align: left;">AND /
 <code>&amp;&amp;</code>/<code>*</code></td>
 <td style="text-align: left;">连接的两个条件<strong>同时为真</strong>时，结果才为真；只要有一个为假，结果就为假。</td>
 <td style="text-align: left;">类似于电路中的<strong>串联</strong>，任何一处断开（为假），整个电路就不通（为假）。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">逻辑或</td>
 <td style="text-align: left;">OR / <code>||</code>/<code>+</code></td>
 <td style="text-align: left;">连接的两个条件<strong>只要有一个为真</strong>，结果就为真；只有两者同时为假时，结果才为假。</td>
 <td style="text-align: left;">类似于电路中的<strong>并联</strong>，只要有一条线路是通路（为真），整个系统就是通路（为真）。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">逻辑非</td>
 <td style="text-align: left;">NOT / <code>!</code></td>
 <td style="text-align: left;">取反操作，真变假，假变真。</td>
 <td style="text-align: left;">对单一条件的否定判断。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">逻辑异或</td>
 <td style="text-align: left;">XOR / <code>^</code>/ <code>⊕</code></td>
 <td style="text-align: left;">当两个输入不同时输出为真，否则为假。</td>
@@ -1601,21 +1605,21 @@ $$</span></p>
 <col style="width: 80%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>特性</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><strong>检错能力</strong></td>
 <td>能够检测出<strong>任意奇数位</strong>（如1、3、5位）的错误。</td>
 </tr>
-<tr>
+<tr class="even">
 <td><strong>检错盲区</strong></td>
 <td><strong>无法检测</strong>出<strong>任意偶数位</strong>（如2、4、6位）的错误。这是因为偶数个位的翻转不会改变码字中“1”的整体奇偶性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><strong>纠错能力</strong></td>
 <td><strong>完全不具备纠错能力</strong>。它只能发现“出错了”，但无法确定是哪一位错了。</td>
 </tr>
@@ -1667,7 +1671,7 @@ $$</span></p>
 <col style="width: 27%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">步骤</th>
 <th style="text-align: left;">正常情况 (无错误)</th>
 <th style="text-align: left;">奇数位错误 (1位出错)</th>
@@ -1675,7 +1679,7 @@ $$</span></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>1. 发送端编码</strong></td>
 <td style="text-align: left;">信息: <code>1011001</code>“1”的个数: 4
 (偶数)为满足偶校验，校验位为 <strong>0</strong>发送码字:
@@ -1683,7 +1687,7 @@ $$</span></p>
 <td style="text-align: left;">(同左)</td>
 <td style="text-align: left;">(同左)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>2. 传输中发生错误</strong></td>
 <td style="text-align: left;">-</td>
 <td style="text-align: left;">第1位 <code>1</code> 翻转为
@@ -1691,7 +1695,7 @@ $$</span></p>
 <td style="text-align: left;">第1、2位翻转 (<code>10</code> -&gt;
 <code>01</code>)错误码字: <code>**01**110010</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>3. 接收端校验</strong></td>
 <td style="text-align: left;">接收码字: <code>10110010</code>“1”的个数:
 4 (偶数)</td>
@@ -1700,7 +1704,7 @@ $$</span></p>
 <td style="text-align: left;">接收码字: <code>01110010</code>“1”的个数:
 <strong>4 (偶数)</strong></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>4. 结论</strong></td>
 <td style="text-align: left;">奇偶性<strong>符合</strong>约定 (偶数)✅
 <strong>数据正确</strong></td>
@@ -1781,7 +1785,7 @@ $$</span></p>
 值。</li>
 <li>通过”分组奇偶校验”实现检错纠错。</li>
 <li>校验位和信息位是相互掺杂在一起的，而不是简单地拼接在末尾。</li>
-<li>海明校验位通常放置在 (2^R) （即 <span class="math inline">(2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, …)</span>的位置上，也就是第
+<li>海明校验位通常放置在 (2^R) （即 <span class="math inline">(2<sup>0</sup>,2<sup>1</sup>,2<sup>2</sup>,…)</span>的位置上，也就是第
 1、2、4、8、16… 位。</li>
 <li>其他非 (2^R) 的位置则放置信息位。</li>
 </ul>
@@ -1849,7 +1853,7 @@ $$</span></p>
 <col style="width: 19%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">校验方式</th>
 <th style="text-align: left;">检错能力</th>
 <th style="text-align: left;">纠错能力</th>
@@ -1859,7 +1863,7 @@ $$</span></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">奇偶校验</td>
 <td style="text-align: left;">只能检测<strong>奇数位</strong>错误</td>
 <td style="text-align: left;">不可纠错</td>
@@ -1869,7 +1873,7 @@ $$</span></p>
 确保整个码字中“1”的个数为奇数。 <br>偶校验 (Even Parity):
 确保整个码字中“1”的个数为偶数。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">CRC校验</td>
 <td style="text-align: left;">可检测多种错误</td>
 <td style="text-align: left;">不可纠错</td>
@@ -1877,7 +1881,7 @@ $$</span></p>
 <td style="text-align: left;">拼接在信息位尾部</td>
 <td style="text-align: left;"><strong>模二除法</strong>求余数，拼接作为校验位</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">海明校验码</td>
 <td style="text-align: left;">可检错</td>
 <td style="text-align: left;">可纠错</td>
@@ -1957,7 +1961,7 @@ $$</span></p>
 <col style="width: 40%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>模块</th>
 <th>子部件</th>
 <th>英文全称 (缩写)</th>
@@ -1965,49 +1969,49 @@ $$</span></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><strong>运算器</strong><br>Arithmetic Unit</td>
 <td>算术逻辑单元</td>
 <td>Arithmetic Logic Unit (ALU)</td>
 <td>负责数据的算术运算与逻辑运算</td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td>累加寄存器</td>
 <td>Accumulator Register (AC)</td>
 <td>通用寄存器，为 ALU 提供工作区，暂存数据</td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td>数据缓冲寄存器</td>
 <td>Data Register (DR)</td>
 <td>写内存时暂存指令或数据</td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td>状态条件寄存器</td>
 <td>Program Status Word (PSW)</td>
 <td>存放状态标志与控制标志<br>(<em>部分教材归入控制器</em>)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><strong>控制器</strong><br>Control Unit</td>
 <td>程序计数器</td>
 <td>Program Counter (PC)</td>
 <td><strong>存储下一条即将执行指令的地址</strong></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td>指令寄存器</td>
 <td>Instruction Register (IR)</td>
 <td>存储<strong>当前</strong>将执行的指令</td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td>指令译码器</td>
 <td>Instruction Decoder (ID)</td>
 <td>对指令中操作码段进行分析解释</td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td>时序部件</td>
 <td>Timing &amp; Control Unit</td>
@@ -2131,7 +2135,7 @@ $$</span></p>
 <col style="width: 33%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">特点 (Feature)</th>
 <th style="text-align: left;">CISC (复杂指令集计算机) Complex
 Instruction Set Computer</th>
@@ -2140,12 +2144,12 @@ Instruction Set Computer</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">想象一个<strong>“万能工具箱”</strong>。这个工具箱里有各种各样为特定复杂任务量身定制的”专业工具”（复杂指令），比如一个可以自动完成”钻孔、拧螺丝、涂漆”整个过程的”多功能一体机”。当有新任务时，就直接往工具箱里添加一个新工具。因此，工具种类繁多，但有些工具可能很少用到，有些则非常频繁。工具的使用方式（寻址方式）也多种多样。</td>
 <td style="text-align: left;">想象一个<strong>“乐高积木盒”</strong>。这个盒子只有少数几种”基本积木”（精简指令），比如”连接”、“旋转”、“移除”等。虽然积木种类少，但通过巧妙地组合这些基本积木，可以搭建出各种各样复杂的模型（实现复杂功能）。所有的积木都大小一致（定长指令），并且组装起来非常迅速（单周期执行）。由于积木数量有限，每种积木都会被频繁地重复使用。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>指令数量</strong><br>Instruction
 Count</td>
 <td style="text-align: left;">较多，通常为数百条<br>(A large number,
@@ -2153,7 +2157,7 @@ usually hundreds)</td>
 <td style="text-align: left;">较少，通常为几十条<br>(A small number,
 usually dozens)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>指令复杂度</strong><br>Instruction
 Complexity</td>
 <td style="text-align: left;">复杂，一条指令可完成多步操作<br>(Complex,
@@ -2161,14 +2165,14 @@ one instruction can perform multiple operations)</td>
 <td style="text-align: left;">精简，一条指令通常只完成一个基本操作<br>(Simple,
 one instruction usually performs one basic operation)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>指令长度格式</strong><br>Instruction
 Length Format</td>
 <td style="text-align: left;">变长格式 (Variable-length format)</td>
 <td style="text-align: left;"><strong>定长</strong>格式 (Fixed-length
 format)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>寻址方式</strong><br>Addressing
 Modes</td>
 <td style="text-align: left;">多种寻址方式，复杂多样<br>(Multiple and
@@ -2176,14 +2180,14 @@ complex addressing modes)</td>
 <td style="text-align: left;">较少，主要以多<strong>寄存器寻址</strong>为主<br>(Fewer,
 primarily register-to-register addressing)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>通用寄存器数量</strong><br>General-Purpose
 Registers</td>
 <td style="text-align: left;">较少<br>(Fewer)</td>
 <td style="text-align: left;">较多，增加通用寄存器以减少访存次数<br>(More,
 increased to reduce memory access)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>执行控制方式</strong><br>Execution
 Control</td>
 <td style="text-align: left;">以<strong>微程序</strong>控制为主
@@ -2191,7 +2195,7 @@ Control</td>
 <td style="text-align: left;">以<strong>硬布线</strong>逻辑控制为主
 (Hardwired logic control)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>编译优化与高级语言支持</strong><br>Compiler
 Optimization &amp; HLL Support</td>
 <td style="text-align: left;">优化编译较困难，支持高级程序语言不如RISC<br>(Harder
@@ -2199,7 +2203,7 @@ for compiler optimization, less HLL support than RISC)</td>
 <td style="text-align: left;">更易于优化编译，有效支持高级程序语言<br>(Easier
 for compiler optimization, effective HLL support)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>流水线执行</strong><br>Pipelining
 Suitability</td>
 <td style="text-align: left;">适合采用流水线技术<br>(Suitable for
@@ -2975,7 +2979,7 @@ $$</span></p>
 <col style="width: 34%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">特性</th>
 <th style="text-align: left;">页式存储 (Paging)</th>
 <th style="text-align: left;">段式存储 (Segmentation)</th>
@@ -2983,19 +2987,19 @@ $$</span></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>划分单位</strong></td>
 <td style="text-align: left;">物理块 (大小固定)</td>
 <td style="text-align: left;">逻辑段 (功能独立)</td>
 <td style="text-align: left;">逻辑段 + 物理块</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>大小</strong></td>
 <td style="text-align: left;"><strong>固定</strong></td>
 <td style="text-align: left;"><strong>可变</strong></td>
 <td style="text-align: left;">段可变，页固定</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>地址空间</strong></td>
 <td style="text-align: left;"><strong>一维</strong> (线性地址)</td>
 <td style="text-align: left;"><strong>二维</strong> (段号,
@@ -3003,25 +3007,25 @@ $$</span></p>
 <td style="text-align: left;"><strong>三维</strong> (段号, 页号,
 页内偏移)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>内存碎片</strong></td>
 <td style="text-align: left;"><strong>内部碎片</strong></td>
 <td style="text-align: left;"><strong>外部碎片</strong></td>
 <td style="text-align: left;"><strong>内部碎片</strong> (最后一页)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>共享与保护</strong></td>
 <td style="text-align: left;">不直观，较难实现</td>
 <td style="text-align: left;"><strong>方便</strong>，以逻辑单位进行</td>
 <td style="text-align: left;"><strong>方便</strong>，以逻辑单位进行</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"><strong>访存次数</strong></td>
 <td style="text-align: left;"><strong>2次</strong> (无快表)</td>
 <td style="text-align: left;"><strong>2次</strong> (无快表)</td>
 <td style="text-align: left;"><strong>3次</strong> (无快表)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>核心目的</strong></td>
 <td style="text-align: left;">提高内存利用率</td>
 <td style="text-align: left;">满足程序逻辑需求</td>
@@ -3357,7 +3361,7 @@ $$</span></p>
 <col style="width: 21%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">指标 (Metric)</th>
 <th style="text-align: left;">定义 (Definition)</th>
 <th style="text-align: left;">公式 (Formula)</th>
@@ -3366,7 +3370,7 @@ $$</span></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">字长<br>Word Length</td>
 <td style="text-align: left;">指CPU一次能并行处理的二进制数据的位数，位数越大性能越高。</td>
 <td style="text-align: left;"></td>
@@ -3375,14 +3379,14 @@ $$</span></p>
 用于生成内存地址的二进制位数）。地址总线的宽度直接决定了 CPU
 能访问的最大内存空间（即寻址空间），如32位对应4GB寻址空间。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">主频 (Main Frequency)</td>
 <td style="text-align: left;">指CPU内数字脉冲振荡器每秒钟发出的脉冲数。</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;">就像工厂里生产线的节拍。节拍越快（主频越高），单位时间内生产的产品就越多</td>
 <td style="text-align: left;">单位是赫兹（Hz），常用GHz表示。主频越高，CPU在一秒内执行的操作次数越多，速度越快。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">时钟周期 (Clock Cycle)</td>
 <td style="text-align: left;">指完成一个时钟脉冲所需的时间，是主频的倒数。单位是秒（s）</td>
 <td style="text-align: left;"><span class="math inline">$时钟周期 =
@@ -3390,7 +3394,7 @@ $$</span></p>
 <td style="text-align: left;">生产线完成一个节拍所需的时间。时间越短，节拍越快。</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">CPI
 每条指令周期数<strong><br></strong>Cycles Per Instruction</td>
 <td style="text-align: left;">执行一条指令所需的平均时钟周期数。</td>
@@ -3399,7 +3403,7 @@ $$</span></p>
 <td style="text-align: left;">工人完成一道工序所需的平均工作步数。</td>
 <td style="text-align: left;">CPI 值越小，执行效率越高。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">IPC
 每周期指令数<strong><br></strong>Instructions Per Cycle</td>
 <td style="text-align: left;">CPU在一个时钟周期内能够完成的指令条数。</td>
@@ -3409,7 +3413,7 @@ $$</span></p>
 <td style="text-align: left;">CPI 和 IPC
 互为倒数，衡量CPU流水线效率。IPC 值越大，性能越强。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">MIPS每秒百万指令<strong><br></strong>Millions
 of Instructions Per Second</td>
 <td style="text-align: left;">CPU每秒钟能执行的指令数量，以百万条为单位。</td>
@@ -3418,7 +3422,7 @@ of Instructions Per Second</td>
 <td style="text-align: left;">工厂里一条生产线每秒钟能生产的”百万个”零件。</td>
 <td style="text-align: left;">K, M, G在时间/频率中为<span class="math inline">10<sup>3</sup>, 10<sup>6</sup>, 10<sup>9</sup></span>，在存储容量中为<span class="math inline">2<sup>10</sup>, 2<sup>20</sup>, 2<sup>30</sup></span>。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">MFLOPS每秒百万浮点运算<strong><br></strong>Millions
 of Floating-point Operations Per Second</td>
 <td style="text-align: left;">CPU每秒钟能执行的浮点运算次数，以百万次为单位。</td>
@@ -3540,41 +3544,41 @@ $$</span></p>
 <col style="width: 76%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">分类</th>
 <th style="text-align: left;">特点</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">批处理操作系统</td>
 <td style="text-align: left;">单道批：一次一个作业入内存，作业由程序、数据、作业说明书组成。多道批：一次多个作业入内存，特点：多道、宏观上并行微观上串行。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">分时操作系统</td>
 <td style="text-align: left;">采用<strong>时间片轮转</strong>的方式为多个用户提供服务，每个用户感觉独占系统。特点：多路性、独立性、交互性和及时性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>实时操作系统</strong></td>
 <td style="text-align: left;"><strong>实时控制系统和实时信息系统。交互能力要求不高，可靠性要求高
 (规定时间内响应并处理)。</strong></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">网络操作系统</td>
 <td style="text-align: left;">方便有效共享网络资源，提供服务软件和有关协议的集合。主要的网络操作系统有：Unix、Linux和Windows
 Server系统。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">分布式操作系统</td>
 <td style="text-align: left;">任意两台计算机可以通过通信交换信息。是网络操作系统的更高级形式，具有透明性、可靠性和高性能等特性。</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">微机操作系统</td>
 <td style="text-align: left;">Windows:
 Microsoft开发的图形用户界面、多任务、多线程操作系统。Linux:
 免费使用和自由传播的类Unix操作系统，多用户、多任务、多线程和多CPU的操作系统。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"><strong>嵌入式操作系统</strong></td>
 <td style="text-align: left;"><strong>运行在智能芯片环境中。特点：微型化、可定制
 (针对硬件变化配置)、实时性、可靠性、易移植性
@@ -3592,7 +3596,7 @@ Microsoft开发的图形用户界面、多任务、多线程操作系统。Linux
 <col style="width: 23%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;">分类</th>
 <th style="text-align: left;">概念 (Concept)</th>
 <th style="text-align: left;">共享资源 (Shared Resources)</th>
@@ -3601,14 +3605,14 @@ Microsoft开发的图形用户界面、多任务、多线程操作系统。Linux
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">程序（program）</td>
 <td style="text-align: left;">程序是静态的概念，而进程是动态的，比如打开运行QQ后才会进入进程状态。进程可以有状态变迁和消亡</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">进程 (Process)</td>
 <td style="text-align: left;">进程是程序在一个数据集合上运行的过程(进程是程序的一次执行过程)，是资源调度和分配的基本单位，不会共享资源，可以包含多个线程。由程序块、进程控制块(PCB,进程的唯一标志，用<strong>队列指针</strong>来链接同一状态的进程，可通过指针个数来判断相应状态的进程数)和数据块组成</td>
 <td style="text-align: left;">不共享资源</td>
@@ -3616,7 +3620,7 @@ Microsoft开发的图形用户界面、多任务、多线程操作系统。Linux
 <td style="text-align: left;">想象一个独立的工厂
 (Factory)，它有自己的地皮、设备和原材料。工厂内的所有生产活动都由这个工厂独立负责，与其他工厂隔离。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">线程 (Thread)</td>
 <td style="text-align: left;">进程内部的更小执行单元
 。进程切换的损耗成本高，所以在进程内部又细分出来线程</td>
@@ -5150,11 +5154,11 @@ $$</span></p>
 <ul>
 <li><p>只要关系模式未达到第三范式就会出现：插入异常、删除异常、修改异常、数据冗余（查）</p></li>
 <li><p>1NF：原子性，属性不可再分</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不满足1NF：系名称 |<span class="string"> 高级职称人数(教授+副教授)</span></span><br><span class="line"><span class="string">满足1NF：  系名称 </span>|<span class="string"> 教授人数 </span>|<span class="string"> 副教授人数</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不满足<span class="number">1</span>NF：系名称 <span class="string">| 高级职称人数(教授+副教授)</span></span><br><span class="line">满足<span class="number">1</span>NF：  系名称 <span class="string">| 教授人数 | 副教授人数</span></span><br></pre></td></tr></table></figure></li>
 <li><p>2NF（满足1NF）：<strong>无部分</strong>函数依赖候选键，即所有非主属性<strong>完全</strong>依赖候选键</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">关系模式：<span class="built_in">R</span>(学号, 课程号, 成绩, 学分)</span><br><span class="line">函数依赖：学号,课程号 → 成绩</span><br><span class="line">         课程号 → 学分</span><br><span class="line"></span><br><span class="line">候选键：(学号, 课程号)</span><br><span class="line">非主属性：成绩, 学分</span><br><span class="line">问题：学分只依赖于课程号（候选键的一部分）→ 存在部分函数依赖</span><br><span class="line">结论：不满足<span class="number">2</span>NF</span><br><span class="line"></span><br><span class="line">分解为：</span><br><span class="line"><span class="built_in">R1</span>(课程号, 学分)        # 分离部分函数依赖</span><br><span class="line"><span class="built_in">R2</span>(学号, 课程号, 成绩)  # 保留完全函数依赖</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">关系模式：R<span class="punctuation">(</span>学号, 课程号, 成绩, 学分<span class="punctuation">)</span></span><br><span class="line">函数依赖：学号,课程号 → 成绩</span><br><span class="line">         课程号 → 学分</span><br><span class="line"></span><br><span class="line">候选键：<span class="punctuation">(</span>学号, 课程号<span class="punctuation">)</span></span><br><span class="line">非主属性：成绩, 学分</span><br><span class="line">问题：学分只依赖于课程号（候选键的一部分）→ 存在部分函数依赖</span><br><span class="line">结论：不满足<span class="number">2</span>NF</span><br><span class="line"></span><br><span class="line">分解为：</span><br><span class="line">R1<span class="punctuation">(</span>课程号, 学分<span class="punctuation">)</span>        # 分离部分函数依赖</span><br><span class="line">R2<span class="punctuation">(</span>学号, 课程号, 成绩<span class="punctuation">)</span>  # 保留完全函数依赖</span><br></pre></td></tr></table></figure></li>
 <li><p>3NF（满足2NF）：<strong>无传递</strong>函数依赖候选键，即<strong>无</strong>非主属性传递依赖于候选键，比如R(学号、姓名、系号、系名)中，候选键为学号（学号决定系号，但是不决定系名），系名需要通过学号这个候选键传递依赖系号。</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">关系模式：<span class="built_in">R</span>(学号, 姓名, 系号, 系名称, 系位置)</span><br><span class="line">函数依赖：学号 → 姓名, 系号</span><br><span class="line">         系号 → 系名称, 系位置</span><br><span class="line"></span><br><span class="line">候选键：学号（单属性）</span><br><span class="line">非主属性：姓名, 系号, 系名称, 系位置</span><br><span class="line">传递依赖：学号 → 系号 → 系名称, 系位置</span><br><span class="line">结论：不满足<span class="number">3</span>NF</span><br><span class="line"></span><br><span class="line">分解为：</span><br><span class="line"><span class="built_in">R1</span>(系号, 系名称, 系位置)  # 分离传递函数依赖</span><br><span class="line"><span class="built_in">R2</span>(学号, 姓名, 系号)      # 保留直接函数依赖</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">关系模式：R<span class="punctuation">(</span>学号, 姓名, 系号, 系名称, 系位置<span class="punctuation">)</span></span><br><span class="line">函数依赖：学号 → 姓名, 系号</span><br><span class="line">         系号 → 系名称, 系位置</span><br><span class="line"></span><br><span class="line">候选键：学号（单属性）</span><br><span class="line">非主属性：姓名, 系号, 系名称, 系位置</span><br><span class="line">传递依赖：学号 → 系号 → 系名称, 系位置</span><br><span class="line">结论：不满足<span class="number">3</span>NF</span><br><span class="line"></span><br><span class="line">分解为：</span><br><span class="line">R1<span class="punctuation">(</span>系号, 系名称, 系位置<span class="punctuation">)</span>  # 分离传递函数依赖</span><br><span class="line">R2<span class="punctuation">(</span>学号, 姓名, 系号<span class="punctuation">)</span>      # 保留直接函数依赖</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="bc范式bcnf">BC范式(BCNF)</h2>
 <figure>
@@ -5204,11 +5208,11 @@ $$</span></p>
 $$</span></p>
 <hr>
 <h2 id="判断是否保持函数依赖">判断是否保持函数依赖</h2>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例题：</span><br><span class="line">    设U=&#123;A,B,C&#125;,F=&#123;A-&gt;B,B-&gt;C,A-&gt;C&#125;,则分解P=&#123;R1(AB),R2(BC)&#125;是否保持函数依赖？</span><br><span class="line"></span><br><span class="line">分析：</span><br><span class="line">	R1(AB): F1=&#123;A-&gt;B&#125;</span><br><span class="line">	R2(BC): F2=&#123;B-&gt;C&#125;</span><br><span class="line">	可以通过传递依赖推导得出函数依赖：F&#x27;=&#123;A-&gt;B,B-&gt;C&#125;=&gt;&#123;A-&gt;C&#125;，故&#123;A-&gt;C&#125;是冗余函数依赖，可以在分解后的关系模式中不保留，逻辑蕴含，仍保持函数依赖。</span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例题：</span><br><span class="line">    设U=&#123;<span class="keyword">A</span>,B,C&#125;,F=&#123;<span class="keyword">A</span>-&gt;B,B-&gt;C,<span class="keyword">A</span>-&gt;C&#125;,则分解P=&#123;R1<span class="punctuation">(</span>AB<span class="punctuation">)</span>,R2<span class="punctuation">(</span>BC<span class="punctuation">)</span>&#125;是否保持函数依赖？</span><br><span class="line"></span><br><span class="line">分析：</span><br><span class="line">	R1<span class="punctuation">(</span>AB<span class="punctuation">)</span>: F1=&#123;<span class="keyword">A</span>-&gt;B&#125;</span><br><span class="line">	R2<span class="punctuation">(</span>BC<span class="punctuation">)</span>: F2=&#123;B-&gt;C&#125;</span><br><span class="line">	可以通过传递依赖推导得出函数依赖：F&#x27;=&#123;<span class="keyword">A</span>-&gt;B,B-&gt;C&#125;=&gt;&#123;<span class="keyword">A</span>-&gt;C&#125;，故&#123;<span class="keyword">A</span>-&gt;C&#125;是冗余函数依赖，可以在分解后的关系模式中不保留，逻辑蕴含，仍保持函数依赖。</span><br></pre></td></tr></table></figure>
 <h2 id="判断无损分解">判断无损分解</h2>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">无损连接分解：</span><br><span class="line">	指将一个关系模式分解成若干关系模式后，通过自然连接（同名属性列取值相等可以合并为一列）等运算仍能还原到原来的关系模式。</span><br><span class="line">	 </span><br><span class="line">例题：</span><br><span class="line">	设R<span class="symbol">=ABC</span>,F=&#123;A-&gt;B&#125;,则分解P=&#123;<span class="built_in">R1</span>(AB),<span class="built_in">R2</span>(AC)&#125;是无损。</span><br><span class="line">	</span><br><span class="line">解析：</span><br><span class="line">	<span class="built_in">R1</span>和<span class="built_in">R2</span>的A为同名属性，自然连接得ABC,且A为左侧决定性因素，故判定无损</span><br><span class="line">	</span><br><span class="line">公式法：</span><br><span class="line">    两个关系模式则可带入公式：</span><br><span class="line">    交集决定差集则无损</span><br><span class="line">    <span class="built_in">R1</span>交集<span class="built_in">R2</span>-&gt;(<span class="built_in">R1</span>-<span class="built_in">R2</span>)</span><br><span class="line">    AB交集AC<span class="symbol">=A</span>,AB-AC<span class="symbol">=B</span>,又A-&gt;B则判定无损</span><br><span class="line">    或</span><br><span class="line">    <span class="built_in">R1</span>交集<span class="built_in">R2</span>-&gt;(<span class="built_in">R2</span>-<span class="built_in">R1</span>)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">无损连接分解：</span><br><span class="line">	指将一个关系模式分解成若干关系模式后，通过自然连接（同名属性列取值相等可以合并为一列）等运算仍能还原到原来的关系模式。</span><br><span class="line">	 </span><br><span class="line">例题：</span><br><span class="line">	设R=ABC,F=&#123;<span class="keyword">A</span>-&gt;B&#125;,则分解P=&#123;R1<span class="punctuation">(</span>AB<span class="punctuation">)</span>,R2<span class="punctuation">(</span>AC<span class="punctuation">)</span>&#125;是无损。</span><br><span class="line">	</span><br><span class="line">解析：</span><br><span class="line">	R1和R2的<span class="keyword">A</span>为同名属性，自然连接得ABC,且<span class="keyword">A</span>为左侧决定性因素，故判定无损</span><br><span class="line">	</span><br><span class="line">公式法：</span><br><span class="line">    两个关系模式则可带入公式：</span><br><span class="line">    交集决定差集则无损</span><br><span class="line">    R1交集R2-&gt;<span class="punctuation">(</span>R1-R2<span class="punctuation">)</span></span><br><span class="line">    AB交集AC=<span class="keyword">A</span>,AB-AC=B,又<span class="keyword">A</span>-&gt;B则判定无损</span><br><span class="line">    或</span><br><span class="line">    R1交集R2-&gt;<span class="punctuation">(</span>R2-R1<span class="punctuation">)</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 <hr>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">例题：</span><br><span class="line">	<span class="variable">U</span><span class="operator">=</span><span class="punctuation">&#123;</span><span class="variable">A</span><span class="operator">,</span><span class="variable">B</span><span class="operator">,</span><span class="built_in">C</span><span class="operator">,</span><span class="built_in">D</span><span class="operator">,</span><span class="built_in">E</span><span class="punctuation">&#125;</span></span><br><span class="line">	<span class="variable">F</span><span class="operator">=</span><span class="punctuation">&#123;</span><span class="variable">A</span><span class="operator">-&gt;</span><span class="variable">B</span><span class="operator">,</span><span class="variable">DE</span><span class="operator">-&gt;</span><span class="variable">B</span><span class="operator">,</span><span class="variable">CB</span><span class="operator">-&gt;</span><span class="built_in">E</span><span class="operator">,</span><span class="built_in">E</span><span class="operator">-&gt;</span><span class="variable">A</span><span class="operator">,</span><span class="variable">B</span><span class="operator">-&gt;</span><span class="built_in">D</span><span class="punctuation">&#125;</span></span><br><span class="line">	求候选键和无损连接并保持函数依赖</span><br><span class="line">	</span><br><span class="line">求候选键：</span><br><span class="line">	<span class="built_in">C</span>的入度为<span class="number">0</span></span><br><span class="line">	又可以通过<span class="punctuation">&#123;</span><span class="built_in">E</span><span class="operator">-&gt;</span><span class="variable">A</span><span class="operator">,</span><span class="variable">A</span><span class="operator">-&gt;</span><span class="variable">B</span><span class="operator">,</span><span class="variable">B</span><span class="operator">-&gt;</span><span class="built_in">D</span><span class="punctuation">&#125;</span>遍历全图</span><br><span class="line">	得出候选键为<span class="variable">CE</span></span><br><span class="line">无损连接并保持函数依赖的分解：</span><br><span class="line">	<span class="variable">P</span><span class="operator">=</span><span class="punctuation">&#123;</span><span class="variable">R1</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="operator">,</span><span class="variable">R2</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="operator">,</span><span class="variable">R3</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">例题：</span><br><span class="line">	U=&#123;<span class="keyword">A</span>,B,C,D,E&#125;</span><br><span class="line">	F=&#123;<span class="keyword">A</span>-&gt;B,DE-&gt;B,CB-&gt;E,E-&gt;<span class="keyword">A</span>,B-&gt;D&#125;</span><br><span class="line">	求候选键和无损连接并保持函数依赖</span><br><span class="line">	</span><br><span class="line">求候选键：</span><br><span class="line">	C的入度为<span class="number">0</span></span><br><span class="line">	又可以通过&#123;E-&gt;<span class="keyword">A</span>,<span class="keyword">A</span>-&gt;B,B-&gt;D&#125;遍历全图</span><br><span class="line">	得出候选键为CE</span><br><span class="line">无损连接并保持函数依赖的分解：</span><br><span class="line">	P=&#123;R1<span class="punctuation">(</span><span class="punctuation">)</span>,R2<span class="punctuation">(</span><span class="punctuation">)</span>,R3<span class="punctuation">(</span><span class="punctuation">)</span>&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p><span class="math display">$$
 \begin{align}
@@ -5330,7 +5334,7 @@ $$</span></p>
 <col style="width: 19%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>层次</th>
 <th>传输单位</th>
 <th>核心功能</th>
@@ -5340,7 +5344,7 @@ $$</span></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>🖥️ <strong>应用层</strong></td>
 <td>数据</td>
 <td>用户接口、网络服务</td>
@@ -5348,7 +5352,7 @@ $$</span></p>
 <td>-</td>
 <td>HTTP, FTP, SMTP</td>
 </tr>
-<tr>
+<tr class="even">
 <td>🔄 <strong>表示层</strong></td>
 <td>数据</td>
 <td>格式转换、加密压缩</td>
@@ -5356,7 +5360,7 @@ $$</span></p>
 <td>-</td>
 <td>SSL/TLS, JPEG</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>🔗 <strong>会话层</strong></td>
 <td>数据</td>
 <td>会话管理、同步控制</td>
@@ -5364,7 +5368,7 @@ $$</span></p>
 <td>-</td>
 <td>NetBIOS, RPC</td>
 </tr>
-<tr>
+<tr class="even">
 <td>📦 <strong>传输层</strong></td>
 <td>段(Segment)</td>
 <td>端到端传输、流控</td>
@@ -5372,7 +5376,7 @@ $$</span></p>
 <td>端口号</td>
 <td>TCP, UDP</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>🗺️ <strong>网络层</strong></td>
 <td>包(Packet)</td>
 <td>路由寻址、包转发</td>
@@ -5380,7 +5384,7 @@ $$</span></p>
 <td>IP地址</td>
 <td>IP, ICMP</td>
 </tr>
-<tr>
+<tr class="even">
 <td>🔗 <strong>数据链路层</strong></td>
 <td>帧(Frame)</td>
 <td>帧传输、错误检测</td>
@@ -5388,7 +5392,7 @@ $$</span></p>
 <td>MAC地址</td>
 <td>Ethernet</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>⚡ <strong>物理层</strong></td>
 <td>比特流</td>
 <td>信号传输、接口定义</td>
@@ -5450,11 +5454,14 @@ $$</span></p>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/06/14/Test/" rel="prev" title="">
-                  <i class="fa fa-chevron-left"></i> 
+                <a href="/2025/04/17/spring-base/" rel="prev" title="spring-base">
+                  <i class="fa fa-chevron-left"></i> spring-base
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2026/11/01/Test/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -5487,18 +5494,19 @@ $$</span></p>
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
 
 
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js","integrity":"sha256-2obLuIPcceEhkE3G09G33hBdmE55ivVcZUlcKcGNHjU="}}</script>
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://lib.baomitu.com/mermaid/9.0.1/mermaid.min.js","integrity":"sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU="}}</script>
   <script src="/js/third-party/tags/mermaid.js"></script>
 
 
+  <script src="/js/third-party/pace.js"></script>
 
   
 
@@ -5507,13 +5515,13 @@ $$</span></p>
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://lib.baomitu.com/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"luotaofun","repo":"hexo-blog-comments","client_id":"Ov23li6vpjnB5BV9Bb5T","client_secret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin_user":"luotaofun","distraction_free_mode":false,"language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"772dc97e76ca0e6076ad7cff3c829838"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"owner":"luotaofun","repo":"hexo-blog-comments","clientID":"Ov23li6vpjnB5BV9Bb5T","clientSecret":"cfc9f5ec04a4a2f7f610ceefd6bf6176d6409461","admin":"luotaofun","distractionFreeMode":false,"js":{"url":"https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"772dc97e76ca0e6076ad7cff3c829838"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
